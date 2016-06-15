@@ -20,9 +20,13 @@
 		
 		function deleteImagem($id) {
 			
-			$db = new DBMySQL(); 
+			$db = new DBMySQL();
+
+			$query = "DELETE FROM `galerias_fotos` WHERE `id` = ".$id.";";
 			
-			$db->do_query("DELETE FROM `galerias_fotos` WHERE `id` = ".$id.";");
+			$db->do_query($query);
+
+			return $query;
 			
 			$db->close();
 			

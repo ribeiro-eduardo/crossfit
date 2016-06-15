@@ -6,7 +6,7 @@
  * Time: 16:07
  */
 @session_start();
-if($_SESSION["autenticado_painel"] != "SIM"){
+if ($_SESSION["autenticado_painel"] != "SIM") {
     header("Location: index.php");
 }
 include("meta.php");
@@ -44,25 +44,31 @@ $imagens = $galeriaFotosBO->get($galeriaFotosVO);
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
 
-            <form id="galerias" action="action/galerias-action.php" name="galerias" method="POST" enctype="multipart/form-data">
+            <form id="galerias" action="action/galerias-action.php" name="galerias" method="POST"
+                  enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="nome">Nome da galeria:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control" id="nome" name="nome" value="<?=$galeria["nome"]?>">
+                    <input type="text" class="form-control" id="nome" name="nome" value="<?= $galeria["nome"] ?>">
                 </div>
                 <div class="form-group">
                     <label for="nome">Adicionar imagens:<span style="color: red"> *</span></label>
                     <input name="arquivos[]" type="file" multiple accept="image/*">
                 </div>
-                <input type="hidden" name="id" value="<?=$id?>">
-                <input type="submit" name="editar" id="editar" class="btn btn-default" value="Salvar altera&ccedil;&otilde;es">
+                <input type="hidden" name="id" value="<?= $id ?>">
+                <input type="submit" name="editar" id="editar" class="btn btn-default"
+                       value="Salvar altera&ccedil;&otilde;es">
             </form>
-            <div class="form-group">
-                <?
-                    for($i = 0; $i < count($imagens); $i++){ ?>
-                        <img src="../galerias/<?=$imagens[$i]['id_galeria']."/".$imagens[$i]['nome']?>" width="30%" height="25%">
-                <?  }
+            <?
+            for ($i = 0; $i < count($imagens); $i++) {
                 ?>
-            </div>
+                <div class="col-sm-12">
+                    <img src="../galerias/<?= $imagens[$i]['id_galeria'] . "/" . $imagens[$i]['nome'] ?>" width="30%"
+                         height="25%">
+                    <a href="javascript:void(0);" onclick="excluir(<?= $imagens[$i]['id'] ?>);"><span
+                            class="glyphicon glyphicon-trash" title="Excluir"></span></a>
+                </div>
+            <? }
+            ?>
         </div>
     </div>
 </div>
@@ -88,4 +94,10 @@ $imagens = $galeriaFotosBO->get($galeriaFotosVO);
             return false;
         }
     });
+
+    function excluir(id) {
+        if (confirm('Você tem certeza que deseja excluir essa imagem?')) {
+            window.location = 'action/galerias-action.php?e=removeImg&idImg=' + id +'&idG=' + <?=$id?>;
+        }
+    }
 </script>
