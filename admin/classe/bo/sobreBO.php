@@ -10,19 +10,25 @@
 			
 			$query = "UPDATE `sobre` SET";
 			
-			$query .= " `texto` = '".$sobreVO->getTexto()."'";
+			$query .= " `texto` = '".$sobreVO->getTexto()."',";
+
+			$query .= " `id_usuario` = '".$sobreVO->getIdUsuario()."'";
+
+			$query .= " WHERE `id_modulo` = '".$sobreVO->getIdModulo()."'";
 			
 			$db->do_query($query);
+
+			return $query;
 			
 			$db->close();
 			
 		}
 		
-		function get() {
+		function get($idModulo) {
 			
 			$db = new DBMySQL();
 				
-			$query = "SELECT texto FROM `sobre`";
+			$query = "SELECT * FROM `sobre` WHERE `id_modulo` = $idModulo";
 				
 			$db->do_query($query);
 				

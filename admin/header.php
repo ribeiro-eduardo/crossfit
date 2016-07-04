@@ -26,8 +26,8 @@
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Conteúdo<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="hd.php">HD Elite Team</a></li>
-                            <li><a href="crossfit.php">Crossfit</a></li>
+                            <li><a href="visualizar-hd.php">HD Elite Team</a></li>
+                            <li><a href="visualizar-crossfit.php">Crossfit</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuários<span class="caret"></span></a>

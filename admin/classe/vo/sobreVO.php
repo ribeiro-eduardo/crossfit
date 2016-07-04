@@ -5,47 +5,73 @@
 		private $id;
 		private $id_modulo;
 		private $id_usuario;
-		private $texto; 
-		
-		public function getId() 
-		{
-		  return $this->id;
-		}
-		
-		public function setId($value) 
-		{
-		  $this->id = $value;
-		} 
+		private $texto;
 
-		public function getIdModulo() 
+		/**
+		 * @return mixed
+		 */
+		public function getId()
 		{
-		  return $this->id_modulo;
+			return $this->id;
 		}
-		
-		public function setIdModulo($value) 
-		{
-		  $this->id_modulo = $value;
-		}  
 
-		public function getIdUsuario() 
+		/**
+		 * @param mixed $id
+		 */
+		public function setId($id)
 		{
-		  return $this->id_usuario;
+			$this->id = $id;
 		}
-		
-		public function setIdUsuario($value) 
-		{
-		  $this-> $is_usuario = $value;
-		}   
 
-		public function getTexto() 
+		/**
+		 * @return mixed
+		 */
+		public function getIdModulo()
 		{
-		  return $this->texto;
+			return $this->id_modulo;
+		}
+
+		/**
+		 * @param mixed $id_modulo
+		 */
+		public function setIdModulo($id_modulo)
+		{
+			$this->id_modulo = $id_modulo;
+		}
+
+		/**
+		 * @return mixed
+		 */
+		public function getIdUsuario()
+		{
+			return $this->id_usuario;
+		}
+
+		/**
+		 * @param mixed $id_usuario
+		 */
+		public function setIdUsuario($id_usuario)
+		{
+			$this->id_usuario = $id_usuario;
+		}
+
+		/**
+		 * @return mixed
+		 */
+		public function getTexto()
+		{
+			return $this->texto;
+		}
+
+		/**
+		 * @param mixed $texto
+		 */
+		public function setTexto($texto)
+		{
+			$this->texto = $texto;
 		}
 		
-		public function setTexto($value) 
-		{
-		  $this->texto = $value;
-		}   
+
 		
 	}
 

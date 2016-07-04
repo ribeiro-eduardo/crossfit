@@ -17,9 +17,11 @@ elseif(isset($_POST['entrar'])){
 //echo "<pre>"; var_dump($result); echo "</pre>"; exit;
 
 	if(count($result) > 0){
+		$id = $result[0]['id'];
 		$nome = $result[0]['nome'];
 		$id_tipo_usuario = $result[0]['id_tipo_usuario'];
 		if($id_tipo_usuario == 1){
+			$_SESSION['id'] = $id;
 			$_SESSION['nome'] = $nome;
 			$_SESSION['login'] = $login;
 			$_SESSION['senha'] = $senha;

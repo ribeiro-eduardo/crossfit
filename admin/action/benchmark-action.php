@@ -5,6 +5,10 @@
  * Date: 30/05/2016
  * Time: 13:38
  */
+@session_start();
+if ($_SESSION["autenticado_painel"] != "SIM") {
+    header("Location: index.php");
+}
 require_once("../lib/DBMySql.php");
 require("../classe/bo/benchmarksBO.php");
 require("../classe/vo/benchmarksVO.php");

@@ -6,6 +6,11 @@
  * Time: 21:20
  */
 
+@session_start();
+if ($_SESSION["autenticado_painel"] != "SIM") {
+    header("Location: index.php");
+}
+
 require_once("../lib/DBMySql.php");
 require("../classe/bo/treinosBO.php");
 require("../classe/vo/treinosVO.php");

@@ -1,5 +1,10 @@
 <?php
 
+@session_start();
+if ($_SESSION["autenticado_painel"] != "SIM") {
+    header("Location: index.php");
+}
+
 require_once("../lib/DBMySql.php");
 require("../classe/bo/demosBO.php");
 require("../classe/vo/demosVO.php");
