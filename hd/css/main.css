@@ -83,7 +83,6 @@ a:hover {
 .navbar-header .navbar-brand a {
   height: auto;
   display: inline-block;
-  margin-top: 8px;
 }
 .navbar-inverse .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle {
@@ -97,18 +96,18 @@ a:hover {
   padding: 15px 0;
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid #343434;
 }
 #top-bar .navbar-nav > li > a:hover {
   background: transparent;
 }
 #top-bar.animated-header {
   padding: 20px 0;
-  background: #ffffff;
+  background: #171717;
   box-shadow: none;
 }
 #top-bar .main-menu li > a {
-  color: #444;
+  color: #5F5F5F;
 }
 #top-bar .main-menu li {
   position: relative;
@@ -140,7 +139,7 @@ a:hover {
   opacity: 0;
 }
 #hero-area {
-  background: url('../images/slider.jpg') no-repeat 50%;
+  background: url('../images/temporaria.jpg') no-repeat 50%;
   background-size: cover;
   background-attachment: fixed;
   padding: 230px 0;
@@ -194,7 +193,7 @@ a:hover {
   border-radius: 0;
 }
 #call-to-action {
-  background: #02bdd5;
+  background: #E5001C;
   background-size: cover;
   background-attachment: fixed;
   padding: 80px 0;
@@ -233,6 +232,7 @@ a:hover {
 }
 #about {
   padding: 110px 0;
+    background-color: #1C1C1C;
 }
 #about .block {
   padding: 20px 30px 0 30px;
@@ -378,6 +378,7 @@ figure figcaption p {
 }
 #feature {
   padding: 80px 0;
+    background-color: #1C1C1C;
 }
 #feature .media {
   margin: 0px 0 70px 0;
@@ -495,7 +496,7 @@ figure figcaption p {
   background-color: #CCC;
 }
 #footer {
-  background: #fff;
+  background: #171717;
   padding: 25px 0;
   color: #555;
 }
@@ -505,7 +506,7 @@ figure figcaption p {
   margin-top: 10px;
 }
 #footer .copyright a {
-  color: #02bdd5;
+  color: #E5001C;
 }
 #footer .social {
   text-align: right;
@@ -520,7 +521,7 @@ figure figcaption p {
   color: #02bdd5;
 }
 .cd-headline.slide .cd-words-wrapper {
-  color: #02bdd5;
+  color: #E5001C;
 }
 ul.social-icons {
   height: auto;
