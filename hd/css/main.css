@@ -3,6 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Glegoo);
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: #171717;
 }
 h1,
 h2,
@@ -139,7 +140,7 @@ a:hover {
   opacity: 0;
 }
 #hero-area {
-  background: url('../images/temporaria.jpg') no-repeat 50%;
+  background: url('../images/back.jpg') no-repeat 50%;
   background-size: cover;
   background-attachment: fixed;
   padding: 230px 0;
@@ -150,7 +151,7 @@ a:hover {
 #hero-area:before {
   content: '';
   z-index: 9;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(0, 0, 0, 0.78);
   position: absolute;
   top: 0;
   left: 0;
