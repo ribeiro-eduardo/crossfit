@@ -4,8 +4,9 @@
 //echo "<pre>";
 //var_dump($_SESSION);
 //echo "</pre>";
-if($_SESSION["autenticado_painel"] != "SIM"){
-    header("Location: index.php");
+//exit;
+if($_SESSION["id_tipo_usuario"] != 1){
+    @header("Location: index.php");
 }
 include("meta.php");
 include("header.php");

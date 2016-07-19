@@ -4,7 +4,7 @@ require('lib/DBMySql.php');
 require('classe/functions.php');
 
 if(isset($_GET["operacao"]) && $_GET["operacao"] == "sair"){
-	echo "teste";
+	//echo "teste";
 	header('location: login.php');
 }
 elseif(isset($_POST['entrar'])){
@@ -26,17 +26,18 @@ elseif(isset($_POST['entrar'])){
 			$_SESSION['login'] = $login;
 			$_SESSION['senha'] = $senha;
 			$_SESSION['id_tipo_usuario'] = $id_tipo_usuario;
-			header('location:index.php');
+			//echo "<pre>"; var_dump($result); echo "</pre>"; exit;
+			@header('location:index.php');
 		}else{
-			echo "n„o È admin";
-			header('location:login.php?e=1');
+			//echo "n√£o √© admin";
+			@header('location:login.php?e=1');
 		}
 	}
 	else{
-		echo "nenhum usu·rio foi encontrado";
+		echo "nenhum usu√°rio foi encontrado";
 //	unset ($_SESSION['login']);
 //	unset ($_SESSION['senha']);
-		header('location:login.php?e=2');
+		@header('location:login.php?e=2');
 
 	}
 }

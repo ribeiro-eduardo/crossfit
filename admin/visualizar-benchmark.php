@@ -6,7 +6,7 @@
  * Time: 16:52
  */
 @session_start();
-if($_SESSION["autenticado_painel"] != "SIM"){
+if($_SESSION["id_tipo_usuario"] != 1){
     header("Location: index.php");
 }
 include("meta.php");
