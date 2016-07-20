@@ -1,5 +1,5 @@
-<?
-include("meta.php");
+<?php
+//include("meta.php");
 include("header.php");
 ?>
 

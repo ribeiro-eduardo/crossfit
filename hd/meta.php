@@ -1,16 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Eduardo Ribeiro
- * Date: 20/07/2016
- * Time: 01:23
- */
+
 ?>
 <!DOCTYPE html>
 <html class="no-js">
     <head>
         <!-- Basic Page Needs
-================================================== -->
+        ================================================== -->
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/png" href="images/favicon.png">
@@ -19,12 +14,12 @@
         <meta name="keywords" content="">
         <meta name="author" content="">
         <!-- Mobile Specific Metas
-================================================== -->
+        ================================================== -->
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Template CSS Files
-================================================== -->
+        ================================================== -->
         <!-- Twitter Bootstrs CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Ionicons Fonts Css -->
@@ -43,7 +38,7 @@
         <link rel="stylesheet" href="css/responsive.css">
 
         <!-- Template Javascript Files
-================================================== -->
+        ================================================== -->
         <!-- modernizr js -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <!-- jquery -->
