@@ -30,7 +30,7 @@ $texto = $sobreBO->get(1);
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Por favor, preencha o texto do módulo HD:</h1>
+            <h1>Por favor, preencha o texto do m&oacute;dulo HD:</h1>
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
 

@@ -50,7 +50,9 @@
 			
 			$db->do_query($query);
 			
-			$db->close();		
+			$db->close();
+
+			return $query;
 			
 		}
 		

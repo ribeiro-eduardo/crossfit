@@ -23,7 +23,6 @@ $descricao = urlencode($_POST["descricao"]);
 
 if (isset($_POST["cadastrar"])) {
     $noticiasVO->setTitulo($titulo);
-    echo $descricao;
     $noticiasVO->setDescricao($descricao);
 
     date_default_timezone_set('America/Sao_Paulo');
@@ -43,6 +42,48 @@ if (isset($_POST["cadastrar"])) {
         ?>
         <script>
             alert("Ocorreu um erro na gravação da notícia. Por favor, tente novamente!");
+            location.href = "../noticias.php";
+        </script>
+        <?
+        exit;
+    }
+}elseif (isset($_POST['editar'])){
+    $id = $_POST['id_noticia'];
+    $noticiasVO->setId($id);
+    $noticiasVO->setTitulo($titulo);
+    $noticiasVO->setDescricao($descricao);
+    if ($noticiasBO->editNoticia($noticiasVO)) {
+        ?>
+        <script>
+            alert("Notícia alterada com sucesso!");
+            location.href = "../noticias.php";
+        </script>
+        <?
+        exit;
+    } else {
+        ?>
+        <script>
+            alert("Ocorreu um erro na edição da notícia. Por favor, tente novamente!");
+            location.href = "../noticias.php";
+        </script>
+        <?
+        exit;
+    }
+}elseif (isset($_GET['acao_e'])){
+    $id = $_GET['id'];
+    $noticiasVO->setId($id);
+    if ($noticiasBO->deleteNoticia($noticiasVO)) {
+        ?>
+        <script>
+            alert("Notícia excluída com sucesso!");
+            location.href = "../noticias.php";
+        </script>
+        <?
+        exit;
+    } else {
+        ?>
+        <script>
+            alert("Ocorreu um erro na remoção da notícia. Por favor, tente novamente!");
             location.href = "../noticias.php";
         </script>
         <?

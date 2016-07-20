@@ -7,7 +7,7 @@
 if($_SESSION["id_tipo_usuario"] != 1){
     header("Location: index.php");
 }
-echo $_SESSION['nome'];
+//echo $_SESSION['nome'];
 $admin = false;
 include('meta.php');
 
@@ -39,6 +39,7 @@ $noticias = $noticiasBO->get($noticiasVO);
                 </tr>
                 </thead>
                 <tbody>
+                <form action="action/noticias-action.php" method="post">
                 <? for ($i = 0; $i < count($noticias); $i++) {
                     ?>
                     <tr>
@@ -49,9 +50,13 @@ $noticias = $noticiasBO->get($noticiasVO);
                                     class="glyphicon glyphicon-edit" title="Visualizar"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $noticias[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-trash" title="Excluir"></span></a>
+                            <div class="checkbox">
+                                <input type="checkbox" name="excluir[<?=$i?>]" value="<?=$noticias[$i]['id']?>">
+                            </div>
                         </td>
                     </tr>
                 <? } ?>
+                </form>
                 </tbody>
             </table>
         </div>
