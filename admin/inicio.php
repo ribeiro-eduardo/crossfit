@@ -2,9 +2,9 @@
 if (!isset($_SESSION)){
     session_start();
 }
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre>";
+//echo "<pre>";
+//var_dump($_SESSION);
+//echo "</pre>";
 //exit;
 if(!isset($_SESSION['id'])){
     @session_destroy();
