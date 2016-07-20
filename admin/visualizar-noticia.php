@@ -26,9 +26,9 @@ $noticia = $noticiasBO->get($noticiasVO);
 //echo "<pre>";
 //var_dump($noticia);
 //echo "</pre>";
-echo "<pre>";
-echo urldecode($noticia['descricao']);
-echo "</pre>";
+//echo "<pre>";
+//echo urldecode($noticia['descricao']);
+//echo "</pre>";
 ?>
 
 <div class="container">
@@ -47,8 +47,8 @@ echo "</pre>";
                     <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
                     <textarea class="form-control" id="descricao" name="descricao"><?=urldecode($noticia["descricao"])?></textarea>
                 </div>
-                <input type="hidden" name="id" value="<?=$noticia['id']?>">
-                <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-default" value='Salvar altera&ccedil;&otilde;es'>
+                <input type="hidden" name="id_noticia" value="<?=$noticia['id']?>">
+                <input type="submit" name="editar" id="editar" class="btn btn-default" value='Salvar altera&ccedil;&otilde;es'>
             </form>
         </div>
     </div>
@@ -56,7 +56,7 @@ echo "</pre>";
 
 <script language="javascript">
 
-    $('#cadastrar').click(function () {
+    $('#editar').click(function () {
         var titulo = $('#titulo').val();
         var descricao = CKEDITOR.instances.descricao.getData();
         if (titulo == "") {
