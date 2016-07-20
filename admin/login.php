@@ -1,4 +1,5 @@
 <? include("meta.php");
+error_reporting(E_ALL ^ E_NOTICE);
 
 $erro = $_GET["e"];
 $display = "display: none";

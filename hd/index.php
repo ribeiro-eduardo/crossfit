@@ -1,6 +1,7 @@
 <?php
 //include("meta.php");
 include("header.php");
+error_reporting(E_ALL ^ E_NOTICE);
 ?>
 
         <!--
