@@ -30,13 +30,13 @@ if($erro == 1){
                 <h4 class="text-uppercase text-center" style="padding: 5%">Faça seu login</h4>
                 <span id="erro" style="color: red; <?=$display?>"><?=$erro?></span>
                 <form action="processausuarios.php" class="text-center" method="POST">
-                  <div class=" form-group input-group">
-                    <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-user"></span>
-                    </span>
-                    <input type="text" id="userName" name="login" class="form-control chat-input"
-                           placeholder="Usuário"/>
-                   </div>
+                    <div class=" form-group input-group">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                      </span>
+                      <input type="text" id="userName" name="login" class="form-control chat-input"
+                             placeholder="Usuário"/>
+                     </div>
                     </br>
                     <div class=" form-group input-group">
                       <span class="input-group-addon">

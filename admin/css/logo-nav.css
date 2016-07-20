@@ -9,12 +9,21 @@ body {
 }
 
 .navbar-fixed-top .nav {
-    padding: 15px 0;
+    /*padding: 15px 0;*/
+    padding: 2% 0;
 }
 
 .navbar-fixed-top .navbar-brand {
     padding: 0 15px;
 }
+
+.lk {
+  color: #5F5F5F;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
 
 @media(min-width:768px) {
     body {
@@ -22,6 +31,6 @@ body {
     }
 
     .navbar-fixed-top .navbar-brand {
-        padding: 15px 0;
+        padding: 25% 0;
     }
 }
