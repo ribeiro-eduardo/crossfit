@@ -44,9 +44,9 @@ Global Page Section Start
                 <span class="input-group-addon">
                   <span class="ion-unlocked"></span>
                 </span>
-                <input class="form-control" placeholder="Senha">
+                <input type="password" class="form-control" placeholder="Senha">
               </div>
-              <button type="submit" class="btn btn-details">Submit</button>
+              <button type="submit" class="btn btn-details">Entrar</button>
             </form>
           </div>
         </div>
