@@ -23,8 +23,11 @@ $id = $_GET["id"];
 $noticiasVO->setId($id);
 $noticia = $noticiasBO->get($noticiasVO);
 
+//echo "<pre>";
+//var_dump($noticia);
+//echo "</pre>";
 echo "<pre>";
-var_dump($noticia);
+echo urldecode($noticia['descricao']);
 echo "</pre>";
 ?>
 
@@ -42,7 +45,7 @@ echo "</pre>";
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
-                    <textarea class="form-control" id="descricao" name="descricao"><?=$noticia["descricao"]?></textarea>
+                    <textarea class="form-control" id="descricao" name="descricao"><?=urldecode($noticia["descricao"])?></textarea>
                 </div>
                 <input type="hidden" name="id" value="<?=$noticia['id']?>">
                 <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-default" value='Salvar altera&ccedil;&otilde;es'>

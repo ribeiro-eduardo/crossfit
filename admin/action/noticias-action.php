@@ -18,7 +18,7 @@ $noticiasBO = new noticiasBO();
 $noticiasVO = new noticiasVO();
 
 $titulo = $_POST["titulo"];
-$descricao = $_POST["descricao"];
+$descricao = urlencode($_POST["descricao"]);
 
 
 if (isset($_POST["cadastrar"])) {

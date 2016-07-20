@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.php">Início</a>
+                        <a href="inicio.php">Início</a>
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Conteúdo<span class="caret"></span></a>
                         <ul class="dropdown-menu">

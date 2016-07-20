@@ -10,9 +10,9 @@
 			
 			$query = "UPDATE `sobre` SET";
 			
-			$query .= " `texto` = '".$sobreVO->getTexto()."',";
+			$query .= " `texto` = '".$sobreVO->getTexto()."'";
 
-			$query .= " `id_usuario` = '".$sobreVO->getIdUsuario()."'";
+			//$query .= " `id_usuario` = '".$sobreVO->getIdUsuario()."'";
 
 			$query .= " WHERE `id_modulo` = '".$sobreVO->getIdModulo()."'";
 			

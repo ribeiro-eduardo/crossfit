@@ -19,14 +19,12 @@ $sobreVO = new sobreVO();
 
 if (isset($_POST["editar"])) {
     $id_modulo = $_POST["id_modulo"];
-    $id_usuario = $_POST["id_usuario"];
     $texto = $_POST["texto"];
 //    echo "id modulo".$id_modulo."<br>";
 //    echo "id usuario".$id_usuario."<br>";
 //    exit;
     $sobreVO->setIdModulo($id_modulo);
-    $sobreVO->setIdUsuario($id_usuario);
-    $sobreVO->setTexto($texto);
+    $sobreVO->setTexto(urlencode($texto));
 
     if ($sobreBO->editarTexto($sobreVO)) {
         ?>

@@ -7,6 +7,7 @@
 if($_SESSION["id_tipo_usuario"] != 1){
     header("Location: index.php");
 }
+echo $_SESSION['nome'];
 $admin = false;
 include('meta.php');
 

@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Eduardo Ribeiro
- * Date: 17/06/2016
- * Time: 01:15
+ * Date: 20/07/2016
+ * Time: 00:41
  */
 @session_start();
 if ($_SESSION["id_tipo_usuario"] != 1) {
@@ -19,22 +19,21 @@ require("classe/vo/sobreVO.php");
 $sobreBO = new sobreBO();
 $sobreVO = new sobreVO();
 
-$texto = $sobreBO->get(1);
+$texto = $sobreBO->get(2);
 
 //echo "<pre>";
 //echo urldecode($texto['texto']);
 //echo "</pre>";
-
 ?>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Por favor, preencha o texto do módulo HD:</h1>
+            <h1>Por favor, preencha o texto do m&oacute;dulo CrossFit:</h1>
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
 
-            <form id="hd" action="action/sobre-action.php" name="hd" method="POST">
+            <form id="hd" action="action/sobre-action.php" name="benchmarks" method="POST">
                 <div class="form-group">
                     <label for="texto">Texto:<span style="color: red"> *</span></label>
                     <textarea class="form-control" id="texto" name="texto"><?=urldecode($texto["texto"]) ?></textarea>
