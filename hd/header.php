@@ -22,7 +22,7 @@ include("meta.php");
 
                 <!-- logo -->
                 <div class="navbar-brand">
-                    <a href="index.html" >
+                    <a href="index.php" >
                         <img src="images/logo_teste_cOriginal.png" alt="">
                     </a>
                 </div>
@@ -42,7 +42,7 @@ include("meta.php");
                               </ul>
                           </div>
                       </li>
-                        <li><a href="index.html#about">WOD</a></li>
+                        <li><a href="index.php#about">WOD</a></li>
                         <li><a href="gallery.html">Demonstrações</a></li>
                         <li><a href="news.html">Notícias</a></li>
                         <li><a href="#about">Eventos</a></li>
