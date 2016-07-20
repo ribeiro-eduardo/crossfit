@@ -1121,3 +1121,18 @@ article {
   font-weight: bold;
   font-size: 1.2em;
 }
+
+.evento{
+  padding: 5% 0;
+}
+
+.epar{
+  background: #fcfcfc;
+}
+
+.link-externo-evento a{
+  color: #AE0216;
+  text-align: right;
+  text-transform: uppercase;
+  padding: 5%;
+}

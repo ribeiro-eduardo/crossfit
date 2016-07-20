@@ -44,7 +44,7 @@ include("meta.php");
                         <li><a href="index.php#about">WOD</a></li>
                         <li><a href="gallery.php">Demonstrações</a></li>
                         <li><a href="news.php">Notícias</a></li>
-                        <li><a href="#">Eventos</a></li>
+                        <li><a href="eventos.php">Eventos</a></li>
                         <li><a href="contact.php">Contato</a></li>
                         <li><a href="#">Login</a></li>
                     </ul>
