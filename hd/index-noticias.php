@@ -14,13 +14,14 @@ $noticiasBO = new noticiasBO();
 
 $noticias = $noticiasBO->get($noticiasVO);
 ?>
+
 <section id="works" class="works">
     <div class="container">
         <div class="section-heading">
-            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Not&iacute;cias</h1>
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Notícias</h1>
 
             <p class="wow fadeInDown" data-wow-delay=".5s">
-                Confira algumas not&iacute;cias da modalidade.
+                Confira algumas notícias da modalidade.
             </p>
         </div>
 
@@ -41,13 +42,13 @@ $noticias = $noticiasBO->get($noticiasVO);
                             <div class="overlay">
                                 <div class="buttons">
                                     <!-- <a rel="gallery" class="fancybox" href="images/portfolio/item-1.jpg">Demo</a> -->
-                                    <a href="single-post.html">Leia mais</a>
+                                    <a href="single-post.php">Leia mais</a>
                                 </div>
                             </div>
                         </div>
                         <figcaption>
                             <h4>
-                                <a href="single-post.html">
+                                <a href="single-post.php">
                                     <?= $noticias[$i]['titulo'] ?>
                                 </a>
                             </h4>

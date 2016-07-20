@@ -1,5 +1,4 @@
 <?php
-
 include("meta.php");
 ?>
 
@@ -37,17 +36,17 @@ include("meta.php");
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sobre <span class="caret"></span></a>
                           <div class="dropdown-menu">
                               <ul>
-                                  <li><a href="about.html">HD Elite Team</a></li>
-                                  <li><a href="about-crossfit.html">Crossfit</a></li>
+                                  <li><a href="about.php">HD Elite Team</a></li>
+                                  <li><a href="about-crossfit.php">Crossfit</a></li>
                               </ul>
                           </div>
                       </li>
                         <li><a href="index.php#about">WOD</a></li>
-                        <li><a href="gallery.html">Demonstrações</a></li>
-                        <li><a href="news.html">Notícias</a></li>
-                        <li><a href="#about">Eventos</a></li>
-                        <li><a href="contact.html">Contato</a></li>
-                        <li><a href="contact.html">Login</a></li>
+                        <li><a href="gallery.php">Demonstrações</a></li>
+                        <li><a href="news.php">Notícias</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="contact.php">Contato</a></li>
+                        <li><a href="#">Login</a></li>
                     </ul>
                 </div>
             </nav>

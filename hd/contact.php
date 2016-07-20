@@ -1,112 +1,6 @@
-<!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <!-- Basic Page Needs
-        ================================================== -->
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="icon" type="image/png" href="images/favicon.png">
-        <title>HD Elite Team</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="">
-        <!-- Mobile Specific Metas
-        ================================================== -->
-        <meta name="format-detection" content="telephone=no">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Template CSS Files
-        ================================================== -->
-        <!-- Twitter Bootstrs CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- Ionicons Fonts Css -->
-        <link rel="stylesheet" href="css/ionicons.min.css">
-        <!-- animate css -->
-        <link rel="stylesheet" href="css/animate.css">
-        <!-- Hero area slider css-->
-        <link rel="stylesheet" href="css/slider.css">
-        <!-- owl craousel css -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/owl.theme.css">
-        <link rel="stylesheet" href="css/jquery.fancybox.css">
-        <!-- template main css file -->
-        <link rel="stylesheet" href="css/main.css">
-        <!-- responsive css -->
-        <link rel="stylesheet" href="css/responsive.css">
-
-        <!-- Template Javascript Files
-        ================================================== -->
-        <!-- modernizr js -->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <!-- jquery -->
-        <script src="js/jquery.min.js"></script>
-        <!-- owl carouserl js -->
-        <script src="js/owl.carousel.min.js"></script>
-        <!-- bootstrap js -->
-
-        <script src="js/bootstrap.min.js"></script>
-        <!-- wow js -->
-        <script src="js/wow.min.js"></script>
-        <!-- slider js -->
-        <script src="js/slider.js"></script>
-        <script src="js/jquery.fancybox.js"></script>
-        <!-- template main js -->
-        <script src="js/main.js"></script>
-    </head>
-    <body>
-        <!--
-        ==================================================
-        Header Section Start
-        ================================================== -->
-        <header id="top-bar" class="navbar-fixed-top animated-header">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- responsive nav button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <!-- /responsive nav button -->
-
-                    <!-- logo -->
-                    <div class="navbar-brand">
-                        <a href="index.html" >
-                            <img src="images/logo_teste_cOriginal.png" alt="">
-                        </a>
-                    </div>
-                    <!-- /logo -->
-                </div>
-                <!-- main menu -->
-                <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                    <div class="main-menu">
-                        <ul class="nav navbar-nav navbar-right">
-
-                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sobre <span class="caret"></span></a>
-                              <div class="dropdown-menu">
-                                  <ul>
-                                      <li><a href="about.html">HD Elite Team</a></li>
-                                      <li><a href="about-crossfit.html">Crossfit</a></li>
-                                  </ul>
-                              </div>
-                          </li>
-
-                            <!-- <li><a href="about.html">About</a></li> -->
-                            <li><a href="index.html#about">WOD</a></li>
-                            <li><a href="gallery.html">Demonstrações</a></li>
-                            <li><a href="news.html">Notícias</a></li>
-                            <li><a href="#about">Eventos</a></li>
-
-                            <li><a href="contact.html">Contato</a></li>
-                            <li><a href="contact.html">Login</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- /main nav -->
-            </div>
-        </header>
+<?php
+include("header.php");
+?>
 
         <!--
         ==================================================
@@ -120,7 +14,7 @@
                             <h2>Contato</h2>
                             <ol class="breadcrumb">
                                 <li>
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <i class="ion-ios-home"></i>
                                         Home
                                     </a>
@@ -253,23 +147,7 @@
         ==================================================
             Footer Section Start
         ================================================== -->
-        <footer id="footer">
-            <div class="container">
-                <div class="col-md-8">
-                    <p class="copyright">Copyright: <span>2015</span> . Design and Developed by <a href="http://www.Themefisher.com">Themefisher</a></p>
-                </div>
-                <div class="col-md-4">
-                    <!-- Social Media -->
-                    <ul class="social">
-                        <li>
-                            <a href="http://localhost/crossfit/admin/login.php">
-                                <img src="images/admin_C2.png" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer> <!-- /#footer -->
-
-    </body>
-</html>
+        <?php
+        include("footer.php");
+        ?>
+        <!-- /#footer -->

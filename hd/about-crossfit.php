@@ -1,5 +1,4 @@
 <?php
-include("meta.php");
 include("header.php");
 
 require("../admin/lib/DBMySql.php");
@@ -12,8 +11,6 @@ $sobreVO = new sobreVO();
 $texto = $sobreBO->get(2);
 
 ?>
-
-
         <!--
         ==================================================
             Global Page Section Start
@@ -69,73 +66,6 @@ $texto = $sobreBO->get(2);
         <section id="stt" class="stt">
             <div class="container">
                 <div class="row">
-                    <!--
-                    <div class="col-md-3">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                            <div class="team-img">
-                                <img src="images/team/team-1.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Jonathon Andrew</h3>
-                            <p class="team_designation">CEO, Project Manager</p>
-                            <p class="team_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
-                            <p class="social-icons">
-                                <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-twitter-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-googleplus-outline"></i></a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".5s">
-                            <div class="team-img">
-                                <img src="images/team/team-2.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Jesmin Martina</h3>
-                            <p class="team_designation">CEO, Project Manager</p>
-                            <p class="team_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p>
-                            <p class="social-icons">
-                                <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-twitter-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-googleplus-outline"></i></a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
-                            <div class="team-img">
-                                <img src="images/team/team-3.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Deu John</h3>
-                            <p class="team_designation">CEO, Project Manager</p>
-                            <p class="team_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p>
-                            <p class="social-icons">
-                                <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-twitter-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-googleplus-outline"></i></a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
-                            <div class="team-img">
-                                <img src="images/team/team-4.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Anderson Martin</h3>
-                            <p class="team_designation">CEO, Project Manager</p>
-                            <p class="team_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p>
-                            <p class="social-icons">
-                                <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-twitter-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
-                                <a href="#" target="_blank"><i class="ion-social-googleplus-outline"></i></a>
-                            </p>
-                        </div>
-                    </div> -->
-
-
                   <h3 class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms">Benefícios do CrossFit</h3>
                 </div>
 
@@ -232,52 +162,6 @@ $texto = $sobreBO->get(2);
                     </div>
             </div>
         </section>
-        <!--
-        ==================================================
-        Clients Section Start
-        ================================================== -->
-        <!-- <section id="clients">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="subtitle text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Our Happy Clinets</h2>
-                        <p class="subtitle-des text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, error.</p>
-                        <div id="clients-logo" class="owl-carousel">
-                            <div>
-                                <img src="images/clients/logo-1.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-2.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-3.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-4.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-5.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-1.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-2.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-3.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-4.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="images/clients/logo-5.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
 
         <!--
         ==================================================
@@ -291,6 +175,3 @@ $texto = $sobreBO->get(2);
 
         <? include("footer.php"); ?>
         <!-- /#footer -->
-
-    </body>
-</html>

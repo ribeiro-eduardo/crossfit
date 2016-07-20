@@ -198,12 +198,10 @@ error_reporting(E_ALL ^ E_NOTICE);
             ==================================================
             Call To Action Section Start
             ================================================== -->
-            <?= include("call-to-action.php");?>
+            <?php include("call-to-action.php");?>
             <!--
             ==================================================
             Footer Section Start
             ================================================== -->
-            <?= include("footer.php");?> <!-- /#footer -->
-
-        </body>
-    </html>
+            <?php include("footer.php");?>
+            <!-- /#footer -->

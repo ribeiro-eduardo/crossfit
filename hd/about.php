@@ -252,6 +252,3 @@ $texto = $sobreBO->get(1);
 
         <? include("footer.php"); ?>
         <!-- /#footer -->
-
-    </body>
-</html>

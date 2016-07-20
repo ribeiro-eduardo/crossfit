@@ -6,7 +6,7 @@
  * Time: 01:42
  */
 ?>
-<section id="call-to-action">
+        <section id="call-to-action">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

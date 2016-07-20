@@ -1,5 +1,4 @@
 <?
-include("meta.php");
 include("header.php");
 ?>
 
@@ -12,26 +11,15 @@ include("header.php");
                             <h2 class="wow fadeInUp animated" data-wow-delay=".6s">Ops! Temos um problema!</h2>
                             <p class="wow fadeInUp animated" data-wow-delay=".9s">A página que você estava buscando não existe.</p>
                             <a href="index.php" class="btn btn-dafault btn-home wow fadeInUp animated" data-wow-delay="1.1s">Voltar ao início</a>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-            <!-- 
-        ================================================== 
-            Call To Action Section Start
-        ================================================== -->
-<!--        --><?//= include("call-to-action.php");?>
-
-
-        <!-- 
-        ================================================== 
+        <!--
+        ==================================================
             Footer Section Start
         ================================================== -->
         <? include ("footer.php"); ?>
         <!-- /#footer -->
-    
-    </body>
-</html>
