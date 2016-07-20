@@ -14,8 +14,8 @@
                             <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">Gostou do que viu?</h2>
                             <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Venha fazer uma aula experimental conosco!</p>
                             <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Atendemos de segunda a sexta, das 7:30 &agrave;s 22:00, e s&aacute;bado, das 8:00 &agrave;s 13:00.</p>
-                            <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Esperamos por voc&ecirc;!</p>
-                            <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Entre em contato</a>
+                            <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Esperamos por você!</p>
+                            <a href="contact.php" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Entre em contato</a>
                         </div>
                     </div>
 

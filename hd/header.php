@@ -46,7 +46,7 @@ include("meta.php");
                         <li><a href="news.php">Notícias</a></li>
                         <li><a href="eventos.php">Eventos</a></li>
                         <li><a href="contact.php">Contato</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="login.php">Login</a></li>
                     </ul>
                 </div>
             </nav>
