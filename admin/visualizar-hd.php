@@ -62,3 +62,6 @@ $texto = $sobreBO->get(1);
             height: 450 }
     );
 </script>
+<?php
+ include("footer.php");
+?>

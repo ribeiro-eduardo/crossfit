@@ -33,4 +33,6 @@ include("header.php");
     <!-- /.container -->
 
 
-
+    <?php
+     include("footer.php");
+    ?>

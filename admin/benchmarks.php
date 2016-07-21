@@ -104,7 +104,7 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
     }
 
     function excluir(id) {
-        if (confirm('Você tem certeza que deseja excluir esse benchmark?')) {
+        if (confirm('Vocï¿½ tem certeza que deseja excluir esse benchmark?')) {
             window.location = 'action/benchmark-action.php?excluir=' + id;
         }
     }
@@ -124,3 +124,7 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
     }
 
 </script>
+
+<?php
+ include("footer.php");
+?>

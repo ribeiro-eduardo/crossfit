@@ -96,8 +96,11 @@ $imagens = $galeriaFotosBO->get($galeriaFotosVO);
     });
 
     function excluir(id) {
-        if (confirm('Você tem certeza que deseja excluir essa imagem?')) {
+        if (confirm('Vocï¿½ tem certeza que deseja excluir essa imagem?')) {
             window.location = 'action/galerias-action.php?e=removeImg&idImg=' + id +'&idG=' + <?=$id?>;
         }
     }
 </script>
+<?php
+ include("footer.php");
+?>

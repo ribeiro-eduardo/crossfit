@@ -21,7 +21,7 @@ $nome = $_SESSION['nome'];
 ?>
 <link rel="stylesheet" href="css/inicio.css">
 
-    <section style="padding-bottom: 10%">
+    <section>
         <div class="container">
       <!--      <div class="row">
               <h2 style="padding: 5% 0" class="subtitle wow fadeInUp text-center" data-wow-delay=".3s" data-wow-duration="500ms">Bem vindo, <?=$nome?>!</h2>
@@ -140,7 +140,9 @@ $nome = $_SESSION['nome'];
         </div>
     </section>
 
-
+<?php
+ include("footer.php");
+?>
 
         <!-- Page Content
         <div class="container">

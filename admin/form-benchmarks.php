@@ -85,14 +85,18 @@ $categorias = getCategoriasTreinos();
             $('#id_classe_treino').focus();
             return false;
         } else if (titulo == "") {
-            alert("Por favor, preencha o título!");
+            alert("Por favor, preencha o tï¿½tulo!");
             $('#titulo').focus();
             return false;
         } else if (descricao == "") {
-            alert("Por favor, preencha a descrição!");
+            alert("Por favor, preencha a descriï¿½ï¿½o!");
             $('#descricao').focus();
             return false;
         }
     });
 
 </script>
+
+<?php
+ include("footer.php");
+?>

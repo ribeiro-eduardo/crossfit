@@ -123,3 +123,7 @@ $usuarios = $usuariosBO->get($usuariosVO);
     }
 
 </script>
+
+<?php
+ include("footer.php");
+?>

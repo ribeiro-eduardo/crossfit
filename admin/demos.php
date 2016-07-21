@@ -60,9 +60,13 @@ $demos = $demosBO->get($demosVO);
     }
 
     function excluir(id) {
-        if (confirm('Você tem certeza que deseja excluir essa demonstração?')) {
+        if (confirm('Vocï¿½ tem certeza que deseja excluir essa demonstraï¿½ï¿½o?')) {
             window.location = 'action/demos-action.php?acao_e=e&id=' + id;
         }
     }
 
 </script>
+
+<?php
+ include("footer.php");
+?>

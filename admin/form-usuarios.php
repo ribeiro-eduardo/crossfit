@@ -62,50 +62,53 @@ $action = "action/usuarios-action.php";
         console.log(data_nascimento);
 
         if (id_tipo_usuario  === '') {
-            alert('Por favor, selecione o tipo de usuário!');
+            alert('Por favor, selecione o tipo de usuï¿½rio!');
             $('#id_tipo_usuario').focus();
             return false;
         }
         if (nome  === '') {
-            alert('Por favor, preencha o nome do usuário!');
+            alert('Por favor, preencha o nome do usuï¿½rio!');
             $('#nome').focus();
             return false;
         }
         if (cpf  === '') {
-            alert('Por favor, preencha o cpf do usuário!');
+            alert('Por favor, preencha o cpf do usuï¿½rio!');
             $('#cpf').focus();
             return false;
         }
         if (data_nascimento  === '') {
-            alert('Por favor, preencha a data de nascimento do usuário!');
+            alert('Por favor, preencha a data de nascimento do usuï¿½rio!');
             $('#data_nascimento').focus();
             return false;
         }
         if (email  === '') {
-            alert('Por favor, preencha o email do usuário!');
+            alert('Por favor, preencha o email do usuï¿½rio!');
             $('#email').focus();
             return false;
         }
         if (login  === '') {
-            alert('Por favor, preencha o login do usuário!');
+            alert('Por favor, preencha o login do usuï¿½rio!');
             $('#login').focus();
             return false;
         }
         if (senha  === '') {
-            alert('Por favor, preencha a senha do usuário!');
+            alert('Por favor, preencha a senha do usuï¿½rio!');
             $('#senha').focus();
             return false;
         }
         if (telefone  === '') {
-            alert('Por favor, preencha o telefone do usuário!');
+            alert('Por favor, preencha o telefone do usuï¿½rio!');
             $('#telefone').focus();
             return false;
         }
         if (celular  === '') {
-            alert('Por favor, preencha o celular do usuário!');
+            alert('Por favor, preencha o celular do usuï¿½rio!');
             $('#celular').focus();
             return false;
         }
     });
 
 </script>
+<?php
+ include("footer.php");
+?>

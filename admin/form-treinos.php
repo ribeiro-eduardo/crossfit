@@ -65,11 +65,11 @@ require("lib/DBMySql.php");
             console.log(descricao);
             console.log(data);
             if(titulo == ""){
-                alert("Por favor, preencha o título!");
+                alert("Por favor, preencha o tï¿½tulo!");
                 $('#titulo').focus();
                 return false;
             }else if(descricao == ""){
-                alert("Por favor, preencha a descrição!");
+                alert("Por favor, preencha a descriï¿½ï¿½o!");
                 $('#descricao').focus();
                 return false;
             }else if(data == ""){
@@ -182,10 +182,13 @@ require("lib/DBMySql.php");
 //        var descricao = $.trim($('#descricao').val());
 //
 //        if (descricao  === '') {
-//            alert('Por favor, preencha o descricao do usuário!');
+//            alert('Por favor, preencha o descricao do usuï¿½rio!');
 //            $('#descricao').focus();
 //            return false;
 //        }
 //    });
 
 </script>
+<?php
+ include("footer.php");
+?>

@@ -78,7 +78,7 @@ $link = $aux[1];
         var titulo = $('#titulo').val();
         var link = $("#link").val();
         if (titulo == "") {
-            alert("Por favor, preencha o título!");
+            alert("Por favor, preencha o tï¿½tulo!");
             $('#titulo').focus();
             return false;
         } else if (link == "") {
@@ -89,3 +89,7 @@ $link = $aux[1];
     });
 
 </script>
+
+<?php
+ include("footer.php");
+?>

@@ -45,7 +45,7 @@ require("lib/DBMySql.php");
         var titulo = $('#titulo').val();
         var link = $("#link").val();
         if (titulo == "") {
-            alert("Por favor, preencha o título!");
+            alert("Por favor, preencha o tï¿½tulo!");
             $('#titulo').focus();
             return false;
         } else if (link == "") {
@@ -56,3 +56,8 @@ require("lib/DBMySql.php");
     });
 
 </script>
+
+
+<?php
+ include("footer.php");
+?>

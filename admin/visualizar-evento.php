@@ -73,3 +73,7 @@ $evento = $eventosBO->get($eventosVO);
         }
     });
 </script>
+
+<?php
+ include("footer.php");
+?>

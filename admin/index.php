@@ -56,3 +56,7 @@ if($erro == 1){
         $('#erro').show();
     }
 </script>
+
+<?php
+ include("footer.php");
+?>

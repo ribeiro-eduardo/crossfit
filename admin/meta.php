@@ -48,6 +48,7 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" media="all">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/body.css" >
 
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>

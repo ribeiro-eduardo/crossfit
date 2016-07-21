@@ -70,9 +70,13 @@ $noticias = $noticiasBO->get($noticiasVO);
     }
 
     function excluir(id) {
-        if (confirm('Você tem certeza que deseja excluir essa noticia?')) {
+        if (confirm('Vocï¿½ tem certeza que deseja excluir essa noticia?')) {
             window.location = 'action/noticias-action.php?acao_e=b&id=' + id;
         }
     }
 
 </script>
+
+<?php
+ include("footer.php");
+?>

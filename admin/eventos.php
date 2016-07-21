@@ -65,8 +65,12 @@ $eventos = $eventosBO->get($eventosVO);
     }
 
     function excluir(id) {
-        if (confirm('Você tem certeza que deseja excluir esse evento?')) {
+        if (confirm('Vocï¿½ tem certeza que deseja excluir esse evento?')) {
             window.location = 'action/eventos-action.php?e=' + id;
         }
     }
 </script>
+
+<?php
+ include("footer.php");
+?>
