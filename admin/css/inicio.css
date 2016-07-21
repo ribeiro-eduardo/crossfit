@@ -1,0 +1,18 @@
+.icones{
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.icones .row{
+  padding-bottom: 12%;
+  font-weight: bold;
+font-size: 17px;
+}
+
+.icones img{
+  margin-right: 4%;
+}
+
+.icones a{
+  color: #333;
+}

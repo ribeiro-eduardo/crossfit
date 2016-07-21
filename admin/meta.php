@@ -1,4 +1,6 @@
-<? include("classe/functions.php"); ?>
+<? include("classe/functions.php");
+error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
+?>
 <html lang="pt-BR">
 
 <head>
@@ -12,7 +14,7 @@
     <title>HD Elite Team</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
     <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 
     <!-- Custom CSS -->
@@ -44,7 +46,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" media="all">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" media="all">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>

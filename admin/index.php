@@ -19,27 +19,32 @@ if($erro == 1){
 ?>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/login-css.css">
+
+
 <div class="container">
     <div class="row">
-        <div class="col-md-offset-5 col-md-3">
-            <img src="img/logo.png" width="100%" height="25%">
-            <div class="form-login">
-                <h4>Preencha login e senha:</h4>
+        <div class="login">
+            <img class="img-responsive" src="img/logo.png">
+            <div >
+                <h4 class="text-uppercase text-center" style="padding: 5%">Faça seu login</h4>
                 <span id="erro" style="color: red; <?=$display?>"><?=$erro?></span>
-                <form action="processausuarios.php" method="POST">
-                    <input type="text" id="userName" name="login" class="form-control input-sm chat-input"
-                           placeholder="Login"/>
+                <form action="processausuarios.php" class="text-center" method="POST">
+                    <div class=" form-group input-group">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                      </span>
+                      <input type="text" id="userName" name="login" class="form-control chat-input"
+                             placeholder="Usuário"/>
+                     </div>
                     </br>
-                    <input type="password" id="userPassword" name="senha" class="form-control input-sm chat-input"
+                    <div class=" form-group input-group">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                      </span>
+                      <input type="password" id="userPassword" name="senha" class="form-control chat-input"
                            placeholder="Senha"/>
-                    </br>
-                    <div class="wrapper">
-                <span class="group-btn"> 
-                    <input type="submit" value="entrar" id="entrar" name="entrar">
-                    <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-                </span>
-                    </div>
-
+                   </div>
+                   <button type="submit" value="entrar" id="entrar" name="entrar" class="btn btn-details">Entrar</button>
                 </form>
             </div>
         </div>

@@ -1,30 +1,30 @@
-<? if(isMobile()){
+<?php if(isMobile()){
     $style = "style='height: 80px;'";
 }else{
     $style="style='height: 80px;'";
 } ?>
 
 <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding: 0.7% 0">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header" <?=$style?>>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span8 class="sr-only">Toggle navigation</span8
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="hd.php">
+                <a class="navbar-brand" href="inicio.php">
                     <img src="img/logo_teste_cOriginal.png" alt="">
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav lk">
-                    <li>
+                    <!--<li>
                         <a href="inicio.php">Início</a>
-                    </li>
+                    </li>-->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sobre<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="visualizar-hd.php">HD Elite Team</a></li>
