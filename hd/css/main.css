@@ -1152,3 +1152,28 @@ article {
   padding: 12% 0;
   margin-left: 25%;
 }
+
+#wod-area {
+  background: url('../images/training.jpg') no-repeat 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 230px 0;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+#wod-area:before {
+  content: '';
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#wod-area h1, h2, h4{
+  font-weight: bold;
+}

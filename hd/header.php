@@ -41,7 +41,7 @@ include("meta.php");
                               </ul>
                           </div>
                       </li>
-                        <li><a href="index.php#about">WOD</a></li>
+                        <li><a href="index.php#wod-area">WOD</a></li>
                         <li><a href="gallery.php">Demonstrações</a></li>
                         <li><a href="news.php">Notícias</a></li>
                         <li><a href="eventos.php">Eventos</a></li>
