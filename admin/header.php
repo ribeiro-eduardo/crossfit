@@ -19,7 +19,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right" role="navigation" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav lk">
-                  
+
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sobre<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="visualizar-hd.php">HD Elite Team</a></li>
@@ -28,7 +28,7 @@
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuários<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="usuarios.php">Todos os usuários</a></li>
+                            <li><a href="usuarios.php">Ver Todos</a></li>
                             <li><a href="form-usuarios.php">Cadastrar</a></li>
                         </ul>
                     </li>
@@ -43,18 +43,27 @@
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Demonstra&ccedil;&otilde;es<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="demos.php">Todas as demonstra&ccedil;&otilde;es</a></li>
+                            <li><a href="demos.php">Ver Todas</a></li>
                             <li><a href="form-demos.php">Cadastrar</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="noticias.php">Notícias</a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Notícias<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="noticias.php">Ver todas</a></li>
+                            <li><a href="form-noticias.php">Cadastrar</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="eventos.php">Eventos</a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Eventos<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="eventos.php">Ver todos</a></li>
+                            <li><a href="form-eventos.php">Cadastrar</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="galerias.php">Fotos</a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Fotos<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="galerias.php">Ver galerias</a></li>
+                            <li><a href="form-galerias.php">Cadastrar galeria</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="processausuarios.php?operacao=sair">Sair</a>
