@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/footer.css">
+
   <footer id="footer">
     <div class="container text-right">
       <a href="http://localhost/crossfit/hd">
@@ -6,4 +7,5 @@
       </a>
     </div>
   </footer>
+  </body>
 </html>

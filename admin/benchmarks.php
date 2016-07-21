@@ -90,6 +90,7 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
                                     class="glyphicon glyphicon-trash" title="Excluir"></span></a>
                         </td>
                     </tr>
+
                 <? } ?>
                 </tbody>
             </table>

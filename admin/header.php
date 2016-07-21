@@ -1,11 +1,8 @@
-<?php if(isMobile()){
-    $style = "style='height: 80px;'";
-}else{
-    $style="style='height: 80px;'";
-} ?>
-
+<body>
+<header class="navbar-fixed-top">
 <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding: 0.7% 0">
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding: 0.7% 0"> -->
+    <nav class="navbar navbar-inverse" role="navigation" style="padding: 0.7% 0; border-radius: 0;">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header" <?=$style?>>
@@ -20,11 +17,9 @@
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse navbar-right" role="navigation" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav lk">
-                    <!--<li>
-                        <a href="inicio.php">Início</a>
-                    </li>-->
+                  
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sobre<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="visualizar-hd.php">HD Elite Team</a></li>
@@ -67,6 +62,8 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
+          </div>
         </div>
         <!-- /.container -->
     </nav>
+</header>
