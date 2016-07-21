@@ -1154,7 +1154,7 @@ article {
 }
 
 #wod-area {
-  background: url('../images/training.jpg') no-repeat 50%;
+  background: url('../images/sobre-crossfit.jpg') no-repeat 50%;
   background-size: cover;
   background-attachment: fixed;
   padding: 230px 0;
@@ -1166,7 +1166,7 @@ article {
 #wod-area:before {
   content: '';
   z-index: 9;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 0;
   left: 0;

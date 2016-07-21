@@ -44,7 +44,7 @@ $texto = $sobreBO->get(2);
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
-                        <img src="images/sobre-crossfit.jpg" alt="" class="img-responsive">
+                        <img src="images/training.jpg" alt="" class="img-responsive">
                     </div>
                     <div class="col-md-6">
                         <div class="block">
