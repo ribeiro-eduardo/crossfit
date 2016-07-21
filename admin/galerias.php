@@ -25,9 +25,15 @@ $galerias = $galeriasBO->get($galeriasVO);
     <div class="row">
         <h1> Galerias cadastradas </h1>
 
+        <div class="text-right">
+          <a href="form-galerias.php" type="button" class="btn btn-default" style="font-weight: bold; margin: 1%">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Nova
+          </a>
+        </div>
+
         <div class="col-lg-12">
 
-            Clique <a href="form-galerias.php"> aqui</a> para adicionar uma nova galeria!
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
@@ -43,7 +49,7 @@ $galerias = $galeriasBO->get($galeriasVO);
                         <td><? echo $galerias[$i]['nome']; ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $galerias[$i]['id'] ?>);"><span
-                                    class="glyphicon glyphicon-edit" title="Visualizar"></span></a>
+                                    class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $galerias[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-trash" title="Excluir"></span></a>
                         </td>

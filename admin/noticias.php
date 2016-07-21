@@ -27,9 +27,15 @@ $noticias = $noticiasBO->get($noticiasVO);
     <div class="row">
         <h1>Not&iacute;cias cadastradas</h1>
 
-        <div class="col-lg-12">
+        <div class="text-right">
+          <a href="form-noticias.php" type="button" class="btn btn-default" style="font-weight: bold; margin: 1%">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Nova
+          </a>
+        </div>
 
-            Clique <a href="form-noticias.php">aqui</a> para adicionar uma nova not&iacute;cia!
+        <div class="col-lg-12">
+            <!-- Clique <a href="form-noticias.php">aqui</a> para adicionar uma nova not&iacute;cia! -->
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
@@ -47,7 +53,7 @@ $noticias = $noticiasBO->get($noticiasVO);
                         <td><? echo $noticias[$i]['titulo']; ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $noticias[$i]['id'] ?>);"><span
-                                    class="glyphicon glyphicon-edit" title="Visualizar"></span></a>
+                                    class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $noticias[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-trash" title="Excluir"></span></a>
                             <div class="checkbox">

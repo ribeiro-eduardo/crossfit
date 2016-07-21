@@ -20,11 +20,18 @@ $demos = $demosBO->get($demosVO);
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-        <h1>Demonstra&ccedil;&atilde;es cadastradas</h1>
+        <h1>Demonstrações cadastradas</h1>
+
+        <div class="text-right">
+          <a href="form-demos.php" type="button" class="btn btn-default" style="font-weight: bold; margin: 1%">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Nova
+          </a>
+        </div>
 
         <div class="col-lg-12">
 
-            Clique <a href="form-demos.php">aqui</a> para adicionar uma nova demonstra&ccedil;&atilde;o!
+            <!-- Clique <a href="form-demos.php">aqui</a> para adicionar uma nova demonstra&ccedil;&atilde;o! -->
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
@@ -41,7 +48,7 @@ $demos = $demosBO->get($demosVO);
                         <td><? echo $demos[$i]['titulo']; ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $demos[$i]['id'] ?>);"><span
-                                    class="glyphicon glyphicon-edit" title="Visualizar"></span></a>
+                                    class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $demos[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-trash" title="Excluir"></span></a>
                         </td>

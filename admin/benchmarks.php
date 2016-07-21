@@ -37,22 +37,32 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
     <div class="row">
         <h1>Benchmarks cadastrados</h1>
 
-        <div class="form-group">
-            <div class="col-sm-4">
-                <label for="celular">Filtrar por categoria de treino:</label>
-                <select class="form-control" id="filtro" name="filtro" onchange="filtrar()">
-                    <option value="Todos" <? if ($filtro == "") echo "selected"; ?>>Todos</option>
-                    <option value="Heroes" <? if ($filtro == "heroes") echo "selected"; ?>>
-                        Heroes
-                    </option>
-                    <option value="Girls" <? if ($filtro == "girls") echo "selected"; ?>>Girls</option>
-                    <option value="Challenges" <? if ($filtro == "challenges") echo "selected"; ?>>Challenges</option>
-                </select>
-            </div>
-        </div>
+        <section>
+          <div class="col-sm-4">
+            <div class="form-group">
+                  <label for="celular">Filtrar por categoria de treino:</label>
+                  <select class="form-control" id="filtro" name="filtro" onchange="filtrar()">
+                      <option value="Todos" <? if ($filtro == "") echo "selected"; ?>>Todos</option>
+                      <option value="Heroes" <? if ($filtro == "heroes") echo "selected"; ?>>
+                          Heroes
+                      </option>
+                      <option value="Girls" <? if ($filtro == "girls") echo "selected"; ?>>Girls</option>
+                      <option value="Challenges" <? if ($filtro == "challenges") echo "selected"; ?>>Challenges</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="col-sm-8 text-right">
+            <a href="form-benchmarks.php" type="button" class="btn btn-default" style="font-weight: bold">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              Novo
+            </a>
+          </div>
+        </section>
+
         <div class="col-lg-12">
 
-            Clique <a href="form-benchmarks.php">aqui</a> para adicionar um novo benchmark!
+          <!--   Clique <a href="form-benchmarks.php">aqui</a> para adicionar um novo benchmark! -->
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
@@ -85,7 +95,7 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
                         </td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $benchmarks[$i]['id'] ?>);"><span
-                                    class="glyphicon glyphicon-edit" title="Visualizar"></span></a>
+                                    class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $benchmarks[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-trash" title="Excluir"></span></a>
                         </td>

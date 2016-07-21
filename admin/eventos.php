@@ -26,9 +26,15 @@ $eventos = $eventosBO->get($eventosVO);
     <div class="row">
         <h1> Eventos cadastrados </h1>
 
+        <div class="text-right">
+          <a href="form-eventos.php" type="button" class="btn btn-default" style="font-weight: bold; margin: 1%">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Novo
+          </a>
+        </div>
+
         <div class="col-lg-12">
 
-            Clique <a href="form-eventos.php">aqui</a> para adicionar um novo evento!
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
@@ -46,7 +52,7 @@ $eventos = $eventosBO->get($eventosVO);
                         <td><?= $eventos[$i]['data'] ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $eventos[$i]['id'] ?>);"><span
-                                    class="glyphicon glyphicon-edit" title="Visualizar"></span></a>
+                                    class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $eventos[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-trash" title="Excluir"></span></a>
                         </td>
