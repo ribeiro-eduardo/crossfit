@@ -37,9 +37,19 @@ $imagens = $galeriaFotosBO->get($galeriaFotosVO);
 
 ?>
 
+
+<!--================================== TRECHO DE CSS! EXTRAIR! ==================================-->
+<style>
+.opcoes{
+  background: #333;
+  padding: 2%;
+  text-align: right;
+}
+</style>
+
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <section>
             <h1>Por favor, preencha os dados a seguir:</h1>
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
@@ -58,18 +68,22 @@ $imagens = $galeriaFotosBO->get($galeriaFotosVO);
                 <input type="submit" name="editar" id="editar" class="btn btn-default"
                        value="Salvar altera&ccedil;&otilde;es">
             </form>
+          </section>
+          <section class="col-md-12">
             <?
             for ($i = 0; $i < count($imagens); $i++) {
                 ?>
-                <div class="col-sm-12">
-                    <img src="../galerias/<?= $imagens[$i]['id_galeria'] . "/" . $imagens[$i]['nome'] ?>" width="30%"
-                         height="25%">
-                    <a href="javascript:void(0);" onclick="excluir(<?= $imagens[$i]['id'] ?>);"><span
-                            class="glyphicon glyphicon-trash" title="Excluir"></span></a>
+                <div class="col-md-4 thumbnail">
+                    <img src="../galerias/<?= $imagens[$i]['id_galeria'] . "/" . $imagens[$i]['nome'] ?>">
+                    <div class="opcoes">
+                      <a href="javascript:void(0);" onclick="excluir(<?= $imagens[$i]['id'] ?>);">
+                        <span class="glyphicon glyphicon-trash" title="Excluir"></span>
+                      </a>
+                    </div>
                 </div>
             <? }
             ?>
-        </div>
+          </section>
     </div>
 </div>
 
