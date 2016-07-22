@@ -20,7 +20,7 @@ include("header.php");
                                 <span class="cd-words-wrapper">
                                     <b class="is-visible">HD Elite Team</b>
                                     <b>Heavy day</b>
-                                    <b>TEXTO C</b>
+                                    <b>join us</b>
                                 </span>
                                 </h1>
                                 </section> <!-- cd-intro -->
