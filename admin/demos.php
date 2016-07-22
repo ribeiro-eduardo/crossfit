@@ -35,7 +35,6 @@ $demos = $demosBO->get($demosVO);
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>T&iacute;tulo da demonstra&ccedil;&atilde;o</th>
                     <th>A&ccedil;&otilde;es</th>
                 </tr>
@@ -44,8 +43,7 @@ $demos = $demosBO->get($demosVO);
                 <? for ($i = 0; $i < count($demos); $i++) {
                     ?>
                     <tr>
-                        <td><?= $demos[$i]['id'] ?></td>
-                        <td><? echo $demos[$i]['titulo']; ?></td>
+                        <td onclick="document.location = 'visualizar-demo.php?id=<?= $demos[$i]['id']?>'; "><? echo $demos[$i]['titulo']; ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $demos[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>

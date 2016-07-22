@@ -16,7 +16,7 @@ Global Page Section Start
         <div class="row">
             <div class="col-md-12">
                 <div class="block">
-                    <h2>Demonstrações</h2>
+                    <h2>DemonstraÃ§Ãµes</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.php">
@@ -24,7 +24,7 @@ Global Page Section Start
                                 Home
                             </a>
                         </li>
-                        <li class="active">Demonstrações</li>
+                        <li class="active">DemonstraÃ§Ãµes</li>
                     </ol>
                 </div>
             </div>

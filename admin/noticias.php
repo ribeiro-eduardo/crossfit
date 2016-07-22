@@ -39,8 +39,7 @@ $noticias = $noticiasBO->get($noticiasVO);
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>T&iacute;tulo da not&iacute;cia</th>
+                    <th style="padding-left: 3%;">T&iacute;tulo da not&iacute;cia</th>
                     <th>A&ccedil;&otilde;es</th>
                 </tr>
                 </thead>
@@ -49,16 +48,13 @@ $noticias = $noticiasBO->get($noticiasVO);
                 <? for ($i = 0; $i < count($noticias); $i++) {
                     ?>
                     <tr>
-                        <td><?= $noticias[$i]['id'] ?></td>
-                        <td><? echo $noticias[$i]['titulo']; ?></td>
+                        <td onclick="document.location = 'visualizar-noticia.php?id=<?= $noticias[$i]['id']?>'; "><input type="checkbox" name="excluir[<?=$i?>]" value="<?=$noticias[$i]['id']?>" style="margin-right: 3%"><? echo $noticias[$i]['titulo']; ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $noticias[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $noticias[$i]['id'] ?>);"><span
-                                    class="glyphicon glyphicon-trash" title="Excluir"></span></a>
-                            <div class="checkbox">
-                                <input type="checkbox" name="excluir[<?=$i?>]" value="<?=$noticias[$i]['id']?>">
-                            </div>
+                                    class="glyphicon glyphicon-trash" title="Excluir" style="padding: 0 3%;"></span></a>
+                            <input type="checkbox" name="excluir[<?=$i?>]" value="<?=$noticias[$i]['id']?>">
                         </td>
                     </tr>
                 <? } ?>

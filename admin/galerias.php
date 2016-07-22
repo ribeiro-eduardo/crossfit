@@ -37,7 +37,6 @@ $galerias = $galeriasBO->get($galeriasVO);
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
-                    <th> ID</th>
                     <th> Nome</th>
                     <th> A&ccedil;&otilde;es</th>
                 </tr>
@@ -45,8 +44,7 @@ $galerias = $galeriasBO->get($galeriasVO);
                 <tbody>
                 <? for ($i = 0; $i < count($galerias); $i++) { ?>
                     <tr>
-                        <td><?= $galerias[$i]['id'] ?></td>
-                        <td><? echo $galerias[$i]['nome']; ?></td>
+                        <td onclick="document.location = 'visualizar-galeria.php?id=<?= $galerias[$i]['id']?>'; "><? echo $galerias[$i]['nome']; ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $galerias[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>

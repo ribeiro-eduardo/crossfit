@@ -38,27 +38,33 @@ $usuarios = $usuariosBO->get($usuariosVO);
 <div class="container">
     <div class="row">
         <h1>Usuários cadastrados</h1>
+        <section>
+          <div class="col-sm-4">
+            <div class="form-group">
+                  <label for="celular">Filtrar por tipo de usu&aacute;rio:</label>
+                  <select class="form-control" id="filtro" name="filtro" onchange="filtrar()">
+                      <option value="Todos" <? if ($filtro == "") echo "selected"; ?>>Todos</option>
+                      <option value="Administradores" <? if ($filtro == "administradores") echo "selected"; ?>>
+                          Administradores
+                      </option>
+                      <option value="Coaches" <? if ($filtro == "coaches") echo "selected"; ?>>Coaches</option>
+                      <option value="Atletas" <? if ($filtro == "atletas") echo "selected"; ?>>Atletas</option>
+                  </select>
+              </div>
+          </div>
+          <div class="col-sm-8 text-right">
+            <a href="form-usuarios.php" type="button" class="btn btn-default" style="font-weight: bold">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              Novo
+            </a>
+          </div>
+        </section>
 
-        <div class="form-group">
-            <div class="col-sm-4">
-                <label for="celular">Filtrar por tipo de usu&aacute;rio:</label>
-                <select class="form-control" id="filtro" name="filtro" onchange="filtrar()">
-                    <option value="Todos" <? if ($filtro == "") echo "selected"; ?>>Todos</option>
-                    <option value="Administradores" <? if ($filtro == "administradores") echo "selected"; ?>>
-                        Administradores
-                    </option>
-                    <option value="Coaches" <? if ($filtro == "coaches") echo "selected"; ?>>Coaches</option>
-                    <option value="Atletas" <? if ($filtro == "atletas") echo "selected"; ?>>Atletas</option>
-                </select>
-            </div>
-        </div>
         <div class="col-lg-12">
-
-            Clique <a href="form-usuarios.php">aqui</a> para adicionar um novo usuário!
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    <!--<th>ID</th>-->
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Ações</th>
@@ -79,12 +85,12 @@ $usuarios = $usuariosBO->get($usuariosVO);
                     }
                     ?>
                     <tr>
-                        <td><?= $usuarios[$i]['id'] ?></td>
-                        <td><? echo $usuarios[$i]['nome']; ?>&nbsp;&nbsp;<?= $icone ?></td>
+                      <!--  <td><?= $usuarios[$i]['id'] ?></td> -->
+                        <td onclick="document.location = 'visualizar-usuario.php?id=<?=$usuarios[$i]['id']?>'; "><?= $icone ?>&nbsp;&nbsp;<? echo $usuarios[$i]['nome']; ?></td>
                         <td><?= $usuarios[$i]['cpf'] ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $usuarios[$i]['id'] ?>);"><span
-                                    class="glyphicon glyphicon-edit" title="Visualizar"></span></a>
+                                    class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $usuarios[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-trash" title="Excluir"></span></a>
                         </td>

@@ -5,7 +5,7 @@
  * Date: 12/05/2016
  * Time: 04:15
  */
-
+error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 require_once("lib/DBMySql.php");
 require("classe/bo/treinosBO.php");
 require("classe/vo/treinosVO.php");

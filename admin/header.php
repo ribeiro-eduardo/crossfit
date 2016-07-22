@@ -33,7 +33,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="form-treinos.php">Treinos mês</a>
+                        <a href="form-treinos.php">WOD</a>
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Benchmarks<span class="caret"></span></a>
                         <ul class="dropdown-menu">

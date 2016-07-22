@@ -66,7 +66,6 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Nome do treino</th>
                     <th>Categoria</th>
                     <th>A&ccedil;&otilde;es</th>
@@ -76,8 +75,8 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
                 <? for ($i = 0; $i < count($benchmarks); $i++) {
                     ?>
                     <tr>
-                        <td><?= $benchmarks[$i]['id'] ?></td>
-                        <td><? echo $benchmarks[$i]['titulo']; ?></td>
+                      <!--  <td><?= $benchmarks[$i]['id'] ?></td> -->
+                        <td onclick="document.location = 'visualizar-benchmark.php?id=<?= $benchmarks[$i]['id']?>'; "><? echo $benchmarks[$i]['titulo']; ?></td>
                         <td>
                             <?
                             switch ($benchmarks[$i]['id_categoria_treino']) {

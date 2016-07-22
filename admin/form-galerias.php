@@ -15,7 +15,7 @@ include("header.php");
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-7 col-sm-offset-2">
             <h1>Por favor, preencha os dados a seguir:</h1>
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>

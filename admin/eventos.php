@@ -38,7 +38,6 @@ $eventos = $eventosBO->get($eventosVO);
             <table border="1" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Nome</th>
                     <th>Data</th>
                     <th>A&ccedil;&otilde;es</th>
@@ -47,7 +46,7 @@ $eventos = $eventosBO->get($eventosVO);
                 <tbody>
                 <? for ($i = 0; $i < count($eventos); $i++) { ?>
                     <tr>
-                        <td><?= $eventos[$i]['id'] ?></td>
+                  <!--      <td><?= $eventos[$i]['id'] ?></td> -->
                         <td onclick="document.location = 'visualizar-evento.php?id=<?=$eventos[$i]['id']?>'; "><? echo $eventos[$i]['nome']; ?></td>
                         <td><?= $eventos[$i]['data'] ?></td>
                         <td>
