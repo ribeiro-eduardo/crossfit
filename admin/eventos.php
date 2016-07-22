@@ -48,7 +48,7 @@ $eventos = $eventosBO->get($eventosVO);
                 <? for ($i = 0; $i < count($eventos); $i++) { ?>
                     <tr>
                         <td><?= $eventos[$i]['id'] ?></td>
-                        <td><? echo $eventos[$i]['nome']; ?></td>
+                        <td onclick="document.location = 'visualizar-evento.php?id=<?=$eventos[$i]['id']?>'; "><? echo $eventos[$i]['nome']; ?></td>
                         <td><?= $eventos[$i]['data'] ?></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $eventos[$i]['id'] ?>);"><span
