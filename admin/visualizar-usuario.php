@@ -21,67 +21,19 @@ $usuario = $usuariosBO->get($usuariosVO);
 
 $tipo_usuarioBO = new tipo_usuarioBO();
 $tipos = $tipo_usuarioBO->get();
+
+//action aqui seta o action do form, tanto mobile quanto desktop
+$action = "action/usuarios-action.php";
 ?>
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1>Por favor, preencha os dados a seguir:</h1>
-            <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
-            <form name="usuarios" id="form" role="form" action="action/usuarios-action.php" method="POST">
-                <div class="form-group">
-                    <label for="celular">Tipo de usu&aacute;rio:<span style="color: red"> *</span></label>
-                    <select class="form-control" id="id_tipo_usuario" name="id_tipo_usuario">
-                        <option value="" disabled selected>Selecione</option>
-                        <?
-                        for($i = 0; $i < count($tipos); $i++){
-                            ?>
-                            <option value="<?=$tipos[$i]['id']?>" <? if($usuario["id_tipo_usuario"] == $tipos[$i]["id"]){ echo "selected";}?>><?=$tipos[$i]['descricao']?></option>
-                            <?
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="nome">Nome:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control" id="nome" name="nome" value="<?=$usuario["nome"]?>">
-                </div>
-                <div class="form-group">
-                    <label for="cpf">CPF:<span style="color: red"> *</span></label>
-                    <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" id="cpf" name="cpf" value="<?=$usuario["cpf"]?>">
-                </div>
-                <div class="form-group">
-                    <label for="data_nascimento">Data de nascimento:<span style="color: red"> *</span></label>
-                    <input type="text" name="data_nascimento" id="data_nascimento" class="datepicker form-control" value="<?=@date('d/m/Y',strtotime($usuario["data_nascimento"]))?>">
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control" id="email" name="email" value="<?=$usuario['email']?>">
-                </div>
-                <div class="form-group">
-                    <label for="login">Login:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control" id="login" name="login" value="<?=$usuario['login']?>">
-                    <a onclick="usarEmail(); return false;">Usar e-mail</a>
-                </div>
-                <div class="form-group">
-                    <label for="email">Senha:<span style="color: red"> *</span></label>
-                    <input type="password" id="senha" name="senha" class="form-control" value="<?=$usuario['senha']?>">
-                    <a id="mostrar_senha" title="Mostrar Senha" class="glyphicon glyphicon-eye-open"></a>&nbsp
-                    <a onclick="randomString(); return false;">Gerar senha aleat&oacute;ria</a>
-                </div>
-                <div class="form-group">
-                    <label for="telefone">Telefone:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="telefone" name="telefone" value="<?=$usuario['telefone']?>">
-                </div>
-                <div class="form-group">
-                    <label for="celular">Celular:</label>
-                    <input type="text" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="celular" name="celular" value="<?=$usuario['celular']?>">
-                </div>
-                <input type="hidden" name="id" value="<?=$usuario['id']?>">
-                <input type="submit" id="editar" name='editar' class='btn btn-default' value='Salvar altera&ccedil;&otilde;es'>
-            </form>
-        </div>
-    </div>
+    <?
+    if(isMobile()){
+        include("conteudo/visualizar-usuarios-mobile.php");
+    }else{
+        include("conteudo/visualizar-usuarios-desktop.php");
+    }
+    ?>
 </div>
 <script>
     $('#mostrar_senha').click(function(){
@@ -101,10 +53,56 @@ $tipos = $tipo_usuarioBO->get();
         });
     });
 
+    function getSenhaAntiga() {
+        var id = $('#id').val();
+        var senha_antiga = $('#senha_antiga').val();
+        console.log(senha_antiga);
+        if (senha_antiga != "") {
+            $.ajax({
+                url: "ajaxGetSenhaAntiga.php",
+                dataType: "json",
+                data: {id: id, senha_antiga: senha_antiga},
+                type: "POST",
+                success: function (data) {
+                    if(data != null){
+                        console.log(data);
+                        if(data.verify){
+                            $('#true').show();
+                            $('#gerarRandom').show();
+                            $('#false').hide();
+                            $('#senha').removeAttr("disabled");
+                        }
+                        else if(!data.verify){
+                            console.log(data.senha_antiga);
+                            console.log(data.senhabd);
+                            $('#false').show();
+                            $('#true').hide();
+                            $('#gerarRandom').hide();
+                            $('#senha').attr("disabled", "disabled");
+                        }
+                        //$('#senha').removeAttr("disabled");
+                    }
+                }
+
+            });
+        }
+    }
+
+    if($('#id_tipo_usuario').val() == "2"){
+        $("#div_descricao").show();
+    }else{
+        $("#div_descricao").hide();
+    }
+
     $(document).ready( function() {
         $("#telefone").mask("(99) 9999-9999");
         $("#celular").mask("(99) 9999-9999");
         $("#data_nascimento").mask("00/00/0000");
+        if($('#id_tipo_usuario').val() == "2"){
+            $("#div_descricao").show();
+        }else{
+            $("#div_descricao").hide();
+        }
     });
 
     $('#editar').click(function() {

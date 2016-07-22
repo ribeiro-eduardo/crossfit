@@ -23,9 +23,13 @@
                 <label for="nome">Nome:<span style="color: red"> *</span></label>
                 <input type="text" class="form-control" id="nome" name="nome">
             </div>
+            <div id="div_descricao" class="form-group" style="display: none">
+                <label for="descricao">Descri&ccedil;&atilde;o:</label>
+                <textarea rows="4" class="form-control" id="descricao" name="descricao"></textarea>
+            </div>
             <div class="form-group">
                 <label for="cpf">CPF:<span style="color: red"> *</span></label>
-                <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control"
+                <input type="text" size="11" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control"
                        id="cpf" name="cpf" placeholder="12345678910">
             </div>
             <div class="form-group">
@@ -45,12 +49,14 @@
     </div>
     <div class="col-md-6 col-xs-6">
         <div class="form-group">
-            <label for="email">Senha:<span style="color: red"> *</span></label><span><a
+            <label for="senha">Senha:<span style="color: red"> *</span></label><span><a
                     onclick="randomString(); return false;">Gerar senha aleat&oacute;ria</a></span>
 
-            <div class="inner-addon right-addon">
+            <div class="input-group">
+                <span class="input-group-addon">
                 <a id="mostrar_senha" title="Mostrar Senha" class="glyphicon glyphicon-eye-open"></a>
-                <input type="password" id="senha" name="senha" class="form-control"/>
+              </span>
+                <input type="password" id="senha" name="senha" class="form-control chat-input"/>
             </div>
         </div>
         <div class="form-group">

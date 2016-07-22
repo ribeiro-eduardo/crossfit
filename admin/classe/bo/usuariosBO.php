@@ -8,7 +8,7 @@
 			
 			$db = new DBMySQL();
 			
-			$query = "INSERT INTO `usuarios` (`nome`,`cpf`, `email`, `telefone`, `celular`, `login`, `senha`, `id_tipo_usuario`,`data_nascimento`, `altura`, `peso`, `data_cadastro`, `status`) VALUES ";
+			$query = "INSERT INTO `usuarios` (`nome`,`cpf`, `email`, `telefone`, `celular`, `login`, `senha`, `id_tipo_usuario`, `descricao`, `data_nascimento`, `altura`, `peso`, `data_cadastro`, `status`) VALUES ";
 
 			$query .= "(
 			'".$usuariosVO->getNome()."',
@@ -19,6 +19,7 @@
 			'".$usuariosVO->getLogin()."',
 			'".$usuariosVO->getSenha()."',
 			'".$usuariosVO->getId_tipo_usuario()."',
+			'".$usuariosVO->getDescricao()."',
 			'".$usuariosVO->getData_nascimento()."',
 			'".$usuariosVO->getAltura()."',
 			'".$usuariosVO->getPeso()."',
@@ -46,6 +47,7 @@
 			$query .= " `login` = '".$usuariosVO->getLogin()."',";
 			$query .= " `senha` = '".$usuariosVO->getSenha()."',";
 			$query .= " `id_tipo_usuario` = '".$usuariosVO->getId_tipo_usuario()."',";
+			$query .= " `descricao` = '".$usuariosVO->getDescricao()."',";
 			$query .= " `data_nascimento` = '".$usuariosVO->getData_nascimento()."',";
 			$query .= " `altura` = '".$usuariosVO->getAltura()."',";
 			$query .= " `peso` = '".$usuariosVO->getPeso()."'";

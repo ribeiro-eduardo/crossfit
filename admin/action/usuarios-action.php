@@ -22,6 +22,7 @@ if(isset($_POST["cadastrar"])){
 
     $id_tipo_usuario = $_POST["id_tipo_usuario"];
     $nome = $_POST["nome"];
+    $descricao = $_POST['descricao'];
     $cpf = $_POST["cpf"];
     $data_nascimento = $_POST["data_nascimento"];
     $aux = explode('/', $data_nascimento);
@@ -41,6 +42,7 @@ if(isset($_POST["cadastrar"])){
 
     $usuariosVO->setId_tipo_usuario($id_tipo_usuario);
     $usuariosVO->setNome($nome);
+    $usuariosVO->setDescricao($descricao);
     $usuariosVO->setCpf($cpf);
     $usuariosVO->setData_nascimento($data_nascimento);
     $usuariosVO->setEmail($email);
@@ -73,6 +75,7 @@ elseif(isset($_POST["editar"])){
     $id = $_POST["id"];
     $id_tipo_usuario = $_POST["id_tipo_usuario"];
     $nome = $_POST["nome"];
+    $descricao = $_POST["descricao"];
     $cpf = $_POST["cpf"];
     $data_nascimento = $_POST["data_nascimento"];
     $aux = explode('/', $data_nascimento);
@@ -93,11 +96,14 @@ elseif(isset($_POST["editar"])){
     $usuariosVO->setId($id);
     $usuariosVO->setId_tipo_usuario($id_tipo_usuario);
     $usuariosVO->setNome($nome);
+    $usuariosVO->setDescricao($descricao);
     $usuariosVO->setCpf($cpf);
     $usuariosVO->setData_nascimento($data_nascimento);
     $usuariosVO->setEmail($email);
     $usuariosVO->setLogin($login);
-    $usuariosVO->setSenha($senha);
+    if($senha != ""){
+        $usuariosVO->setSenha(md5($senha));
+    }
     $usuariosVO->setTelefone($telefone);
     $usuariosVO->setCelular($celular);
     $usuariosVO->setData_cadastro($data_cadastro);

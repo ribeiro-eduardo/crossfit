@@ -10,7 +10,7 @@ include("header.php");
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Demonstrações</h2>
+                            <h2>Fotos</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="index.php">
@@ -18,7 +18,7 @@ include("header.php");
                                         Home
                                     </a>
                                 </li>
-                                <li class="active">Demonstrações</li>
+                                <li class="active">Fotos</li>
                             </ol>
                         </div>
                     </div>
@@ -46,6 +46,7 @@ include("header.php");
                                     <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title">
                                     <div class="overlay">
                                         <div class="buttons">
+                                            <h2>TESTE</h2>
                                             <a rel="gallery" class="fancybox" href="images/portfolio/item-2.jpg">Ver</a>
                                         </div>
                                     </div>

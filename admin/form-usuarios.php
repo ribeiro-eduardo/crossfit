@@ -36,16 +36,26 @@ $action = "action/usuarios-action.php";
        }
     });
 
+    //console.log($("id_tipo_usuario").val());
 //    $(function(){
 //        $('.datepicker').datepicker({
 //            format: 'dd/mm/yyyy'
 //        });
 //    });
 
+    $("#id_tipo_usuario").change(function(){
+        if($(this).val() == "2"){
+            $("#div_descricao").show();
+        }else{
+            $("#div_descricao").hide();
+        }
+    });
+
     $(document).ready( function() {
-        $("#telefone").mask("(99) 9999-9999");
-        $("#celular").mask("(99) 9999-9999");
+        $("#telefone").mask("(99) 9999-99999");
+        $("#celular").mask("(99) 9999-99999");
         $("#data_nascimento").mask("00/00/0000");
+        //console.log($("id_tipo_usuario").val());
     });
 
     $('#cadastrar').click(function() {
@@ -62,47 +72,47 @@ $action = "action/usuarios-action.php";
         console.log(data_nascimento);
 
         if (id_tipo_usuario  === '') {
-            alert('Por favor, selecione o tipo de usu�rio!');
+            alert('Por favor, selecione o tipo de usuario!');
             $('#id_tipo_usuario').focus();
             return false;
         }
         if (nome  === '') {
-            alert('Por favor, preencha o nome do usu�rio!');
+            alert('Por favor, preencha o nome do usuario!');
             $('#nome').focus();
             return false;
         }
         if (cpf  === '') {
-            alert('Por favor, preencha o cpf do usu�rio!');
+            alert('Por favor, preencha o cpf do usuario!');
             $('#cpf').focus();
             return false;
         }
         if (data_nascimento  === '') {
-            alert('Por favor, preencha a data de nascimento do usu�rio!');
+            alert('Por favor, preencha a data de nascimento do usuario!');
             $('#data_nascimento').focus();
             return false;
         }
         if (email  === '') {
-            alert('Por favor, preencha o email do usu�rio!');
+            alert('Por favor, preencha o email do usuario!');
             $('#email').focus();
             return false;
         }
         if (login  === '') {
-            alert('Por favor, preencha o login do usu�rio!');
+            alert('Por favor, preencha o login do usuario!');
             $('#login').focus();
             return false;
         }
         if (senha  === '') {
-            alert('Por favor, preencha a senha do usu�rio!');
+            alert('Por favor, preencha a senha do usuario!');
             $('#senha').focus();
             return false;
         }
         if (telefone  === '') {
-            alert('Por favor, preencha o telefone do usu�rio!');
+            alert('Por favor, preencha o telefone do usuario!');
             $('#telefone').focus();
             return false;
         }
         if (celular  === '') {
-            alert('Por favor, preencha o celular do usu�rio!');
+            alert('Por favor, preencha o celular do usuario!');
             $('#celular').focus();
             return false;
         }

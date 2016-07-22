@@ -42,9 +42,10 @@ include("meta.php");
                           </div>
                       </li>
                         <li><a href="index.php#wod-area">WOD</a></li>
-                        <li><a href="gallery.php">Demonstrações</a></li>
+                        <li><a href="demos.php">Demonstrações</a></li>
                         <li><a href="news.php">Notícias</a></li>
                         <li><a href="eventos.php">Eventos</a></li>
+                        <li><a href="gallery.php">Fotos</a></li>
                         <li><a href="contact.php">Contato</a></li>
                         <li><a href="login.php">Login</a></li>
                     </ul>

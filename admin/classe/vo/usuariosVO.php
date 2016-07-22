@@ -11,11 +11,27 @@
 		private $senha;
 		private $login;
 		private $id_tipo_usuario;
+        private $descricao;
 		private $data_nascimento;
 		private $altura;
 		private $peso;
-		private $datacadastro;
 		private $status;
+
+        /**
+         * @return mixed
+         */
+        public function getDescricao()
+        {
+            return $this->descricao;
+        }
+
+        /**
+         * @param mixed $descricao
+         */
+        public function setDescricao($descricao)
+        {
+            $this->descricao = $descricao;
+        }
 
         function getId()
         {
