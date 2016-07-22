@@ -1,0 +1,14 @@
+.foto-nav{
+  height: 50px;
+  width: 50px;
+}
+
+body{
+  padding-top: 70px;
+}
+
+#footer{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

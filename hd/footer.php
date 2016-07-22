@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Eduardo Ribeiro
- * Date: 20/07/2016
- * Time: 01:47
- */
+
 ?>
       <footer id="footer">
             <div class="container">
