@@ -21,6 +21,28 @@ $galeriasBO = new galeriasBO();
 $galerias = $galeriasBO->get($galeriasVO);
 ?>
 
+<!-- page header -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <ol class="breadcrumb text-center" style="background: none; font-weight: bold; color: #5f5f5f; padding-top: 5%;">
+                        <li>
+                            <a href="inicio.php" style="color: #333;">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>Fotos</li>
+                        <li class="active">Ver Galerias</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section><!--/#Page header-->
+
 <div class="container">
     <div class="row">
         <h1> Galerias cadastradas </h1>

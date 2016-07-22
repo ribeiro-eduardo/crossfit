@@ -16,6 +16,28 @@ $tipos = $tipo_usuarioBO->get();
 $action = "action/usuarios-action.php";
 ?>
 
+<!-- page header -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <ol class="breadcrumb text-center" style="background: none; font-weight: bold; color: #5f5f5f; padding-top: 5%;">
+                        <li>
+                            <a href="inicio.php" style="color: #333;">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>Usuários</li>
+                        <li class="active">Cadastrar</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section><!--/#Page header-->
+
 <div class="container">
     <?
         if(isMobile()){

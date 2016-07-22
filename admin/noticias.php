@@ -22,6 +22,28 @@ $noticiasVO = new noticiasVO();
 $noticias = $noticiasBO->get($noticiasVO);
 ?>
 
+<!-- page header -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <ol class="breadcrumb text-center" style="background: none; font-weight: bold; color: #5f5f5f; padding-top: 5%;">
+                        <li>
+                            <a href="inicio.php" style="color: #333;">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>Notícias</li>
+                        <li class="active">Ver Todas</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section><!--/#Page header-->
+
 <!-- Page Content -->
 <div class="container">
     <div class="row">
@@ -48,7 +70,7 @@ $noticias = $noticiasBO->get($noticiasVO);
                 <? for ($i = 0; $i < count($noticias); $i++) {
                     ?>
                     <tr>
-                        <td onclick="document.location = 'visualizar-noticia.php?id=<?= $noticias[$i]['id']?>'; "><input type="checkbox" name="excluir[<?=$i?>]" value="<?=$noticias[$i]['id']?>" style="margin-right: 3%"><? echo $noticias[$i]['titulo']; ?></td>
+                        <!--<td onclick="document.location = 'visualizar-noticia.php?id=<?= $noticias[$i]['id']?>'; "> --><td><input type="checkbox" name="excluir[<?=$i?>]" value="<?=$noticias[$i]['id']?>" style="margin-right: 3%"><a style="color:#5f5f5f" href="visualizar-noticia.php?id=<?= $noticias[$i]['id']?>"><? echo $noticias[$i]['titulo']; ?> </a></td>
                         <td>
                             <a href="javascript:void(0);" onclick="visualizar(<?= $noticias[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>

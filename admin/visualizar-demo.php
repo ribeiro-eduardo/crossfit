@@ -45,9 +45,32 @@ $link = $aux[1];
         height: 100%;
     }</style>
 
+    <!-- page header -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <ol class="breadcrumb text-center" style="background: none; font-weight: bold; color: #5f5f5f; padding-top: 5%;">
+                            <li>
+                                <a href="inicio.php" style="color: #333;">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li>Demonstrações</li>
+                            <li>Ver Todas</li>
+                            <li class="active">Visualizar</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section><!--/#Page header-->
+
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-8 col-sm-offset-2">
             <h1>Por favor, preencha os dados a seguir:</h1>
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>

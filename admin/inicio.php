@@ -73,7 +73,7 @@ $nome = $_SESSION['nome'];
                               <span>
                                 <a href="form-treinos.php">
                                   <img src="img/icons/icone_treinos.png" />
-                                  Treinos
+                                  WOD
                                 </a>
                               </span>
                             </p>
