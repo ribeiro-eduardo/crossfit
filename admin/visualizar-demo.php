@@ -59,7 +59,11 @@ $link = $aux[1];
                                 </a>
                             </li>
                             <li>Demonstrações</li>
-                            <li>Ver Todas</li>
+                            <li>
+                              <a href="demos.php" style="color: #333;">
+                                Ver Todas
+                              </a>
+                            </li>
                             <li class="active">Visualizar</li>
                         </ol>
                     </div>

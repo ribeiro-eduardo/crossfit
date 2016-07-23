@@ -58,7 +58,7 @@ $demos = $demosBO->get($demosVO);
                 <thead>
                 <tr>
                     <th>T&iacute;tulo da demonstra&ccedil;&atilde;o</th>
-                    <th>A&ccedil;&otilde;es</th>
+                    <th class="col-xs-1 text-center">A&ccedil;&otilde;es</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -66,7 +66,7 @@ $demos = $demosBO->get($demosVO);
                     ?>
                     <tr>
                         <td onclick="document.location = 'visualizar-demo.php?id=<?= $demos[$i]['id']?>'; "><? echo $demos[$i]['titulo']; ?></td>
-                        <td>
+                        <td class="text-center">
                             <a href="javascript:void(0);" onclick="visualizar(<?= $demos[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $demos[$i]['id'] ?>);"><span

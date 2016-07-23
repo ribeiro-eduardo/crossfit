@@ -44,7 +44,11 @@ $categorias = getCategoriasTreinos();
                             </a>
                         </li>
                         <li>Benchmarks</li>
-                        <li>Ver Todos</li>
+                        <li>
+                          <a href="benchmarks.php" style="color: #333;">
+                            Ver Todos
+                          </a>
+                        </li>
                         <li class="active">Visualizar</li>
                     </ol>
                 </div>

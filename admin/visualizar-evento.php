@@ -38,7 +38,11 @@ $evento = $eventosBO->get($eventosVO);
                             </a>
                         </li>
                         <li>Eventos</li>
-                        <li>Ver Todos</li>
+                        <li>
+                          <a href="eventos.php" style="color: #333;">
+                            Ver Todos
+                          </a>
+                        </li>
                         <li class="active">Visualizar</li>
                     </ol>
                 </div>

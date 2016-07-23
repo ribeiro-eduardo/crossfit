@@ -40,7 +40,11 @@ $action = "action/usuarios-action.php";
                             </a>
                         </li>
                         <li>Usuários</li>
-                        <li>Ver Todos</li>
+                        <li>
+                          <a href="usuarios.php" style="color: #333;">
+                            Ver Todos
+                          </a>
+                        </li>
                         <li class="active">Visualizar</li>
                     </ol>
                 </div>

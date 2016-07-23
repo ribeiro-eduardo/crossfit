@@ -45,7 +45,11 @@ $noticia = $noticiasBO->get($noticiasVO);
                             </a>
                         </li>
                         <li>Notícias</li>
-                        <li>Ver Todas</li>
+                        <li>
+                          <a href="noticias.php" style="color: #333;">
+                            Ver Todas
+                          </a>
+                        </li>
                         <li class="active">Visualizar</li>
                     </ol>
                 </div>

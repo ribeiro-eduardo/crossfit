@@ -89,8 +89,8 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
                 <thead>
                 <tr>
                     <th>Nome do treino</th>
-                    <th>Categoria</th>
-                    <th>A&ccedil;&otilde;es</th>
+                    <th class="col-sm-3">Categoria</th>
+                    <th class="col-xs-1 text-center">A&ccedil;&otilde;es</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -114,7 +114,7 @@ $benchmarks = $benchmarksBO->get($benchmarksVO);
                             }
                             ?>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="javascript:void(0);" onclick="visualizar(<?= $benchmarks[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $benchmarks[$i]['id'] ?>);"><span

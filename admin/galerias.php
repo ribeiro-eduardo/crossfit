@@ -60,14 +60,14 @@ $galerias = $galeriasBO->get($galeriasVO);
                 <thead>
                 <tr>
                     <th> Nome</th>
-                    <th> A&ccedil;&otilde;es</th>
+                    <th class="col-xs-1 text-center"> A&ccedil;&otilde;es</th>
                 </tr>
                 </thead>
                 <tbody>
                 <? for ($i = 0; $i < count($galerias); $i++) { ?>
                     <tr>
                         <td onclick="document.location = 'visualizar-galeria.php?id=<?= $galerias[$i]['id']?>'; "><? echo $galerias[$i]['nome']; ?></td>
-                        <td>
+                        <td class="text-center">
                             <a href="javascript:void(0);" onclick="visualizar(<?= $galerias[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $galerias[$i]['id'] ?>);"><span

@@ -62,8 +62,8 @@ $eventos = $eventosBO->get($eventosVO);
                 <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Data</th>
-                    <th>A&ccedil;&otilde;es</th>
+                    <th class="col-sm-4">Data</th>
+                    <th class="col-xs-1 text-center">A&ccedil;&otilde;es</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -72,7 +72,7 @@ $eventos = $eventosBO->get($eventosVO);
                   <!--      <td><?= $eventos[$i]['id'] ?></td> -->
                         <td onclick="document.location = 'visualizar-evento.php?id=<?=$eventos[$i]['id']?>'; "><? echo $eventos[$i]['nome']; ?></td>
                         <td><?= $eventos[$i]['data'] ?></td>
-                        <td>
+                        <td class="text-center">
                             <a href="javascript:void(0);" onclick="visualizar(<?= $eventos[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $eventos[$i]['id'] ?>);"><span

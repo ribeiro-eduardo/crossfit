@@ -61,7 +61,11 @@ $imagens = $galeriaFotosBO->get($galeriaFotosVO);
                             </a>
                         </li>
                         <li>Fotos</li>
-                        <li>Ver Galerias</li>
+                        <li>
+                          <a href="galerias.php" style="color: #333;">
+                            Ver Galerias
+                          </a>
+                        </li>
                         <li class="active">Visualizar</li>
                     </ol>
                 </div>

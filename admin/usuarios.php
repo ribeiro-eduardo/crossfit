@@ -89,7 +89,7 @@ $usuarios = $usuariosBO->get($usuariosVO);
                     <!--<th>ID</th>-->
                     <th>Nome</th>
                     <th>CPF</th>
-                    <th>Ações</th>
+                    <th class="col-xs-1 text-center">Ações</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -110,7 +110,7 @@ $usuarios = $usuariosBO->get($usuariosVO);
                       <!--  <td><?= $usuarios[$i]['id'] ?></td> -->
                         <td onclick="document.location = 'visualizar-usuario.php?id=<?=$usuarios[$i]['id']?>'; "><?= $icone ?>&nbsp;&nbsp;<? echo $usuarios[$i]['nome']; ?></td>
                         <td><?= $usuarios[$i]['cpf'] ?></td>
-                        <td>
+                        <td class="text-center">
                             <a href="javascript:void(0);" onclick="visualizar(<?= $usuarios[$i]['id'] ?>);"><span
                                     class="glyphicon glyphicon-edit" title="Visualizar" style="padding: 0 3%;"></span></a>
                             <a href="javascript:void(0);" onclick="excluir(<?= $usuarios[$i]['id'] ?>);"><span
