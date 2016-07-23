@@ -52,6 +52,7 @@ if (isset($_POST["cadastrar"])) {
     $noticiasVO->setId($id);
     $noticiasVO->setTitulo($titulo);
     $noticiasVO->setDescricao($descricao);
+    $noticiasVO->setStatus(1);
     if ($noticiasBO->editNoticia($noticiasVO)) {
         ?>
         <script>
