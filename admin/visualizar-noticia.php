@@ -6,10 +6,10 @@
  * Time: 10:36
  */
 @session_start();
-if($_SESSION["id_tipo_usuario"] != 1) {
+if ($_SESSION["id_tipo_usuario"] != 1) {
     header("Location: index.php");
 }
-include ("meta.php");
+include("meta.php");
 include("header.php");
 
 require("lib/DBMySql.php");
@@ -37,7 +37,8 @@ $noticia = $noticiasBO->get($noticiasVO);
         <div class="row">
             <div class="col-md-12">
                 <div class="block">
-                    <ol class="breadcrumb text-center" style="background: none; font-weight: bold; color: #5f5f5f; padding-top: 5%;">
+                    <ol class="breadcrumb text-center"
+                        style="background: none; font-weight: bold; color: #5f5f5f; padding-top: 5%;">
                         <li>
                             <a href="inicio.php" style="color: #333;">
                                 <i class="glyphicon glyphicon-home"></i>
@@ -46,9 +47,9 @@ $noticia = $noticiasBO->get($noticiasVO);
                         </li>
                         <li>Notícias</li>
                         <li>
-                          <a href="noticias.php" style="color: #333;">
-                            Ver Todas
-                          </a>
+                            <a href="noticias.php" style="color: #333;">
+                                Ver Todas
+                            </a>
                         </li>
                         <li class="active">Visualizar</li>
                     </ol>
@@ -56,7 +57,7 @@ $noticia = $noticiasBO->get($noticiasVO);
             </div>
         </div>
     </div>
-  </section><!--/#Page header-->
+</section><!--/#Page header-->
 
 <div class="container">
     <div class="row">
@@ -65,17 +66,31 @@ $noticia = $noticiasBO->get($noticiasVO);
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
 
-            <form id="treinos" action="action/noticias-action.php" name="noticias" method="POST">
+            <form id="noticias" action="action/noticias-action.php" name="noticias" method="POST"
+                  enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="titulo">T&iacute;tulo:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" value="<?=$noticia["titulo"]?>">
+                    <input type="text" class="form-control" id="titulo" name="titulo" value="<?= $noticia["titulo"] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
-                    <textarea class="form-control" id="descricao" name="descricao"><?=urldecode($noticia["descricao"])?></textarea>
+                    <label for="imagem">Imagem da notícia:<span style="color: red"> *</span></label>
+                    <input id="imagem" name="imagem" type="file" accept="image/*">
                 </div>
-                <input type="hidden" name="id_noticia" value="<?=$noticia['id']?>">
-                <input type="submit" name="editar" id="editar" class="btn btn-default" value='Salvar altera&ccedil;&otilde;es'>
+                <? if ($noticia['imagem'] != "") {
+                    ?>
+                    <div class="form-group">
+                        <label for="imagem">Imagem atual:</label>
+                        <img class="img-responsive" src="../noticias-imagem/<?= $noticia['imagem'] ?>">
+                    </div>
+                <? } ?>
+                <div class="form-group">
+                    <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
+                    <textarea class="form-control" id="descricao"
+                              name="descricao"><?= urldecode($noticia["descricao"]) ?></textarea>
+                </div>
+                <input type="hidden" name="id_noticia" value="<?= $noticia['id'] ?>">
+                <input type="submit" name="editar" id="editar" class="btn btn-default"
+                       value='Salvar altera&ccedil;&otilde;es'>
             </form>
         </div>
     </div>
@@ -98,11 +113,12 @@ $noticia = $noticiasBO->get($noticiasVO);
     });
 
     CKEDITOR.replace('descricao', {
-            filebrowserBrowseUrl : ' uploadEditor.php?action=browse',
-            filebrowserUploadUrl : ' uploadEditor.php?action=upload',
-            height: 450 }
+            filebrowserBrowseUrl: ' uploadEditor.php?action=browse',
+            filebrowserUploadUrl: ' uploadEditor.php?action=upload',
+            height: 450
+        }
     );
 </script>
 <?php
- include("footer.php");
+include("footer.php");
 ?>

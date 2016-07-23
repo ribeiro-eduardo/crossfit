@@ -4,6 +4,7 @@
 		
 		private $id;
 		private $titulo;
+		private $imagem;
 		private $descricao;
 		private $data;
 		private $status;
@@ -26,7 +27,24 @@
 		public function setTitulo($value) 
 		{
 		  $this->titulo = $value;
-		}    
+		}
+
+		/**
+		 * @return mixed
+		 */
+		public function getImagem()
+		{
+			return $this->imagem;
+		}
+
+		/**
+		 * @param mixed $imagem
+		 */
+		public function setImagem($imagem)
+		{
+			$this->imagem = $imagem;
+		}
+
 
 		public function getDescricao()
 		{

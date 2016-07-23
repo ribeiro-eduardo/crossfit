@@ -42,7 +42,7 @@ include("header.php");
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
 
-            <form id="eventos" action="action/eventos-action.php" name="eventos" method="POST">
+            <form id="eventos" action="action/eventos-action.php" name="eventos" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="nome">Nome do evento:<span style="color: red"> *</span></label>
                     <input type="text" class="form-control" id="nome" name="nome">
@@ -56,7 +56,10 @@ include("header.php");
                     <input type="text" class="form-control" id="data" name="data"
                            placeholder="exemplo: 12, 13 e 14 de junho, &agrave;s 14h30">
                 </div>
-
+                <div class="form-group">
+                    <label for="imagem">Imagem do evento:<span style="color: red"> *</span></label>
+                    <input id="imagem" name="imagem" type="file" accept="image/*">
+                </div>
                 <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-default" value="Cadastrar">
             </form>
         </div>
@@ -69,8 +72,13 @@ include("header.php");
         var nome = $('#nome').val();
         var local = $('#local').val();
         var data = $('#data').val();
+        var imagem = $('#imagem').val();
 
-        if (nome == "") {
+        if (imagem == "" || imagem == null){
+            alert("Por favor, selecione uma imagem para a noticia!");
+            $('#imagem').focus();
+            return false;
+        }else if (nome == "") {
             alert("Por favor, preencha o nome do evento!");
             $('#nome').focus();
             return false;

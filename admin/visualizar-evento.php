@@ -69,7 +69,7 @@ $evento = $eventosBO->get($eventosVO);
                 </div>
                 <div class="form-group">
                     <label for="data">Datas e hor&aacute;rios:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control" id="data" name="data" value="<?=$evento["nome"]?>">
+                    <input type="text" class="form-control" id="data" name="data" value="<?=$evento["data"]?>">
                 </div>
                 <input type="hidden" name="id" value="<?=$evento["id"]?>">
                 <input type="submit" name="editar" id="editar" class="btn btn-default" value="Salvar altera&ccedil;&otilde;es">

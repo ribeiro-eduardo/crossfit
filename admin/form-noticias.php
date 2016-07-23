@@ -36,10 +36,14 @@ include("header.php");
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
 
-            <form id="noticias" action="action/noticias-action.php" name="noticias" method="POST">
+            <form id="noticias" action="action/noticias-action.php" name="noticias" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="titulo">T&iacute;tulo da notícia:<span style="color: red"> *</span></label>
                     <input type="text" class="form-control" id="titulo" name="titulo">
+                </div>
+                <div class="form-group">
+                    <label for="imagem">Imagem da notícia:<span style="color: red"> *</span></label>
+                    <input id="imagem" name="imagem" type="file" accept="image/*">
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
@@ -55,8 +59,14 @@ include("header.php");
 
     $('#cadastrar').click(function () {
         var titulo = $('#titulo').val();
+        var imagem = $('#imagem').val();
         var descricao = CKEDITOR.instances.descricao.getData();
-        if (titulo == "") {
+
+        if (imagem == "" || imagem == null){
+            alert("Por favor, selecione uma imagem para a noticia!");
+            $('#imagem').focus();
+            return false;
+        }else if (titulo == "") {
             alert("Por favor, preencha o t�tulo!");
             $('#titulo').focus();
             return false;

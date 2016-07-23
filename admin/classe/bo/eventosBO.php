@@ -8,9 +8,9 @@
 			
 			$db = new DBMySQL();
 			
-			$query = "INSERT INTO `eventos` (`nome`, `local`,`data`,`status`) VALUES ";
+			$query = "INSERT INTO `eventos` (`nome`,`local`,`data`, `imagem`,`status`) VALUES ";
 			
-			$query .= "('".$eventosVO->getNome()."','".$eventosVO->getLocal()."','".$eventosVO->getData()."','".$eventosVO->getStatus()."');";
+			$query .= "('".$eventosVO->getNome()."','".$eventosVO->getLocal()."','".$eventosVO->getData()."', '".$eventosVO->getImagem()."','".$eventosVO->getStatus()."');";
 			
 			$db->do_query($query);
 
@@ -29,6 +29,10 @@
 			$query .= " `nome` = '".$eventosVO->getNome()."',";
 
 			$query .= " `local` = '".$eventosVO->getLocal()."',";
+
+			if($eventosVO->getImagem() != ""){
+				$query .= " `imagem` = '$".$eventosVO->getImagem()."',";
+			}
 			
 			$query .= " `data` = '".$eventosVO->getData()."'";
 

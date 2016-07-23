@@ -6,6 +6,7 @@
 		private $nome;
 		private $local;
 		private $data;
+		private $imagem;
 		private $status;
 
 		/**
@@ -70,6 +71,22 @@
 		public function setData($data)
 		{
 			$this->data = $data;
+		}
+
+		/**
+		 * @return mixed
+		 */
+		public function getImagem()
+		{
+			return $this->imagem;
+		}
+
+		/**
+		 * @param mixed $imagem
+		 */
+		public function setImagem($imagem)
+		{
+			$this->imagem = $imagem;
 		}
 
 		/**

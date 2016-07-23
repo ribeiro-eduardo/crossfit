@@ -8,9 +8,9 @@
 			
 			$db = new DBMySQL();
 			
-			$query = "INSERT INTO `noticias` (`titulo`,`descricao`,`data`,`status`) VALUES ";
+			$query = "INSERT INTO `noticias` (`titulo`, `imagem`, `descricao`,`data`,`status`) VALUES ";
 			
-			$query .= "('".$noticiasVO->getTitulo()."','".$noticiasVO->getDescricao()."','".$noticiasVO->getData()."','".$noticiasVO->getStatus()."');";
+			$query .= "('".$noticiasVO->getTitulo()."', '".$noticiasVO->getImagem()."', '".$noticiasVO->getDescricao()."','".$noticiasVO->getData()."','".$noticiasVO->getStatus()."');";
 			
 			$db->do_query($query);
 
@@ -27,6 +27,10 @@
 			$query = "UPDATE `noticias` SET";
 			
 			$query .= " `titulo` = '".$noticiasVO->getTitulo()."',";
+
+			if($noticiasVO->getImagem() != ""){
+				$query .= " `imagem` = '".$noticiasVO->getImagem()."',";
+			}
 			
 			$query .= " `descricao` = '".$noticiasVO->getDescricao()."',";
 

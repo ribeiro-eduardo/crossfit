@@ -26,7 +26,7 @@ $noticias = $noticiasBO->get($noticiasVO);
         </div>
 
         <div class="row">
-            <? for ($i = 0; $i < count($noticias); $i++) {
+            <? for ($i = 0; $i < 6; $i++) {
                 date_default_timezone_set('America/Sao_Paulo');
                 $data_completa = $noticias[$i]['data'];
                 $datetime = new DateTime($data_completa);
@@ -37,8 +37,7 @@ $noticias = $noticiasBO->get($noticiasVO);
                     <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
                             data-wow-delay="0ms">
                         <div class="img-wrapper">
-                            <img src="images/fitness3.jpg" class="img-responsive" alt="this is a title">
-
+                            <img src="../noticias-imagem/<?= $noticias[$i]['imagem']?>" class="img-responsive" alt="<?=$noticias[$i]['titulo']?>">
                             <div class="overlay">
                                 <div class="buttons">
                                     <!-- <a rel="gallery" class="fancybox" href="images/portfolio/item-1.jpg">Demo</a> -->

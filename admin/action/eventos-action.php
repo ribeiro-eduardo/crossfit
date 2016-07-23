@@ -13,8 +13,14 @@ require_once("../lib/DBMySql.php");
 require("../classe/bo/eventosBO.php");
 require("../classe/vo/eventosVO.php");
 
+require_once('../classe/bo/uploadBO.php');
+
 $eventosBO = new eventosBO();
 $eventosVO = new eventosVO();
+
+$uploadBO = new uploadBO();
+
+$_UP['extensoes'] = array('jpg', 'jpeg', 'png', 'gif');
 
 $nome = $_POST["nome"];
 $local = $_POST["local"];
@@ -25,6 +31,62 @@ if (isset($_POST["cadastrar"])) {
     $eventosVO->setLocal($local);
     $eventosVO->setData($data);
     $eventosVO->setStatus(1);
+
+    $imagem = $_FILES["imagem"];
+
+    //print_r($imagem); exit;
+    if($imagem['error'] == 1){
+        ?>
+        <script>
+            alert("Escolha uma imagem de no máximo 1,5 MB!");
+            location.href = "../form-eventos.php";
+        </script>
+        <?
+        exit;
+    }
+
+    if ($imagem['error'] == 0 && $imagem['size'] > 0) {
+
+        if ($imagem['size'] > 1500000) {
+
+            $msg = "Escolha imagens de no m&aacute;ximo 1,5 MB";
+            //echo $msg;
+
+            //die("se ferrou");
+
+        } else {
+
+            $nomeArquivo = $imagem['name'];
+            $auxiliar = explode('.', $nomeArquivo);
+            $auxiliar2 = end($auxiliar);
+            $extensao = strtolower($auxiliar2);
+
+            if (array_search($extensao, $_UP['extensoes']) === false) {
+                $msg = "Por favor, envie arquivos com as seguintes extens&otilde;es: jpg, png ou gif";
+                //return;
+            } else {
+
+                $uploadBO->pasta = "../../eventos-imagem/";
+
+                $uploadBO->nome = $_FILES["imagem"]['name'];
+
+                $uploadBO->tmp_name = $_FILES["imagem"]['tmp_name'];
+
+                $uploadBO->img_marca = "";
+
+                $imagem = $uploadBO->uploadArquivo(TRUE);
+
+                $eventosVO->setImagem($imagem);
+
+            }
+
+        }
+
+    } else {
+
+        $msg = "Escolha imagens dos tipos jpg, jpeg, gif ou png de no m&aacute;ximo 1,5 MB";
+    }
+
     if ($eventosBO->newEvento($eventosVO)) {
         ?>
         <script>
