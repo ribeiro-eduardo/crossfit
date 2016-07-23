@@ -2,7 +2,7 @@
 
   <footer id="footer">
     <div class="container text-right">
-      <a href="http://localhost/crossfit/hd">
+      <a href="../hd">
           <img class="text-right" src="img/icons/icon-www.png" />
       </a>
     </div>
