@@ -32,9 +32,7 @@
 				$query .= " `imagem` = '".$noticiasVO->getImagem()."',";
 			}
 			
-			$query .= " `descricao` = '".$noticiasVO->getDescricao()."',";
-
-			$query .= " `status` = '".$noticiasVO->getStatus()."'";
+			$query .= " `descricao` = '".$noticiasVO->getDescricao()."'";
 
 			$query .= " WHERE `id` = '".$noticiasVO->getId()."'";
 			

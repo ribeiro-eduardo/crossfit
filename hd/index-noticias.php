@@ -6,7 +6,6 @@
  * Time: 03:24
  */
 
-require("../admin/lib/DBMySql.php");
 require("../admin/classe/bo/noticiasBO.php");
 require("../admin/classe/vo/noticiasVO.php");
 $noticiasVO = new noticiasVO();
@@ -26,7 +25,13 @@ $noticias = $noticiasBO->get($noticiasVO);
         </div>
 
         <div class="row">
-            <? for ($i = 0; $i < 6; $i++) {
+            <?
+            if(count($noticias) > 6){
+                $limite = 6;
+            }else{
+                $limite = count($noticias);
+            }
+            for ($i = 0; $i < $limite; $i++) {
                 date_default_timezone_set('America/Sao_Paulo');
                 $data_completa = $noticias[$i]['data'];
                 $datetime = new DateTime($data_completa);
@@ -36,19 +41,19 @@ $noticias = $noticiasBO->get($noticiasVO);
                 <div class="col-sm-4 col-xs-12">
                     <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
                             data-wow-delay="0ms">
-                        <div class="img-wrapper">
-                            <img src="../noticias-imagem/<?= $noticias[$i]['imagem']?>" class="img-responsive" alt="<?=$noticias[$i]['titulo']?>">
+                        <div class="img-wrapper" style="height: 240px;">
+                            <img src="../noticias-imagem/<?= $noticias[$i]['imagem']?>" class="img-responsive" alt="<?=$noticias[$i]['titulo'];?>">
                             <div class="overlay">
                                 <div class="buttons">
                                     <!-- <a rel="gallery" class="fancybox" href="images/portfolio/item-1.jpg">Demo</a> -->
-                                    <a href="single-post.php">Leia mais</a>
+                                    <a href="single-post.php?id=<?=$noticias[$i]['id']?>">Leia mais</a>
                                 </div>
                             </div>
                         </div>
                         <figcaption>
                             <h4>
                                 <a href="single-post.php">
-                                    <?= $noticias[$i]['titulo'] ?>
+                                    <?=$noticias[$i]['titulo']; ?>
                                 </a>
                             </h4>
 

@@ -8,9 +8,16 @@
 			
 			$db = new DBMySQL();
 			
-			$query = "INSERT INTO `eventos` (`nome`,`local`,`data`, `imagem`,`status`) VALUES ";
+			$query = "INSERT INTO `eventos` (`nome`,`local`,`data`, `link`, `infos`, `imagem`,`status`) VALUES ";
 			
-			$query .= "('".$eventosVO->getNome()."','".$eventosVO->getLocal()."','".$eventosVO->getData()."', '".$eventosVO->getImagem()."','".$eventosVO->getStatus()."');";
+			$query .= "('".$eventosVO->getNome()."',
+						'".$eventosVO->getLocal()."',
+						'".$eventosVO->getData()."',
+						'".$eventosVO->getLink()."',
+						'".$eventosVO->getInfos()."',
+						'".$eventosVO->getImagem()."',
+						'".$eventosVO->getStatus()."'
+						);";
 			
 			$db->do_query($query);
 
@@ -30,8 +37,12 @@
 
 			$query .= " `local` = '".$eventosVO->getLocal()."',";
 
+			$query .= " `link` = '".$eventosVO->getLink()."',";
+
+			$query .= " `infos` = '".$eventosVO->getInfos()."',";
+
 			if($eventosVO->getImagem() != ""){
-				$query .= " `imagem` = '$".$eventosVO->getImagem()."',";
+				$query .= " `imagem` = '".$eventosVO->getImagem()."',";
 			}
 			
 			$query .= " `data` = '".$eventosVO->getData()."'";
@@ -76,7 +87,7 @@
 				
 			} else {
 				
-				$query = "SELECT * FROM `eventos` WHERE `status` = 1  ORDER BY `id` ASC";
+				$query = "SELECT * FROM `eventos` WHERE `status` = 1  ORDER BY `id` DESC LIMIT 10";
 				
 				$db->do_query($query);
 				

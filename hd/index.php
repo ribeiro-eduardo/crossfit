@@ -1,6 +1,8 @@
 <?php
 //include("meta.php");
 include("header.php");
+require("../admin/lib/DBMySql.php");
+
 ?>
 
         <!--

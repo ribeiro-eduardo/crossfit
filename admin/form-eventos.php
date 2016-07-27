@@ -57,6 +57,15 @@ include("header.php");
                            placeholder="exemplo: 12, 13 e 14 de junho, &agrave;s 14h30">
                 </div>
                 <div class="form-group">
+                    <label for="link">Link para o evento: (n&atilde;o obrigat&oacute;rio)</label>
+                    <input type="text" class="form-control" id="link" name="link"
+                           placeholder="http://www.exemplo.com.br">
+                </div>
+                <div class="form-group">
+                    <label for="infos">Informa&ccedil;&otilde;es adicionais: (n&atilde;o obrigat&oacute;rio)</label>
+                    <textarea rows="4" class="form-control" maxlength="255" size="255" name="infos"></textarea>
+                </div>
+                <div class="form-group">
                     <label for="imagem">Imagem do evento:<span style="color: red"> *</span></label>
                     <input id="imagem" name="imagem" type="file" accept="image/*">
                 </div>

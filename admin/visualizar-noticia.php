@@ -73,8 +73,9 @@ $noticia = $noticiasBO->get($noticiasVO);
                     <input type="text" class="form-control" id="titulo" name="titulo" value="<?= $noticia["titulo"] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="imagem">Imagem da notícia:<span style="color: red"> *</span></label>
-                    <input id="imagem" name="imagem" type="file" accept="image/*">
+                    <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
+                    <textarea class="form-control" id="descricao"
+                              name="descricao"><?= urldecode($noticia["descricao"]) ?></textarea>
                 </div>
                 <? if ($noticia['imagem'] != "") {
                     ?>
@@ -84,9 +85,8 @@ $noticia = $noticiasBO->get($noticiasVO);
                     </div>
                 <? } ?>
                 <div class="form-group">
-                    <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
-                    <textarea class="form-control" id="descricao"
-                              name="descricao"><?= urldecode($noticia["descricao"]) ?></textarea>
+                    <label for="imagem">Trocar imagem da notícia:<span style="color: red"> *</span></label>
+                    <input id="imagem" name="imagem" type="file" accept="image/*">
                 </div>
                 <input type="hidden" name="id_noticia" value="<?= $noticia['id'] ?>">
                 <input type="submit" name="editar" id="editar" class="btn btn-default"

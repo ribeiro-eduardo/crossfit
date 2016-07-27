@@ -40,26 +40,19 @@ if (isset($_POST["cadastrar"])) {
     $imagem = $_FILES["imagem"];
 
     //print_r($imagem); exit;
-    if($imagem['error'] == 1){
-        ?>
-        <script>
-            alert("Escolha uma imagem de no máximo 1,5 MB!");
-            location.href = "../form-noticias.php";
-        </script>
-        <?
-        exit;
-    }
 
     if ($imagem['error'] == 0 && $imagem['size'] > 0) {
 
-        if ($imagem['size'] > 1500000) {
-
-            $msg = "Escolha imagens de no m&aacute;ximo 1,5 MB";
-            //echo $msg;
-
-            //die("se ferrou");
-
-        } else {
+        if($imagem['size'] > 8000000){
+            ?>
+            <script>
+                alert("Escolha uma imagem de no máximo 8 MB!");
+                location.href = "../form-noticias.php";
+            </script>
+            <?
+            exit;
+        }
+        else {
 
             $nomeArquivo = $imagem['name'];
             $auxiliar = explode('.', $nomeArquivo);
@@ -119,58 +112,51 @@ if (isset($_POST["cadastrar"])) {
 
     $imagem = $_FILES["imagem"];
 
-    //print_r($imagem); exit;
-    if($imagem['error'] == 1){
-        ?>
-        <script>
-            alert("Escolha uma imagem de no máximo 1,5 MB!");
-            location.href = "../visualizar-noticia.php?id=<?=$id?>";
-        </script>
-        <?
-        exit;
-    }
+    if($imagem != ""){
+        if ($imagem['error'] == 0 && $imagem['size'] > 0) {
 
-    if ($imagem['error'] == 0 && $imagem['size'] > 0) {
+            if ($imagem['size'] > 8000000) {
 
-        if ($imagem['size'] > 1500000) {
+                ?>
+                <script>
+                    alert("Escolha uma imagem de no máximo 8 MB!");
+                    location.href = "../visualizar-noticia.php?id=<?=$id?>";
+                </script>
+                <?
+                exit;
 
-            $msg = "Escolha imagens de no m&aacute;ximo 1,5 MB";
-            //echo $msg;
-
-            //die("se ferrou");
-
-        } else {
-
-            $nomeArquivo = $imagem['name'];
-            $auxiliar = explode('.', $nomeArquivo);
-            $auxiliar2 = end($auxiliar);
-            $extensao = strtolower($auxiliar2);
-
-            if (array_search($extensao, $_UP['extensoes']) === false) {
-                $msg = "Por favor, envie arquivos com as seguintes extens&otilde;es: jpg, png ou gif";
-                //return;
             } else {
 
-                $uploadBO->pasta = "../../noticias-imagem/";
+                $nomeArquivo = $imagem['name'];
+                $auxiliar = explode('.', $nomeArquivo);
+                $auxiliar2 = end($auxiliar);
+                $extensao = strtolower($auxiliar2);
 
-                $uploadBO->nome = $_FILES["imagem"]['name'];
+                if (array_search($extensao, $_UP['extensoes']) === false) {
+                    $msg = "Por favor, envie arquivos com as seguintes extens&otilde;es: jpg, png ou gif";
+                    //return;
+                } else {
 
-                $uploadBO->tmp_name = $_FILES["imagem"]['tmp_name'];
+                    $uploadBO->pasta = "../../noticias-imagem/";
 
-                $uploadBO->img_marca = "";
+                    $uploadBO->nome = $_FILES["imagem"]['name'];
 
-                $imagem = $uploadBO->uploadArquivo(TRUE);
+                    $uploadBO->tmp_name = $_FILES["imagem"]['tmp_name'];
 
-                echo $imagem; exit;
-                $noticiasVO->setImagem($imagem);
+                    $uploadBO->img_marca = "";
+
+                    $imagem = $uploadBO->uploadArquivo(TRUE);
+
+                    $noticiasVO->setImagem($imagem);
+
+                }
 
             }
 
-        }
+        } else {
 
-    } else {
-        echo "vish"; exit;
-        $msg = "Escolha imagens dos tipos jpg, jpeg, gif ou png de no m&aacute;ximo 1,5 MB";
+            $msg = "Escolha imagens dos tipos jpg, jpeg, gif ou png de no m&aacute;ximo 1,5 MB";
+        }
     }
 
     if ($noticiasBO->editNoticia($noticiasVO)) {

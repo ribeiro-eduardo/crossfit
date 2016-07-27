@@ -6,6 +6,8 @@
 		private $nome;
 		private $local;
 		private $data;
+		private $link;
+		private $infos;
 		private $imagem;
 		private $status;
 
@@ -71,6 +73,38 @@
 		public function setData($data)
 		{
 			$this->data = $data;
+		}
+
+		/**
+		 * @return mixed
+		 */
+		public function getLink()
+		{
+			return $this->link;
+		}
+
+		/**
+		 * @param mixed $link
+		 */
+		public function setLink($link)
+		{
+			$this->link = $link;
+		}
+
+		/**
+		 * @return mixed
+		 */
+		public function getInfos()
+		{
+			return $this->infos;
+		}
+
+		/**
+		 * @param mixed $infos
+		 */
+		public function setInfos($infos)
+		{
+			$this->infos = $infos;
 		}
 
 		/**

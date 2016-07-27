@@ -1,5 +1,16 @@
 <?php
 include("header.php");
+
+require("../admin/lib/DBMySql.php");
+require("../admin/classe/bo/noticiasBO.php");
+require("../admin/classe/vo/noticiasVO.php");
+$noticiasVO = new noticiasVO();
+$noticiasBO = new noticiasBO();
+
+$id = $_GET['id'];
+$noticiasVO->setId($id);
+$noticia = $noticiasBO->get($noticiasVO);
+
 ?>
         <!--
         ==================================================
@@ -10,7 +21,7 @@ include("header.php");
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Título da notícia</h2>
+                            <h2><?=$noticia['titulo']?></h2>
                             <div class="portfolio-meta">
                                 <span>Dec 11, 2020</span>|
                                 <span> Category: typography</span>|

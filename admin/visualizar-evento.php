@@ -58,7 +58,7 @@ $evento = $eventosBO->get($eventosVO);
 
             <p style="color: red"><i>campos marcados com * s&atilde;o obrigat&oacute;rios</i></p>
 
-            <form id="eventos" action="action/eventos-action.php" name="eventos" method="POST">
+            <form id="eventos" action="action/eventos-action.php" name="eventos" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="nome">Nome do evento:<span style="color: red"> *</span></label>
                     <input type="text" class="form-control" id="nome" name="nome" value="<?=$evento["nome"]?>">
@@ -70,6 +70,26 @@ $evento = $eventosBO->get($eventosVO);
                 <div class="form-group">
                     <label for="data">Datas e hor&aacute;rios:<span style="color: red"> *</span></label>
                     <input type="text" class="form-control" id="data" name="data" value="<?=$evento["data"]?>">
+                </div>
+                <div class="form-group">
+                    <label for="link">Link para o evento: (n&atilde;o obrigat&oacute;rio)</label>
+                    <input type="text" class="form-control" id="link" name="link"
+                           value="<?=$evento['link']?>">
+                </div>
+                <div class="form-group">
+                    <label for="infos">Informa&ccedil;&otilde;es adicionais: (n&atilde;o obrigat&oacute;rio)</label>
+                    <textarea rows="4" class="form-control" maxlength="255" size="255" name="infos"><?=$evento['infos']?></textarea>
+                </div>
+                <? if ($evento['imagem'] != "") {
+                    ?>
+                    <div class="form-group">
+                        <label for="imagem">Imagem atual:</label>
+                        <img class="img-responsive" src="../eventos-imagem/<?= $evento['imagem'] ?>">
+                    </div>
+                <? } ?>
+                <div class="form-group">
+                    <label for="imagem">Trocar imagem do evento:<span style="color: red"> *</span></label>
+                    <input id="imagem" name="imagem" type="file" accept="image/*">
                 </div>
                 <input type="hidden" name="id" value="<?=$evento["id"]?>">
                 <input type="submit" name="editar" id="editar" class="btn btn-default" value="Salvar altera&ccedil;&otilde;es">

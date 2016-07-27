@@ -42,12 +42,12 @@ include("header.php");
                     <input type="text" class="form-control" id="titulo" name="titulo">
                 </div>
                 <div class="form-group">
-                    <label for="imagem">Imagem da notícia:<span style="color: red"> *</span></label>
-                    <input id="imagem" name="imagem" type="file" accept="image/*">
-                </div>
-                <div class="form-group">
                     <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
                     <textarea class="form-control" id="descricao" name="descricao"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imagem">Imagem da notícia:<span style="color: red"> *</span></label>
+                    <input id="imagem" name="imagem" type="file" accept="image/*">
                 </div>
                 <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-default" value="Cadastrar">
             </form>

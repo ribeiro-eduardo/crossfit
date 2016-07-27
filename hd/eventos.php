@@ -44,13 +44,9 @@ Global Page Section Start
 Bloco para cada Evento Ímpar (ex: eventos 1, 3, 5...)
 ================================================== -->
 <?
-$epar = "";
 for ($i = 0; $i < count($eventos); $i++) {
-    if ($i % 2 == 0) {
-        $epar = "epar";
-    }
     ?>
-    <section class="evento <?= $epar ?>">
+    <section <? if ($i % 2 != 0){ echo 'class="evento epar"';} else{ echo 'class="evento"';} ?>>
         <div class="container">
 
             <div class="row">
@@ -70,20 +66,28 @@ for ($i = 0; $i < count($eventos); $i++) {
                         <div class="evento">
                             <div class="col-md-4 wow fadeInUp" data-wow-delay=".5s" data-wow-duration="500ms">
                                 <h4>Data e Horário</h4><br/>
-                                <h4>Cidade</h4><br/>
                                 <h4>Local</h4><br/>
-                                <h4>Inscrições</h4>
+                                <? if($eventos[$i]['link'] != ""){ ?>
+                                    <h4>Link do evento</h4><br/>
+                                <? }
+                                   if($eventos[$i]['infos'] != ""){ ?>
+                                       <h4>Informações adicionais</h4>
+                                <? } ?>
                             </div>
                             <div class="col-md-8 wow fadeInUp" data-wow-delay=".5s" data-wow-duration="500ms">
                                 <h4><?=$eventos[$i]['data']?></h4><br/>
-                                <h4>Curitiba</h4><br/>
                                 <h4><?=$eventos[$i]['local']?></h4><br/>
-                                <h4>???????</h4>
+                                <? if($eventos[$i]['link'] != ""){ ?>
+                                    <h4><a target="_blank" href="<?=$eventos[$i]['link']?>"><?=$eventos[$i]['link']?></a></h4><br/>
+                                <? }
+                                   if($eventos[$i]['infos'] != ""){ ?>
+                                    <h4><?=$eventos[$i]['infos']?></h4>
+                                <? } ?>
                             </div>
-                            <div class="link-externo-evento text-right">
-                                <a href="https://sites.minhasinscricoes.com.br/corridaproesportevicentina">Inscreva-se
-                                    aqui</a>
-                            </div>
+<!--                            <div class="link-externo-evento text-right">-->
+<!--                                <a href="https://sites.minhasinscricoes.com.br/corridaproesportevicentina">Inscreva-se-->
+<!--                                    aqui</a>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
