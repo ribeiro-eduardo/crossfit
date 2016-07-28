@@ -45,8 +45,9 @@ $time = $datetime->format('H:i');
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="post-img">
-                                <img class="img-responsive" alt="" src="../noticias-imagem/<?= $noticia['imagem']?>">
+                          <div class="post-img">
+                          <!--  <div class="post-img" style="background: url(../noticias-imagem/<?= $noticia['imagem']?>) no-repeat 50%; height:100%;"> -->
+                              <img class="img-responsive center-block" alt="" src="../noticias-imagem/<?= $noticia['imagem']?>">
                             </div>
                             <div class="post-content">
                                 <p>
