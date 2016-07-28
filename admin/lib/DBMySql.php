@@ -1,7 +1,7 @@
 <?
 class DBMySQL {
 	var $username="root";
-	var $password="travessa05";
+	var $password="";
 	var $host="localhost";
 	var $database="crossfit";
 	var $link;
