@@ -32,12 +32,13 @@ if(isset($_POST["cadastrar"])){
     $senha = $_POST["senha"];
     $telefone = $_POST["telefone"];
     $celular = $_POST["celular"];
+    $permissao = $_POST['permissao'];
     date_default_timezone_set('America/Sao_Paulo');
     $t=time();
     $data_cadastro = @date("Y-m-d H:i:s",$t);
 
 //validação caso passe pelo JS
-    include("../classe/validacoes/valida-usuarios.php");
+    include("../classe/validacoes/valida-usuarios.php?a=cadastrar");
 
 
     $usuariosVO->setId_tipo_usuario($id_tipo_usuario);
@@ -50,6 +51,7 @@ if(isset($_POST["cadastrar"])){
     $usuariosVO->setSenha(md5($senha));
     $usuariosVO->setTelefone($telefone);
     $usuariosVO->setCelular($celular);
+    $usuariosVO->setPermissao($permissao);
     $usuariosVO->setData_cadastro($data_cadastro);
     $usuariosVO->setStatus(1);
 
@@ -85,6 +87,7 @@ elseif(isset($_POST["editar"])){
     $senha = $_POST["senha"];
     $telefone = $_POST["telefone"];
     $celular = $_POST["celular"];
+    $permissao = $_POST['permissao'];
     date_default_timezone_set('America/Sao_Paulo');
     $t=time();
     $data_cadastro = @date("Y-m-d H:i:s",$t);
@@ -106,6 +109,7 @@ elseif(isset($_POST["editar"])){
     }
     $usuariosVO->setTelefone($telefone);
     $usuariosVO->setCelular($celular);
+    $usuariosVO->setPermissao($permissao);
     $usuariosVO->setData_cadastro($data_cadastro);
 
     if($usuariosBO->editUsuario($usuariosVO)) {

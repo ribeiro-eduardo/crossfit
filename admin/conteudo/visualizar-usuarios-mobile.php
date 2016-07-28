@@ -88,6 +88,9 @@
                 <input type="text" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
                        id="celular" name="celular" value="<?= $usuario['celular'] ?>">
             </div>
+            <div class="form-group">
+                <label>O usu&aacute;rio aceita ter sua imagem exposta no site: <input type="checkbox" name="permissao" value="s" <? if($usuario['permissao'] == "s"){ echo "checked"; } ?>></label>
+            </div>
             <input type="hidden" name="id" id="id" value="<?=$id?>">
             <input type="submit" id="editar" name='editar' class='btn btn-default'
                    value='Salvar altera&ccedil;&otilde;es'>

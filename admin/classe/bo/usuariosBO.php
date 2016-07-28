@@ -8,7 +8,7 @@
 			
 			$db = new DBMySQL();
 			
-			$query = "INSERT INTO `usuarios` (`nome`,`cpf`, `email`, `telefone`, `celular`, `login`, `senha`, `id_tipo_usuario`, `descricao`, `data_nascimento`, `altura`, `peso`, `data_cadastro`, `status`) VALUES ";
+			$query = "INSERT INTO `usuarios` (`nome`,`cpf`, `email`, `telefone`, `celular`, `permissao`, `login`, `senha`, `id_tipo_usuario`, `descricao`, `data_nascimento`, `altura`, `peso`, `data_cadastro`, `status`) VALUES ";
 
 			$query .= "(
 			'".$usuariosVO->getNome()."',
@@ -16,6 +16,7 @@
 			'".$usuariosVO->getEmail()."',
 			'".$usuariosVO->getTelefone()."',
 			'".$usuariosVO->getCelular()."',
+			'".$usuariosVO->getPermissao()."',
 			'".$usuariosVO->getLogin()."',
 			'".$usuariosVO->getSenha()."',
 			'".$usuariosVO->getId_tipo_usuario()."',
@@ -44,6 +45,7 @@
 			$query .= " `email` = '".$usuariosVO->getEmail()."',";
 			$query .= " `telefone` = '".$usuariosVO->getTelefone()."',";
 			$query .= " `celular` = '".$usuariosVO->getCelular()."',";
+			$query .= " `permissao` = '".$usuariosVO->getPermissao()."',";
 			$query .= " `login` = '".$usuariosVO->getLogin()."',";
 			$query .= " `senha` = '".$usuariosVO->getSenha()."',";
 			$query .= " `id_tipo_usuario` = '".$usuariosVO->getId_tipo_usuario()."',";

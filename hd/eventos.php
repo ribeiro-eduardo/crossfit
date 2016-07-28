@@ -78,7 +78,7 @@ for ($i = 0; $i < count($eventos); $i++) {
                                 <h4><?=$eventos[$i]['data']?></h4><br/>
                                 <h4><?=$eventos[$i]['local']?></h4><br/>
                                 <? if($eventos[$i]['link'] != ""){ ?>
-                                    <h4><a target="_blank" href="<?=$eventos[$i]['link']?>"><?=$eventos[$i]['link']?></a></h4><br/>
+                                    <h4><u><a style="color:red;" target="_blank" href="<?=$eventos[$i]['link']?>"><?=$eventos[$i]['link']?></a></u></h4><br/>
                                 <? }
                                    if($eventos[$i]['infos'] != ""){ ?>
                                     <h4><?=$eventos[$i]['infos']?></h4>

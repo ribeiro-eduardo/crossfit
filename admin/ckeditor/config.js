@@ -26,9 +26,8 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'about' }
 	];
 
-	config.protectedSource.push( /<br[\s\S]*?\/>/g );   // BR Tags
-	config.protectedSource.push( /<img[\s\S]*?\/>/g );   // IMG Tags
-	
+	config.allowedContent = true;
+
 	// Integrate with KCFINDER
 	config.filebrowserBrowseUrl = 'kcfinder/browse.php?type=files';
   	config.filebrowserImageBrowseUrl = 'kcfinder/browse.php?type=images';

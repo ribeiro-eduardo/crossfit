@@ -1,9 +1,9 @@
 <?
 class DBMySQL {
-	var $username="allypubl_ally";
-	var $password="leg123";
+	var $username="root";
+	var $password="travessa05";
 	var $host="localhost";
-	var $database="allypubl_thaibrasil";
+	var $database="crossfit";
 	var $link;
 	var $result;
 	var $last_query;

@@ -86,6 +86,9 @@
         <label for="celular">Celular:<span style="color: red"> *</span></label>
         <input type="text" class="form-control" id="celular" name="celular" value="<?=$usuario['celular']?>">
     </div>
+    <div class="form-group">
+        <label>O usu&aacute;rio aceita ter sua imagem exposta no site: <input type="checkbox" name="permissao" value="s" <? if($usuario['permissao'] == "s"){ echo "checked"; } ?>></label>
+    </div>
     <input type="hidden" name="id" id="id" value="<?=$id?>">
     <input type="submit" id="editar" name="editar" class="btn btn-default" value="Salvar altera&ccedil;&otilde;es">
     </form>

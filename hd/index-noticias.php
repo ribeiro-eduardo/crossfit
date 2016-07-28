@@ -52,7 +52,7 @@ $noticias = $noticiasBO->get($noticiasVO);
                         </div>
                         <figcaption>
                             <h4>
-                                <a href="single-post.php">
+                                <a href="single-post.php?id=<?=$noticias[$i]['id']?>">
                                     <?=$noticias[$i]['titulo']; ?>
                                 </a>
                             </h4>

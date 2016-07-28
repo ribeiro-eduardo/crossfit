@@ -175,11 +175,6 @@ $action = "action/usuarios-action.php";
             $('#login').focus();
             return false;
         }
-        if (senha  === '') {
-            alert('Por favor, preencha a senha do usu�rio!');
-            $('#senha').focus();
-            return false;
-        }
         if (telefone  === '') {
             alert('Por favor, preencha o telefone do usu�rio!');
             $('#telefone').focus();

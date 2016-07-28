@@ -67,6 +67,9 @@
             <label for="celular">Celular:<span style="color: red"> *</span></label>
             <input type="text" class="form-control" id="celular" name="celular" placeholder="(99) 9999-9999">
         </div>
+        <div class="form-group">
+            <label>O usu&aacute;rio aceita ter sua imagem exposta no site: <input type="checkbox" name="permissao" value="s"></label>
+        </div>
         <input type="submit" id="cadastrar" name="cadastrar" class="btn btn-default" value="Cadastrar">
         </form>
     </div>

@@ -8,6 +8,7 @@
 		private $email;
 		private $telefone;
 		private $celular;
+        private $permissao;
 		private $senha;
 		private $login;
 		private $id_tipo_usuario;
@@ -62,6 +63,15 @@
         {
             return $this->celular;
         }
+
+        /**
+         * @return mixed
+         */
+        public function getPermissao()
+        {
+            return $this->permissao;
+        }
+
 
         function getLogin()
         {
@@ -131,6 +141,14 @@
         function setCelular($celular)
         {
             $this->celular = $celular;
+        }
+
+        /**
+         * @param mixed $permissao
+         */
+        public function setPermissao($permissao)
+        {
+            $this->permissao = $permissao;
         }
 
         function setLogin($login)

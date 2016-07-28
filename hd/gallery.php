@@ -1,5 +1,21 @@
 <?php
 include("header.php");
+
+require("../admin/lib/DBMySql.php");
+require_once("../admin/classe/bo/galeriasBO.php");
+require_once("../admin/classe/vo/galeriasVO.php");
+
+$galeriasVO = new galeriasVO();
+$galeriasBO = new galeriasBO();
+
+require("../admin/classe/bo/galeriaFotosBO.php");
+require("../admin/classe/vo/galeriaFotosVO.php");
+
+$galeriaFotosBO = new galeriaFotosBO();
+$galeriaFotosVO = new galeriaFotosVO();
+
+$galerias = $galeriasBO->get($galeriasVO);
+
 ?>
         <!--
         ==================================================
@@ -28,79 +44,25 @@ include("header.php");
             <section id="gallery" class="gallery">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title">
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-1.jpg">Ver</a>
+                        <? for($i = 0; $i < count($galerias); $i++){
+                            $id = $galerias[$i]['id'];
+                            $galeriaFotosVO->setIdGaleria($id);
+                            $fotos = $galeriaFotosBO->get($galeriaFotosVO);
+                            ?>
+                            <div class="col-sm-4 col-xs-12">
+                                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+                                    <div class="img-wrapper" style="height: 240px;">
+                                        <img src="../galerias/<?=$id?>/<?=$fotos[0]['nome']?>" class="img-responsive" alt="this is a title">
+                                        <div class="overlay">
+                                            <div class="buttons">
+                                                <a rel="gallery" class="fancybox" href="images/portfolio/item-1.jpg"><?=$galerias[$i]['nome']?></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title">
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <h2>TESTE</h2>
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-2.jpg">Ver</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated animated" data-wow-duration="500ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="">
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-3.jpg">Ver</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="700ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: none; -webkit-animation-name: none;">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="">
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-4.jpg">Ver</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 900ms; -webkit-animation-delay: 900ms; animation-name: none; -webkit-animation-name: none;">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-5.jpg" class="img-responsive" alt="">
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-5.jpg">Ver</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1100ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 1200ms; -webkit-animation-delay: 1200ms; animation-name: none; -webkit-animation-name: none;">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="">
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Ver</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
+                                </figure>
+                            </div>
+                     <?   } ?>
+
                     </div>
                 </div>
             </section>
