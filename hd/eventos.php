@@ -46,7 +46,7 @@ Bloco para cada Evento Ímpar (ex: eventos 1, 3, 5...)
 <?
 for ($i = 0; $i < count($eventos); $i++) {
     ?>
-    <section <? if ($i % 2 != 0){ echo 'class="evento epar"';} else{ echo 'class="evento"';} ?>>
+    <section <? if ($i % 2 != 0){ echo 'class="evento epar"';} else{ echo 'class="evento eimpar"';} ?>>
         <div class="container">
 
             <div class="row">

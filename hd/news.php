@@ -37,12 +37,12 @@ include("header.php");
                                     <h2 class="blogpost-title">
                                     <a href="single-post.php">Título notícia 1</a>
                                     </h2>
-                                    <div class="blog-meta">
+                                    <div class="blog-meta" style="color: #5f5f5f;">
                                         <span>Dec 11, 2020</span>
-                                        <span>by <a href="">Admin</a></span>
-                                        <span><a href="">business</a>,<a href="">people</a></span>
+                                        <span>by Admin</span>
+                                        <!-- <span><a href="">business</a>,<a href="">people</a></span> -->
                                     </div>
-                                    <p>Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
+                                    <p style="color: #acacac">Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
                                     </p>
                                     <a href="single-post.php" class="btn btn-dafault btn-details">Continue Lendo</a>
                                 </div>
@@ -56,12 +56,12 @@ include("header.php");
                                     <h2 class="blogpost-title">
                                     <a href="single-post.php">Título notícia 2</a>
                                     </h2>
-                                    <div class="blog-meta">
+                                    <div class="blog-meta" style="color: #5f5f5f;">
                                         <span>Dec 11, 2020</span>
-                                        <span>by <a href="">Admin</a></span>
-                                        <span><a href="">business</a>,<a href="">people</a></span>
+                                        <span>by Admin</span>
+                                        <!-- <span><a href="">business</a>,<a href="">people</a></span> -->
                                     </div>
-                                    <p>Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
+                                    <p style="color: #acacac;">Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
                                     </p>
                                     <a href="single-post.php" class="btn btn-dafault btn-details">Continue Lendo</a>
                                 </div>
@@ -75,12 +75,12 @@ include("header.php");
                                     <h2 class="blogpost-title">
                                     <a href="single-post.php">Título notícia 3</a>
                                     </h2>
-                                    <div class="blog-meta">
+                                    <div class="blog-meta" style="color: #5f5f5f;">
                                         <span>Dec 11, 2020</span>
-                                        <span>by <a href="">Admin</a></span>
-                                        <span><a href="">business</a>,<a href="">people</a></span>
+                                        <span>by Admin</span>
+                                      <!--  <span><a href="">business</a>,<a href="">people</a></span>-->
                                     </div>
-                                    <p>Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
+                                    <p style="color: #acacac;">Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
                                     </p>
                                     <a href="single-post.php" class="btn btn-dafault btn-details">Continue Lendo</a>
                                 </div>

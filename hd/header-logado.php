@@ -32,7 +32,7 @@ include("meta.php");
                 <div class="main-menu">
                     <ul class="nav navbar-nav navbar-right">
 
-                      <li class="dropdown">
+                    <!--  <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sobre <span class="caret"></span></a>
                           <div class="dropdown-menu">
                               <ul>
@@ -46,8 +46,19 @@ include("meta.php");
                         <li><a href="news.php">Notícias</a></li>
                         <li><a href="eventos.php">Eventos</a></li>
                         <li><a href="contact.php">Contato</a></li>
-                        <li><a href="#">Sair</a></li>
-                        <li><img class="img-circle foto-nav" src="images/coach2.jpg"></li>
+                        <li><a href="#">Sair</a></li> -->
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img class="img-circle foto-nav" src="images/coach2.jpg">
+                          </a>
+                          <div class="dropdown-menu">
+                              <ul>
+                                  <li><a href="#">Meu Perfil</a></li>
+                                  <li><a href="#">Calendário</a></li>
+                                  <li><a href="#">Sair</a></li>
+                              </ul>
+                          </div>
+                        </li>
                     </ul>
                 </div>
             </nav>

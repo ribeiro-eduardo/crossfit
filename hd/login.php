@@ -36,9 +36,9 @@ Global Page Section Start
             <form class="login text-center" method="post">
               <div class="form-group input-group">
                 <span class="input-group-addon">
-                  <span class="ion-at"></span>
+                  <span class="ion-person"></span>
                 </span>
-                <input class="form-control" placeholder="Email">
+                <input class="form-control" placeholder="Usuário">
               </div>
               <div class="form-group input-group">
                 <span class="input-group-addon">

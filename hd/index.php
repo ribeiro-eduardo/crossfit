@@ -159,8 +159,8 @@ require("../admin/lib/DBMySql.php");
             <section id="feature">
                 <div class="container">
                     <div class="section-heading">
-                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">Equipe</h1>
-                        <p class="wow fadeInDown" data-wow-delay=".5s">
+                        <h1 class="title wow fadeInDown" data-wow-delay=".3s" style="color: #5f5f5f;">Equipe</h1>
+                        <p class="wow fadeInDown" data-wow-delay=".5s" style="color: #acacac;">
                             Conheça alguns dos profissionais que trabalham conosco. Um time preparado para te atender.
                         </p>
                     </div>
@@ -174,7 +174,7 @@ require("../admin/lib/DBMySql.php");
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Ana</h4>
+                                    <h4 class="media-heading" style="color: #5f5f5f;">Ana</h4>
                                     <p>Coach há apenas 2 anos, Ana trabalha duro para levar seus alunos ao limite.</p>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@ require("../admin/lib/DBMySql.php");
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Marcelo</h4>
+                                    <h4 class="media-heading" style="color: #5f5f5f;">Marcelo</h4>
                                     <p>Nosso coach mais antigo, é também fisiculturista.</p>
                                 </div>
                             </div>
@@ -200,7 +200,7 @@ require("../admin/lib/DBMySql.php");
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Bia</h4>
+                                    <h4 class="media-heading" style="color: #5f5f5f;">Bia</h4>
                                     <p>Nova na modalidade e a mais nova na casa, sofre com a pressão dos colegas.</p>
                                 </div>
                             </div>
@@ -213,7 +213,7 @@ require("../admin/lib/DBMySql.php");
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Pedro</h4>
+                                    <h4 class="media-heading" style="color: #5f5f5f;">Pedro</h4>
                                     <p>Campeão regional de levantamento de peso por 2 anos seguidos, é o coach mais exigente da equipe.</p>
                                 </div>
                             </div>
@@ -226,7 +226,7 @@ require("../admin/lib/DBMySql.php");
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Camila</h4>
+                                    <h4 class="media-heading" style="color: #5f5f5f;">Camila</h4>
                                     <p>Além de coach na HD Elite Team, Camila participa de competições femininas de levantamento de peso.</p>
                                 </div>
                             </div>
@@ -239,7 +239,7 @@ require("../admin/lib/DBMySql.php");
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Ricardo</h4>
+                                    <h4 class="media-heading" style="color: #5f5f5f;">Ricardo</h4>
                                     <p>Após trabalhar alguns anos no exterior, juntou-se ao nosso time  a procura de atletas de elite.</p>
                                 </div>
                             </div>

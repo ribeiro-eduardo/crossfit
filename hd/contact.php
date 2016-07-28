@@ -37,8 +37,8 @@ include("header.php");
                 <div class="row">
                     <div class="col-md-6">
                         <div class="block">
-                            <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Entre em contato conosco</h2>
-                            <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                            <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s" style="color: #5f5f5f;">Entre em contato conosco</h2>
+                            <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s" style="color: #acacac;">
                                 Envie sua mensagem que responderemos o mais breve possível.
                             </p>
                             <div class="contact-form">
@@ -77,8 +77,8 @@ include("header.php");
                     </div>
                     <div class="col-md-6">
                          <div class="map-area">
-                            <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Localização</h2>
-                            <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                            <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s" style="color: #5f5f5f;">Localização</h2>
+                            <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s" style="color: #acacac;">
                                 Saiba onde nos encontrar.
                             </p>
                             <div class="map">

@@ -4,11 +4,43 @@
 }
 
 body{
-  padding-top: 70px;
+  padding-top: 120px;
 }
 
 #footer{
   position: absolute;
   width: 100%;
-  bottom: 0;
+  /*bottom: 0;*/
+}
+/*
+.row{
+  background: rgba(252, 252, 252, 0.85);
+  background: #fcfcfc;
+  height: 100%;
+}
+
+html, body{
+  height: 100%;
+}
+
+.container{
+  height: 100%;
+}
+*/
+.conteudo{
+  padding: 2% 5%;
+}
+
+.pdg{
+  padding: 3%;
+}
+
+.pdg h2{
+  padding-bottom: 2%;
+}
+
+.btn-send {
+  background: #E5001C;
+  color: #fcfcfc;
+  border-radius: 0;
 }

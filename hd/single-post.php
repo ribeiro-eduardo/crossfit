@@ -15,7 +15,7 @@ $noticia = $noticiasBO->get($noticiasVO);
 date_default_timezone_set('America/Sao_Paulo');
 $data_completa = $noticia['data'];
 $datetime = new DateTime($data_completa);
-$data = $datetime->format('d-m-Y');
+$data = $datetime->format('d/m/Y');
 $time = $datetime->format('H:i');
 ?>
         <!--
