@@ -55,4 +55,12 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
         <script src="js/jquery.fancybox.js"></script>
         <!-- template main js -->
         <script src="js/main.js"></script>
+
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+        <script>
+        $( function() {
+          $( "#accordion" ).accordion();
+        } );
+        </script>
+
     </head>

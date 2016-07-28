@@ -32,20 +32,38 @@ include("meta.php");
                 <div class="main-menu">
                     <ul class="nav navbar-nav navbar-right">
 
-                      <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sobre <span class="caret"></span></a>
-                          <div class="dropdown-menu">
-                              <ul>
-                                  <li><a href="about.php">HD Elite Team</a></li>
-                                  <li><a href="about-crossfit.php">Crossfit</a></li>
-                              </ul>
-                          </div>
-                      </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sobre <span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="about.php">HD Elite Team</a></li>
+                                    <li><a href="about-crossfit.php">Crossfit</a></li>
+                                </ul>
+                            </div>
+                        </li>
                         <li><a href="index.php#wod-area">WOD</a></li>
-                        <li><a href="demos.php">Demonstrações</a></li>
-                        <li><a href="news.php">Notícias</a></li>
-                        <li><a href="eventos.php">Eventos</a></li>
-                        <li><a href="gallery.php">Fotos</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Benchmark <span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="benchmarks.php">Challenges</a></li>
+                                    <li><a href="#.php">Heros</a></li>
+                                    <li><a href="#.php">Girls</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informações <span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="news.php">Notícias</a></li>
+                                    <li><a href="eventos.php">Eventos</a></li>
+                                    <li><a href="gallery.php">Fotos</a></li>
+                                    <li><a href="demos.php">Demonstrações</a></li>
+                                </ul>
+                            </div>
+                        </li>
                         <li><a href="contact.php">Contato</a></li>
                         <li><a href="login.php">Login</a></li>
                     </ul>
