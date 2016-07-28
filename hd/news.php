@@ -28,7 +28,8 @@ include("header.php");
             <section id="blog-full-width">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                      <!-------------------INICIO DO FOREACH------------------->
+                        <div class="col-md-6">
                             <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
                                 <div class="blog-post-image">
                                     <a href="single-post.php"><img class="img-responsive" src="images/fitness3.jpg" alt="" /></a>
@@ -46,8 +47,11 @@ include("header.php");
                                     </p>
                                     <a href="single-post.php" class="btn btn-dafault btn-details">Continue Lendo</a>
                                 </div>
-
                             </article>
+                          </div>
+                          <!-------------------FIM DO FOREACH------------------>
+                          <!---------Abaixo são exemplos, pode excluir--------->
+                          <div class="col-md-6">
                             <article class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">
                                 <div class="blog-post-image">
                                     <a href="single-post.php"><img class="img-responsive" src="images/fitness2.jpg" alt="" /></a>
@@ -65,8 +69,9 @@ include("header.php");
                                     </p>
                                     <a href="single-post.php" class="btn btn-dafault btn-details">Continue Lendo</a>
                                 </div>
-
                             </article>
+                          </div>
+                          <div class="col-md-6">
                             <article class="wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">
                                 <div class="blog-post-image">
                                     <a href="single-post.php"><img class="img-responsive" src="images/fitness3.jpg" alt="" /></a>
@@ -84,8 +89,9 @@ include("header.php");
                                     </p>
                                     <a href="single-post.php" class="btn btn-dafault btn-details">Continue Lendo</a>
                                 </div>
-
                             </article>
+                          </div>
+                          <!--------------Excluir até aqui--------------------->
                         </div>
                     </div>
                 </div>
