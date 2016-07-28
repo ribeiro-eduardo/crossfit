@@ -1183,3 +1183,7 @@ article {
 #wod-area h1, h2, h4{
   font-weight: bold;
 }
+
+.post-content a{
+  color: #e5001c;
+}
