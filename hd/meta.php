@@ -62,7 +62,8 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
           $( "#accordion" ).accordion( {
             header: "h3",
             collapsible: true,
-            active: false
+            active: false,
+            heightStyle: "content" 
           } );
         } );
 
