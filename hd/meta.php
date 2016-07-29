@@ -59,8 +59,21 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
         <script>
         $( function() {
-          $( "#accordion" ).accordion();
+          $( "#accordion" ).accordion( {
+            header: "h3",
+            collapsible: true,
+            active: false
+          } );
         } );
+
+        $(document).ready(function(){
+          //$("#accordion div").hide();
+          //$("#accordion h3").click(function(){
+          // $("div:visible").slideUp("slow");
+          // $(this).parent().next().not(':visible').slideDown("slow");
+           //return false;
+          //});
+         });
         </script>
 
     </head>
