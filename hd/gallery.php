@@ -55,8 +55,12 @@ $galerias = $galeriasBO->get($galeriasVO);
                                         <img src="../galerias/<?=$id?>/<?=$fotos[0]['nome']?>" class="img-responsive" alt="this is a title">
                                         <div class="overlay">
                                             <div class="buttons">
-                                                <a rel="gallery" class="fancybox" href="images/portfolio/item-1.jpg"><?=$galerias[$i]['nome']?></a>
+                                                <a rel="group<?=$i?>" class="fancybox" href="../galerias/<?=$id?>/<?=$fotos[0]['nome']?>"><?=$galerias[$i]['nome']?></a>
                                             </div>
+                                            <? for($j = 1; $j < count($fotos); $j++){ ?>
+                                            <a class="fancybox hide" rel="group<?=$i?>" href="../galerias/<?=$id?>/<?=$fotos[$j]['nome']?>"></a>
+                                            <? } ?>
+
                                         </div>
                                     </div>
                                 </figure>

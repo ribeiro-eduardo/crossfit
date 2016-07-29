@@ -34,18 +34,19 @@ Global Page Section Start
 <section id="gallery" class="gallery">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="images/portfolio/item-1.jpg">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
+            <!-- NESSE PEDAÇO DE CÓDIGO, COLOQUEI A MESMA ESTRUTURA QUE USO NO admin/visualizar-demo.php
+                ESSA CLASS embed-container, no caso do visualizar-demo.php está num css inline. Para essa página,
+                coloquei o css dessa classe no css/main.css, linhas 606~621. Acho que podemos deixar uma listagem dessa forma mesmo,
+                ao invés de várias fancyboxes que abrem e dão play no video. É mais trabalhoso de fazer.
+                Essa classe embed-container precisa ser arrumada (height está zuado e eu nao sei como arrumar)
+                ou até mesmo trocada de nome, com o nome que vc achar melhor,
+                pra poder ter uma listagem bonitinha;
+                Até deixei as outras divs ali embaixo, caso vc ainda precise usar.
+             -->
+            <div class="embed-container">
+                        <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen></iframe>
             </div>
+            <!-- FIM DA CLASSE EMBED-CONTAINER-->
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
                     <div class="img-wrapper">

@@ -9,7 +9,7 @@
                 <div class="col-md-4">
                     <ul class="social">
                         <li>
-                            <a href="http://localhost/crossfit/admin">
+                            <a href="../admin">
                                 <img src="images/admin_C2.png" />
                             </a>
                         </li>

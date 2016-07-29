@@ -47,7 +47,7 @@ include("meta.php");
                             <div class="dropdown-menu">
                                 <ul>
                                     <li><a href="benchmarks.php">Challenges</a></li>
-                                    <li><a href="#.php">Heros</a></li>
+                                    <li><a href="#.php">Heroes</a></li>
                                     <li><a href="#.php">Girls</a></li>
                                 </ul>
                             </div>
