@@ -41,17 +41,20 @@ Global Page Section Start
                 date_default_timezone_set('America/Sao_Paulo');
                 $data_completa = $noticias[$i]['data'];
                 $datetime = new DateTime($data_completa);
-                $data = $datetime->format('d-m-Y');
+                $data = $datetime->format('d/m/Y');
                 $time = $datetime->format('H:i');
                 $texto_completo = $noticias[$i]['descricao'];
                 $texto = strip_tags(urldecode($texto_completo));
                 //echo $texto;
             ?>
-                <div class="col-md-6">
+                <div class="col-md-6" >
                     <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
-                        <div class="blog-post-image">
-                            <a href="single-post.php?id=<?=$id?>"><img class="img-responsive" src="../noticias-imagem/<?=$noticias[$i]['imagem']?>" alt=""/></a>
+                      <a href="single-post.php?id=<?=$id?>" >
+                        <div class="blog-post-image" style="height: 370px; background: url('../noticias-imagem/<?=$noticias[$i]['imagem']?>') no-repeat 50%;
+background-size: cover;">
+                          <!-- <img class="img-responsive" src="../noticias-imagem/<?=$noticias[$i]['imagem']?>" alt=""/></a> -->
                         </div>
+                      </a>
                         <div class="blog-content">
                             <h2 class="blogpost-title">
                                 <a href="single-post.php?id=<?=$id?>"><?= $noticias[$i]['titulo'] ?></a>
@@ -61,6 +64,7 @@ Global Page Section Start
                                 <span><?= $data ?>, &agrave;s <?= $time ?></span>
                                 <!-- DEIXEI COMENTADO A PROXIMA LINHA PQ NÃO TEMOS A INFORMAÇÃO DE QUEM CADASTROU A NOTICIA,
                                 SE QUISER EU POSSO FAZER TB, SE DER TEMPO KK
+                                ------ Não precisa :)
                                 <span>by Admin</span>-->
                                 <!-- <span><a href="">business</a>,<a href="">people</a></span> -->
                             </div>
