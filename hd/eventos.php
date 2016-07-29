@@ -65,23 +65,23 @@ for ($i = 0; $i < count($eventos); $i++) {
 
                         <div class="evento">
                             <div class="col-md-4 wow fadeInUp" data-wow-delay=".5s" data-wow-duration="500ms">
-                                <h4>Data e Horário</h4><br/>
-                                <h4>Local</h4><br/>
+                                <p style="font-weight: bold;">Data e Horário</p><br/>
+                                <p style="font-weight: bold;">Local</p><br/>
                                 <? if($eventos[$i]['link'] != ""){ ?>
-                                    <h4>Link do evento</h4><br/>
+                                    <p style="font-weight: bold;">Link do evento</p><br/>
                                 <? }
                                    if($eventos[$i]['infos'] != ""){ ?>
-                                       <h4>Informações adicionais</h4>
+                                       <p style="font-weight: bold;">Informações adicionais</p>
                                 <? } ?>
                             </div>
                             <div class="col-md-8 wow fadeInUp" data-wow-delay=".5s" data-wow-duration="500ms">
-                                <h4><?=$eventos[$i]['data']?></h4><br/>
-                                <h4><?=$eventos[$i]['local']?></h4><br/>
+                                <p><?=$eventos[$i]['data']?></p><br/>
+                                <p><?=$eventos[$i]['local']?></p><br/>
                                 <? if($eventos[$i]['link'] != ""){ ?>
-                                    <h4><u><a style="color:red;" target="_blank" href="<?=$eventos[$i]['link']?>"><?=$eventos[$i]['link']?></a></u></h4><br/>
+                                    <p><u><a style="color:red;" target="_blank" href="<?=$eventos[$i]['link']?>"><?=$eventos[$i]['link']?></a></u></p><br/>
                                 <? }
                                    if($eventos[$i]['infos'] != ""){ ?>
-                                    <h4><?=$eventos[$i]['infos']?></h4>
+                                    <p><?=$eventos[$i]['infos']?></p>
                                 <? } ?>
                             </div>
 <!--                            <div class="link-externo-evento text-right">-->
