@@ -34,14 +34,14 @@ Global Page Section Start
 <section id="gallery" class="gallery">
     <div class="container">
         <div class="row">
-            <!-- NESSE PEDAÇO DE CÓDIGO, COLOQUEI A MESMA ESTRUTURA QUE USO NO admin/visualizar-demo.php
-                ESSA CLASS embed-container, no caso do visualizar-demo.php está num css inline. Para essa página,
+            <!-- NESSE PEDAï¿½O DE Cï¿½DIGO, COLOQUEI A MESMA ESTRUTURA QUE USO NO admin/visualizar-demo.php
+                ESSA CLASS embed-container, no caso do visualizar-demo.php estï¿½ num css inline. Para essa pï¿½gina,
                 coloquei o css dessa classe no css/main.css, linhas 606~621. Acho que podemos deixar uma listagem dessa forma mesmo,
-                ao invés de várias fancyboxes que abrem e dão play no video. É mais trabalhoso de fazer.
-                Essa classe embed-container precisa ser arrumada (height está zuado e eu nao sei como arrumar)
-                ou até mesmo trocada de nome, com o nome que vc achar melhor,
+                ao invï¿½s de vï¿½rias fancyboxes que abrem e dï¿½o play no video. ï¿½ mais trabalhoso de fazer.
+                Essa classe embed-container precisa ser arrumada (height estï¿½ zuado e eu nao sei como arrumar)
+                ou atï¿½ mesmo trocada de nome, com o nome que vc achar melhor,
                 pra poder ter uma listagem bonitinha;
-                Até deixei as outras divs ali embaixo, caso vc ainda precise usar.
+                Atï¿½ deixei as outras divs ali embaixo, caso vc ainda precise usar.
              -->
             <div class="embed-container">
                         <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen></iframe>
@@ -52,8 +52,8 @@ Global Page Section Start
                     <div class="img-wrapper">
                         <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title">
                         <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="images/portfolio/item-2.jpg">Ver</a>
+                            <div>
+                                <a rel="gallery" class="fancybox" href="images/portfolio/item-2.jpg" style="margin-top: 120px;">Ver</a>
                             </div>
                         </div>
                     </div>
@@ -64,8 +64,8 @@ Global Page Section Start
                     <div class="img-wrapper">
                         <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="">
                         <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="images/portfolio/item-3.jpg">Ver</a>
+                            <div>
+                                <a rel="gallery" class="fancybox" href="images/portfolio/item-3.jpg" style="margin-top: 120px;">Ver</a>
                             </div>
                         </div>
                     </div>
@@ -76,8 +76,8 @@ Global Page Section Start
                     <div class="img-wrapper">
                         <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="">
                         <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="images/portfolio/item-4.jpg">Ver</a>
+                            <div>
+                                <a rel="gallery" class="fancybox" href="images/portfolio/item-4.jpg" style="margin-top: 120px;">Ver</a>
                             </div>
                         </div>
                     </div>
@@ -88,8 +88,8 @@ Global Page Section Start
                     <div class="img-wrapper">
                         <img src="images/portfolio/item-5.jpg" class="img-responsive" alt="">
                         <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="images/portfolio/item-5.jpg">Ver</a>
+                            <div>
+                                <a rel="gallery" class="fancybox" href="images/portfolio/item-5.jpg" style="margin-top: 120px;">Ver</a>
                             </div>
                         </div>
                     </div>
@@ -100,8 +100,8 @@ Global Page Section Start
                     <div class="img-wrapper">
                         <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="">
                         <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Ver</a>
+                            <div >
+                                <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg" style="margin-top: 120px;">Ver</a>
                             </div>
                         </div>
                     </div>
