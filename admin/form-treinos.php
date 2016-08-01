@@ -46,7 +46,7 @@ require("lib/DBMySql.php");
             <form id="treinos" action="javascript:func()" name="treinos" method="POST">
                 <div class="form-group">
                     <label for="data">Data:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control datepicker" id="data" name="data" onchange="getTreinoDia()">
+                    <input type="text" class="form-control" id="data" name="data" onchange="getTreinoDia()">
                 </div>
                 <div class="form-group" style="display: none">
                     <label for="titulo">T&iacute;tulo:<span style="color: red"> *</span></label>
@@ -64,18 +64,34 @@ require("lib/DBMySql.php");
 </div>
 
 <style>
-    .Highlighted a{
-
-        background-color : Green !important;
-        background-image :none !important;
-        color: White !important;
-        font-weight:bold !important;
-        font-size: 12pt;
+    .ui-state-active {
+        background: #333;
+        border: 1px solid #555;
+        color: #EEE;
     }
-
 </style>
 
 <script>
+
+    var disabledDays = ["2016-8-1","2016-8-24","2016-8-27","2016-8-28"];
+    var date = new Date();
+
+    jQuery(document).ready(function() {
+        $('#data').datepicker({
+            dateFormat: 'yy-mm-dd',
+            beforeShowDay: function (date) {
+                var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+                for (i = 0; i < disabledDays.length; i++) {
+                    if($.inArray(y + '-' + (m+1) + '-' + d,disabledDays) != -1) {
+                        //return [false];
+                        return [true, 'ui-state-active', ''];
+                    }
+                }
+                return [true];
+            }
+        });
+    });
+
 
     $(function($) {
         $("#treinos").submit(function() {
