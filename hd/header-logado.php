@@ -7,7 +7,7 @@ include("meta.php");
     ==================================================
     Header Section Start
     ================================================== -->
-    <header id="top-bar" class="navbar-fixed-top animated-header" style="padding: 5px;">
+    <header id="top-bar" class="navbar-fixed-top animated-header">
         <div class="container">
             <div class="navbar-header">
                 <!-- responsive nav button -->
@@ -20,7 +20,7 @@ include("meta.php");
                 <!-- /responsive nav button -->
 
                 <!-- logo -->
-                <div class="navbar-brand" style="padding-top: 20%">
+                <div class="navbar-brand">
                     <a href="index.php" >
                         <img src="images/logo_teste_cOriginal.png" alt="">
                     </a>
