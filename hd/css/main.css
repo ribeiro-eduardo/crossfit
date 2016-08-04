@@ -1224,3 +1224,8 @@ article {
   padding: 10px;
   border: none;
 }
+
+span.ui-accordion-header-icon.ui-icon.ui-icon-triangle-1-e{
+  margin-right: 10px;
+  background-image: url("images/ui-icons_ffffff_256x240.png");
+}

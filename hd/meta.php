@@ -67,8 +67,6 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
             collapsible: true,
             active: false,
             heightStyle: "content",
-          //  icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
-            //icons: { "header": "ui-icon-mail-closed", "activeHeader": "ui-icon-minus" }
           } );
         } );
         </script>
