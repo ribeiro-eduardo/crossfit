@@ -37,6 +37,8 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
         <!-- responsive css -->
         <link rel="stylesheet" href="css/responsive.css">
 
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+
         <!-- Template Javascript Files
         ================================================== -->
         <!-- modernizr js -->
@@ -57,24 +59,18 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
         <script src="js/main.js"></script>
 
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
         <script>
         $( function() {
           $( "#accordion" ).accordion( {
             header: "h3",
             collapsible: true,
             active: false,
-            heightStyle: "content" 
+            heightStyle: "content",
+          //  icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+            //icons: { "header": "ui-icon-mail-closed", "activeHeader": "ui-icon-minus" }
           } );
         } );
-
-        $(document).ready(function(){
-          //$("#accordion div").hide();
-          //$("#accordion h3").click(function(){
-          // $("div:visible").slideUp("slow");
-          // $(this).parent().next().not(':visible').slideDown("slow");
-           //return false;
-          //});
-         });
         </script>
 
     </head>

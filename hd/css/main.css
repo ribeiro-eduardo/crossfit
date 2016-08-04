@@ -1217,3 +1217,10 @@ article {
 .nome-video{
   font-weight: bold;
 }
+
+#accordion .ui-accordion-header {
+  background-color: #5f5f5f;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+}

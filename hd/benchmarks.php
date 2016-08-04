@@ -34,7 +34,7 @@ Global Page Section Start
       <h3 style="color: #fcfcfc;">30 Muscle-ups</h3>
       <div>
         <h4 style="color: #5f5f5f;">Homens e Mulheres:</h4>
-        <p style="color: #acacac;">
+        <p style="color: #5f5f5f;">
           For time:<br/>
           30 muscle-ups
         </p>
@@ -43,7 +43,7 @@ Global Page Section Start
       <h3 style="color: #fcfcfc;">300 Challenge</h3>
       <div>
         <h4 style="color: #5f5f5f;">Homens:</h4>
-        <p style="color: #acacac;">
+        <p style="color: #5f5f5f;">
           25 pull-ups <br/>
           50 deadlifts at 135 pounds <br/>
           50 push-ups <br/>
@@ -55,7 +55,7 @@ Global Page Section Start
           Time limit @ 20 minutes.
         </p>
         <h4 style="color: #5f5f5f;">Mulheres:</h4>
-        <p style="color: #acacac;">
+        <p style="color: #5f5f5f;">
           25 pull-ups <br/>
           50 deadlifts at 95 pounds <br/>
           50 push-ups <br/>
@@ -71,7 +71,7 @@ Global Page Section Start
       <h3 style="color: #fcfcfc;">Air Force</h3>
       <div>
         <h4 style="color: #5f5f5f;">Homens e Mulheres:</h4>
-        <p style="color: #acacac;">
+        <p style="color: #5f5f5f;">
           For time:<br/>
           20 Thrusters<br/>
           20 Sumo deadlift high pulls<br/>
@@ -86,7 +86,7 @@ Global Page Section Start
       <h3 style="color: #fcfcfc;">Baseline</h3>
       <div>
         <h4 style="color: #5f5f5f;">Homens e Mulheres:</h4>
-        <p style="color: #acacac;">
+        <p style="color: #5f5f5f;">
           For time:<br/>
           500m Row<br/>
           40 squats<br/>
