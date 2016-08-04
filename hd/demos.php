@@ -6,6 +6,15 @@
  * Time: 01:42
  */
 include("header.php");
+
+require("../admin/lib/DBMySql.php");
+require_once("../admin/classe/bo/demosBO.php");
+require_once("../admin/classe/vo/demosVO.php");
+
+$demosBO = new demosBO();
+$demosVO = new demosVO();
+
+$demos = $demosBO->get($demosVO);
 ?>
 <!--
 ==================================================
@@ -34,103 +43,17 @@ Global Page Section Start
 <section id="gallery" class="gallery">
     <div class="container">
         <div class="row">
-            <!-- NESSE PEDA�O DE C�DIGO, COLOQUEI A MESMA ESTRUTURA QUE USO NO admin/visualizar-demo.php
-                ESSA CLASS embed-container, no caso do visualizar-demo.php est� num css inline. Para essa p�gina,
-                coloquei o css dessa classe no css/main.css, linhas 606~621. Acho que podemos deixar uma listagem dessa forma mesmo,
-                ao inv�s de v�rias fancyboxes que abrem e d�o play no video. � mais trabalhoso de fazer.
-                Essa classe embed-container precisa ser arrumada (height est� zuado e eu nao sei como arrumar)
-                ou at� mesmo trocada de nome, com o nome que vc achar melhor,
-                pra poder ter uma listagem bonitinha;
-                At� deixei as outras divs ali embaixo, caso vc ainda precise usar.
-             -->
-<!--            <div class="embed-container">-->
-<!--                        <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen></iframe>-->
-<!--            </div>-->
-          <div class="video col-md-4">
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
-            <p class="nome-video">Nome do vídeo</p>
-          </div>
-          <div class="video col-md-4">
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
-            <p class="nome-video">Nome do vídeo</p>
-          </div>
-          <div class="video col-md-4">
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
-            <p class="nome-video">Nome do vídeo</p>
-          </div>
-          <div class="video col-md-4">
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
-            <p class="nome-video">Nome do vídeo</p>
-          </div>
-          <div class="video col-md-4">
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
-            <p class="nome-video">Nome do vídeo</p>
-          </div>
-          <div class="video col-md-4">
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
-            <p class="nome-video">Nome do vídeo</p>
-          </div>
-            <!-- FIM DA CLASSE EMBED-CONTAINER-->
-<!--            <div class="col-sm-4 col-xs-12">-->
-<!--                <figure class="wow fadeInLeft animated animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">-->
-<!--                    <div class="img-wrapper">-->
-<!--                        <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title">-->
-<!--                        <div class="overlay">-->
-<!--                            <div>-->
-<!--                                <a rel="gallery" class="fancybox" href="images/portfolio/item-2.jpg" style="margin-top: 120px;">Ver</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </figure>-->
-<!--            </div>-->
-<!--            <div class="col-sm-4 col-xs-12">-->
-<!--                <figure class="wow fadeInLeft animated animated" data-wow-duration="500ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">-->
-<!--                    <div class="img-wrapper">-->
-<!--                        <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="">-->
-<!--                        <div class="overlay">-->
-<!--                            <div>-->
-<!--                                <a rel="gallery" class="fancybox" href="images/portfolio/item-3.jpg" style="margin-top: 120px;">Ver</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </figure>-->
-<!--            </div>-->
-<!--            <div class="col-sm-4 col-xs-12">-->
-<!--                <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="700ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: none; -webkit-animation-name: none;">-->
-<!--                    <div class="img-wrapper">-->
-<!--                        <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="">-->
-<!--                        <div class="overlay">-->
-<!--                            <div>-->
-<!--                                <a rel="gallery" class="fancybox" href="images/portfolio/item-4.jpg" style="margin-top: 120px;">Ver</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </figure>-->
-<!--            </div>-->
-<!--            <div class="col-sm-4 col-xs-12">-->
-<!--                <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 900ms; -webkit-animation-delay: 900ms; animation-name: none; -webkit-animation-name: none;">-->
-<!--                    <div class="img-wrapper">-->
-<!--                        <img src="images/portfolio/item-5.jpg" class="img-responsive" alt="">-->
-<!--                        <div class="overlay">-->
-<!--                            <div>-->
-<!--                                <a rel="gallery" class="fancybox" href="images/portfolio/item-5.jpg" style="margin-top: 120px;">Ver</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </figure>-->
-<!--            </div>-->
-<!--            <div class="col-sm-4 col-xs-12">-->
-<!--                <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1100ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 1200ms; -webkit-animation-delay: 1200ms; animation-name: none; -webkit-animation-name: none;">-->
-<!--                    <div class="img-wrapper">-->
-<!--                        <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="">-->
-<!--                        <div class="overlay">-->
-<!--                            <div >-->
-<!--                                <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg" style="margin-top: 120px;">Ver</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </figure>-->
-<!--            </div>-->
+            <? for ($i = 0; $i < count($demos); $i++) {
+                $aux = $demos[$i]["link"];
+                $aux = explode("=", $aux);
+                $link = $aux[1];
+                ?>
+                <div class="video col-md-4">
+                    <iframe src="https://www.youtube.com/embed/<?=$link?>" frameborder="0" allowfullscreen
+                            width="360" height="220"></iframe>
+                    <p class="nome-video"><?=$demos[$i]['titulo']?></p>
+                </div>
+            <? } ?>
         </div>
     </div>
 </section>
