@@ -100,8 +100,8 @@ $imagens = $galeriaFotosBO->get($galeriaFotosVO);
             <?
             for ($i = 0; $i < count($imagens); $i++) {
                 ?>
-                <div class="col-md-4 thumbnail">
-                    <img src="../galerias/<?= $imagens[$i]['id_galeria'] . "/" . $imagens[$i]['nome'] ?>">
+                <div class="col-md-4 thumbnail" style="height: 284px;">
+                    <img src="../galerias/<?= $imagens[$i]['id_galeria'] . "/" . $imagens[$i]['nome'] ?>" class="img-responsive" style="height: 247px">
                     <div class="opcoes">
                       <a href="javascript:void(0);" onclick="excluir(<?= $imagens[$i]['id'] ?>);">
                         <span class="glyphicon glyphicon-trash" title="Excluir"></span>
