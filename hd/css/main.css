@@ -1208,3 +1208,12 @@ article {
 .benchs{
   padding: 80px 12%;
 }
+
+.video{
+  margin-bottom: 5%;
+  color: #e5001c;
+}
+
+.nome-video{
+  font-weight: bold;
+}

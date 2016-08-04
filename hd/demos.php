@@ -46,13 +46,30 @@ Global Page Section Start
 <!--            <div class="embed-container">-->
 <!--                        <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen></iframe>-->
 <!--            </div>-->
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen width="380" height="240"></iframe>
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen width="380" height="240"></iframe>
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen width="380" height="240"></iframe>
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen width="380" height="240"></iframe>
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen width="380" height="240"></iframe>
-            <iframe src="https://www.youtube.com/embed/GimrZbS-390" frameborder="0" allowfullscreen width="380" height="240"></iframe>
-
+          <div class="video col-md-4">
+            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
+            <p class="nome-video">Nome do vídeo</p>
+          </div>
+          <div class="video col-md-4">
+            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
+            <p class="nome-video">Nome do vídeo</p>
+          </div>
+          <div class="video col-md-4">
+            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
+            <p class="nome-video">Nome do vídeo</p>
+          </div>
+          <div class="video col-md-4">
+            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
+            <p class="nome-video">Nome do vídeo</p>
+          </div>
+          <div class="video col-md-4">
+            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
+            <p class="nome-video">Nome do vídeo</p>
+          </div>
+          <div class="video col-md-4">
+            <iframe src="https://www.youtube.com/embed/GimrZbS-390?showinfo=0" frameborder="0" allowfullscreen width="360" height="220"></iframe>
+            <p class="nome-video">Nome do vídeo</p>
+          </div>
             <!-- FIM DA CLASSE EMBED-CONTAINER-->
 <!--            <div class="col-sm-4 col-xs-12">-->
 <!--                <figure class="wow fadeInLeft animated animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">-->

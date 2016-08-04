@@ -7,7 +7,7 @@ include("meta.php");
     ==================================================
     Header Section Start
     ================================================== -->
-    <header id="top-bar" class="navbar-fixed-top animated-header">
+    <header id="top-bar" class="navbar-fixed-top animated-header" style="padding: 5px;">
         <div class="container">
             <div class="navbar-header">
                 <!-- responsive nav button -->
@@ -20,7 +20,7 @@ include("meta.php");
                 <!-- /responsive nav button -->
 
                 <!-- logo -->
-                <div class="navbar-brand">
+                <div class="navbar-brand" style="padding-top: 20%">
                     <a href="index.php" >
                         <img src="images/logo_teste_cOriginal.png" alt="">
                     </a>
@@ -31,8 +31,7 @@ include("meta.php");
             <nav class="collapse navbar-collapse navbar-right" role="navigation">
                 <div class="main-menu">
                     <ul class="nav navbar-nav navbar-right">
-
-                    <!--  <li class="dropdown">
+                      <li class="dropdown" style="top: 15px">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sobre <span class="caret"></span></a>
                           <div class="dropdown-menu">
                               <ul>
@@ -41,12 +40,30 @@ include("meta.php");
                               </ul>
                           </div>
                       </li>
-                        <li><a href="index.php#wod-area">WOD</a></li>
-                        <li><a href="gallery.php">Demonstrações</a></li>
-                        <li><a href="news.php">Notícias</a></li>
-                        <li><a href="eventos.php">Eventos</a></li>
-                        <li><a href="contact.php">Contato</a></li>
-                        <li><a href="#">Sair</a></li> -->
+                      <li style="top: 15px"><a href="index.php#wod-area">WOD</a></li>
+                      <li class="dropdown" style="top: 15px">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Benchmark <span class="caret"></span></a>
+                          <div class="dropdown-menu">
+                              <ul>
+                                  <li><a href="benchmarks.php">Challenges</a></li>
+                                  <li><a href="#.php">Heroes</a></li>
+                                  <li><a href="#.php">Girls</a></li>
+                              </ul>
+                          </div>
+                      </li>
+
+                      <li class="dropdown" style="top: 15px">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informações <span class="caret"></span></a>
+                          <div class="dropdown-menu">
+                              <ul>
+                                  <li><a href="news.php">Notícias</a></li>
+                                  <li><a href="eventos.php">Eventos</a></li>
+                                  <li><a href="gallery.php">Fotos</a></li>
+                                  <li><a href="demos.php">Demonstrações</a></li>
+                              </ul>
+                          </div>
+                      </li>
+                      <li><a href="contact.php" style="top: 15px">Contato</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img class="img-circle foto-nav" src="images/coach2.jpg">
@@ -54,6 +71,7 @@ include("meta.php");
                           <div class="dropdown-menu">
                               <ul>
                                   <li><a href="#">Meu Perfil</a></li>
+                                  <li><a href="#">Atletas</a></li>
                                   <li><a href="#">Calendário</a></li>
                                   <li><a href="#">Sair</a></li>
                               </ul>
