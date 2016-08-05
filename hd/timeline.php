@@ -1,5 +1,16 @@
 <?php
-include("header-logado.php");
+if (!isset($_SESSION)){
+    session_start();
+}
+if(!isset($_SESSION['id'])){
+    @session_destroy();
+    @header("Location: index.php");
+    exit;
+}else{
+    include("header-logado.php");
+}
+
+//include("header-logado.php");
 ?>
 <body>
 

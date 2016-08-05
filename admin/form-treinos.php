@@ -73,7 +73,7 @@ require("lib/DBMySql.php");
 
 <script>
 
-    var disabledDays = ["2016-8-1","2016-8-24","2016-8-27","2016-8-28"];
+    var disabledDays = ["2016-8-21","2016-8-24","2016-8-27","2016-8-28"];
     var date = new Date();
 
     jQuery(document).ready(function() {

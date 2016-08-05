@@ -45,9 +45,9 @@ include("meta.php");
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Benchmark <span class="caret"></span></a>
                           <div class="dropdown-menu">
                               <ul>
-                                  <li><a href="benchmarks.php">Challenges</a></li>
-                                  <li><a href="#.php">Heroes</a></li>
-                                  <li><a href="#.php">Girls</a></li>
+                                  <li><a href="benchmarks.php?b=heroes">Heroes</a></li>
+                                  <li><a href="benchmarks.php?b=girls">Girls</a></li>
+                                  <li><a href="benchmarks.php?b=challenges">Challenges</a></li>
                               </ul>
                           </div>
                       </li>
@@ -73,7 +73,7 @@ include("meta.php");
                                   <li><a href="#">Meu Perfil</a></li>
                                   <li><a href="#">Atletas</a></li>
                                   <li><a href="#">Calendário</a></li>
-                                  <li><a href="#">Sair</a></li>
+                                  <li><a href="processausuarios.php?operacao=sair">Sair</a></li>
                               </ul>
                           </div>
                         </li>
