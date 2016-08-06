@@ -1,6 +1,15 @@
 <?php
-include("header.php");
-require_once("../admin/lib/DBMySql.php");
+
+if (!isset($_SESSION)){
+    session_start();
+}
+if(!isset($_SESSION['id'])){
+    @session_destroy();
+    include("header.php");
+    //exit;
+}else{
+    include("header-logado.php");
+}require_once("../admin/lib/DBMySql.php");
 require("../admin/classe/bo/eventosBO.php");
 require("../admin/classe/vo/eventosVO.php");
 

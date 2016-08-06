@@ -1,7 +1,16 @@
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
 </script>
 <?php
-include("header.php");
+if (!isset($_SESSION)){
+    session_start();
+}
+if(!isset($_SESSION['id'])){
+    @session_destroy();
+    include("header.php");
+    //exit;
+}else{
+    include("header-logado.php");
+}
 
 require("../admin/lib/DBMySql.php");
 require("../admin/classe/bo/noticiasBO.php");

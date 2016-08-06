@@ -5,7 +5,16 @@
  * Date: 22/07/2016
  * Time: 01:42
  */
-include("header.php");
+if (!isset($_SESSION)){
+    session_start();
+}
+if(!isset($_SESSION['id'])){
+    @session_destroy();
+    include("header.php");
+    //exit;
+}else{
+    include("header-logado.php");
+}
 
 require("../admin/lib/DBMySql.php");
 require_once("../admin/classe/bo/demosBO.php");
