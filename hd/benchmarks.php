@@ -74,7 +74,10 @@ Global Page Section Start
                 <div>
                     <!--        <h4 style="color: #5f5f5f;">Homens e Mulheres:</h4>-->
                     <p style="color: #5f5f5f;">
-                        <? echo $benchmarks[$i]['descricao']; ?>
+                        <?
+                        //nl2br é uma função que, quando um enter for dado num textarea [ADMIN],
+                        //é traduzido para <br/>, "pulando linha" no html tbm.
+                        echo nl2br($benchmarks[$i]['descricao']); ?>
                     </p>
                 </div>
                 <!-------FIM DO LAÇO------->
