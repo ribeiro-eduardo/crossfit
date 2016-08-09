@@ -70,7 +70,7 @@ include("meta.php");
                           </a>
                           <div class="dropdown-menu">
                               <ul>
-                                  <li><a href="#">Meu Perfil</a></li>
+                                  <li><a href="perfil.php">Meu Perfil</a></li>
                                   <li><a href="#">Atletas</a></li>
                                   <li><a href="#">Calendário</a></li>
                                   <li><a href="processausuarios.php?operacao=sair">Sair</a></li>

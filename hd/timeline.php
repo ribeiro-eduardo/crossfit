@@ -12,8 +12,6 @@ if(!isset($_SESSION['id'])){
 
 //include("header-logado.php");
 ?>
-<body>
-
 
   <!--
   ==================================================
