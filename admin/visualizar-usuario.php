@@ -73,11 +73,12 @@ $action = "action/usuarios-action.php";
         }
     });
 
-
-    $(function(){
-        $('.datepicker').datepicker({
-            format: 'dd/mm/yyyy'
-        });
+    $("#id_tipo_usuario").change(function(){
+        if($(this).val() == "2"){
+            $("#div_descricao").show();
+        }else{
+            $("#div_descricao").hide();
+        }
     });
 
     function getSenhaAntiga() {

@@ -58,13 +58,6 @@ $action = "action/usuarios-action.php";
        }
     });
 
-    //console.log($("id_tipo_usuario").val());
-//    $(function(){
-//        $('.datepicker').datepicker({
-//            format: 'dd/mm/yyyy'
-//        });
-//    });
-
     $("#id_tipo_usuario").change(function(){
         if($(this).val() == "2"){
             $("#div_descricao").show();
@@ -77,7 +70,6 @@ $action = "action/usuarios-action.php";
         $("#telefone").mask("(99) 9999-99999");
         $("#celular").mask("(99) 9999-99999");
         $("#data_nascimento").mask("00/00/0000");
-        //console.log($("id_tipo_usuario").val());
     });
 
     $('#cadastrar').click(function() {

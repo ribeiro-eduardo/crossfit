@@ -35,7 +35,7 @@
             </div>
             <div id="div_descricao" class="form-group" style="display: none">
                 <label for="descricao">Descri&ccedil;&atilde;o:</label>
-                <textarea rows="4" size="255" maxlength="255" class="form-control" id="descricao" name="descricao"></textarea>
+                <textarea rows="4" size="255" maxlength="255" class="form-control" id="descricao" name="descricao"><?=$usuario['descricao']?></textarea>
             </div>
             <div class="form-group">
                 <label for="cpf">CPF:<span style="color: red"> *</span></label>

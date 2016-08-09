@@ -25,7 +25,7 @@
             </div>
             <div id="div_descricao" class="form-group" style="display: none">
                 <label for="descricao">Descri&ccedil;&atilde;o:</label>
-                <textarea rows="4" class="form-control" id="descricao" name="descricao"></textarea>
+                <textarea size="255" maxlength="255" rows="4" class="form-control" id="descricao" name="descricao"></textarea>
             </div>
             <div class="form-group">
                 <label for="cpf">CPF:<span style="color: red"> *</span></label>
