@@ -34,7 +34,13 @@ include("header-logado.php");
         <td class="col-md-7 lbl">Abbate</td>
         <td class="col-md-4 lbl">28:56</td>
       </tr>
+      <tr>
+        <td class="col-md-1 lbl text-center"><img src="images/girl.png" ></td>
+        <td class="col-md-7 lbl">...</td>
+        <td class="col-md-4 lbl">28:56</td>
+      </tr>
     </table>
+    
   </div>
 </div>
 
