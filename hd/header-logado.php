@@ -70,6 +70,7 @@ include("meta.php");
                           </a>
                           <div class="dropdown-menu">
                               <ul>
+                                  <li><a href="timeline.php">Treinos da semana</a></li>
                                   <li><a href="perfil.php">Meu Perfil</a></li>
                                   <li><a href="#">Atletas</a></li>
                                   <li><a href="#">Calendário</a></li>
