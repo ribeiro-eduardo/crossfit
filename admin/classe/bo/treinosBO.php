@@ -1,231 +1,268 @@
 <?php
-	
-	class treinosBO {
-		
-		public $paginaAdmin;
 
-		function newTreino($treinosVO) {
-			
-			$db = new DBMySQL();
+class treinosBO
+{
 
-			$query = "INSERT INTO `treinos` (`id_tipo_treino`, `id_classe_treino`, `titulo`,`descricao`,`data`, `status`) VALUES ";
-			
-			$query .= "('".$treinosVO->getIdTipoTreino()."', '".$treinosVO->getIdClasseTreino()."','".$treinosVO->getTitulo()."','".$treinosVO->getDescricao()."','".$treinosVO->getData()."','".$treinosVO->getStatus()."');";
+    public $paginaAdmin;
 
-			$db->do_query($query);
+    function newTreino($treinosVO)
+    {
 
-			return $query;
+        $db = new DBMySQL();
 
-			$db->close();			
-			
-		}
-		
-		function editTreino($treinosVO) {
-			
-			$db = new DBMySQL();
-			
-			$query = "UPDATE `treinos` SET";
-			
-			$query .= " `data` = '".$treinosVO->getData()."',";
-			
-			$query .= " `titulo` = '".$treinosVO->getTitulo()."',";
+        $query = "INSERT INTO `treinos` (`id_classe_treino`, `titulo`,`descricao`,`data`, `status`) VALUES ";
 
-			$query .= " `descricao` = '".$treinosVO->getDescricao()."',";
+        $query .= "('" . $treinosVO->getIdClasseTreino() . "','" . $treinosVO->getTitulo() . "','" . $treinosVO->getDescricao() . "','" . $treinosVO->getData() . "','" . $treinosVO->getStatus() . "');";
 
-			$query .= " `data` = '".$treinosVO->getData()."',";
+        $db->do_query($query);
 
-			$query .= " `status` = '".$treinosVO->getStatus()."'";
-								
-			$query .= " WHERE `id` = '".$treinosVO->getId()."'";
-			
-			$db->do_query($query);
-			
-			$db->close();
-			
-		}
-		
-		function deleteTreino($treinosVO) {
-			
-			$db = new DBMySQL();
-			
-			$query = "UPDATE `treinos` SET `status` = 0 WHERE `id` = '".$treinosVO->getId()."'";
-			
-			$db->do_query($query);
+        return $query;
 
-			return $query;
-			
-			$db->close();		
-			
-		}
-		
-		function get($treinosVO) {
-			
-			$db = new DBMySQL();
-			
-			if($treinosVO->getId() != "") {
-				
-				$query = "SELECT * FROM `treinos` WHERE `id` = '".$treinosVO->getId()."'";
-				
-				$db->do_query($query);
-				
-				$result = $db->getRow();
-				
-				
-			} else {
-				
-				$query = "SELECT * FROM `treinos` ORDER BY `id` ASC";
-				
-				$db->do_query($query);
-				
-				$r = 0;
-				
-				while($row = $db->getRow()) {
-					
-					$result[$r] = $row;
-					
-					$r++;
-					
-				}
-				
-			}
-			
-			return $result;
-			
-		}
+        $db->close();
 
-		function buscaPorData($treinosVO) {
-			
-			$db = new DBMySQL();
-			
-			$query = "SELECT * from treinos WHERE `data` = '".$treinosVO->getData()."'";
+    }
 
-			$db->do_query($query);
+    function editTreino($treinosVO)
+    {
 
-			$result = $db->getRow();
-						
-			return $result;
-			
-		}
+        $db = new DBMySQL();
 
-		
-		function getTreino($dia) {
+        $query = "UPDATE `treinos` SET";
 
-			$db = new DBMySQL();
+        $query .= " `data` = '" . $treinosVO->getData() . "',";
 
-			$query = "SELECT * FROM `treinos` WHERE `data` = '".$dia."' ORDER BY `titulo` ";
-			
-							
-			$db->do_query($query);
-				
-			$r = 0;
-				
-			while($row = $db->getRow()) {
-						
-				$result[$r] = $row;
-					
-				$r++;
-					
-			}
+        $query .= " `titulo` = '" . $treinosVO->getTitulo() . "',";
 
-			return $result;
+        $query .= " `descricao` = '" . $treinosVO->getDescricao() . "',";
 
-			
-		}
-		
-		function getBenchmarks($treinosVO){
+        $query .= " `data` = '" . $treinosVO->getData() . "',";
 
-			$db = new DBMySQL();
+        $query .= " `status` = '" . $treinosVO->getStatus() . "'";
 
-			$query = "SELECT * FROM `treinos` WHERE `id_tipo_treino` = '".$treinosVO->getIdTipoTreino()."'";
+        $query .= " WHERE `id` = '" . $treinosVO->getId() . "'";
 
-			$db->do_query($query);
+        $db->do_query($query);
 
-			$r = 0;
+        return $query;
 
-			while($row = $db->getRow()) {
+        $db->close();
 
-				$result[$r] = $row;
+    }
 
-				$r++;
+    function deleteTreino($treinosVO)
+    {
 
-			}
+        $db = new DBMySQL();
 
-			return $result;
-		}
-		
-		function count() {
-			
-			$db = new DBMySQL();
-			
-			$db->do_query("SELECT COUNT(`id`) AS 'total' FROM `treinos`");
-			
-			$result = $db->getRow();
-			
-			return $result;
-			
-		}
-		
-		function paginacao() {
-			
-			$db = new DBMySQL();
-		
-			$db->do_query("SELECT * FROM `treinos`  ORDER BY `id` ASC");
-			
-			$r = 0;
-			
-			while($row = $db->getRow()) {
-				
-				$result[$r] = $row;
-				
-				$r++;
-				
-			}
-			
-			return $result;
-			
-		}
-		
-		function countAll() {
-				
-			$db = new DBMySQL();
-				
-			$db->do_query("SELECT COUNT(`id`) AS 'total' FROM `treinos` ");
-				
-			$result = $db->getRow();
-				
-			return $result;
-				
-		}
-		
-		function paginacaoAll($inicio,$TAMANHO_PAGINA) {
-				
-			$db = new DBMySQL();
-				
-			$db->do_query("SELECT * FROM `treinos` ORDER BY `id` ASC LIMIT ".$inicio.",".$TAMANHO_PAGINA);
-				
-			$r = 0;
-				
-			while($row = $db->getRow()) {
-		
-				$result[$r] = $row;
-		
-				$r++;
-		
-			}
-				
-			return $result;
-				
-		}
+        $query = "UPDATE `treinos` SET `status` = 0 WHERE `id` = '" . $treinosVO->getId() . "'";
 
-		function paginaAdmin($admin){
-			if($admin == TRUE){
-				$this->paginaAdmin = TRUE;
-			}else{
-				$this->paginaAdmin = FALSE;
-			}
-		}
-		
-	}
+        $db->do_query($query);
+
+        return $query;
+
+        $db->close();
+
+    }
+
+    function get($treinosVO)
+    {
+
+        $db = new DBMySQL();
+
+        if ($treinosVO->getId() != "") {
+
+            $query = "SELECT * FROM `treinos` WHERE `id` = '" . $treinosVO->getId() . "'";
+
+            $db->do_query($query);
+
+            $result = $db->getRow();
+
+
+        } else {
+
+            $query = "SELECT * FROM `treinos` ORDER BY `id` ASC";
+
+            $db->do_query($query);
+
+            $r = 0;
+
+            while ($row = $db->getRow()) {
+
+                $result[$r] = $row;
+
+                $r++;
+
+            }
+
+        }
+
+        return $result;
+
+    }
+
+    function getDatas()
+    {
+
+        $db = new DBMySQL();
+
+        $query = "SELECT `data` FROM `treinos` WHERE `status` = 1 ORDER BY `id` ASC";
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+    }
+
+    function buscaPorData($treinosVO)
+    {
+
+        $db = new DBMySQL();
+
+        $query = "SELECT * from treinos WHERE `data` = '" . $treinosVO->getData() . "' AND `status` = 1";
+
+        $db->do_query($query);
+
+        $result = $db->getRow();
+
+        return $result;
+
+    }
+
+
+    function getTreino($dia)
+    {
+
+        $db = new DBMySQL();
+
+        $query = "SELECT * FROM `treinos` WHERE `data` = '" . $dia . "' ORDER BY `titulo` ";
+
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+
+
+    }
+
+    function getBenchmarks($treinosVO)
+    {
+
+        $db = new DBMySQL();
+
+        $query = "SELECT * FROM `treinos` WHERE `id_tipo_treino` = '" . $treinosVO->getIdTipoTreino() . "'";
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+    }
+
+    function count()
+    {
+
+        $db = new DBMySQL();
+
+        $db->do_query("SELECT COUNT(`id`) AS 'total' FROM `treinos`");
+
+        $result = $db->getRow();
+
+        return $result;
+
+    }
+
+    function paginacao()
+    {
+
+        $db = new DBMySQL();
+
+        $db->do_query("SELECT * FROM `treinos`  ORDER BY `id` ASC");
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+
+    }
+
+    function countAll()
+    {
+
+        $db = new DBMySQL();
+
+        $db->do_query("SELECT COUNT(`id`) AS 'total' FROM `treinos` ");
+
+        $result = $db->getRow();
+
+        return $result;
+
+    }
+
+    function paginacaoAll($inicio, $TAMANHO_PAGINA)
+    {
+
+        $db = new DBMySQL();
+
+        $db->do_query("SELECT * FROM `treinos` ORDER BY `id` ASC LIMIT " . $inicio . "," . $TAMANHO_PAGINA);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+
+    }
+
+    function paginaAdmin($admin)
+    {
+        if ($admin == TRUE) {
+            $this->paginaAdmin = TRUE;
+        } else {
+            $this->paginaAdmin = FALSE;
+        }
+    }
+
+}
 
 
 ?>

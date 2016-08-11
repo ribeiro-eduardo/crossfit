@@ -19,12 +19,37 @@ $datepicker = $aux[2]."-".$aux[1]."-".$aux[0];
 
 $treinosVO->setData($datepicker);
 $treino = $treinosBO->buscaPorData($treinosVO);
-echo
-'<div class="form-group">
+
+if($treino['titulo'] != "") {
+    $titulo = $treino['titulo'];
+}else{
+    $titulo = "";
+}
+
+if($treino['descricao'] != ""){
+    $descricao = $treino['descricao'];
+}else{
+    $descricao = "";
+}
+
+if($treino['id'] != ""){
+    $id = $treino['id'];
+}else{
+    $id = "";
+}
+    echo
+        '
+      <div class="form-group">
          <label for="titulo">T&iacute;tulo:<span style="color: red"> *</span></label>
-            <input type="text" class="form-control" id="titulo" name="titulo" value="'.$treino["titulo"].'">
+            <input type="text" class="form-control" id="titulo" name="titulo" value="'.$titulo.'">
       </div>
       <div class="form-group">
          <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
-            <textarea class="form-control" id="descricao" name="descricao">'.$treino["descricao"].'</textarea>
-      </div>';
+            <textarea rows="4" class="form-control" id="descricao" name="descricao">'.$descricao.'</textarea>
+      </div>
+      <div class="form-group">
+        <input type="hidden" name="id" id="id" value="'.$id.'">
+      </div>
+      ';
+
+
