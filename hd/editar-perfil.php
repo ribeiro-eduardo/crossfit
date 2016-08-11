@@ -20,7 +20,7 @@ include("header-logado.php");
         </div>
       </figure>
       <div class="col-md-8" style="margin-top: 20px">
-        <span style="margin-right: 15px"><img src="images/admin.png"></span>
+        <span style="margin-right: 15px"><img src="images/athlete.png"></span>
         <input id="nome" value="Tio Patinhas" style="font-size: 30px; font-weight: bold;">
         <div id="dados" style="padding-top: 30px">
 
