@@ -4,20 +4,27 @@ include("header-logado.php");
 <div class="container" style="margin-top: 100px">
   <div class="row">
     <div class="col-md-4">
-      <img class="img-circle center-block img-perfil" src="images/coach2.jpg">
+      <img class="img-circle center-block img-perfil" src="images/coach2.jpg" style="margin-top: 40px">
     </div>
     <div class="col-md-8">
-      <span><img src="images/admin.png"></span>
+      <div class="text-right">
+        <button class="btn btn-details" onclick="location='editar-perfil.php'">Editar Perfil</button>
+      </div>
+      <span style="margin-right: 15px"><img src="images/admin.png"></span>
       <input id="nome" value="Tio Patinhas" readonly class="ipts" style="font-size: 30px; font-weight: bold;">
       <div id="dados" style="padding-top: 30px">
-        <label class="lbl" for="email">Email:</label>
-        <input name="email" class="ipts" value="tiozinho@email.com" readonly><br/>
-        <label class="lbl" for="data-nasc">Idade:</label>
-        <input name="data-nasc" class="ipts" value="28 anos" readonly><br/>
-        <label class="lbl" for="altura">Altura:</label>
-        <input name="altura" class="ipts" value="1.96 m" readonly><br/>
-        <label class="lbl" for="peso">Peso:</label>
-        <input id="peso" class="ipts" value="90.3 kg" readonly><br/>
+        <div class="col-md-2 text-right">
+          <label class="lbl" for="email">Email:</label>
+          <label class="lbl" for="data-nasc">Idade:</label>
+          <label class="lbl" for="altura">Altura:</label>
+          <label class="lbl" for="peso">Peso:</label>
+        </div>
+        <div class="col-md-6">
+          <input name="email" class="ipts" value="tiozinho@email.com" readonly><br/>
+          <input name="data-nasc" class="ipts" value="28 anos" readonly><br/>
+          <input name="altura" class="ipts" value="1.96 m" readonly><br/>
+          <input id="peso" class="ipts" value="90.3 kg" readonly><br/>
+        </div>
       </div>
     </div>
   </div>
@@ -40,7 +47,7 @@ include("header-logado.php");
         <td class="col-md-4 lbl">28:56</td>
       </tr>
     </table>
-    
+
   </div>
 </div>
 
