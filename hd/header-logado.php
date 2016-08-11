@@ -72,7 +72,7 @@ include("meta.php");
                               <ul>
                                   <li><a href="timeline.php">Treinos da semana</a></li>
                                   <li><a href="perfil.php">Meu Perfil</a></li>
-                                  <li><a href="#">Atletas</a></li>
+                                  <li><a href="atletas.php">Atletas</a></li>
                                   <li><a href="#">Calendário</a></li>
                                   <li><a href="processausuarios.php?operacao=sair">Sair</a></li>
                               </ul>

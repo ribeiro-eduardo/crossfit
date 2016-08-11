@@ -2,7 +2,35 @@
 include("header-logado.php");
 ?>
 
-<div class="container" style="margin-top: 100px">
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>Editar Perfil</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.php">
+                                <i class="ion-ios-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>Login</li>
+                        <li><a href="perfil.php">Meu Perfil</a></li>
+                        <li class="active">Editar Perfil</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section><!--/#Page header-->
+
+
+<div class="container" style="margin-top: 60px">
   <div class="row">
 
     <!-- form dados pessoais -->
