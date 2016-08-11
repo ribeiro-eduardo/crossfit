@@ -4,6 +4,8 @@ include("header-logado.php");
 
 <div class="container" style="margin-top: 100px">
   <div class="row">
+
+    <!-- form dados pessoais -->
     <form>
 
       <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
@@ -43,6 +45,7 @@ include("header-logado.php");
         </div>
 
       </form>
+      <!--fim form dados pessoais-->
     </div>
   </div>
 
@@ -52,6 +55,7 @@ include("header-logado.php");
       <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-plus-circled"></span> Adicionar Benchmark</a>
     </div>
 
+    <!--form benchs-->
     <form>
 
       <table style="width: 80%; margin-left: 10%">
@@ -109,6 +113,7 @@ include("header-logado.php");
       </div>
 
     </form>
+    <!--fim form benchs-->
   </div>
 </div>
 
