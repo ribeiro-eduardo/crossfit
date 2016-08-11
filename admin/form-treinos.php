@@ -63,7 +63,9 @@ for($i = 0; $i < count($datas); $i++){
             <form id="treinos" name="treinos" method="POST">
                 <div class="form-group">
                     <label for="data">Data:<span style="color: red"> *</span></label>
-                    <input type="text" class="form-control" id="data" name="data" onchange="getTreinoDia()">
+                    <div id="datepicker_container">
+                        <input type="text" class="form-control" id="data" name="data" onchange="getTreinoDia()">
+                    </div>
                 </div>
                 <div id="resultado"></div>
                 <input type="button" id="limpar" class="btn btn-default" value="Limpar Dados">
@@ -98,6 +100,7 @@ for($i = 0; $i < count($datas); $i++){
                 });
             }
         });
+        console.log("entrou");
     }
 
     var date = new Date();
@@ -162,6 +165,8 @@ for($i = 0; $i < count($datas); $i++){
                 $('#resultado').html("");
                 $('#resultado').hide();
                 $('#data').val("");
+                $("#datepicker_container").html("");
+                $("#datepicker_container").html('<input type="text" class="form-control" id="data" name="data" onchange="getTreinoDia()">')
 
                 updateDates();
             });
