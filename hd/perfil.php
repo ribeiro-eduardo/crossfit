@@ -10,7 +10,7 @@ include("header-logado.php");
       <div class="text-right">
         <button class="btn btn-details" onclick="location='editar-perfil.php'">Editar Perfil</button>
       </div>
-      <span style="margin-right: 15px"><img src="images/admin.png"></span>
+      <span style="margin-right: 15px"><img src="images/coach.png"></span>
       <input id="nome" value="Tio Patinhas" readonly class="ipts" style="font-size: 30px; font-weight: bold;">
       <div id="dados" style="padding-top: 30px">
         <div class="col-md-2 text-right">
