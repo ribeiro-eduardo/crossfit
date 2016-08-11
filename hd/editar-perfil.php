@@ -41,7 +41,7 @@ include("header-logado.php");
         </div>
 
         <div class="text-right" style="margin-top: 180px">
-          <button class="btn btn-details">Salvar</button>
+          <button type="submit" class="btn btn-details">Salvar</button>
         </div>
 
       </form>
@@ -109,7 +109,7 @@ include("header-logado.php");
         </tr>
       </table>
       <div class="text-right" style="margin-top: 60px">
-        <button class="btn btn-details">Salvar</button>
+        <button type="submit" class="btn btn-details">Salvar</button>
       </div>
 
     </form>
