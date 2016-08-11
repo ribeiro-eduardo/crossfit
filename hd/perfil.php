@@ -1,7 +1,35 @@
 <?php
 include("header-logado.php");
 ?>
-<div class="container" style="margin-top: 100px">
+
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>Meu Perfil</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.php">
+                                <i class="ion-ios-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>Login</li>
+                        <li class="active">Meu Perfil</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section><!--/#Page header-->
+
+
+<div class="container" style="margin-top: 60px">
   <div class="row">
     <div class="col-md-4">
       <img class="img-circle center-block img-perfil" src="images/coach2.jpg" style="margin-top: 40px">
@@ -10,7 +38,7 @@ include("header-logado.php");
       <div class="text-right">
         <button class="btn btn-details" onclick="location='editar-perfil.php'">Editar Perfil</button>
       </div>
-      <span style="margin-right: 15px"><img src="images/admin.png"></span>
+      <span style="margin-right: 15px"><img src="images/coach.png"></span>
       <input id="nome" value="Tio Patinhas" readonly class="ipts" style="font-size: 30px; font-weight: bold;">
       <div id="dados" style="padding-top: 30px">
         <div class="col-md-2 text-right">

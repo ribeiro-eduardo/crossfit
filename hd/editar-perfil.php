@@ -2,8 +2,38 @@
 include("header-logado.php");
 ?>
 
-<div class="container" style="margin-top: 100px">
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>Editar Perfil</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.php">
+                                <i class="ion-ios-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>Login</li>
+                        <li><a href="perfil.php">Meu Perfil</a></li>
+                        <li class="active">Editar Perfil</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section><!--/#Page header-->
+
+
+<div class="container" style="margin-top: 60px">
   <div class="row">
+
+    <!-- form dados pessoais -->
     <form>
 
       <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
@@ -20,7 +50,7 @@ include("header-logado.php");
         </div>
       </figure>
       <div class="col-md-8" style="margin-top: 20px">
-        <span style="margin-right: 15px"><img src="images/admin.png"></span>
+        <span style="margin-right: 15px"><img src="images/coach.png"></span>
         <input id="nome" value="Tio Patinhas" style="font-size: 30px; font-weight: bold;">
         <div id="dados" style="padding-top: 30px">
 
@@ -39,10 +69,11 @@ include("header-logado.php");
         </div>
 
         <div class="text-right" style="margin-top: 180px">
-          <button class="btn btn-details">Salvar</button>
+          <button type="submit" class="btn btn-details">Salvar</button>
         </div>
 
       </form>
+      <!--fim form dados pessoais-->
     </div>
   </div>
 
@@ -52,6 +83,7 @@ include("header-logado.php");
       <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-plus-circled"></span> Adicionar Benchmark</a>
     </div>
 
+    <!--form benchs-->
     <form>
 
       <table style="width: 80%; margin-left: 10%">
@@ -105,10 +137,11 @@ include("header-logado.php");
         </tr>
       </table>
       <div class="text-right" style="margin-top: 60px">
-        <button class="btn btn-details">Salvar</button>
+        <button type="submit" class="btn btn-details">Salvar</button>
       </div>
 
     </form>
+    <!--fim form benchs-->
   </div>
 </div>
 
