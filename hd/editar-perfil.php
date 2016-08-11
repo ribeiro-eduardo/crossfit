@@ -12,7 +12,9 @@ include("header-logado.php");
           <img class="img-circle center-block img-perfil" src="images/coach2.jpg" style="margin-top: 24px; margin-bottom:40px">
           <div class="overlay" style="background: none;">
               <div class="buttons" style="background: rgba(0, 0, 0, 0.7); margin-left: 20px;">
-                  <a href="#">Alterar</a>
+                  <input type="file" name="file" id="file" class="inputfile" />
+                  <a><label for="file">Alterar</label></a>
+                  <!-- <a href="#">Alterar</a> -->
               </div>
           </div>
         </div>
@@ -105,7 +107,7 @@ include("header-logado.php");
       <div class="text-right" style="margin-top: 60px">
         <button class="btn btn-details">Salvar</button>
       </div>
-      
+
     </form>
   </div>
 </div>
