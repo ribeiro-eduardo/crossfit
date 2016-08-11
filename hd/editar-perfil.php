@@ -24,13 +24,13 @@ include("header-logado.php");
 
         <div class="col-md-2 text-right">
             <label class="lbl" for="email" style="padding-bottom: 5px">Email:</label>
-            <label class="lbl" for="data-nasc" style="padding-bottom: 5px">Idade:</label>
+            <label class="lbl" for="idade" style="padding-bottom: 5px">Idade:</label>
             <label class="lbl" for="altura" style="padding-bottom: 5px">Altura:</label>
             <label class="lbl" for="peso" style="padding-bottom: 5px">Peso:</label>
           </div>
           <div class="col-md-6">
-            <input name="email" value="tiozinho@email.com" style="width: 250px; font-size: 16px"><br/>
-            <input name="data-nasc" value="28 anos" style="width: 250px; font-size: 16px"><br/>
+            <input type="email" name="email" value="tiozinho@email.com" style="width: 250px; font-size: 16px" ><br/>
+            <input name="idade" value="28 anos" style="width: 250px; font-size: 16px"><br/>
             <input name="altura" value="1.96 m" style="width: 250px; font-size: 16px"><br/>
             <input id="peso" value="90.3 kg" style="width: 250px; font-size: 16px"><br/>
           </div>
@@ -81,7 +81,7 @@ include("header-logado.php");
               <option value="challenge">CHALLENGE</option>
             </select>
           <td class="col-md-7 lbl">
-            <select style="border-radius: 0; width: 300px; height: 100%">
+            <select style="border-radius: 0; width: 100%; height: 100%">
               <option value="">Benchmark</option>
               <option value="">abc</option>
               <option value="">abc</option>
@@ -105,6 +105,7 @@ include("header-logado.php");
       <div class="text-right" style="margin-top: 60px">
         <button class="btn btn-details">Salvar</button>
       </div>
+      
     </form>
   </div>
 </div>

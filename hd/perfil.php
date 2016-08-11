@@ -15,13 +15,13 @@ include("header-logado.php");
       <div id="dados" style="padding-top: 30px">
         <div class="col-md-2 text-right">
           <label class="lbl" for="email">Email:</label>
-          <label class="lbl" for="data-nasc">Idade:</label>
+          <label class="lbl" for="idade">Idade:</label>
           <label class="lbl" for="altura">Altura:</label>
           <label class="lbl" for="peso">Peso:</label>
         </div>
         <div class="col-md-6">
           <input name="email" class="ipts" value="tiozinho@email.com" readonly><br/>
-          <input name="data-nasc" class="ipts" value="28 anos" readonly><br/>
+          <input name="idade" class="ipts" value="28 anos" readonly><br/> <!-- CONCATENAR AS PALAVRAS "ANOS", "m" e "kg" -->
           <input name="altura" class="ipts" value="1.96 m" readonly><br/>
           <input id="peso" class="ipts" value="90.3 kg" readonly><br/>
         </div>
