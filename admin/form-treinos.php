@@ -66,6 +66,7 @@ for($i = 0; $i < count($datas); $i++){
                     <input type="text" class="form-control" id="data" name="data" onchange="getTreinoDia()">
                 </div>
                 <div id="resultado"></div>
+                <input type="button" id="limpar" class="btn btn-default" value="Limpar Dados">
                 <input type="submit" id="enviar" class="btn btn-default" value="Enviar">
             </form>
         </div>
@@ -105,6 +106,12 @@ for($i = 0; $i < count($datas); $i++){
         updateDates();
     });
 
+
+    $("#limpar").click(function(){
+        //$('#data').val("");
+        $('#titulo').val("");
+        $('#descricao').val("");
+    });
 
     $(function($) {
         $("#treinos").submit(function(e) {
