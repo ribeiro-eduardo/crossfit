@@ -38,7 +38,7 @@ Global Page Section Start
       <div id="atletas" style="padding-top: 100px; color: #fcfcfc;">
 
         <!-- div inserida para cada atleta -->
-          <div class="col-md-4" style="margin-bottom: 40px;">
+          <div class="col-md-4 col-sm-6" style="margin-bottom: 40px;">
             <a href="#">
                 <img class="img-circle col-md-2 img-busca" src="images/coach2.jpg">
                 <div>
@@ -49,7 +49,7 @@ Global Page Section Start
           </div>
         <!-- fim da div -->
 
-          <div class="col-md-4" style="margin-bottom: 40px;">
+          <div class="col-md-4 col-sm-6" style="margin-bottom: 40px;">
             <a href="#">
               <img class="img-circle col-md-2 img-busca" src="images/coach2.jpg">
               <div>
@@ -58,7 +58,7 @@ Global Page Section Start
               </div>
             </a>
           </div>
-          <div class="col-md-4" style="margin-bottom: 40px;">
+          <div class="col-md-4 col-sm-6" style="margin-bottom: 40px;">
             <a href="#">
               <img class="img-circle col-md-2 img-busca" src="images/coach2.jpg">
               <div>
@@ -67,7 +67,7 @@ Global Page Section Start
               </div>
             </a>
           </div>
-          <div class="col-md-4" style="margin-bottom: 40px;">
+          <div class="col-md-4 col-sm-6" style="margin-bottom: 40px;">
             <a href="#">
               <img class="img-circle col-md-2 img-busca" src="images/coach2.jpg">
               <div>
@@ -76,7 +76,7 @@ Global Page Section Start
               </div>
             </a>
           </div>
-          <div class="col-md-4" style="margin-bottom: 40px;">
+          <div class="col-md-4 col-sm-6" style="margin-bottom: 40px;">
             <a href="#">
               <img class="img-circle col-md-2 img-busca" src="images/coach2.jpg">
               <div>
