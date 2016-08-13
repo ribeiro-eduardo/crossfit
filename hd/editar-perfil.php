@@ -1,5 +1,62 @@
 <?php
-include("header-logado.php");
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['id'])) {
+    @session_destroy();
+    @header("Location: index.php");
+    exit;
+} else {
+    include("header-logado.php");
+}
+require_once("../admin/lib/DBMySql.php");
+require("../admin/classe/bo/usuariosBO.php");
+require("../admin/classe/vo/usuariosVO.php");
+require_once("../admin/classe/functions.php");
+
+require("../admin/classe/bo/benchmarksBO.php");
+require("../admin/classe/vo/benchmarksVO.php");
+
+$usuariosBO = new usuariosBO();
+$usuariosVO = new usuariosVO();
+
+$benchmarksVO = new benchmarksVO();
+$benchmarksBO = new benchmarksBO();
+
+$id = $_POST["id"];
+$usuariosVO->setId($id);
+
+$usuario = $usuariosBO->get($usuariosVO);
+$id_tipo_usuario = $usuario['id_tipo_usuario'];
+
+switch ($id_tipo_usuario) {
+    case 1:
+        $icone = "images/coach.png";
+        break;
+    case 2:
+        $icone = "images/coach.png";
+        break;
+    case 3:
+        $icone = "images/athlete.png";
+        break;
+}
+
+$data_nascimento = @date('d/m/Y', strtotime($usuario["data_nascimento"]));
+$idade = calculaIdade($data_nascimento);
+$peso = $usuario['peso'];
+$altura = $usuario['altura'];
+
+$mostra_peso = 0;
+$mostra_altura = 0;
+if ($peso != 0) {
+    $mostra_peso = 1;
+}
+if ($altura != 0) {
+    $mostra_altura = 1;
+}
+
+$benchmarks = $benchmarksBO->getPorAtleta($usuariosVO);
+
 ?>
 
 <!--
@@ -34,12 +91,13 @@ Global Page Section Start
   <div class="row">
 
     <!-- form dados pessoais -->
-    <form>
+    <form id="form" role="form">
 
       <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
               data-wow-delay="0ms" style="background: none;">
         <div class="col-md-4 img-wrapper">
-          <img class="img-circle center-block img-perfil" src="images/coach2.jpg" style="margin-top: 24px; margin-bottom:40px">
+          <img id="preview" class="img-circle center-block img-perfil" src="fotos-coaches/<?= $usuario['imagem'] ?>" style="margin-top: 24px; margin-bottom:40px">
+<!--            <img id="preview" src="#" width="100px" height="100px">-->
           <div class="overlay" style="background: none;">
               <div class="buttons" style="background: rgba(0, 0, 0, 0.7); top: 40%; left: 40%;">
                   <input type="file" name="file" id="file" class="inputfile" />
@@ -50,24 +108,24 @@ Global Page Section Start
         </div>
       </figure>
       <div class="col-md-8" style="margin-top: 20px">
-        <span style="margin-right: 15px"><img src="images/coach.png"></span>
-        <input id="nome" value="Tio Patinhas" style="font-size: 30px; font-weight: bold;">
+        <span style="margin-right: 15px"><img src="<?=$icone?>"></span>
+        <input type="text" id="nome" value="<?=$usuario['nome']?>" style="font-size: 30px; font-weight: bold;">
         <div id="dados" style="padding-top: 30px">
           <div class="form-group" style="margin-bottom: 2px">
               <label class="lbl col-xs-2 text-right" for="email" style="padding-bottom: 5px">Email:</label>
-              <input type="email" name="email" value="tiozinho@email.com" style="width: 250px; font-size: 16px" >
+              <input type="text" name="email" value="<?=$usuario['email']?>" style="width: 250px; font-size: 16px" >
           </div>
           <div class="form-group" style="margin-bottom: 2px">
-              <label class="lbl col-xs-2 text-right" for="idade" style="padding-bottom: 5px">Idade:</label>
-              <input name="idade" value="28 anos" style="width: 250px; font-size: 16px">
+              <label class="lbl col-xs-2 text-right" for="data_nascimento" style="padding-bottom: 5px">Data de nascimento:</label>
+              <input type="text" name="data_nascimento" id="data_nascimento" value="<?=@date('d/m/Y', strtotime($usuario["data_nascimento"])) ?>" style="width: 250px; font-size: 16px">
+          </div><br/>
+          <div class="form-group" style="margin-bottom: 2px">
+              <label class="lbl col-xs-2 text-right" for="altura" style="padding-bottom: 5px">Altura: (m)</label>
+              <input type="text" name="altura" id="altura" value="<? echo substr_replace($altura, ',', 1, 0); ?> m" style="width: 250px; font-size: 16px">
           </div>
           <div class="form-group" style="margin-bottom: 2px">
-              <label class="lbl col-xs-2 text-right" for="altura" style="padding-bottom: 5px">Altura:</label>
-              <input name="altura" value="1.96 m" style="width: 250px; font-size: 16px">
-          </div>
-          <div class="form-group" style="margin-bottom: 2px">
-              <label class="lbl col-xs-2 text-right" for="peso" style="padding-bottom: 5px">Peso:</label>
-              <input id="peso" value="90.3 kg" style="width: 250px; font-size: 16px"><br/>
+              <label class="lbl col-xs-2 text-right" for="peso" style="padding-bottom: 5px">Peso: (kg)</label>
+              <input type="text" id="peso" value="<?=$peso?> kg" style="width: 250px; font-size: 16px"><br/>
           </div>
         </div>
 
@@ -148,8 +206,30 @@ Global Page Section Start
   </div>
 </div>
 
-
-
   <?php
   include("footer-logado.php");
   ?>
+
+<script>
+    $(document).ready( function() {
+        $("#data_nascimento").mask("00/00/0000");
+        $("#altura").mask("0,00");
+        $("#peso").mask("000");
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#file").change(function(){
+        readURL(this);
+    });
+</script>

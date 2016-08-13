@@ -30,8 +30,8 @@ Global Page Section Start
 
   <div class="container">
     <div class="row">
-      <h4>Selecione a data</h4>
-      <input type="date" />
+      <h4 style="color: white;">Selecione a data:</h4>
+        <div id="datepicker"></div>
     </div>
     <div id="exibe-treino" class="row">
 
@@ -42,3 +42,8 @@ Global Page Section Start
 <?php
 include("footer-logado.php");
 ?>
+<script>
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+</script>

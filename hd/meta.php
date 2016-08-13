@@ -60,6 +60,9 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
+        <!-- jquery mask -->
+        <script src="../admin/js/jquery.mask.min.js"></script>
+
         <script>
         $( function() {
           $( "#accordion" ).accordion( {

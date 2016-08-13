@@ -6,16 +6,17 @@ $display = "display: none";
 
 if($erro == 1){
     //não é admin
-    $erro = "Ops! Esse usuário não é um administrador!";
-    $display = "";
-}elseif($erro == 2){
-    //usuário inexistente
     $erro = "Ops! Usuário e/ou senha incorretos!";
     $display = "";
-}elseif($erro == 3){
-    //logout
-    $erro = "";
 }
+//elseif($erro == 2){
+//    //usuário inexistente
+//    $erro = "Ops! Usuário e/ou senha incorretos!";
+//    $display = "";
+//}elseif($erro == 3){
+//    //logout
+//    $erro = "";
+//}
 ?>
 
 <!--

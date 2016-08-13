@@ -31,7 +31,6 @@ elseif(isset($_POST['entrar'])){
         $id = $result[0]['id'];
         $nome = $result[0]['nome'];
         $id_tipo_usuario = $result[0]['id_tipo_usuario'];
-        if($id_tipo_usuario == 1){
             if(!isset($_SESSION)){
                 @session_start();
                 $_SESSION['id'] = $id;
@@ -42,17 +41,12 @@ elseif(isset($_POST['entrar'])){
                 //echo "<pre>"; var_dump($result); echo "</pre>"; exit;
                 @header('location:timeline.php');
             }
-
-        }else{
-            //echo "não é admin";
-            @header('location:login.php?e=1');
-        }
     }
     else{
         echo "nenhum usuário foi encontrado";
 //	unset ($_SESSION['login']);
 //	unset ($_SESSION['senha']);
-        @header('location:login.php?e=2');
+        @header('location:login.php?e=1');
 
     }
 }

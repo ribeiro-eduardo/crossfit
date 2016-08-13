@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Eduardo Ribeiro
+ * Date: 12/08/2016
+ * Time: 22:30
+ */
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -24,7 +30,7 @@ $usuariosVO = new usuariosVO();
 $benchmarksVO = new benchmarksVO();
 $benchmarksBO = new benchmarksBO();
 
-$id = $_SESSION["id"];
+$id = $_POST["id"];
 $usuariosVO->setId($id);
 
 $usuario = $usuariosBO->get($usuariosVO);
@@ -96,10 +102,7 @@ Global Page Section Start
         <div class="col-md-8">
 
             <div class="text-right">
-                <form method="post" action="editar-perfil.php">
-                    <input type="hidden" name="id" value="<?=$id?>">
-                    <button type="submit" class="btn btn-details">Editar Perfil</button>
-                </form>
+                <button class="btn btn-details" onclick="location='editar-perfil.php'">Editar Perfil</button>
             </div>
             <span style="margin-right: 15px"><img src="<?= $icone ?>"></span>
             <input id="nome" value="<?= $usuario['nome'] ?>" readonly class="ipts"
@@ -160,9 +163,3 @@ Global Page Section Start
 <?php
 include("footer-logado.php");
 ?>
-
-<script>
-    function editarPerfil(id){
-
-    }
-</script>
