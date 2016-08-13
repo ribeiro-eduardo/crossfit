@@ -45,7 +45,7 @@ if (isset($_POST["cadastrar"])) {
 
             ?>
             <script>
-                alert("Escolha uma imagem de no m·ximo 8 MB!");
+                alert("Escolha uma imagem de no m√°ximo 8 MB!");
                 location.href = "../form-eventos.php";
             </script>
             <?
@@ -95,7 +95,7 @@ if (isset($_POST["cadastrar"])) {
     } else {
         ?>
         <script>
-            alert("Ocorreu um erro na gravaÁ„o do evento. Por favor, tente novamente!");
+            alert("Ocorreu um erro na grava√ß√£o do evento. Por favor, tente novamente!");
             location.href = "../eventos.php";
         </script>
         <?
@@ -119,7 +119,7 @@ if (isset($_POST["cadastrar"])) {
 
                 ?>
                 <script>
-                    alert("Escolha uma imagem de no m·ximo 8 MB!");
+                    alert("Escolha uma imagem de no m√°ximo 8 MB!");
                     location.href = "../visualizar-evento.php?id=<?=$id?>";
                 </script>
                 <?
@@ -170,7 +170,7 @@ if (isset($_POST["cadastrar"])) {
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na alteraÁ„o do evento. Por favor, tente novamente!");
+            alert("Ocorreu um erro na altera√ß√£o do evento. Por favor, tente novamente!");
             location.href = "../eventos.php";
         </script>
         <?
@@ -182,7 +182,7 @@ if (isset($_POST["cadastrar"])) {
     if($eventosBO->deleteEvento($eventosVO)){
         ?>
         <script>
-            alert("Evento excluÌdo com sucesso!");
+            alert("Evento exclu√≠do com sucesso!");
             location.href = "../eventos.php";
         </script>
         <?
@@ -190,7 +190,7 @@ if (isset($_POST["cadastrar"])) {
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na remoÁ„o do evento. Por favor, tente novamente!");
+            alert("Ocorreu um erro na remo√ß√£o do evento. Por favor, tente novamente!");
             location.href = "../eventos.php";
         </script>
         <?

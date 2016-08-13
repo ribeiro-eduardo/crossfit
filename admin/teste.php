@@ -13,6 +13,13 @@ $noticia = $noticiasBO->get($noticiasVO);
 //echo "Titulo: ".$noticia['titulo']."<br><br>";
 //echo "Texto: ".urldecode($noticia['descricao']);
 
-echo md5("admin2");
 
 ?>
+
+<div id="datepicker"></div>
+
+<script>
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+</script>

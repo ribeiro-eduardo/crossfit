@@ -63,15 +63,15 @@ include("header.php");
         var descricao = CKEDITOR.instances.descricao.getData();
 
         if (imagem == "" || imagem == null){
-            alert("Por favor, selecione uma imagem para a noticia!");
+            alert("Por favor, selecione uma imagem para a notícia!");
             $('#imagem').focus();
             return false;
         }else if (titulo == "") {
-            alert("Por favor, preencha o t�tulo!");
+            alert("Por favor, preencha o título!");
             $('#titulo').focus();
             return false;
         } else if (!descricao) {
-            alert("Por favor, preencha a descri��o!");
+            alert("Por favor, preencha a descrição!");
             $('#descricao').focus();
             return false;
         }

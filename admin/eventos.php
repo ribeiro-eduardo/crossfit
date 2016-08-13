@@ -93,7 +93,7 @@ $eventos = $eventosBO->get($eventosVO);
     }
 
     function excluir(id) {
-        if (confirm('Voc� tem certeza que deseja excluir esse evento?')) {
+        if (confirm('Você tem certeza que deseja excluir esse evento?')) {
             window.location = 'action/eventos-action.php?e=' + id;
         }
     }
