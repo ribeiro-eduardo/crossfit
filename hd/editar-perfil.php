@@ -91,14 +91,14 @@ Global Page Section Start
   <div class="row">
 
     <!-- form dados pessoais -->
-    <form id="form" role="form">
+    <form id="form" role="form" method="POST" action="../admin/action/usuarios-action.php" enctype="multipart/form-data">
 
 
       <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
               data-wow-delay="0ms" style="background: none;">
         <div class="col-md-4 img-wrapper">
         <!--  <div id="preview" class="center-block circle-avatar" style="background: url('fotos-coaches/<?= $usuario['imagem'] ?>') no-repeat; "></div> -->
-           <div id="preview" class="center-block circle-avatar" style="background: url('fotos-coaches/img-vertical.jpg') no-repeat; "></div>
+           <div id="preview" class="center-block circle-avatar" style="background: url('fotos-coaches/<?= $usuario['imagem'] ?>') no-repeat; "></div>
            <div class="overlay center-block" style="background: none; width: 220px;">
               <div class="buttons" style="background: rgba(0, 0, 0, 0.7); top: 40%; left: 30%;">
                   <input type="file" name="file" id="file" class="inputfile" />
@@ -132,27 +132,35 @@ Global Page Section Start
       <div class="col-md-8" style="margin-top: 20px">
         <span style="margin-right: 15px"><img src="<?=$icone?>"></span>
         <input type="text" id="nome" value="<?=$usuario['nome']?>" style="font-size: 25px; font-weight: bold; width: 410px">
+          <span id="nome-obrig" style="display: none; color: red">Campo obrigatório!</span>
         <div id="dados" style="padding-top: 30px">
           <div class="form-group" style="margin-bottom: 2px">
               <label class="lbl col-xs-3 text-right" for="email" style="padding-bottom: 5px">Email:</label>
-              <input type="text" name="email" value="<?=$usuario['email']?>" style="width: 280px; font-size: 16px" >
+              <input type="text" name="email" id="email" value="<?=$usuario['email']?>" style="width: 280px; font-size: 16px" >
+              <span id="email-obrig" style="display: none; color: red">Campo obrigatório!</span>
           </div>
           <div class="form-group" style="margin-bottom: 2px">
               <label class="lbl col-xs-3 text-right" for="data_nascimento" style="padding-bottom: 5px">Data de nascimento:</label>
               <input type="text" name="data_nascimento" id="data_nascimento" value="<?=@date('d/m/Y', strtotime($usuario["data_nascimento"])) ?>" style="width: 280px; font-size: 16px">
+              <span id="data_nascimento-obrig" style="display: none; color: red">Campo obrigatório!</span>
           </div>
           <div class="form-group" style="margin-bottom: 2px">
               <label class="lbl col-xs-3 text-right" for="altura" style="padding-bottom: 5px">Altura: (m)</label>
               <input type="text" name="altura" id="altura" value="<? echo substr_replace($altura, ',', 1, 0); ?> m" style="width: 280px; font-size: 16px">
+              <span id="altura-obrig" style="display: none; color: red">Campo obrigatório!</span>
           </div>
           <div class="form-group" style="margin-bottom: 2px">
               <label class="lbl col-xs-3 text-right" for="peso" style="padding-bottom: 5px">Peso: (kg)</label>
-              <input type="text" id="peso" value="<?=$peso?> kg" style="width: 280px; font-size: 16px"><br/>
+              <input type="text" id="peso" value="<?=$peso?> kg" style="width: 280px; font-size: 16px">
+              <span id="peso-obrig" style="display: none; color: red">Campo obrigatório!</span>
+              <br/>
           </div>
         </div>
-
+        <div class="form-group" style="margin-bottom: 2px">
+            <input type="hidden" name="editar-hd" value="<?=$id?>">
+        </div>
         <div class="text-right" style="margin-top: 100px">
-          <button type="submit" class="btn btn-details">Salvar</button>
+          <input type="submit" id="salvar" class="btn btn-details" value="Salvar">
         </div>
 
       </form>
@@ -220,7 +228,7 @@ Global Page Section Start
         </tr>
       </table>
       <div class="text-right" style="margin-top: 60px">
-        <button type="submit" class="btn btn-details">Salvar</button>
+        <input name="salvar" id="salvar" value="Salvar" type="submit" class="btn btn-details">
       </div>
 
     </form>
@@ -244,8 +252,8 @@ Global Page Section Start
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                $('#preview').attr('src', e.target.result);
-            }
+                $('#preview').css('background', 'url('+e.target.result+')');
+            };
 
             reader.readAsDataURL(input.files[0]);
         }
@@ -254,4 +262,6 @@ Global Page Section Start
     $("#file").change(function(){
         readURL(this);
     });
+
 </script>
+<script src="js/valida-form-perfil.js"></script>
