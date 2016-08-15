@@ -147,42 +147,42 @@ $action = "action/usuarios-action.php";
         console.log(data_nascimento);
 
         if (id_tipo_usuario  === '') {
-            alert('Por favor, selecione o tipo de usu�rio!');
+            alert('Por favor, selecione o tipo de usuário!');
             $('#id_tipo_usuario').focus();
             return false;
         }
         if (nome  === '') {
-            alert('Por favor, preencha o nome do usu�rio!');
+            alert('Por favor, preencha o nome do usuário!');
             $('#nome').focus();
             return false;
         }
         if (cpf  === '') {
-            alert('Por favor, preencha o cpf do usu�rio!');
+            alert('Por favor, preencha o cpf do usuário!');
             $('#cpf').focus();
             return false;
         }
         if (data_nascimento  === '') {
-            alert('Por favor, preencha a data de nascimento do usu�rio!');
+            alert('Por favor, preencha a data de nascimento do usuário!');
             $('#data_nascimento').focus();
             return false;
         }
         if (email  === '') {
-            alert('Por favor, preencha o email do usu�rio!');
+            alert('Por favor, preencha o email do usuário!');
             $('#email').focus();
             return false;
         }
         if (login  === '') {
-            alert('Por favor, preencha o login do usu�rio!');
+            alert('Por favor, preencha o login do usuário!');
             $('#login').focus();
             return false;
         }
         if (telefone  === '') {
-            alert('Por favor, preencha o telefone do usu�rio!');
+            alert('Por favor, preencha o telefone do usuário!');
             $('#telefone').focus();
             return false;
         }
         if (celular  === '') {
-            alert('Por favor, preencha o celular do usu�rio!');
+            alert('Por favor, preencha o celular do usuário!');
             $('#celular').focus();
             return false;
         }

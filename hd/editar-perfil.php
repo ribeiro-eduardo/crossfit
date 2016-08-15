@@ -214,7 +214,7 @@ Global Page Section Start
     $(document).ready( function() {
         $("#data_nascimento").mask("00/00/0000");
         $("#altura").mask("0,00");
-        $("#peso").mask("000");
+        $("#peso").mask("00,0");
     });
 
     function readURL(input) {

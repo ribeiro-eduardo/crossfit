@@ -87,7 +87,7 @@ $demos = $demosBO->get($demosVO);
     }
 
     function excluir(id) {
-        if (confirm('Voc� tem certeza que deseja excluir essa demonstra��o?')) {
+        if (confirm('Você tem certeza que deseja excluir essa demonstração?')) {
             window.location = 'action/demos-action.php?acao_e=e&id=' + id;
         }
     }
