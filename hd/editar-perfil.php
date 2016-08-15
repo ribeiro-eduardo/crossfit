@@ -131,27 +131,27 @@ Global Page Section Start
 
       <div class="col-md-8" style="margin-top: 20px">
         <span style="margin-right: 15px"><img src="<?=$icone?>"></span>
-        <input type="text" id="nome" value="<?=$usuario['nome']?>" style="font-size: 25px; font-weight: bold; width: 410px">
+        <input type="text" id="nome" value="<?=$usuario['nome']?>" style="font-size: 25px; font-weight: bold; width: 74%">
           <span id="nome-obrig" style="display: none; color: red">Campo obrigatório!</span>
         <div id="dados" style="padding-top: 30px">
           <div class="form-group" style="margin-bottom: 2px">
-              <label class="lbl col-xs-3 text-right" for="email" style="padding-bottom: 5px">Email:</label>
-              <input type="text" name="email" id="email" value="<?=$usuario['email']?>" style="width: 280px; font-size: 16px" >
+              <label class="lbl col-xs-5 text-center" for="email" style="padding-bottom: 5px">Email:</label>
+              <input type="text" name="email" id="email" value="<?=$usuario['email']?>" style="width: 40%; font-size: 16px" >
               <span id="email-obrig" style="display: none; color: red">Campo obrigatório!</span>
           </div>
           <div class="form-group" style="margin-bottom: 2px">
-              <label class="lbl col-xs-3 text-right" for="data_nascimento" style="padding-bottom: 5px">Data de nascimento:</label>
-              <input type="text" name="data_nascimento" id="data_nascimento" value="<?=@date('d/m/Y', strtotime($usuario["data_nascimento"])) ?>" style="width: 280px; font-size: 16px">
+              <label class="lbl col-xs-5 text-center" for="data_nascimento" style="padding-bottom: 5px">Data de nascimento:</label>
+              <input type="text" name="data_nascimento" id="data_nascimento" value="<?=@date('d/m/Y', strtotime($usuario["data_nascimento"])) ?>" style="width: 40%; font-size: 16px">
               <span id="data_nascimento-obrig" style="display: none; color: red">Campo obrigatório!</span>
           </div>
           <div class="form-group" style="margin-bottom: 2px">
-              <label class="lbl col-xs-3 text-right" for="altura" style="padding-bottom: 5px">Altura: (m)</label>
-              <input type="text" name="altura" id="altura" value="<? echo substr_replace($altura, ',', 1, 0); ?> m" style="width: 280px; font-size: 16px">
+              <label class="lbl col-xs-5 text-center" for="altura" style="padding-bottom: 5px">Altura: (m)</label>
+              <input type="text" name="altura" id="altura" value="<? echo substr_replace($altura, ',', 1, 0); ?> m" style="width: 40%; font-size: 16px">
               <span id="altura-obrig" style="display: none; color: red">Campo obrigatório!</span>
           </div>
           <div class="form-group" style="margin-bottom: 2px">
-              <label class="lbl col-xs-3 text-right" for="peso" style="padding-bottom: 5px">Peso: (kg)</label>
-              <input type="text" id="peso" value="<?=$peso?> kg" style="width: 280px; font-size: 16px">
+              <label class="lbl col-xs-5 text-center" for="peso" style="padding-bottom: 5px">Peso: (kg)</label>
+              <input type="text" id="peso" value="<?=$peso?> kg" style="width: 40%; font-size: 16px">
               <span id="peso-obrig" style="display: none; color: red">Campo obrigatório!</span>
               <br/>
           </div>
@@ -168,9 +168,9 @@ Global Page Section Start
     </div>
   </div>
 
-  <div class="row" style="margin-top: 80px; margin-bottom: 80px;">
+  <div class="row" style="margin: 70px 0;">
     <h1 class="text-center" style="margin-bottom: 60px; background: #E5001C; padding: 15px; color: #fcfcfc;">Benchmarks</h1>
-    <div class="text-right" style="margin: 30px 0;">
+    <div class="text-right" style="margin: 30px;">
       <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-plus-circled"></span> Adicionar Benchmark</a>
     </div>
 
