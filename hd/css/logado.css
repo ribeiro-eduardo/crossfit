@@ -142,3 +142,15 @@ body{
 #resultado-busca{
   display: none;
 }
+
+.circle-avatar{
+  max-width: 100%;
+  width: 220px;
+  height: 220px;
+  display: block;
+  border-radius: 50%;
+  background-position-y: center !important;
+  background-position-x: center !important;
+  background-size: contain !important;
+  background-color: #E5001C !important;
+}
