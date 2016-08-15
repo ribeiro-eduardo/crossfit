@@ -151,6 +151,6 @@ body{
   border-radius: 50%;
   background-position-y: center !important;
   background-position-x: center !important;
-  background-size: contain !important;
+  background-size: cover !important;
   background-color: #E5001C !important;
 }
