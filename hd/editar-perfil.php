@@ -32,12 +32,15 @@ $id_tipo_usuario = $usuario['id_tipo_usuario'];
 switch ($id_tipo_usuario) {
     case 1:
         $icone = "images/coach.png";
+        $dir = "fotos-coaches";
         break;
     case 2:
         $icone = "images/coach.png";
+        $dir = "fotos-coaches";
         break;
     case 3:
         $icone = "images/athlete.png";
+        $dir = "fotos-atletas";
         break;
 }
 
@@ -50,9 +53,14 @@ $mostra_peso = 0;
 $mostra_altura = 0;
 if ($peso != 0) {
     $mostra_peso = 1;
+    $peso = str_replace(".", ",", $peso);
+}else{
+    $peso = "";
 }
 if ($altura != 0) {
     $mostra_altura = 1;
+}else{
+    $altura = "";
 }
 
 $benchmarks = $benchmarksBO->getPorAtleta($usuariosVO);
@@ -98,7 +106,7 @@ Global Page Section Start
               data-wow-delay="0ms" style="background: none;">
         <div class="col-md-4 img-wrapper">
         <!--  <div id="preview" class="center-block circle-avatar" style="background: url('fotos-coaches/<?= $usuario['imagem'] ?>') no-repeat; "></div> -->
-           <div id="preview" class="center-block circle-avatar" style="background: url('fotos-coaches/<?= $usuario['imagem'] ?>') no-repeat; "></div>
+           <div id="preview" class="center-block circle-avatar" style="background: url('<?=$dir?>/<?= $usuario['imagem'] ?>') no-repeat; "></div>
            <div class="overlay center-block" style="background: none; width: 220px;">
               <div class="buttons" style="background: rgba(0, 0, 0, 0.7); top: 40%; left: 30%;">
                   <input type="file" name="file" id="file" class="inputfile" />
@@ -157,10 +165,10 @@ Global Page Section Start
           </div>
         </div>
         <div class="form-group" style="margin-bottom: 2px">
-            <input type="hidden" name="editar-hd" value="<?=$id?>">
+            <input type="hidden" name="id" value="<?=$id?>">
         </div>
         <div class="text-right" style="margin-top: 100px">
-          <input type="submit" id="salvar" class="btn btn-details" value="Salvar">
+          <input type="submit" id="salvar" name="editar-hd" class="btn btn-details" value="Salvar">
         </div>
 
       </form>

@@ -33,12 +33,15 @@ $id_tipo_usuario = $usuario['id_tipo_usuario'];
 switch ($id_tipo_usuario) {
     case 1:
         $icone = "images/coach.png";
+        $dir = "fotos-coaches";
         break;
     case 2:
         $icone = "images/coach.png";
+        $dir = "fotos-coaches";
         break;
     case 3:
         $icone = "images/athlete.png";
+        $dir = "fotos-atletas";
         break;
 }
 
@@ -51,9 +54,14 @@ $mostra_peso = 0;
 $mostra_altura = 0;
 if ($peso != 0) {
     $mostra_peso = 1;
+    $peso = str_replace(".", ",", $peso);
+}else{
+    $peso = "";
 }
 if ($altura != 0) {
     $mostra_altura = 1;
+}else{
+    $altura = "";
 }
 
 $benchmarks = $benchmarksBO->getPorAtleta($usuariosVO);
@@ -90,7 +98,7 @@ Global Page Section Start
 <div class="container" style="margin-top: 60px">
     <div class="row">
         <div class="col-md-4">
-            <img class="img-circle center-block img-perfil" src="fotos-coaches/<?= $usuario['imagem'] ?>"
+            <img class="img-circle center-block img-perfil" src="<?=$dir?>/<?= $usuario['imagem'] ?>"
                  style="margin-top: 40px">
         </div>
         <div class="col-md-8">

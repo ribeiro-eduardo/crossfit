@@ -37,7 +37,7 @@ if(isset($_POST["cadastrar"])){
     $t=time();
     $data_cadastro = @date("Y-m-d H:i:s",$t);
 
-//validação caso passe pelo JS
+//validaÃ§Ã£o caso passe pelo JS
     include("../classe/validacoes/valida-usuarios.php?a=cadastrar");
 
 
@@ -58,7 +58,7 @@ if(isset($_POST["cadastrar"])){
     if($usuariosBO->newUsuario($usuariosVO)) {
         ?>
         <script>
-            alert("Usuário inserido com sucesso!");
+            alert("UsuÃ¡rio inserido com sucesso!");
             location.href = "../usuarios.php";
         </script>
         <?
@@ -66,7 +66,7 @@ if(isset($_POST["cadastrar"])){
     }else{
         ?>
         <script>
-        alert("Ocorreu um erro na gravação do usuário. Por favor, tente novamente!");
+        alert("Ocorreu um erro na gravaÃ§Ã£o do usuÃ¡rio. Por favor, tente novamente!");
         location.href = "../usuarios.php";
         </script>
         <?
@@ -92,7 +92,7 @@ elseif(isset($_POST["editar"])){
     $t=time();
     $data_cadastro = @date("Y-m-d H:i:s",$t);
 
-//validação caso passe pelo JS
+//validaï¿½ï¿½o caso passe pelo JS
     include("../classe/validacoes/valida-usuarios.php");
 
 
@@ -115,7 +115,7 @@ elseif(isset($_POST["editar"])){
     if($usuariosBO->editUsuario($usuariosVO)) {
         ?>
         <script>
-            alert("Usuário alterado com sucesso!");
+            alert("UsuÃ¡rio alterado com sucesso!");
             location.href = "../usuarios.php";
         </script>
         <?
@@ -123,7 +123,7 @@ elseif(isset($_POST["editar"])){
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na alteração do usuário. Por favor, tente novamente!");
+            alert("Ocorreu um erro na alteraÃ§Ã£o do usuÃ¡rio. Por favor, tente novamente!");
             location.href = "../usuarios.php";
         </script>
         <?
@@ -138,7 +138,7 @@ if($_GET["acao"] == "e"){
     if($usuariosBO->deleteUsuario($usuariosVO)){
         ?>
         <script>
-            alert("Usuário excluído com sucesso!");
+            alert("UsuÃ¡rio excluÃ­do com sucesso!");
             location.href = "../usuarios.php";
         </script>
         <?
@@ -146,10 +146,23 @@ if($_GET["acao"] == "e"){
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na exclusão do usuário. Por favor, tente novamente!");
+            alert("Ocorreu um erro na exclusÃ£o do usuÃ¡rio. Por favor, tente novamente!");
             location.href = "../usuarios.php";
         </script>
         <?
         exit;
     }
+}
+
+if(isset($_POST['editar-hd'])){
+    $id = $_POST['id'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $data_nascimento = $_POST['data_nascimento'];
+    $aux = explode('/', $data_nascimento);
+    $data_nascimento = $aux[2]."-".$aux[1]."-".$aux[0];
+    $altura = $_POST['altura'];
+    $peso = $_POST['peso'];
+
+    
 }
