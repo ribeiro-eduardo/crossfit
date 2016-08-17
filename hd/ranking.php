@@ -35,7 +35,7 @@ Global Page Section Start
               Selecione a categoria do benchmark que deseja ranquear:
             </h4>
           </div>
-          <div class="col-md-offset-4 col-md-4 col-xs-12 text-center">
+          <div class="col-md-offset-4 col-md-4 col-xs-12 text-center" style="height: 27px;">
             <select style="border-radius: 0; width: 80%; height: 100%;">
               <option value=""></option>
               <option value="challenge">CHALLENGE</option>
@@ -44,14 +44,65 @@ Global Page Section Start
             </select>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-offset-3 col-md-6 col-xs-12">
-            combo2
+        <div class="row" style="margin-top: 40px">
+          <div class="col-xs-12 text-center">
+            <h4 style="color: #fcfcfc; padding-bottom: 15px; text-transform: uppercase; font-family: 'Roboto', sans-serif;">
+              Selecione o benchmark que deseja ranquear:
+            </h4>
+          </div>
+          <div class="col-md-offset-3 col-md-6 col-xs-12 text-center" style="height: 27px;">
+            <select style="border-radius: 0; width: 80%; height: 100%;">
+              <option value=""></option>
+              <option value="1">GIRL 1</option>
+              <option value="2">GIRL 2</option>
+              <option value="3">GIRL 3</option>
+            </select>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xs-12">
-            ranking
+        <div class="row" style="margin-top: 100px">
+          <div class="col-xs-12 text-center">
+
+            <table class="table table-hover">
+              <!--linha para cada atleta do ranking-->
+              <tr>
+                <td>
+                  <a href="#">
+                      <div class="col-md-offset-3 col-md-6">
+                        <img class="img-circle img-busca col-md-4" src="fotos-atletas/sem-imagem.jpg">
+                        <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
+                        <p>21 anos</p>
+                        <p style="font-weight: bold">meu tempinho</p>
+                      </div>
+                  </a>
+                </td>
+              </tr>
+              <!--fim da linha para cada atleta do ranking-->
+              <tr>
+                <td>
+                  <a href="#">
+                    <div class="col-md-offset-3 col-md-6">
+                      <img class="img-circle img-busca col-md-4" src="fotos-coaches/coach1.jpg">
+                      <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
+                      <p>21 anos</p>
+                      <p style="font-weight: bold">meu tempinho</p>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">
+                    <div class="col-md-offset-3 col-md-6">
+                      <img class="img-circle img-busca col-md-4" src="fotos-coaches/coach2.jpg">
+                      <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
+                      <p>21 anos</p>
+                      <p style="font-weight: bold">meu tempinho</p>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+            </table>
+
           </div>
         </div>
     </div>
