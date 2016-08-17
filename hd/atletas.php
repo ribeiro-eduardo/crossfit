@@ -90,7 +90,7 @@ Global Page Section Start
               $data_nascimento = @date('d/m/Y', strtotime($atletas[$i]["data_nascimento"]));
               $idade = calculaIdade($data_nascimento);
               ?>
-          <div class="col-md-4 col-sm-6" style="margin-bottom: 40px;">
+          <div class="col-md-4 col-sm-6" style="margin-bottom: 40px; height: 131px">
             <a href="#">
                 <img class="img-circle col-md-2 img-busca" src="<?=$dir?>/<?=$atletas[$i]['imagem']?>">
                 <div>
@@ -100,7 +100,6 @@ Global Page Section Start
             </a>
           </div>
         <!-- fim da div -->
-              <div class="clearfix"></div>
          <? } ?>
           <div align="right">
               <?
