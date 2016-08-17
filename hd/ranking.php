@@ -66,6 +66,7 @@ Global Page Section Start
               <button type="button" class="btn btn-default btn-lg" style="background: none; border: none; color: #ec001c">
                 <span class="ion-arrow-up-b" aria-hidden="true"></span>
               </button>
+              
               <button type="button" class="btn btn-default btn-lg" style="background: none; border: none; color: #ec001c">
                 <span class="ion-arrow-down-b" aria-hidden="true"></span>
               </button>
