@@ -62,6 +62,8 @@ Global Page Section Start
         <div class="row" style="margin-top: 100px">
           <div class="col-xs-12 text-center">
 
+<a><span class="glyphicon glyphicon-sort-by-attributes"></span></a>
+
             <table class="table table-hover">
               <!--linha para cada atleta do ranking-->
               <tr>
