@@ -16,6 +16,7 @@
 		private $data_nascimento;
 		private $altura;
 		private $peso;
+        private $imagem;
 		private $status;
 
         /**
@@ -179,6 +180,22 @@
         function setPeso($peso)
         {
             $this->peso = $peso;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getImagem()
+        {
+            return $this->imagem;
+        }
+
+        /**
+         * @param mixed $imagem
+         */
+        public function setImagem($imagem)
+        {
+            $this->imagem = $imagem;
         }
 
         function setData_cadastro($data_cadastro)

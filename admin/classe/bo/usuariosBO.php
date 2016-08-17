@@ -52,15 +52,48 @@
 			$query .= " `descricao` = '".$usuariosVO->getDescricao()."',";
 			$query .= " `data_nascimento` = '".$usuariosVO->getData_nascimento()."',";
 			$query .= " `altura` = '".$usuariosVO->getAltura()."',";
+
+			if($usuariosVO->getImagem() != ""){
+				$query .= " `imagem` = '".$usuariosVO->getImagem()."',";
+			}
+
 			$query .= " `peso` = '".$usuariosVO->getPeso()."'";
 			$query .= " WHERE `id` = '".$usuariosVO->getId()."'";
 			
 			$db->do_query($query);
 
+			//echo $query; exit;
+
 			return $query;
 
 			$db->close();
 			
+		}
+
+		function editPerfil($usuariosVO){
+
+			$db = new DBMySQL();
+
+			$query = "UPDATE `usuarios` SET";
+			$query .= " `nome` = '".$usuariosVO->getNome()."',";
+			$query .= " `email` = '".$usuariosVO->getEmail()."',";
+			$query .= " `login` = '".$usuariosVO->getLogin()."',";
+			$query .= " `senha` = '".$usuariosVO->getSenha()."',";
+			$query .= " `data_nascimento` = '".$usuariosVO->getData_nascimento()."',";
+			$query .= " `altura` = '".$usuariosVO->getAltura()."',";
+
+			if($usuariosVO->getImagem() != ""){
+				$query .= " `imagem` = '".$usuariosVO->getImagem()."',";
+			}
+
+			$query .= " `peso` = '".$usuariosVO->getPeso()."'";
+			$query .= " WHERE `id` = '".$usuariosVO->getId()."'";
+
+			$db->do_query($query);
+
+			return $query;
+
+			$db->close();
 		}
 		
 		function deleteUsuario($usuariosVO) {
