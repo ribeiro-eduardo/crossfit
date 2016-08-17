@@ -62,12 +62,20 @@ Global Page Section Start
         <div class="row" style="margin-top: 100px">
           <div class="col-xs-12 text-center">
 
-<a><span class="glyphicon glyphicon-sort-by-attributes"></span></a>
+            <div class="text-right">
+              <button type="button" class="btn btn-default btn-lg" style="background: none; border: none; color: #ec001c">
+                <span class="ion-arrow-up-b" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-default btn-lg" style="background: none; border: none; color: #ec001c">
+                <span class="ion-arrow-down-b" aria-hidden="true"></span>
+              </button>
+            </div>
+
 
             <table class="table table-hover">
               <!--linha para cada atleta do ranking-->
               <tr>
-                <td>
+                <td style="border-top: transparent">
                   <a href="#" style="color: #5f5f5f;">
                     <div class="col-sm-1">
                       <h1 style="color: #e5001c">1</h1>
