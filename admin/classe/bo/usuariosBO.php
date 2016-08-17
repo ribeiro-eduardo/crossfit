@@ -261,11 +261,24 @@
 			
 		}
 		
-		function paginacao($inicio,$TAMANHO_PAGINA) {
+		function paginacao($busca = "",$inicio,$TAMANHO_PAGINA) {
+
+			echo $busca."<br>";
+			echo $inicio."<br>";
+			echo $TAMANHO_PAGINA."<br>";
+			//exit;
 			
 			$db = new DBMySQL();
-		
-			$db->do_query("SELECT * FROM `usuarios`  ORDER BY `id` ASC LIMIT ".$inicio.",".$TAMANHO_PAGINA);
+
+			if($busca == ""){
+
+				$query = "SELECT * FROM `usuarios` ORDER BY `id` ASC LIMIT $inicio, $TAMANHO_PAGINA";
+			}
+			else{
+				$query = "SELECT * FROM `usuarios` WHERE `nome` LIKE '%$busca%' ORDER BY `id` ASC LIMIT $inicio, $TAMANHO_PAGINA";
+			}
+
+			$db->do_query($query);
 			
 			$r = 0;
 			
@@ -276,6 +289,8 @@
 				$r++;
 				
 			}
+
+			echo $query; //exit;
 			
 			return $result;
 			
