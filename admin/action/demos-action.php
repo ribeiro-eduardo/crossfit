@@ -24,7 +24,7 @@ if($acao == "inserir"){
     if($demosBO->newDemo($demosVO)){
         ?>
         <script>
-            alert("Demonstração inserida com sucesso!");
+            alert("DemonstraÃ§Ã£o inserida com sucesso!");
             location.href = "../demos.php";
         </script>
         <?
@@ -32,7 +32,7 @@ if($acao == "inserir"){
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na gravação da demonstração. Por favor, tente novamente!");
+            alert("Ocorreu um erro na gravaÃ§Ã£o da demonstraÃ§Ã£o. Por favor, tente novamente!");
             location.href = "../demos.php";
         </script>
         <?
@@ -48,7 +48,7 @@ if($acao == "inserir"){
     if($demosBO->editDemo($demosVO)){
         ?>
         <script>
-            alert("Demonstração alterada com sucesso!");
+            alert("DemonstraÃ§Ã£o alterada com sucesso!");
             location.href = "../demos.php";
         </script>
         <?
@@ -56,7 +56,7 @@ if($acao == "inserir"){
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na alteração da demonstração. Por favor, tente novamente!");
+            alert("Ocorreu um erro na alteraÃ§Ã£o da demonstraÃ§Ã£o. Por favor, tente novamente!");
             location.href = "../demos.php";
         </script>
         <?
@@ -68,7 +68,7 @@ if($acao == "inserir"){
     if($demosBO->deleteDemo($demosVO)){
         ?>
         <script>
-            alert("Demonstração excluída com sucesso!");
+            alert("DemonstraÃ§Ã£o excluÃ­da com sucesso!");
             location.href = "../demos.php";
         </script>
         <?
@@ -76,7 +76,7 @@ if($acao == "inserir"){
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na remoção da demonstração. Por favor, tente novamente!");
+            alert("Ocorreu um erro na remoÃ§Ã£o da demonstraÃ§Ã£o. Por favor, tente novamente!");
             location.href = "../demos.php";
         </script>
         <?

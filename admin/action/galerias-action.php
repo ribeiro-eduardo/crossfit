@@ -48,7 +48,7 @@ if (isset($_POST["cadastrar"])) {
             if ($file['error'][$i] == 1) {
                 ?>
                 <script>
-                    alert("Escolha imagens de no m·ximo 1,5 MB!");
+                    alert("Escolha imagens de no m√°ximo 1,5 MB!");
                     location.href = "../galerias.php";
                 </script>
                 <?
@@ -58,7 +58,7 @@ if (isset($_POST["cadastrar"])) {
 
                 if ($file['size'][$i] > 1500000) {
 
-                    $msg = "Escolha imagens de no m&aacute;ximo 1,5 MB";
+                    $msg = "Escolha imagens de no m√°ximo 1,5 MB";
                     //echo $msg;
 
                     //die("se ferrou");
@@ -121,7 +121,7 @@ if (isset($_POST["cadastrar"])) {
     } else {
         ?>
         <script>
-            alert("Ocorreu um erro na gravaÁ„o da galeria. Por favor, tente novamente!");
+            alert("Ocorreu um erro na grava√ß√£o da galeria. Por favor, tente novamente!");
             location.href = "../galerias.php";
         </script>
         <?
@@ -154,7 +154,7 @@ if (isset($_POST["cadastrar"])) {
                 if ($file['error'][$i] == 1) {
                     ?>
                     <script>
-                        alert("Escolha imagens de no m·ximo 1,5 MB!");
+                        alert("Escolha imagens de no m√°ximo 1,5 MB!");
                         location.href = "../visualizar-galeria.php?id="+<?=$id?>;
                     </script>
                     <?
@@ -227,7 +227,7 @@ if (isset($_POST["cadastrar"])) {
         } else {
             ?>
             <script>
-                alert("Ocorreu um erro na alteraÁ„o da galeria. Por favor, tente novamente!");
+                alert("Ocorreu um erro na altera√ß√£o da galeria. Por favor, tente novamente!");
                 location.href = "../galerias.php";
             </script>
             <?
@@ -242,7 +242,7 @@ elseif (isset($_GET["e"]) && $_GET["e"] == "excluir" && isset($_GET['id'])) {
     if ($galeriasBO->deleteGaleria($galeriasVO)) {
         ?>
         <script>
-            alert("Galeria excluÌda com sucesso!");
+            alert("Galeria exclu√≠da com sucesso!");
             location.href = "../galerias.php";
         </script>
         <?
@@ -250,7 +250,7 @@ elseif (isset($_GET["e"]) && $_GET["e"] == "excluir" && isset($_GET['id'])) {
     } else {
         ?>
         <script>
-            alert("Ocorreu um erro na remoÁ„o da galeria. Por favor, tente novamente!");
+            alert("Ocorreu um erro na remo√ß√£o da galeria. Por favor, tente novamente!");
             location.href = "../galerias.php";
         </script>
         <?
@@ -263,7 +263,7 @@ elseif (isset($_GET["e"]) && $_GET["e"] == "excluir" && isset($_GET['id'])) {
     if($galeriaFotosBO->deleteImagem($id)){
         ?>
         <script>
-            alert("Imagem excluÌda com sucesso!");
+            alert("Imagem exclu√≠da com sucesso!");
             location.href = "../visualizar-galeria.php?id="+<?=$idG?>;
         </script>
         <?
@@ -271,7 +271,7 @@ elseif (isset($_GET["e"]) && $_GET["e"] == "excluir" && isset($_GET['id'])) {
     } else {
         ?>
         <script>
-            alert("Ocorreu um erro na remoÁ„o da galeria. Por favor, tente novamente!");
+            alert("Ocorreu um erro na remo√ß√£o da galeria. Por favor, tente novamente!");
             location.href = "../visualizar-galeria.php?id="+<?=$idG?>;
         </script>
         <?

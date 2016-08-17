@@ -30,7 +30,7 @@ if (isset($_POST["editar"])) {
         ?>
         <script>
             var id_modulo = <?=$id_modulo?>;
-            alert("Conteúdo atualizado com sucesso!");
+            alert("ConteÃºdo atualizado com sucesso!");
             if (id_modulo == 1) {
                 location.href = "../visualizar-hd.php";
             } else if (id_modulo == 2) {
@@ -43,7 +43,7 @@ if (isset($_POST["editar"])) {
         ?>
         <script>
             var id_modulo = <?=$id_modulo?>;
-            alert("Ocorreu um erro na atualização do conteúdo. Por favor, tente novamente!");
+            alert("Ocorreu um erro na atualizaÃ§Ã£o do conteÃºdo. Por favor, tente novamente!");
             if (id_modulo == 1) {
                 location.href = "../visualizar-hd.php";
             } else if (id_modulo == 2) {

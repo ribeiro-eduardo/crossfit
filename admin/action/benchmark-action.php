@@ -38,7 +38,7 @@ if(isset($_POST["cadastrar"])){
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na gravação do benchmark. Por favor, tente novamente!");
+            alert("Ocorreu um erro na gravaÃ§Ã£o do benchmark. Por favor, tente novamente!");
             location.href = "../form-benchmarks.php";
         </script>
         <?
@@ -62,7 +62,7 @@ if(isset($_POST["cadastrar"])){
     }else{
         ?>
         <script>
-            alert("Ocorreu um erro na alteração do benchmark. Por favor, tente novamente!");
+            alert("Ocorreu um erro na alteraÃ§Ã£o do benchmark. Por favor, tente novamente!");
             location.href = "../form-benchmarks.php";
         </script>
         <?
@@ -74,7 +74,7 @@ if(isset($_POST["cadastrar"])){
     if($benchmarksBO->deleteBenchmark($benchmarksVO)){
         ?>
         <script>
-            alert("Benchmark excluído com sucesso!");
+            alert("Benchmark excluï¿½do com sucesso!");
             location.href = "../benchmarks.php";
         </script>
         <?

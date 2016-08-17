@@ -46,7 +46,7 @@ if (isset($_POST["cadastrar"])) {
         if($imagem['size'] > 8000000){
             ?>
             <script>
-                alert("Escolha uma imagem de no m·ximo 8 MB!");
+                alert("Escolha uma imagem de no m√°ximo 8 MB!");
                 location.href = "../form-noticias.php";
             </script>
             <?
@@ -89,7 +89,7 @@ if (isset($_POST["cadastrar"])) {
     if ($noticiasBO->newNoticia($noticiasVO)) {
         ?>
         <script>
-            alert("NotÌcia inserida com sucesso!");
+            alert("Not√≠cia inserida com sucesso!");
             location.href = "../noticias.php";
         </script>
         <?
@@ -97,7 +97,7 @@ if (isset($_POST["cadastrar"])) {
     } else {
         ?>
         <script>
-            alert("Ocorreu um erro na gravaÁ„o da notÌcia. Por favor, tente novamente!");
+            alert("Ocorreu um erro na grava√ß√£o da not√≠cia. Por favor, tente novamente!");
             location.href = "../noticias.php";
         </script>
         <?
@@ -119,7 +119,7 @@ if (isset($_POST["cadastrar"])) {
 
                 ?>
                 <script>
-                    alert("Escolha uma imagem de no m·ximo 8 MB!");
+                    alert("Escolha uma imagem de no m√°ximo 8 MB!");
                     location.href = "../visualizar-noticia.php?id=<?=$id?>";
                 </script>
                 <?
@@ -162,7 +162,7 @@ if (isset($_POST["cadastrar"])) {
     if ($noticiasBO->editNoticia($noticiasVO)) {
         ?>
         <script>
-            alert("NotÌcia alterada com sucesso!");
+            alert("Not√≠cia alterada com sucesso!");
             location.href = "../noticias.php";
         </script>
         <?
@@ -170,7 +170,7 @@ if (isset($_POST["cadastrar"])) {
     } else {
         ?>
         <script>
-            alert("Ocorreu um erro na ediÁ„o da notÌcia. Por favor, tente novamente!");
+            alert("Ocorreu um erro na edi√ß√£o da not√≠cia. Por favor, tente novamente!");
             location.href = "../noticias.php";
         </script>
         <?
@@ -182,7 +182,7 @@ if (isset($_POST["cadastrar"])) {
     if ($noticiasBO->deleteNoticia($noticiasVO)) {
         ?>
         <script>
-            alert("NotÌcia excluÌda com sucesso!");
+            alert("Not√≠cia exclu√≠da com sucesso!");
             location.href = "../noticias.php";
         </script>
         <?
@@ -190,7 +190,7 @@ if (isset($_POST["cadastrar"])) {
     } else {
         ?>
         <script>
-            alert("Ocorreu um erro na remoÁ„o da notÌcia. Por favor, tente novamente!");
+            alert("Ocorreu um erro na remo√ß√£o da not√≠cia. Por favor, tente novamente!");
             location.href = "../noticias.php";
         </script>
         <?
