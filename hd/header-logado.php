@@ -66,7 +66,7 @@ include("meta.php");
                       <li><a href="contact.php" style="top: 15px">Contato</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img class="img-circle foto-nav" src="images/coach2.jpg">
+                            <img class="img-circle foto-nav" src="<?=$dir?>/<?=$imagem?>">
                           </a>
                           <div class="dropdown-menu">
                               <ul>

@@ -1,14 +1,4 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
-if (!isset($_SESSION['id'])) {
-    @session_destroy();
-    @header("Location: index.php");
-    exit;
-} else {
-    include("header-logado.php");
-}
 require_once("../admin/lib/DBMySql.php");
 require("../admin/classe/bo/usuariosBO.php");
 require("../admin/classe/vo/usuariosVO.php");
@@ -23,10 +13,23 @@ $usuariosVO = new usuariosVO();
 $benchmarksVO = new benchmarksVO();
 $benchmarksBO = new benchmarksBO();
 
-$id = $_POST["id"];
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['id'])) {
+    @session_destroy();
+    @header("Location: index.php");
+    exit;
+} else {
+    $header_logado = 1;
+    //include("header-logado.php");
+}
+
+$id = $_SESSION["id"];
 $usuariosVO->setId($id);
 
 $usuario = $usuariosBO->get($usuariosVO);
+$imagem = $usuario['imagem'];
 $id_tipo_usuario = $usuario['id_tipo_usuario'];
 
 switch ($id_tipo_usuario) {
@@ -42,6 +45,10 @@ switch ($id_tipo_usuario) {
         $icone = "images/athlete.png";
         $dir = "fotos-atletas";
         break;
+}
+
+if($header_logado == 1){
+    include("header-logado.php");
 }
 
 $data_nascimento = @date('d/m/Y', strtotime($usuario["data_nascimento"]));
@@ -190,7 +197,7 @@ Global Page Section Start
     </div>
 </div>
 
-<div class="row" style="margin: 70px 0;">
+<div class="row" id="benchmarks" style="margin: 70px 0;">
     <h1 class="text-center" style="margin-bottom: 60px; background: #E5001C; padding: 15px; color: #fcfcfc;">
         Benchmarks</h1>
 
@@ -254,31 +261,31 @@ Global Page Section Start
 
 
       <!--inserir bench-->
-      <div>
-        <div class="col-md-1 text-center lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
-          <select style="border-radius: 0; width: 100%; height: 100%;">
-            <option value=""></option>
-            <option value="challenge">CHALLENGE</option>
-            <option value="girl">GIRL</option>
-            <option value="hero">HERO</option>
-          </select>
-        </div>
-        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
-          <select style="border-radius: 0; width: 100%; height: 100%;">
-            <option value=""></option>
-            <option value="1">Nome do benchmark dessa categoria</option>
-            <option value="2">Nome do benchmark</option>
-            <option value="3">Nome do benchmark</option>
-          </select>
-        </div>
-        <div class="col-md-2 lbl" style="height: 30px; font-size: 16px; padding-top: 2px;">
-          <input value="02:59" style="width: 100%"/>
-        </div>
-        <div class="col-md-2" style="height: 30px; font-size: 16px; padding-top: 4px;">
-          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>
-        </div>
-      </div>
-      <div class="clearfix"></div>
+<!--      <div>-->
+<!--        <div class="col-md-1 text-center lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">-->
+<!--          <select id="id_categoria_treino" style="border-radius: 0; width: 100%; height: 100%;">-->
+<!--            <option value=""></option>-->
+<!--            <option value="challenge">CHALLENGE</option>-->
+<!--            <option value="girl">GIRL</option>-->
+<!--            <option value="hero">HERO</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">-->
+<!--          <select style="border-radius: 0; width: 100%; height: 100%;">-->
+<!--            <option value=""></option>-->
+<!--            <option value="1">Nome do benchmark dessa categoria</option>-->
+<!--            <option value="2">Nome do benchmark</option>-->
+<!--            <option value="3">Nome do benchmark</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <div class="col-md-2 lbl" style="height: 30px; font-size: 16px; padding-top: 2px;">-->
+<!--          <input value="02:59" style="width: 100%"/>-->
+<!--        </div>-->
+<!--        <div class="col-md-2" style="height: 30px; font-size: 16px; padding-top: 4px;">-->
+<!--          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="clearfix"></div>-->
       <!--fim inserir bench-->
 
 
@@ -323,7 +330,7 @@ include("footer-logado.php");
 
 <script>
     $('#add-benchmark').click(function () {
-        $('#tr-benchmark').append('<tr><td class="col-sm-1 lbl text-center"><select id="id_categoria_treino" style="border-radius: 0; width: 60px; height: 100%"><option value=""></option><option value="1">Hero</option><option value="2">Girl</option><option value="3">Challenge</option></select><td class="col-md-7 lbl"><select id="titulo" style="border-radius: 0; width: 100%; height: 100%"><option value="">Benchmark</option><option value="">abc</option><option value="">abc</option></select></td><td class="col-md-3 lbl"><input value=""/></td><td class="col-md-1 text-right"><a href="#"style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b"></span> </a></td></tr>');
+        $('#benchmarks').append('<div><div class="col-md-1 text-center lbl" style="height: 30px; font-size: 16px; padding-top: 4px;"><select id="id_categoria_treino" style="border-radius: 0; width: 100%; height: 100%;"><option value=""></option><option value="challenge">CHALLENGE</option><option value="girl">GIRL</option><option value="hero">HERO</option></select></div><div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;"><select style="border-radius: 0; width: 100%; height: 100%;"><option value=""></option><option value="1">Nome do benchmark dessa categoria</option><option value="2">Nome do benchmark</option><option value="3">Nome do benchmark</option></select></div><div class="col-md-2 lbl" style="height: 30px; font-size: 16px; padding-top: 2px;"><input value="02:59" style="width: 100%"/></div><div class="col-md-2" style="height: 30px; font-size: 16px; padding-top: 4px;"><a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a></div></div><div class="clearfix"></div>');
     });
 
 //    $('#id_categoria_treino').change(function(){

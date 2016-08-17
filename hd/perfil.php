@@ -1,14 +1,4 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
-if (!isset($_SESSION['id'])) {
-    @session_destroy();
-    @header("Location: index.php");
-    exit;
-} else {
-    include("header-logado.php");
-}
 
 require_once("../admin/lib/DBMySql.php");
 require("../admin/classe/bo/usuariosBO.php");
@@ -24,10 +14,23 @@ $usuariosVO = new usuariosVO();
 $benchmarksVO = new benchmarksVO();
 $benchmarksBO = new benchmarksBO();
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['id'])) {
+    @session_destroy();
+    @header("Location: index.php");
+    exit;
+} else {
+    $header_logado = 1;
+    //include("header-logado.php");
+}
+
 $id = $_SESSION["id"];
 $usuariosVO->setId($id);
 
 $usuario = $usuariosBO->get($usuariosVO);
+$imagem = $usuario['imagem'];
 $id_tipo_usuario = $usuario['id_tipo_usuario'];
 
 switch ($id_tipo_usuario) {
@@ -43,6 +46,10 @@ switch ($id_tipo_usuario) {
         $icone = "images/athlete.png";
         $dir = "fotos-atletas";
         break;
+}
+
+if($header_logado == 1){
+    include("header-logado.php");
 }
 
 $data_nascimento = @date('d/m/Y', strtotime($usuario["data_nascimento"]));
@@ -98,8 +105,8 @@ Global Page Section Start
 <div class="container" style="margin-top: 60px">
     <div class="row">
         <div class="col-md-4">
-            <img class="img-circle center-block img-perfil" src="<?=$dir?>/<?= $usuario['imagem'] ?>"
-                 style="margin-top: 40px">
+            <img class="img-circle center-block img-perfil" src="<?=$dir?>/<?= $imagem ?>"
+                 style="margin-top: 40px; background: none;">
         </div>
         <div class="col-md-8">
 

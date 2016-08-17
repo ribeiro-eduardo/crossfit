@@ -1,12 +1,40 @@
 <?php
-if (!isset($_SESSION)){
+require_once("../admin/lib/DBMySql.php");
+require("../admin/classe/bo/usuariosBO.php");
+require("../admin/classe/vo/usuariosVO.php");
+$usuariosBO = new usuariosBO();
+$usuariosVO = new usuariosVO();
+if (!isset($_SESSION)) {
     session_start();
 }
-if(!isset($_SESSION['id'])){
+if (!isset($_SESSION['id'])) {
     @session_destroy();
     @header("Location: index.php");
     exit;
-}else{
+} else {
+    $header_logado = 1;
+    //include("header-logado.php");
+}
+$id = $_SESSION["id"];
+$usuariosVO->setId($id);
+$usuario = $usuariosBO->get($usuariosVO);
+$imagem = $usuario['imagem'];
+$id_tipo_usuario = $usuario['id_tipo_usuario'];
+switch ($id_tipo_usuario) {
+    case 1:
+        $icone = "images/coach.png";
+        $dir = "fotos-coaches";
+        break;
+    case 2:
+        $icone = "images/coach.png";
+        $dir = "fotos-coaches";
+        break;
+    case 3:
+        $icone = "images/athlete.png";
+        $dir = "fotos-atletas";
+        break;
+}
+if($header_logado == 1){
     include("header-logado.php");
 }
 
