@@ -64,7 +64,7 @@ if($header_logado == 1){
         <div class=" pdg">
             <h5 class="text-right">03/03/2016</h5>
             <h2 class="text-center">Título do WOD</h2>
-            <h4 class="text-center">Subtítulo do WOD(ex: homem/mulher/iniciante/intermediario/avançado) CASO EXISTA</h4>
+            <h4 class="text-center">Subtítulo do WOD(ex: homem/mulher/iniciante</h4>
             <p class="text-center">30 Box Jump – Salto na Caixa<br/>
               30 KB SW 12kg/16kg<br/>
               30 Burpee<br/>
@@ -251,7 +251,7 @@ if($header_logado == 1){
         <div class=" pdg">
             <h5 class="text-right">03/03/2016</h5>
             <h2 class="text-center">Título do WOD</h2>
-            <h4>Subtítulo do WOD(ex: homem/mulher/iniciante/intermediario/avançado) CASO EXISTA</h4>
+            <h4>Subtítulo do WOD(ex: homem/mulher/iniciante/intermediario/</h4>
             <p>30 Box Jump – Salto na Caixa<br/>
               30 KB SW 12kg/16kg<br/>
               30 Burpee<br/>
