@@ -383,12 +383,12 @@ if(!isset($_SESSION['id'])){
     </div>
   </div>
 
-
+<!--
 
   <div class="row">
       <div class="col-md-12">
 
-<!--
+
           <div class="comments">
               <div class="media">
                   <a href="" class="pull-left">
