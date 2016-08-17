@@ -57,7 +57,7 @@ Global Page Section Start
                 $aux = explode("=", $aux);
                 $link = $aux[1];
                 ?>
-                <div class="video col-md-4">
+                <div class="video-demo col-md-4">
                     <iframe src="https://www.youtube.com/embed/<?=$link?>" frameborder="0" allowfullscreen
                             width="360" height="220"></iframe>
                     <p class="nome-video"><?=$demos[$i]['titulo']?></p>
