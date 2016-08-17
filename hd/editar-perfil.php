@@ -201,65 +201,59 @@ Global Page Section Start
 
     <!--form benchs-->
     <form>
+      <!--cada bench-->
+      <div>
+        <div class="col-md-1 text-center lbl">
+          <img src="images/challenge.png"></td>
+        </div>
+        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
+          Nome do benchmark
+        </div>
+        <div class="col-md-2 lbl">
+          <input value="02:59" style="width: 100%"/>
+        </div>
+        <div class="col-md-2">
+          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <!--fim de cada bench-->
 
-        <table id="tr-benchmark">
-            <tr>
-                <td class="col-md-1 lbl text-center"><img src="images/challenge.png"></td>
-                <td class="col-md-7 lbl">30 Muscle-ups</td>
-                <td class="col-md-3 lbl"><input value="02:59"/></td>
-                <td class="col-md-1 text-right"><a href="#"
-                                                   style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span
-                            class="ion-trash-b"></span> </a></td>
-            </tr>
-            <tr>
-                <td class="col-sm-1 lbl text-center"><img src="images/hero.png"></td>
-                <td class="col-sm-7 lbl">Abbate</td>
-                <td class="col-sm-3 lbl"><input value="28:56"/></td>
-                <td class="col-sm-1 text-right"><a href="#"
-                                                   style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span
-                            class="ion-trash-b"></span> </a></td>
-            </tr>
-            <tr>
-                <td class="col-sm-1 lbl text-center"><img src="images/girl.png"></td>
-                <td class="col-sm-7 lbl">Qualquer Girl</td>
-                <td class="col-sm-3 lbl"><input value="02:05"/></td>
-                <td class="col-sm-1 text-right"><a href="#"
-                                                   style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span
-                            class="ion-trash-b"></span> </a></td>
-            </tr>
-            <!-- <tr> para add um novo benchmark. a ideia é que só apareça pra ser preenchida qdo clicar em "adicionar benchmark"-->
-<!--            <tr>-->
-<!--                <td class="col-sm-1 lbl text-center">-->
-<!--                    <select style="border-radius: 0; width: 60px; height: 100%">-->
-<!--                        <option value=""></option>-->
-<!--                        <option value="girl">GIRL</option>-->
-<!--                        <option value="hero">HERO</option>-->
-<!--                        <option value="challenge">CHALLENGE</option>-->
-<!--                    </select>-->
-<!--                <td class="col-md-7 lbl">-->
-<!--                    <select style="border-radius: 0; width: 100%; height: 100%">-->
-<!--                        <option value="">Benchmark</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                        <option value="">abc</option>-->
-<!--                    </select>-->
-<!--                </td>-->
-<!--                <td class="col-md-3 lbl"><input value=""/></td>-->
-<!--                <td class="col-md-1 text-right"><a href="#"-->
-<!--                                                   style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span-->
-<!--                            class="ion-trash-b"></span> </a></td>-->
-<!--            </tr>-->
-        </table>
+
+      <div>
+        <div class="col-md-1 text-center lbl">
+          <img src="images/girl.png"></td>
+        </div>
+        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
+          Nome do benchmark
+        </div>
+        <div class="col-md-2 lbl">
+          <input value="02:59" style="width: 100%"/>
+        </div>
+        <div class="col-md-2">
+          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+
+      <div>
+        <div class="col-md-1 text-center lbl">
+          <img src="images/hero.png"></td>
+        </div>
+        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
+          Nome do benchmark
+        </div>
+        <div class="col-md-2 lbl">
+          <input value="02:59" style="width: 100%"/>
+        </div>
+        <div class="col-md-2">
+          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+
+
+
         <div class="text-right" style="margin-top: 60px">
             <input name="salvar" id="salvar" value="Salvar" type="submit" class="btn btn-details">
         </div>
