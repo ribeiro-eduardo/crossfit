@@ -253,6 +253,34 @@ Global Page Section Start
       <div class="clearfix"></div>
 
 
+      <!--inserir bench-->
+      <div>
+        <div class="col-md-1 text-center lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
+          <select style="border-radius: 0; width: 100%; height: 100%;">
+            <option value=""></option>
+            <option value="challenge">CHALLENGE</option>
+            <option value="girl">GIRL</option>
+            <option value="hero">HERO</option>
+          </select>
+        </div>
+        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
+          <select style="border-radius: 0; width: 100%; height: 100%;">
+            <option value=""></option>
+            <option value="1">Nome do benchmark dessa categoria</option>
+            <option value="2">Nome do benchmark</option>
+            <option value="3">Nome do benchmark</option>
+          </select>
+        </div>
+        <div class="col-md-2 lbl" style="height: 30px; font-size: 16px; padding-top: 2px;">
+          <input value="02:59" style="width: 100%"/>
+        </div>
+        <div class="col-md-2" style="height: 30px; font-size: 16px; padding-top: 4px;">
+          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <!--fim inserir bench-->
+
 
         <div class="text-right" style="margin-top: 60px">
             <input name="salvar" id="salvar" value="Salvar" type="submit" class="btn btn-details">

@@ -30,8 +30,18 @@ Global Page Section Start
 
     <div class="container" style="margin-top: 60px; margin-bottom: 60px">
         <div class="row">
-          <div class="col-md-offset-4 col-md-4 col-xs-12">
-            combo 1
+          <div class="col-xs-12 text-center">
+            <h4 style="color: #fcfcfc; padding-bottom: 15px; text-transform: uppercase; font-family: 'Roboto', sans-serif;">
+              Selecione a categoria do benchmark que deseja ranquear:
+            </h4>
+          </div>
+          <div class="col-md-offset-4 col-md-4 col-xs-12 text-center">
+            <select style="border-radius: 0; width: 80%; height: 100%;">
+              <option value=""></option>
+              <option value="challenge">CHALLENGE</option>
+              <option value="girl">GIRL</option>
+              <option value="hero">HERO</option>
+            </select>
           </div>
         </div>
         <div class="row">
