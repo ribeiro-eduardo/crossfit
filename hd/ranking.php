@@ -66,12 +66,15 @@ Global Page Section Start
               <!--linha para cada atleta do ranking-->
               <tr>
                 <td>
-                  <a href="#">
-                      <div class="col-md-offset-3 col-md-6">
+                  <a href="#" style="color: #5f5f5f;">
+                    <div class="col-sm-1">
+                      <h1 style="color: #e5001c">1</h1>
+                    </div>
+                      <div class="col-md-offset-2 col-md-6">
                         <img class="img-circle img-busca col-md-4" src="fotos-atletas/sem-imagem.jpg">
                         <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
                         <p>21 anos</p>
-                        <p style="font-weight: bold">meu tempinho</p>
+                        <p style="font-weight: bold; color: #e5001c">meu tempinho</p>
                       </div>
                   </a>
                 </td>
@@ -79,24 +82,30 @@ Global Page Section Start
               <!--fim da linha para cada atleta do ranking-->
               <tr>
                 <td>
-                  <a href="#">
-                    <div class="col-md-offset-3 col-md-6">
+                  <a href="#" style="color: #5f5f5f;">
+                    <div class="col-sm-1">
+                      <h1 style="color: #e5001c">2</h1>
+                    </div>
+                    <div class="col-md-offset-2 col-md-6">
                       <img class="img-circle img-busca col-md-4" src="fotos-coaches/coach1.jpg">
                       <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
                       <p>21 anos</p>
-                      <p style="font-weight: bold">meu tempinho</p>
+                      <p style="font-weight: bold; color: #e5001c">meu tempinho</p>
                     </div>
                   </a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="#">
-                    <div class="col-md-offset-3 col-md-6">
+                  <a href="#" style="color: #5f5f5f;">
+                    <div class="col-sm-1">
+                      <h1 style="color: #e5001c">3</h1>
+                    </div>
+                    <div class="col-md-offset-2 col-md-6">
                       <img class="img-circle img-busca col-md-4" src="fotos-coaches/coach2.jpg">
                       <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
                       <p>21 anos</p>
-                      <p style="font-weight: bold">meu tempinho</p>
+                      <p style="font-weight: bold; color: #e5001c">meu tempinho</p>
                     </div>
                   </a>
                 </td>
