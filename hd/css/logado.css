@@ -153,3 +153,9 @@ body{
   background-size: cover !important;
   background-color: #E5001C !important;
 }
+
+#datepicker div{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
