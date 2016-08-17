@@ -74,6 +74,7 @@ include("meta.php");
                                   <li><a href="perfil.php">Meu Perfil</a></li>
                                   <li><a href="atletas.php">Atletas</a></li>
                                   <li><a href="calendario.php">Calendário</a></li>
+                                  <li><a href="ranking.php">Ranking</a></li>
                                   <li><a href="processausuarios.php?operacao=sair">Sair</a></li>
                               </ul>
                           </div>
