@@ -200,8 +200,3 @@ Global Page Section Start
 include("footer-logado.php");
 ?>
 
-<script>
-    function editarPerfil(id){
-
-    }
-</script>

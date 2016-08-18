@@ -88,7 +88,7 @@ $galerias = $galeriasBO->get($galeriasVO);
     }
 
     function excluir(id) {
-        if (confirm('Voc� tem certeza que deseja excluir essa galeria?')) {
+        if (confirm('Você tem certeza que deseja excluir essa galeria?')) {
             window.location = 'action/galerias-action.php?e=excluir&id=' + id;
         }
     }

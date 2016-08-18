@@ -7,7 +7,8 @@ if (!isset($_SESSION['id'])) {
     @header("Location: index.php");
     exit;
 } else {
-    include("header-logado.php");
+    $header_logado = 1;
+    //include("header-logado.php");
 }
 require_once("../admin/lib/DBMySql.php");
 require("../admin/classe/bo/usuariosBO.php");
@@ -16,6 +17,7 @@ require_once("../admin/classe/functions.php");
 
 $usuariosBO = new usuariosBO();
 $usuariosVO = new usuariosVO();
+$usuario_logadoVO = new usuariosVO();
 
 $busca = (isset($_GET['busca'])) ? $_GET['busca'] : "";
 $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
@@ -26,9 +28,33 @@ $numPaginas = ceil($total/$registros);
 $inicio = ($registros*$pagina)-$registros;
 $atletas = $usuariosBO->paginacao($busca, $inicio, $registros);
 
-//echo "<pre>";
-//var_dump($atletas);
-//echo "</pre>";
+$id = $_SESSION["id"];
+$usuario_logadoVO->setId($id);
+
+$usuario_logado = $usuariosBO->get($usuario_logadoVO);
+$imagem = $usuario_logado['imagem'];
+$id_tipo_usuario = $usuario_logado['id_tipo_usuario'];
+
+switch ($id_tipo_usuario) {
+    case 1:
+        $icone = "images/coach.png";
+        $dir = "fotos-coaches";
+        break;
+    case 2:
+        $icone = "images/coach.png";
+        $dir = "fotos-coaches";
+        break;
+    case 3:
+        $icone = "images/athlete.png";
+        $dir = "fotos-atletas";
+        break;
+}
+
+
+if($header_logado == 1){
+    include("header-logado.php");
+}
+
 ?>
 
 <!--
@@ -91,7 +117,7 @@ Global Page Section Start
               $idade = calculaIdade($data_nascimento);
               ?>
           <div class="col-md-4 col-sm-6" style="margin-bottom: 40px; height: 131px">
-            <a href="#">
+            <a href="atleta.php?id=<?=$atletas[$i]['id']?>">
                 <img class="img-circle col-md-2 img-busca" src="<?=$dir?>/<?=$atletas[$i]['imagem']?>">
                 <div>
                   <h3><?=$atletas[$i]['nome']?><span><img src="<?=$icone?>"></span></h3>

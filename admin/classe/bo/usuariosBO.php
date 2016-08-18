@@ -262,11 +262,6 @@
 		}
 		
 		function paginacao($busca = "",$inicio,$TAMANHO_PAGINA) {
-
-			echo $busca."<br>";
-			echo $inicio."<br>";
-			echo $TAMANHO_PAGINA."<br>";
-			//exit;
 			
 			$db = new DBMySQL();
 
@@ -290,8 +285,6 @@
 				
 			}
 
-			echo $query; //exit;
-			
 			return $result;
 			
 		}

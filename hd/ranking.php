@@ -1,6 +1,55 @@
 <?php
-include("header-logado.php");
-?>
+require_once("../admin/lib/DBMySql.php");
+require("../admin/classe/bo/usuariosBO.php");
+require("../admin/classe/vo/usuariosVO.php");
+require_once("../admin/classe/functions.php");
+
+require("../admin/classe/bo/benchmarksBO.php");
+require("../admin/classe/vo/benchmarksVO.php");
+
+$usuariosBO = new usuariosBO();
+$usuariosVO = new usuariosVO();
+
+$benchmarksVO = new benchmarksVO();
+$benchmarksBO = new benchmarksBO();
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['id'])) {
+    @session_destroy();
+    @header("Location: index.php");
+    exit;
+} else {
+    $header_logado = 1;
+    //include("header-logado.php");
+}
+
+$id = $_SESSION["id"];
+$usuariosVO->setId($id);
+
+$usuario = $usuariosBO->get($usuariosVO);
+$imagem = $usuario['imagem'];
+$id_tipo_usuario = $usuario['id_tipo_usuario'];
+
+switch ($id_tipo_usuario) {
+    case 1:
+        $icone = "images/coach.png";
+        $dir = "fotos-coaches";
+        break;
+    case 2:
+        $icone = "images/coach.png";
+        $dir = "fotos-coaches";
+        break;
+    case 3:
+        $icone = "images/athlete.png";
+        $dir = "fotos-atletas";
+        break;
+}
+
+if($header_logado == 1){
+    include("header-logado.php");
+}?>
 
 <!--
 ==================================================
@@ -36,11 +85,12 @@ Global Page Section Start
             </h4>
           </div>
           <div class="col-md-offset-4 col-md-4 col-xs-12 text-center" style="height: 27px;">
-            <select style="border-radius: 0; width: 80%; height: 100%;">
-              <option value=""></option>
-              <option value="challenge">CHALLENGE</option>
-              <option value="girl">GIRL</option>
-              <option value="hero">HERO</option>
+            <select id="id_categoria_treino" style="border-radius: 0; width: 80%; height: 100%;">
+              <option value="" disabled selected>Selecione</option>
+              <option value="1">HERO</option>
+                <option value="2">GIRL</option>
+                <option value="3">CHALLENGE</option>
+
             </select>
           </div>
         </div>
@@ -51,11 +101,8 @@ Global Page Section Start
             </h4>
           </div>
           <div class="col-md-offset-3 col-md-6 col-xs-12 text-center" style="height: 27px;">
-            <select style="border-radius: 0; width: 80%; height: 100%;">
-              <option value=""></option>
-              <option value="1">GIRL 1</option>
-              <option value="2">GIRL 2</option>
-              <option value="3">GIRL 3</option>
+            <select id="id_benchmark" style="border-radius: 0; width: 80%; height: 100%;">
+              <option value="" selected="selected">Selecione</option>
             </select>
           </div>
         </div>
@@ -73,62 +120,72 @@ Global Page Section Start
             </div>
 
 
-            <table class="table table-hover">
+            <table class="table table-hover" id="listagem">
               <!--linha para cada atleta do ranking-->
-              <tr>
-                <td style="border-top: transparent">
-                  <a href="#" style="color: #5f5f5f;">
-                    <div class="col-sm-1">
-                      <h1 style="color: #e5001c">1</h1>
-                    </div>
-                      <div class="col-md-offset-2 col-md-6">
-                        <img class="img-circle img-busca col-md-4" src="fotos-atletas/sem-imagem.jpg">
-                        <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
-                        <p>21 anos</p>
-                        <p style="font-weight: bold; color: #e5001c">meu tempinho</p>
-                      </div>
-                  </a>
-                </td>
-              </tr>
+<!--              <tr>-->
+<!--                <td style="border-top: transparent">-->
+<!--                  <a href="#" style="color: #5f5f5f;">-->
+<!--                    <div class="col-sm-1">-->
+<!--                      <h1 style="color: #e5001c">1</h1>-->
+<!--                    </div>-->
+<!--                      <div class="col-md-offset-2 col-md-6">-->
+<!--                        <img class="img-circle img-busca col-md-4" src="fotos-atletas/sem-imagem.jpg">-->
+<!--                        <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>-->
+<!--                        <p>21 anos</p>-->
+<!--                        <p style="font-weight: bold; color: #e5001c">meu tempinho</p>-->
+<!--                      </div>-->
+<!--                  </a>-->
+<!--                </td>-->
+<!--              </tr>-->
               <!--fim da linha para cada atleta do ranking-->
-              <tr>
-                <td>
-                  <a href="#" style="color: #5f5f5f;">
-                    <div class="col-sm-1">
-                      <h1 style="color: #e5001c">2</h1>
-                    </div>
-                    <div class="col-md-offset-2 col-md-6">
-                      <img class="img-circle img-busca col-md-4" src="fotos-coaches/coach1.jpg">
-                      <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
-                      <p>21 anos</p>
-                      <p style="font-weight: bold; color: #e5001c">meu tempinho</p>
-                    </div>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#" style="color: #5f5f5f;">
-                    <div class="col-sm-1">
-                      <h1 style="color: #e5001c">3</h1>
-                    </div>
-                    <div class="col-md-offset-2 col-md-6">
-                      <img class="img-circle img-busca col-md-4" src="fotos-coaches/coach2.jpg">
-                      <h3><span><img src="images/athlete.png"></span>Meu nome horroroso</h3>
-                      <p>21 anos</p>
-                      <p style="font-weight: bold; color: #e5001c">meu tempinho</p>
-                    </div>
-                  </a>
-                </td>
-              </tr>
             </table>
 
           </div>
         </div>
     </div>
 
-
-
 <?php
 include ("footer-logado.php");
 ?>
+
+<script>
+    $('#id_categoria_treino').change(function(){
+        var id_categoria_treino = $('#id_categoria_treino').val();
+//        console.log("Id categoria: "+id_categoria_treino);
+        if(id_categoria_treino != ""){
+            $('#id_benchmark').find("option:gt(0)").remove();
+            $('#listagem').html("");
+            $.ajax({
+                url: "ajaxGetBenchmarks.php",
+                data: {'id_categoria_treino': id_categoria_treino},
+                type: "POST",
+                success: function (data) {
+                    var benchs = $.parseJSON(data);
+                    $.each(benchs, function(i, d) {
+                        $('#id_benchmark').append('<option value="' + d.id + '">' + d.titulo + '</option>');
+                    });
+                    //$('#id_benchmark').html(data);
+                }
+            });
+        }
+
+    });
+
+    $('#id_benchmark').change(function(){
+       var id_benchmark = $('#id_benchmark').val();
+       console.log("Id bench: "+id_benchmark);
+       if(id_benchmark != ""){
+           $.ajax({
+              url: "ajaxGetBest.php",
+              dataType: "html",
+              data: {'id': id_benchmark},
+              type: "POST",
+              success: function(data){
+                   $('#listagem').html(data);
+              }
+           });
+       }
+    });
+
+
+</script>

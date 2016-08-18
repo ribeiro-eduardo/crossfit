@@ -141,6 +141,49 @@ class benchmarksBO
         return $result;
     }
 
+    function getPorCategoria($benchmarksVO){
+
+        $db = new DBMySQL();
+
+        $query = "SELECT * FROM `benchmarks` WHERE `id_categoria_treino` = '".$benchmarksVO->getIdCategoriaTreino()."'AND `status` = 1 ORDER BY `titulo` ASC";
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+    }
+
+    function getBest($benchmarksVO){
+
+        $db = new DBMySQL();
+
+        $query = "SELECT * FROM benchmark_atleta b JOIN usuarios u ON(b.id_atleta = u.id) WHERE id_benchmark = '".$benchmarksVO->getId()."' ORDER BY b.tempo ASC";
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+
+    }
+
     function count()
     {
 
