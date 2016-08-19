@@ -104,10 +104,15 @@ Global Page Section Start
 
 <div class="container" style="margin-top: 60px">
     <div class="row">
-        <div class="col-md-4">
-            <img class="img-circle center-block img-perfil" src="<?=$dir?>/<?= $imagem ?>"
-                 style="margin-top: 40px; background: none;">
-        </div>
+
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
+                data-wow-delay="0ms" style="background: none;">
+            <div class="col-md-4 img-wrapper">
+               <div id="preview" class="center-block circle-avatar"
+                     style="background: url('<?= $dir ?>/<?= $usuario['imagem'] ?>') no-repeat; margin-top: 70px; "></div>
+            </div>
+        </figure>
+
         <div class="col-md-8">
 
             <div class="text-right">
@@ -199,4 +204,3 @@ Global Page Section Start
 <?php
 include("footer-logado.php");
 ?>
-

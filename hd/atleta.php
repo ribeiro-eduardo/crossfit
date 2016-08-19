@@ -75,7 +75,7 @@ Global Page Section Start
         <div class="row">
             <div class="col-md-12">
                 <div class="block">
-                    <h2>Meu Perfil</h2>
+                    <h2>Atleta</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.php">
@@ -84,7 +84,7 @@ Global Page Section Start
                             </a>
                         </li>
                         <li>Login</li>
-                        <li class="active">Meu Perfil</li>
+                        <li class="active">Atleta</li>
                     </ol>
                 </div>
             </div>
@@ -95,43 +95,47 @@ Global Page Section Start
 
 <div class="container" style="margin-top: 60px">
     <div class="row">
-        <div class="col-md-4">
-            <img class="img-circle center-block img-perfil" src="fotos-coaches/<?= $usuario['imagem'] ?>"
-                 style="margin-top: 40px">
+
+        <div class="col-md-4 img-wrapper">
+           <div class="center-block circle-avatar"
+                 style="background: url('<?= $dir ?>/<?= $usuario['imagem'] ?>') no-repeat; margin-top: 40px; "></div>
         </div>
+
         <div class="col-md-8">
 
             <div class="text-right">
                 <button class="btn btn-details" onclick="location='editar-perfil.php'">Editar Perfil</button>
             </div>
-            <span style="margin-right: 15px"><img src="<?= $icone ?>"></span>
-            <input id="nome" value="<?= $usuario['nome'] ?>" readonly class="ipts"
-                   style="font-size: 30px; font-weight: bold;">
 
-            <div id="dados" style="padding-top: 30px">
-                <div class="col-md-2 text-right">
-                    <label class="lbl" for="email">Email:</label>
-                    <label class="lbl" for="idade">Idade:</label>
-                    <? if ($mostra_altura == 1) { ?>
-                        <label class="lbl" for="altura">Altura:</label>
-                    <? } ?>
-                    <? if ($mostra_altura == 1) { ?>
-                        <label class="lbl" for="peso">Peso:</label>
-                    <? } ?>
-                </div>
-                <div class="col-md-6">
-                    <input name="email" class="ipts" value="<?= $usuario['email'] ?>" readonly><br/>
-                    <input name="idade" class="ipts" value="<?= $idade ?> anos" readonly><br/>
-                    <!-- CONCATENAR AS PALAVRAS "ANOS", "m" e "kg" -->
-                    <? if ($mostra_altura == 1) { ?>
-                        <input name="altura" class="ipts" value="<? echo substr_replace($altura, ',', 1, 0); ?> m"
-                               readonly><br/>
-                    <? } ?>
-                    <? if ($mostra_peso == 1) { ?>
-                        <input id="peso" class="ipts" value="<?= $peso ?> kg" readonly><br/>
-                    <? } ?>
-                </div>
+           <span style="margin-right: 15px"><img src="<?= $icone ?>"></span>
+           <input id="nome" value="<?= $usuario['nome'] ?>" readonly class="ipts"
+                  style="font-size: 25px; font-weight: bold; width: 74%">
+
+
+          <div id="dados" style="padding-top: 30px">
+            <div class="form-group" style="margin-bottom: 1%">
+                <label class="lbl col-md-3 text-center" for="email" style="padding-bottom: 5px">Email:</label>
+                <input class="ipts" type="text" name="email" id="email" value="<?=$usuario['email']?>" style="width: 40%; font-size: 16px"  readonly>
             </div>
+            <div class="form-group" style="margin-bottom: 1%">
+                <label class="lbl col-md-3 text-center" for="idade" style="padding-bottom: 5px">Idade:</label>
+                <input class="ipts" type="text" name="idade" id="idade" value="<?= $idade ?> anos" style="width: 40%; font-size: 16px" readonly>
+            </div>
+
+            <? if ($mostra_altura == 1) { ?>
+              <div class="form-group" style="margin-bottom: 1%">
+                  <label class="lbl col-md-3 text-center" for="altura" style="padding-bottom: 5px">Altura:</label>
+                  <input class="ipts" type="text" name="altura" id="altura" value="<? echo substr_replace($altura, ',', 1, 0); ?> m" style="width: 40%; font-size: 16px" readonly>
+              </div>
+            <? } ?>
+            <? if ($mostra_peso == 1) { ?>
+              <div class="form-group" style="margin-bottom: 1%">
+                  <label class="lbl col-md-3 text-center" for="peso" style="padding-bottom: 5px">Peso:</label>
+                  <input class="ipts" type="text" id="peso" value="<?=$peso?> kg" style="width: 40%; font-size: 16px" readonly>
+                  <br/>
+              </div>
+            <? } ?>
+          </div>
         </div>
     </div>
     <div class="row" style="margin-top: 80px; margin-bottom: 80px;">

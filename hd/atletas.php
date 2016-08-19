@@ -116,16 +116,18 @@ Global Page Section Start
               $data_nascimento = @date('d/m/Y', strtotime($atletas[$i]["data_nascimento"]));
               $idade = calculaIdade($data_nascimento);
               ?>
-          <div class="col-md-4 col-sm-6" style="margin-bottom: 40px; height: 131px">
-            <a href="atleta.php?id=<?=$atletas[$i]['id']?>">
-                <img class="img-circle col-md-2 img-busca" src="<?=$dir?>/<?=$atletas[$i]['imagem']?>">
-                <div>
-                  <h3><?=$atletas[$i]['nome']?><span><img src="<?=$icone?>"></span></h3>
-                  <p><?=$idade?></p>
-                </div>
-            </a>
-          </div>
-        <!-- fim da div -->
+
+
+                  <div class="col-md-4 col-sm-6 img-wrapper" style="margin-bottom: 60px; height: 131px">
+                    <a href="atleta.php?id=<?=$atletas[$i]['id']?>">
+                      <div class="circle-avatar col-md-3" style="background: url('<?=$dir?>/<?=$atletas[$i]['imagem']?>') no-repeat; height: 131px; width: 131px; margin-right: 20px"></div>
+                      <div>
+                        <h3><?=$atletas[$i]['nome']?><span><img src="<?=$icone?>"></span></h3>
+                        <p><?=$idade?></p>
+                      </div>
+                    </a>
+                  </div>
+
          <? } ?>
           <div align="right">
               <?
