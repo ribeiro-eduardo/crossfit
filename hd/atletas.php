@@ -123,7 +123,7 @@ Global Page Section Start
                       <div class="circle-avatar col-md-3" style="background: url('<?=$dir?>/<?=$atletas[$i]['imagem']?>') no-repeat; height: 131px; width: 131px; margin-right: 20px"></div>
                       <div>
                         <h3><?=$atletas[$i]['nome']?><span><img src="<?=$icone?>"></span></h3>
-                        <p><?=$idade?></p>
+                        <p><?=$idade?> anos</p>
                       </div>
                     </a>
                   </div>

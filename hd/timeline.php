@@ -2,8 +2,13 @@
 require_once("../admin/lib/DBMySql.php");
 require("../admin/classe/bo/usuariosBO.php");
 require("../admin/classe/vo/usuariosVO.php");
+require("../admin/classe/bo/treinosBO.php");
+require("../admin/classe/vo/treinosVO.php");
+
 $usuariosBO = new usuariosBO();
 $usuariosVO = new usuariosVO();
+$treinosBO = new treinosBO();
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -34,382 +39,108 @@ switch ($id_tipo_usuario) {
         $dir = "fotos-atletas";
         break;
 }
-if($header_logado == 1){
+if ($header_logado == 1) {
     include("header-logado.php");
 }
-
+date_default_timezone_set('America/Sao_Paulo');
+$datas[0] = date("Y-m-d", strtotime("today"));
+for ($i = 1; $i < 7; $i++) {
+    $datas[$i] = date("Y-m-d", strtotime("$i days ago"));
+}
+$treinos = $treinosBO->getTimeline("'$datas[0]', '$datas[1]', '$datas[2]', '$datas[3]', '$datas[4]', '$datas[5]', '$datas[6]'");
+for($i = 0; $i < count($treinos); $i++)
 //include("header-logado.php");
 ?>
 
-  <!--
-  ==================================================
-  Global Page Section Start
-  ================================================== -->
-  <section class="global-page-header log">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="block">
-                      <h2>Confira os Treinos da Semana</h2>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section><!--/#Page header-->
-
-  <div class="container timeline">
-    <div class="row">
-      <div class="conteudo">
-        <!-- foreach WOD -->
-        <div class=" pdg">
-            <h5 class="text-right">03/03/2016</h5>
-            <h2 class="text-center">Título do WOD</h2>
-            <h4 class="text-center">Subtítulo do WOD(ex: homem/mulher/iniciante</h4>
-            <p class="text-center">30 Box Jump – Salto na Caixa<br/>
-              30 KB SW 12kg/16kg<br/>
-              30 Burpee<br/>
-              30 Abmat
-            </p>
-            <h4 class="text-center">Intermediário</h4>
-            <p class="text-center">40 Box Jump<br/>
-              40 KB SW 16kg/20kg<br/>
-              40 Burpee<br/>
-              40 V-up – Canivete
-            </p>
-            <h4 class="text-center">Avançado</h4>
-            <p class="text-center">50 Box Jump<br/>
-              50 KB SW 20kg/24kg<br/>
-              50 Burpee<br/>
-              50 V-up com peso 10lbs/15lbs
-            </p>
-            <div class="text-right">
-              <button class="btn btn-send">Comentar</button>
-            </div>
-
-            <div class="comments">
-                <div class="media">
-                    <a href="" class="pull-left">
-                        <img alt="" src="images/avater.jpg" class="media-object">
-                    </a>
-
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Jonathon Andrew</h4>
-
-                        <p class="text-muted">
-                            12 July 2013, 10:20 PM
-                        </p>
-
-                        <p>
-                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                            Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                        </p>
-                        <a href="">Reply</a>
-                        <hr>
-                        <!-- Nested media object -->
-                        <div class="media">
-                            <a href="" class="pull-left">
-                                <img alt="" src="images/avater-1.jpg" class="media-object">
-                            </a>
-
-                            <div class="media-body">
-                                <h4 class="media-heading">
-                                    Tom Cruse </h4>
-
-                                <p class="text-muted">
-                                    12 July 2013, 10:20 PM
-                                </p>
-
-                                <p>
-                                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-                                    cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                                    amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
-                                    dui.
-                                </p>
-                            </div>
-                        </div>
-                        <!--end media-->
-                        <hr>
-                        <div class="media">
-                            <a href="" class="pull-left">
-                                <img alt="" src="images/avater-1.jpg" class="media-object">
-                            </a>
-
-                            <div class="media-body">
-                                <h4 class="media-heading">
-                                    Nicolus Carolus </h4>
-
-                                <p class="text-muted">
-                                    12 July 2013, 10:20 PM
-                                </p>
-
-                                <p>
-                                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-                                    cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                                    amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
-                                    dui.
-                                </p>
-                            </div>
-                        </div>
-                        <!--end media-->
-                    </div>
-                </div>
-                <div class="media">
-                    <a href="" class="pull-left">
-                        <img alt="" src="images/avater-2.jpg" class="media-object">
-                    </a>
-
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Rob Martin</h4>
-
-                        <p class="text-muted">
-                            12 July 2013, 10:20 PM
-                        </p>
-
-                        <p>
-                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                            Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                        </p>
-                        <a href="">Reply</a>
-                    </div>
-                </div>
-                <div class="media">
-                    <a href="" class="pull-left">
-                        <img alt="" src="images/avater-2.jpg" class="media-object">
-                    </a>
-
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Mastarello </h4>
-
-                        <p class="text-muted">
-                            12 July 2013, 10:20 PM
-                        </p>
-
-                        <p>
-                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                            Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                        </p>
-                        <a href="">Reply</a>
-                    </div>
-                </div>
-
-                <div class="post-comment">
-                    <h3>Deixe um comentário</h3>
-
-                    <form role="form" class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <textarea class=" form-control" rows="8" placeholder="Mensagem"></textarea>
-                            </div>
-                        </div>
-                        <p>
-                        </p>
-
-                        <p>
-                            <button class="btn btn-send" type="submit">Comentar</button>
-                        </p>
-
-                        <p></p>
-                    </form>
-                </div>
-            </div>
-          <!---  <div class="post-comment">
-                <h3>Deixe um comentário</h3>
-
-                <form role="form" class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-lg-6">
-                            <input type="text" class="col-lg-12 form-control" placeholder="Nome">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="text" class="col-lg-12 form-control" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-12">
-                            <textarea class=" form-control" rows="8" placeholder="Mensagem"></textarea>
-                        </div>
-                    </div>
-                    <p>
-                    </p>
-
-                    <p>
-                        <button class="btn btn-send" type="submit">Comment</button>
-                    </p>
-
-                    <p></p>
-                </form>
-            </div> -->
-
-        </div>
-<!-- FIM DO FOREACH.   MAIS PARA EXEMPLO:-->
-        <div class=" pdg">
-            <h5 class="text-right">03/03/2016</h5>
-            <h2 class="text-center">Título do WOD</h2>
-            <h4>Subtítulo do WOD(ex: homem/mulher/iniciante/intermediario/</h4>
-            <p>30 Box Jump – Salto na Caixa<br/>
-              30 KB SW 12kg/16kg<br/>
-              30 Burpee<br/>
-              30 Abmat
-            </p>
-            <h4>Intermediário</h4>
-            <p>40 Box Jump<br/>
-              40 KB SW 16kg/20kg<br/>
-              40 Burpee<br/>
-              40 V-up – Canivete
-            </p>
-            <h4>Avançado</h4>
-            <p>50 Box Jump<br/>
-              50 KB SW 20kg/24kg<br/>
-              50 Burpee<br/>
-              50 V-up com peso 10lbs/15lbs
-            </p>
-            <div class="text-right">
-              <button class="btn btn-send">Comentar</button>
-            </div>
-
-            <div class="comments">
-                <div class="media">
-                    <a href="" class="pull-left">
-                        <img alt="" src="images/avater.jpg" class="media-object">
-                    </a>
-
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Jonathon Andrew</h4>
-
-                        <p class="text-muted">
-                            12 July 2013, 10:20 PM
-                        </p>
-
-                        <p>
-                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                            Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                        </p>
-                        <a href="">Reply</a>
-                        <hr>
-                        <!-- Nested media object -->
-                        <div class="media">
-                            <a href="" class="pull-left">
-                                <img alt="" src="images/avater-1.jpg" class="media-object">
-                            </a>
-
-                            <div class="media-body">
-                                <h4 class="media-heading">
-                                    Tom Cruse </h4>
-
-                                <p class="text-muted">
-                                    12 July 2013, 10:20 PM
-                                </p>
-
-                                <p>
-                                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-                                    cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                                    amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
-                                    dui.
-                                </p>
-                            </div>
-                        </div>
-                        <!--end media-->
-                        <hr>
-                        <div class="media">
-                            <a href="" class="pull-left">
-                                <img alt="" src="images/avater-1.jpg" class="media-object">
-                            </a>
-
-                            <div class="media-body">
-                                <h4 class="media-heading">
-                                    Nicolus Carolus </h4>
-
-                                <p class="text-muted">
-                                    12 July 2013, 10:20 PM
-                                </p>
-
-                                <p>
-                                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-                                    cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                                    amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
-                                    dui.
-                                </p>
-                            </div>
-                        </div>
-                        <!--end media-->
-                    </div>
-                </div>
-                <div class="media">
-                    <a href="" class="pull-left">
-                        <img alt="" src="images/avater-2.jpg" class="media-object">
-                    </a>
-
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Rob Martin</h4>
-
-                        <p class="text-muted">
-                            12 July 2013, 10:20 PM
-                        </p>
-
-                        <p>
-                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                            Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                        </p>
-                        <a href="">Reply</a>
-                    </div>
-                </div>
-                <div class="media">
-                    <a href="" class="pull-left">
-                        <img alt="" src="images/avater-2.jpg" class="media-object">
-                    </a>
-
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Mastarello </h4>
-
-                        <p class="text-muted">
-                            12 July 2013, 10:20 PM
-                        </p>
-
-                        <p>
-                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                            Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                        </p>
-                        <a href="">Reply</a>
-                    </div>
-                </div>
-
-                <div class="post-comment">
-                    <h3>Deixe um comentário</h3>
-
-                    <form role="form" class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <textarea class=" form-control" rows="8" placeholder="Mensagem"></textarea>
-                            </div>
-                        </div>
-                        <p>
-                        </p>
-
-                        <p>
-                            <button class="btn btn-send" type="submit">Comentar</button>
-                        </p>
-
-                        <p></p>
-                    </form>
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header log">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>Confira os Treinos da Semana</h2>
                 </div>
             </div>
         </div>
-
-      </div>
     </div>
-  </div>
+</section><!--/#Page header-->
+
+<div class="container timeline">
+    <div class="row">
+        <div class="conteudo">
+            <!-- foreach WOD -->
+            <? for ($i = 0; $i < count($treinos); $i++) {
+                $descricao = $treinos[$i]['descricao'];
+                $descricao = nl2br($descricao);
+                $data = date("d/m/Y", strtotime($treinos[$i]['data']));
+                ?>
+                <div class=" pdg">
+                    <h5 class="text-right"><?=$data?></h5>
+
+                    <h2 class="text-center"><?=$treinos[$i]['titulo']?></h2>
+<!--                    <h4 class="text-center">Subtítulo do WOD(ex: homem/mulher/iniciante</h4>-->
+
+                    <p class="text-center"><?=$descricao?>
+                    </p>
+
+                    <div class="text-right">
+                        <button class="btn btn-send">Comentar</button>
+                    </div>
+
+                    <div class="comments">
+                        <div class="media">
+                            <a href="" class="pull-left">
+                                <img alt="" src="images/avater-2.jpg" class="media-object">
+                            </a>
+
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    Rob Martin</h4>
+
+                                <p class="text-muted">
+                                    12 July 2013, 10:20 PM
+                                </p>
+
+                                <p>
+                                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                    commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                    Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="post-comment">
+                            <h3>Deixe um comentário</h3>
+
+                            <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        <textarea class=" form-control" rows="8" placeholder="Mensagem"></textarea>
+                                    </div>
+                                </div>
+                                <p>
+                                </p>
+
+                                <p>
+                                    <button class="btn btn-send" type="submit">Comentar</button>
+                                </p>
+
+                                <p></p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            <? } ?>
+
+            <!-- FIM DO FOREACH.-->
+
+        </div>
+    </div>
+</div>
 
 <!--
 
@@ -566,12 +297,11 @@ if($header_logado == 1){
 -->
 
 
-
 <script>
-$('button').on('click',function(){
-    $('.comments').show(); // aparece o div
-    //$('.post-comment textarea').focus();
-});
+    $('button').on('click', function () {
+        $('.comments').show(); // aparece o div
+        //$('.post-comment textarea').focus();
+    });
 </script>
 
 <?php

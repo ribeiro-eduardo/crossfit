@@ -88,7 +88,6 @@ Global Page Section Start
     <div class="row">
       <div id="exibe-treino" class="col-md-12">
         <div class="conteudo">
-          <!-- foreach WOD -->
           <div class="pdg" style="display: none;" id="treino">
           </div>
       </div>

@@ -162,11 +162,11 @@ class benchmarksBO
         return $result;
     }
 
-    function getBest($benchmarksVO){
+    function getBest($benchmarksVO, $ordem){
 
         $db = new DBMySQL();
 
-        $query = "SELECT * FROM benchmark_atleta b JOIN usuarios u ON(b.id_atleta = u.id) WHERE id_benchmark = '".$benchmarksVO->getId()."' ORDER BY b.tempo ASC";
+        $query = "SELECT *, u.id as id_atleta FROM benchmark_atleta b JOIN usuarios u ON(b.id_atleta = u.id) WHERE id_benchmark = '".$benchmarksVO->getId()."' ORDER BY b.tempo $ordem";
 
         $db->do_query($query);
 

@@ -137,6 +137,27 @@ class treinosBO
 
     }
 
+    function getTimeline($datas){
+
+        $db = new DBMySQL();
+
+        $query = "SELECT * FROM treinos WHERE data in ($datas) ORDER BY data DESC";
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+        echo $query;
+        return $result;
+    }
+
 
     function getTreino($dia)
     {

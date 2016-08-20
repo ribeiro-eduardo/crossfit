@@ -1,5 +1,4 @@
 <?php
-
 require_once("../admin/lib/DBMySql.php");
 require("../admin/classe/bo/usuariosBO.php");
 require("../admin/classe/vo/usuariosVO.php");
@@ -48,7 +47,7 @@ switch ($id_tipo_usuario) {
         break;
 }
 
-if($header_logado == 1){
+if ($header_logado == 1) {
     include("header-logado.php");
 }
 
@@ -62,12 +61,12 @@ $mostra_altura = 0;
 if ($peso != 0) {
     $mostra_peso = 1;
     $peso = str_replace(".", ",", $peso);
-}else{
+} else {
     $peso = "";
 }
 if ($altura != 0) {
     $mostra_altura = 1;
-}else{
+} else {
     $altura = "";
 }
 
@@ -108,7 +107,7 @@ Global Page Section Start
         <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
                 data-wow-delay="0ms" style="background: none;">
             <div class="col-md-4 img-wrapper">
-               <div id="preview" class="center-block circle-avatar"
+                <div id="preview" class="center-block circle-avatar"
                      style="background: url('<?= $dir ?>/<?= $usuario['imagem'] ?>') no-repeat; margin-top: 70px; "></div>
             </div>
         </figure>
@@ -117,7 +116,7 @@ Global Page Section Start
 
             <div class="text-right">
                 <form method="post" action="editar-perfil.php">
-                    <input type="hidden" name="id" value="<?=$id?>">
+                    <input type="hidden" name="id" value="<?= $id ?>">
                     <button type="submit" class="btn btn-details">Editar Perfil</button>
                 </form>
             </div>
@@ -126,31 +125,36 @@ Global Page Section Start
                    style="font-size: 25px; font-weight: bold; width: 74%">
 
             <div id="dados" style="padding-top: 30px">
-              <div class="form-group" style="margin-bottom: 1%">
-                  <label class="lbl col-md-3 text-center" for="email" style="padding-bottom: 5px">Email:</label>
-                  <input class="ipts" type="text" name="email" id="email" value="<?=$usuario['email']?>" style="width: 40%; font-size: 16px"  readonly>
-              </div>
-              <div class="form-group" style="margin-bottom: 1%">
-                  <label class="lbl col-md-3 text-center" for="idade" style="padding-bottom: 5px">Idade:</label>
-                  <input class="ipts" type="text" name="idade" id="idade" value="<?= $idade ?> anos" style="width: 40%; font-size: 16px" readonly>
-              </div>
-
-              <? if ($mostra_altura == 1) { ?>
                 <div class="form-group" style="margin-bottom: 1%">
-                    <label class="lbl col-md-3 text-center" for="altura" style="padding-bottom: 5px">Altura:</label>
-                    <input class="ipts" type="text" name="altura" id="altura" value="<? echo substr_replace($altura, ',', 1, 0); ?> m" style="width: 40%; font-size: 16px" readonly>
+                    <label class="lbl col-md-3 text-center" for="email" style="padding-bottom: 5px">Email:</label>
+                    <input class="ipts" type="text" name="email" id="email" value="<?= $usuario['email'] ?>"
+                           style="width: 40%; font-size: 16px" readonly>
                 </div>
-              <? } ?>
-              <? if ($mostra_peso == 1) { ?>
                 <div class="form-group" style="margin-bottom: 1%">
-                    <label class="lbl col-md-3 text-center" for="peso" style="padding-bottom: 5px">Peso:</label>
-                    <input class="ipts" type="text" id="peso" value="<?=$peso?> kg" style="width: 40%; font-size: 16px" readonly>
-                    <br/>
+                    <label class="lbl col-md-3 text-center" for="idade" style="padding-bottom: 5px">Idade:</label>
+                    <input class="ipts" type="text" name="idade" id="idade" value="<?= $idade ?> anos"
+                           style="width: 40%; font-size: 16px" readonly>
                 </div>
-              <? } ?>
+
+                <? if ($mostra_altura == 1) { ?>
+                    <div class="form-group" style="margin-bottom: 1%">
+                        <label class="lbl col-md-3 text-center" for="altura" style="padding-bottom: 5px">Altura:</label>
+                        <input class="ipts" type="text" name="altura" id="altura"
+                               value="<? echo substr_replace($altura, ',', 1, 0); ?> m"
+                               style="width: 40%; font-size: 16px" readonly>
+                    </div>
+                <? } ?>
+                <? if ($mostra_peso == 1) { ?>
+                    <div class="form-group" style="margin-bottom: 1%">
+                        <label class="lbl col-md-3 text-center" for="peso" style="padding-bottom: 5px">Peso:</label>
+                        <input class="ipts" type="text" id="peso" value="<?= $peso ?> kg"
+                               style="width: 40%; font-size: 16px" readonly>
+                        <br/>
+                    </div>
+                <? } ?>
 
 
-          <!--      <div class="col-md-2 text-right">
+                <!--      <div class="col-md-2 text-right">
                     <label class="lbl" for="email">Email:</label>
                     <label class="lbl" for="idade">Idade:</label>
                     <? if ($mostra_altura == 1) { ?>
@@ -179,22 +183,28 @@ Global Page Section Start
         <h1 class="text-center" style="margin-bottom: 60px; background: #E5001C; padding: 15px; color: #fcfcfc;">
             Benchmarks</h1>
         <table style="width: 80%; margin-left: 10%">
-            <? for ($i = 0; $i < count($benchmarks); $i++) {
-                $id_categoria_treino = $benchmarks[$i]['id_categoria_treino'];
-                if($id_categoria_treino == 1){
-                    $imagem = "images/hero.png";
-                }elseif($id_categoria_treino == 2){
-                    $imagem = "images/girl.png";
-                }elseif($id_categoria_treino == 3){
-                    $imagem = "images/challenge.png";
-                }
-                ?>
-                <tr>
-                    <td class="col-md-1 lbl text-center"><img src="<?=$imagem?>"></td>
-                    <td class="col-md-7 lbl"><?=$benchmarks[$i]['titulo']?></td>
-                    <td class="col-md-4 lbl"><?=$benchmarks[$i]['tempo']?></td>
-                </tr>
-            <? } ?>
+            <?
+            if (!empty($benchmarks)) {
+                for ($i = 0; $i < count($benchmarks); $i++) {
+                    $id_categoria_treino = $benchmarks[$i]['id_categoria_treino'];
+                    if ($id_categoria_treino == 1) {
+                        $imagem = "images/hero.png";
+                    } elseif ($id_categoria_treino == 2) {
+                        $imagem = "images/girl.png";
+                    } elseif ($id_categoria_treino == 3) {
+                        $imagem = "images/challenge.png";
+                    }
+                    ?>
+                    <tr>
+                        <td class="col-md-1 lbl text-center"><img src="<?= $imagem ?>"></td>
+                        <td class="col-md-7 lbl"><?= $benchmarks[$i]['titulo'] ?></td>
+                        <td class="col-md-4 lbl"><?= $benchmarks[$i]['tempo'] ?></td>
+                    </tr>
+                <? }
+            }
+            else{ ?>
+                <h2 align="center">Nenhum benchmark registrado.</h2>
+        <?  } ?>
 
         </table>
     </div>
