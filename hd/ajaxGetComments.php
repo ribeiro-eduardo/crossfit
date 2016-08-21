@@ -96,7 +96,7 @@ if(!empty($comentarios)){
 
         $html .= "<div class='media'>
         <a href='' class='pull-left'>
-            <img alt='' src='fotos-coaches/$imagem' class='media-object'>
+          <div class='circle-avatar' style='background: url(fotos-coaches/$imagem) no-repeat; width: 120px; height: 120px;'></div>
         </a>
 
         <div class='media-body'>
