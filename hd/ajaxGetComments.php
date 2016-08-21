@@ -43,6 +43,57 @@ if(!empty($comentarios)){
                 $dir = 'fotos-atletas/';
                 break;
         }
+        $datetime = $comentarios[$j]['data'];
+        $aux = explode(" ", $datetime);
+        $data = $aux[0];
+        $aux_data = explode("-", $data);
+        $dia = $aux_data[2];
+        $mes = $aux_data[1];
+        $ano = $aux_data[0];
+
+        switch($mes){
+            case '01':
+                $mes = 'janeiro';
+                break;
+            case '02':
+                $mes = 'fevereiro';
+                break;
+            case '03':
+                $mes = 'março';
+                break;
+            case '04':
+                $mes = 'abril';
+                break;
+            case '05':
+                $mes = 'maio';
+                break;
+            case '06':
+                $mes = 'junho';
+                break;
+            case '07':
+                $mes = 'julho';
+                break;
+            case '08':
+                $mes = 'agosto';
+                break;
+            case '09':
+                $mes = 'setembro';
+                break;
+            case '10':
+                $mes = 'outubro';
+                break;
+            case '11':
+                $mes = 'novembro';
+                break;
+            case '12':
+                $mes = 'dezembro';
+                break;
+        }
+        $time = $aux[1];
+        $aux_time = explode(":", $time);
+        $hora = $aux_time[0];
+        $minuto = $aux_time[1];
+
         $html .= "<div class='media'>
         <a href='' class='pull-left'>
             <img alt='' src='fotos-coaches/$imagem' class='media-object'>
@@ -53,7 +104,7 @@ if(!empty($comentarios)){
                 $nome</h4>
 
             <p class='text-muted'>
-                12 July 2013, 10:20 PM
+                $dia de $mes de $ano, às $hora:$minuto
             </p>
 
             <p>
