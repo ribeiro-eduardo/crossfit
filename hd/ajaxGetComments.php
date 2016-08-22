@@ -118,6 +118,12 @@ if(!empty($comentarios)){
         </div>
     </div>";
     }
+}else{
+    $html = "
+        <div class='media'>
+            <h4>Nenhum comentário registrado. Seja o primeiro a deixar sua marca!</h4>
+        </div>
+        ";
 }
 $html .= "<div class='post-comment'>
         <h3>Deixe um comentário</h3>

@@ -40,7 +40,7 @@ if($treino['id'] != ""){
 }
 
 //esse talvez viria ap�s o h2 class text center
-$talvez = '<h4 class="text-center">Subt�tulo do WOD(ex: homem/mulher/inici</h4>';
+$talvez = '<h4 class="text-center">Subtítulo do WOD(ex: homem/mulher/inici</h4>';
 
 echo
     '
