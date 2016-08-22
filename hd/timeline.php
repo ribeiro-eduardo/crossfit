@@ -88,7 +88,7 @@ Global Page Section Start
                     </p>
 
                     <div class="text-right">
-                        <button id="mostrarComments-<?=$id_treino?>" class="btn btn-send" onclick="mostrarComments(<?=$id_treino?>)">Mostrar Comentários</button>
+                        <button id="mostrarComments-<?=$id_treino?>" class="btn btn-send" onclick="mostrarComments(<?=$id_treino?>, <?=$id?>)">Mostrar Comentários</button>
                     </div>
 
                     <div class="comments-<?=$id_treino?>" style="display:none;">
@@ -147,15 +147,15 @@ Global Page Section Start
 
 <script>
 
-    function mostrarComments(i){
+    function mostrarComments(i, id_logado){
+        console.log("mostrarComments");
         $('.comments-'+i).show();
         $.ajax({
             url: "ajaxGetComments.php",
             dataType: "html",
-            data: {'id_treino': i},
+            data: {'id_treino': i, 'id_logado': id_logado},
             type: "POST",
             success: function (data) {
-                console.log(data);
                 $('.comments-'+i).html(data);
             }
         });
@@ -167,6 +167,31 @@ Global Page Section Start
         $('.comments-'+i).hide();
         $('#mostrarComments-'+i).html("Mostrar comentários");
         $('#mostrarComments-'+i).attr("onclick", "mostrarComments("+i+")");
+    }
+
+    function comentar(){
+        var texto = $('#texto').val();
+        var id_atleta = $('#id_logado').val();
+        var id_treino = $('#id_treino').val();
+
+        if(!texto){
+            alert("Por favor, deixe um comentário!");
+            texto.focus();
+            return false;
+        }
+        else{
+            $.ajax({
+                url: "ajaxPutComments.php",
+                dataType: "html",
+                data: {'id_treino': id_treino, 'id_atleta': id_atleta, 'texto': texto},
+                type: "POST",
+                success: function (data) {
+                    console.log(data);
+                    mostrarComments(id_treino, id_atleta);
+                }
+            });
+        }
+        return false;
     }
 </script>
 

@@ -16,7 +16,7 @@ class comentariosBO
 
         $db = new DBMySQL();
 
-        $query = "INSERT INTO `comentarios` (`id_atleta`, `id_treino`, `texto`,`data`,`status`) VALUES ";
+        $query = "INSERT INTO `treinos_comentarios` (`id_atleta`,`id_treino`,`texto`, `data`) VALUES ";
 
         $query .= "('" . $comentariosVO->getIdAtleta() . "', '" . $comentariosVO->getIdTreino() . "', '" . $comentariosVO->getTexto() . "','" . $comentariosVO->getData() . "');";
 
@@ -28,37 +28,12 @@ class comentariosBO
 
     }
 
-    function editNoticia($comentariosVO)
+    function deleteComment($comentariosVO)
     {
 
         $db = new DBMySQL();
 
-        $query = "UPDATE `comentarios` SET";
-
-        $query .= " `titulo` = '" . $comentariosVO->getTitulo() . "',";
-
-        if ($comentariosVO->getImagem() != "") {
-            $query .= " `imagem` = '" . $comentariosVO->getImagem() . "',";
-        }
-
-        $query .= " `descricao` = '" . $comentariosVO->getDescricao() . "'";
-
-        $query .= " WHERE `id` = '" . $comentariosVO->getId() . "'";
-
-        $db->do_query($query);
-
-        return $query;
-
-        $db->close();
-
-    }
-
-    function deleteNoticia($comentariosVO)
-    {
-
-        $db = new DBMySQL();
-
-        $query = "DELETE FROM `comentarios` WHERE `id` = '" . $comentariosVO->getId() . "'";
+        $query = "DELETE FROM `treinos_comentarios` WHERE `id` = '" . $comentariosVO->getId() . "'";
 
         $db->do_query($query);
 
@@ -73,7 +48,7 @@ class comentariosBO
 
         $db = new DBMySQL();
 
-        $query = "SELECT tc.*, u.nome as nome_atleta, u.id_tipo_usuario, u.imagem FROM treinos_comentarios tc JOIN usuarios u ON (tc.id_atleta = u.id) JOIN treinos t ON(tc.id_treino = t.id) WHERE tc.id_treino = " . $comentariosVO->getIdTreino() . " ORDER BY tc.data DESC";
+        $query = "SELECT tc.*, u.id as id_atleta, u.nome as nome_atleta, u.id_tipo_usuario, u.imagem FROM treinos_comentarios tc JOIN usuarios u ON (tc.id_atleta = u.id) JOIN treinos t ON(tc.id_treino = t.id) WHERE tc.id_treino = " . $comentariosVO->getIdTreino() . " ORDER BY tc.data DESC";
 
         $db->do_query($query);
 

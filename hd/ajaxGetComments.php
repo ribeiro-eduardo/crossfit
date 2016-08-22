@@ -16,31 +16,33 @@ $comentariosBO = new comentariosBO();
 $usuariosBO = new usuariosBO();
 $usuariosVO = new usuariosVO();
 
+$id_logado = $_POST['id_logado'];
 $id_treino = $_POST['id_treino'];
 $comentariosVO->setIdTreino($id_treino);
 $comentarios = $comentariosBO->get($comentariosVO);
 
 if(!empty($comentarios)){
     for($j = 0; $j < count($comentarios); $j++){
+        $id_atleta = $comentarios[$j]['id_atleta'];
         $nome = $comentarios[$j]['nome_atleta'];
         $texto = $comentarios[$j]['texto'];
         $texto = nl2br($texto);
         $imagem = $comentarios[$j]['imagem'];
-        $id_tipo_usuario = $usuario['id_tipo_usuario'];
+        $id_tipo_usuario = $comentarios[$j]['id_tipo_usuario'];
         $dir = '';
 
         switch ($id_tipo_usuario) {
             case 1:
                 $icone = "images/coach.png";
-                $dir = 'fotos-coaches/';
+                $dir = 'fotos-coaches';
                 break;
             case 2:
                 $icone = "images/coach.png";
-                $dir = 'fotos-coaches/';
+                $dir = 'fotos-coaches';
                 break;
             case 3:
                 $icone = "images/athlete.png";
-                $dir = 'fotos-atletas/';
+                $dir = 'fotos-atletas';
                 break;
         }
         $datetime = $comentarios[$j]['data'];
@@ -95,13 +97,16 @@ if(!empty($comentarios)){
         $minuto = $aux_time[1];
 
         $html .= "<div class='media'>
-        <a href='' class='pull-left'>
-          <div class='circle-avatar' style='background: url(fotos-coaches/$imagem) no-repeat; width: 120px; height: 120px;'></div>
+        <a href='atleta.php?id=$id_atleta' class='pull-left'>
+          <div class='circle-avatar' style='background: url($dir/$imagem) no-repeat; width: 120px; height: 120px;'></div>
         </a>
 
         <div class='media-body'>
-            <h4 class='media-heading'>
-                $nome</h4>
+            <a href='atleta.php?id=$id_atleta'>
+                <h4 class='media-heading'>
+                    $nome
+                </h4>
+            </a>
 
             <p class='text-muted'>
                 $dia de $mes de $ano, às $hora:$minuto
@@ -111,70 +116,27 @@ if(!empty($comentarios)){
                 $texto
             </p>
         </div>
-    </div>
-
-    <div class='post-comment'>
+    </div>";
+    }
+}
+$html .= "<div class='post-comment'>
         <h3>Deixe um comentário</h3>
 
-        <form role='form' class='form-horizontal'>
+        <form role='form' id='comentario' method='POST' onsubmit='return comentar()' class='form-horizontal'>
             <div class='form-group'>
                 <div class='col-lg-12'>
-                    <textarea class=' form-control' rows='8' placeholder='Mensagem'></textarea>
+                    <textarea class=' form-control' rows='2' maxlength='255' id='texto' name='texto' placeholder='Mensagem'></textarea>
                 </div>
             </div>
+            <input type='hidden' name='id_treino' id='id_treino' value='$id_treino'>
+            <input type='hidden' name='id_logado' id='id_logado' value='$id_logado'>
             <p>
-            </p>
-
-            <p>
-                <button class='btn btn-send' type='submit'>Comentar</button>
+                <input type='submit' class='btn btn-send' value='Comentar' type='submit'/>
             </p>
 
             <p></p>
         </form>
     </div>";
-    }
-}
-echo $html;
 
-//echo"
-//
-//    <div class='media'>
-//        <a href='' class='pull-left'>
-//            <img alt='' src='images/avater-2.jpg' class='media-object'>
-//        </a>
-//
-//        <div class='media-body'>
-//            <h4 class='media-heading'>
-//                $id_treino</h4>
-//
-//            <p class='text-muted'>
-//                12 July 2013, 10:20 PM
-//            </p>
-//
-//            <p>
-//                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-//                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-//                Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-//            </p>
-//        </div>
-//    </div>
-//
-//    <div class='post-comment'>
-//        <h3>Deixe um comentário</h3>
-//
-//        <form role='form' class='form-horizontal'>
-//            <div class='form-group'>
-//                <div class='col-lg-12'>
-//                    <textarea class=' form-control' rows='8' placeholder='Mensagem'></textarea>
-//                </div>
-//            </div>
-//            <p>
-//            </p>
-//
-//            <p>
-//                <button class='btn btn-send' type='submit'>Comentar</button>
-//            </p>
-//
-//            <p></p>
-//        </form>
-//    </div>";
+
+echo $html;
