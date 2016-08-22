@@ -96,7 +96,7 @@ if(!empty($comentarios)){
         $hora = $aux_time[0];
         $minuto = $aux_time[1];
 
-        $html .= "<div class='media'>
+        $html .= "<div class='media' style='padding-top: 20px'>
         <a href='atleta.php?id=$id_atleta' class='pull-left'>
           <div class='circle-avatar' style='background: url($dir/$imagem) no-repeat; width: 120px; height: 120px;'></div>
         </a>
@@ -108,6 +108,10 @@ if(!empty($comentarios)){
                 </h4>
             </a>
 
+            <a href='#'>
+              <span style='float: right; color: #e5001c; font-size: 20px;' class='ion-close'></span>
+            </a>
+
             <p class='text-muted'>
                 $dia de $mes de $ano, às $hora:$minuto
             </p>
@@ -116,6 +120,7 @@ if(!empty($comentarios)){
                 $texto
             </p>
         </div>
+
     </div>";
     }
 }else{
