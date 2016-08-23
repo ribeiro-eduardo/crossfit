@@ -11,7 +11,7 @@ require("../admin/classe/vo/treinosVO.php");
 $treinosVO = new treinosVO();
 $treinosBO = new treinosBO();
 
-$date = date("Y-m-d", strtotime("today"));
+$date = @date("Y-m-d", @strtotime("today"));
 $treinosVO->setData($date);
 $treino = $treinosBO->buscaPorData($treinosVO);
 $aux = explode("-", $date);

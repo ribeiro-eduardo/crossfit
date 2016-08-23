@@ -141,6 +141,16 @@ Global Page Section Start
 
         <div class="col-md-8">
 
+            <? if($id == $id_atleta){ ?>
+                <div class="text-right">
+                    <form method="post" action="editar-perfil.php">
+                        <input type="hidden" name="id" value="<?= $id ?>">
+                        <button type="submit" class="btn btn-details">Editar Perfil</button>
+                    </form>
+                </div>
+
+            <? } ?>
+
             <span style="margin-right: 15px"><img src="<?= $icone ?>"></span>
             <input id="nome" value="<?= $atleta['nome'] ?>" readonly class="ipts"
                    style="font-size: 25px; font-weight: bold; width: 74%">

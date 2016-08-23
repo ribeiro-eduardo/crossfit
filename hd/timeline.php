@@ -193,6 +193,25 @@ Global Page Section Start
         }
         return false;
     }
+    function remover(i){
+        if(confirm("Deseja excluir esse comentário?")){
+            var id_atleta = $('#id_logado').val();
+            var id_treino = $('#id_treino').val();
+            $.ajax({
+                url: "ajaxPutComments.php",
+                dataType: "html",
+                data: {'acao': 'remover', 'id_comentario': i},
+                type: "POST",
+                success: function (data) {
+                    console.log(data);
+                    mostrarComments(id_treino, id_atleta);
+                }
+            });
+            return false;
+        }
+
+    }
+
 </script>
 
 <?php

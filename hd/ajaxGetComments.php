@@ -23,7 +23,12 @@ $comentarios = $comentariosBO->get($comentariosVO);
 
 if(!empty($comentarios)){
     for($j = 0; $j < count($comentarios); $j++){
+        $id_comentario = $comentarios[$j]['id'];
+        $remover = "";
         $id_atleta = $comentarios[$j]['id_atleta'];
+        if($id_atleta == $id_logado){
+            $remover = "<a onclick='return remover($id_comentario)'><span style='float: right; color: #e5001c; font-size: 20px;' class='ion-close'></span></a>";
+        }
         $nome = $comentarios[$j]['nome_atleta'];
         $texto = $comentarios[$j]['texto'];
         $texto = nl2br($texto);
@@ -108,9 +113,7 @@ if(!empty($comentarios)){
                 </h4>
             </a>
 
-            <a href='#'>
-              <span style='float: right; color: #e5001c; font-size: 20px;' class='ion-close'></span>
-            </a>
+            $remover
 
             <p class='text-muted'>
                 $dia de $mes de $ano, às $hora:$minuto
