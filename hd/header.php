@@ -43,7 +43,7 @@ include("meta.php");
                         </li>
                         <li><a href="index.php#wod-area">WOD</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Benchmark <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Benchmarks <span class="caret"></span></a>
                             <div class="dropdown-menu">
                                 <ul>
                                     <li><a href="benchmarks.php?b=heroes">Heroes</a></li>

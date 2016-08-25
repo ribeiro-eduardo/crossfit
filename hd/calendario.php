@@ -104,18 +104,16 @@ include("footer-logado.php");
             dateFormat: 'dd/mm/yy',
             maxDate: new Date()
         });
-        //$("#datepicker").datepicker();
     });
 
     function getTreinoDia() {
         $("#treino").html("");
-        //$("#treino").hide();
         var datepicker = $('#datepicker').val();
         if (datepicker != "") {
             $.ajax({
                 url: "ajaxGetTreino.php",
                 dataType: "html",
-                data: {datepicker: datepicker},
+                data: {'datepicker': datepicker, 'id_logado': <?=$id?>},
                 type: "POST",
                 success: function (data) {
                     $('#treino').html(data);
@@ -125,13 +123,69 @@ include("footer-logado.php");
         }
     }
 
-    $('#comentar').on('click',function(){
-        $('.comments').show(); // aparece o div
-        //$('.post-comment textarea').focus();
-    });
+    function mostrarComments(i, id_logado){
+        console.log("mostrarComments");
+        $('.comments-'+i).show();
+        $.ajax({
+            url: "ajaxGetComments.php",
+            dataType: "html",
+            data: {'id_treino': i, 'id_logado': id_logado},
+            type: "POST",
+            success: function (data) {
+                $('.comments-'+i).html(data);
+            }
+        });
+        $('#mostrarComments-'+i).html("Ocultar comentários");
+        $('#mostrarComments-'+i).attr("onclick", "ocultarComments("+i+")");
+    }
 
-    function mostrarComentarios(){
-        $('.comments').show();
+    function ocultarComments(i){
+        $('.comments-'+i).hide();
+        $('#mostrarComments-'+i).html("Mostrar comentários");
+        $('#mostrarComments-'+i).attr("onclick", "mostrarComments("+i+")");
+    }
+
+    function comentar(){
+        var texto = $('#texto').val();
+        var id_atleta = $('#id_logado').val();
+        var id_treino = $('#id_treino').val();
+
+        if(!texto){
+            alert("Por favor, deixe um comentário!");
+            texto.focus();
+            return false;
+        }
+        else{
+            $.ajax({
+                url: "ajaxPutComments.php",
+                dataType: "html",
+                data: {'id_treino': id_treino, 'id_atleta': id_atleta, 'texto': texto},
+                type: "POST",
+                success: function (data) {
+                    console.log(data);
+                    mostrarComments(id_treino, id_atleta);
+                }
+            });
+        }
+        return false;
+    }
+    function remover(i){
+        if(confirm("Deseja excluir esse comentário?")){
+            var id_atleta = $('#id_logado').val();
+            var id_treino = $('#id_treino').val();
+            $.ajax({
+                url: "ajaxPutComments.php",
+                dataType: "html",
+                data: {'acao': 'remover', 'id_comentario': i},
+                type: "POST",
+                success: function (data) {
+                    console.log(data);
+                    mostrarComments(id_treino, id_atleta);
+                }
+            });
+            return false;
+        }
+
     }
 
 </script>
