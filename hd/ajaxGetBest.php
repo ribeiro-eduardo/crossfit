@@ -83,4 +83,7 @@ if (!empty($benchmarks)) {
                 </button>
     </div>';
 }
+else{
+    echo "<h2>Nenhum resultado registrado.</h2>";
+}
 

@@ -124,7 +124,11 @@ class benchmarksBO
 
         $db = new DBMySQL();
 
-        $query = "SELECT * FROM benchmark_atleta ba join benchmarks b ON(ba.id_benchmark = b.id) join usuarios u on (ba.id_atleta = u.id) WHERE `id_atleta` = '".$usuariosVO->getId()."'";
+//        $query = "SELECT * FROM benchmark_atleta ba join benchmarks b ON(ba.id_benchmark = b.id) join usuarios u on (ba.id_atleta = u.id) WHERE `id_atleta` = '".$usuariosVO->getId()."'";
+
+
+        $query = "SELECT ba.id as id_tempo, ba.id_atleta as id_atleta, ba.id_benchmark as id_benchmark, ba.tempo as tempo, b.id_categoria_treino as id_categoria_treino, b.titulo as titulo FROM benchmark_atleta ba join benchmarks b ON(ba.id_benchmark = b.id) join usuarios u on (ba.id_atleta = u.id) WHERE id_atleta = '".$usuariosVO->getId()."'";
+
 
         $db->do_query($query);
 

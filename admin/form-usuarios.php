@@ -59,7 +59,7 @@ $action = "action/usuarios-action.php";
     });
 
     $("#id_tipo_usuario").change(function(){
-        if($(this).val() == "2"){
+        if($(this).val() == "2" || $(this).val() == "1"){
             $("#div_descricao").show();
         }else{
             $("#div_descricao").hide();

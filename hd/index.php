@@ -9,7 +9,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if (isset($_SESSION['id'])) {
-    var_dump($_SESSION);
     $id = $_SESSION["id"];
     $usuariosVO->setId($id);
 
@@ -32,7 +31,6 @@ if (isset($_SESSION['id'])) {
     include("header-logado.php");
 } else {
     @session_destroy();
-    var_dump($_SESSION);
     include("header.php");
 }
 

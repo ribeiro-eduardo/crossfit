@@ -10,10 +10,8 @@ require_once("../admin/classe/bo/usuariosBO.php");
 require_once("../admin/classe/vo/usuariosVO.php");
 
 $usuariosBO = new usuariosBO();
-$usuariosVO = new usuariosVO();
 
-$usuariosVO->setId_tipo_usuario(2);
-$coaches = $usuariosBO->get($usuariosVO);
+$coaches = $usuariosBO->getCoaches();
 
 ?>
 <section id="feature">
@@ -26,12 +24,18 @@ $coaches = $usuariosBO->get($usuariosVO);
             </p>
         </div>
         <div class="row">
-            <? for ($i = 0; $i < count($coaches); $i++) { ?>
+            <? for ($i = 0; $i < count($coaches); $i++) {
+                if($coaches[$i]['imagem'] == ""){
+                    $imagem = "fotos-coaches/sem-imagem.jpg";
+                }else{
+                    $imagem = "fotos-coaches/".$coaches[$i]['imagem'];
+                }
+                ?>
                 <div class="col-md-4 col-lg-4 col-xs-12">
                     <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
                         <div class="media-left">
                             <div class="icon">
-                                <img src="images/<?=$coaches[$i]['imagem']?>" class="img-responsive" alt="">
+                                <img src="<?=$imagem?>" class="img-responsive" alt="">
                                 <!-- <i class="ion-ios-flask-outline"></i> -->
                             </div>
                         </div>

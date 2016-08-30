@@ -1,336 +1,368 @@
 <?php
-	
-	class usuariosBO {
-		
-		public $paginaAdmin;
 
-		function newUsuario($usuariosVO) {
-			
-			$db = new DBMySQL();
-			
-			$query = "INSERT INTO `usuarios` (`nome`,`cpf`, `email`, `telefone`, `celular`, `permissao`, `login`, `senha`, `id_tipo_usuario`, `descricao`, `data_nascimento`, `altura`, `peso`, `data_cadastro`, `status`) VALUES ";
+class usuariosBO
+{
 
-			$query .= "(
-			'".$usuariosVO->getNome()."',
-			'".$usuariosVO->getCpf()."',
-			'".$usuariosVO->getEmail()."',
-			'".$usuariosVO->getTelefone()."',
-			'".$usuariosVO->getCelular()."',
-			'".$usuariosVO->getPermissao()."',
-			'".$usuariosVO->getLogin()."',
-			'".$usuariosVO->getSenha()."',
-			'".$usuariosVO->getId_tipo_usuario()."',
-			'".$usuariosVO->getDescricao()."',
-			'".$usuariosVO->getData_nascimento()."',
-			'".$usuariosVO->getAltura()."',
-			'".$usuariosVO->getPeso()."',
-			'".$usuariosVO->getData_cadastro()."',
-			'".$usuariosVO->getStatus()."');";
-			
-			$db->do_query($query);
+    public $paginaAdmin;
 
-			return $query;
+    function newUsuario($usuariosVO)
+    {
 
-			$db->close();
-			
-		}
-		
-		function editUsuario($usuariosVO) {
-			
-			$db = new DBMySQL();
-			
-			$query = "UPDATE `usuarios` SET";
-			$query .= " `nome` = '".$usuariosVO->getNome()."',";
-			$query .= " `cpf` = '".$usuariosVO->getCpf()."',";
-			$query .= " `email` = '".$usuariosVO->getEmail()."',";
-			$query .= " `telefone` = '".$usuariosVO->getTelefone()."',";
-			$query .= " `celular` = '".$usuariosVO->getCelular()."',";
-			$query .= " `permissao` = '".$usuariosVO->getPermissao()."',";
-			$query .= " `login` = '".$usuariosVO->getLogin()."',";
-			$query .= " `senha` = '".$usuariosVO->getSenha()."',";
-			$query .= " `id_tipo_usuario` = '".$usuariosVO->getId_tipo_usuario()."',";
-			$query .= " `descricao` = '".$usuariosVO->getDescricao()."',";
-			$query .= " `data_nascimento` = '".$usuariosVO->getData_nascimento()."',";
-			$query .= " `altura` = '".$usuariosVO->getAltura()."',";
+        $db = new DBMySQL();
 
-			if($usuariosVO->getImagem() != ""){
-				$query .= " `imagem` = '".$usuariosVO->getImagem()."',";
-			}
+        $query = "INSERT INTO `usuarios` (`nome`,`cpf`, `email`, `telefone`, `celular`, `permissao`, `login`, `senha`, `id_tipo_usuario`, `descricao`, `data_nascimento`, `altura`, `peso`, `data_cadastro`, `status`) VALUES ";
 
-			$query .= " `peso` = '".$usuariosVO->getPeso()."'";
-			$query .= " WHERE `id` = '".$usuariosVO->getId()."'";
-			
-			$db->do_query($query);
+        $query .= "(
+			'" . $usuariosVO->getNome() . "',
+			'" . $usuariosVO->getCpf() . "',
+			'" . $usuariosVO->getEmail() . "',
+			'" . $usuariosVO->getTelefone() . "',
+			'" . $usuariosVO->getCelular() . "',
+			'" . $usuariosVO->getPermissao() . "',
+			'" . $usuariosVO->getLogin() . "',
+			'" . $usuariosVO->getSenha() . "',
+			'" . $usuariosVO->getId_tipo_usuario() . "',
+			'" . $usuariosVO->getDescricao() . "',
+			'" . $usuariosVO->getData_nascimento() . "',
+			'" . $usuariosVO->getAltura() . "',
+			'" . $usuariosVO->getPeso() . "',
+			'" . $usuariosVO->getData_cadastro() . "',
+			'" . $usuariosVO->getStatus() . "');";
 
-			//echo $query; exit;
+        $db->do_query($query);
 
-			return $query;
+        return $query;
 
-			$db->close();
-			
-		}
+        $db->close();
 
-		function editPerfil($usuariosVO){
+    }
 
-			$db = new DBMySQL();
+    function editUsuario($usuariosVO)
+    {
 
-			$query = "UPDATE `usuarios` SET";
-			$query .= " `nome` = '".$usuariosVO->getNome()."',";
-			$query .= " `email` = '".$usuariosVO->getEmail()."',";
-			$query .= " `login` = '".$usuariosVO->getLogin()."',";
-			$query .= " `senha` = '".$usuariosVO->getSenha()."',";
-			$query .= " `data_nascimento` = '".$usuariosVO->getData_nascimento()."',";
-			$query .= " `altura` = '".$usuariosVO->getAltura()."',";
+        $db = new DBMySQL();
 
-			if($usuariosVO->getImagem() != ""){
-				$query .= " `imagem` = '".$usuariosVO->getImagem()."',";
-			}
+        $query = "UPDATE `usuarios` SET";
+        $query .= " `nome` = '" . $usuariosVO->getNome() . "',";
+        $query .= " `cpf` = '" . $usuariosVO->getCpf() . "',";
+        $query .= " `email` = '" . $usuariosVO->getEmail() . "',";
+        $query .= " `telefone` = '" . $usuariosVO->getTelefone() . "',";
+        $query .= " `celular` = '" . $usuariosVO->getCelular() . "',";
+        $query .= " `permissao` = '" . $usuariosVO->getPermissao() . "',";
+        $query .= " `login` = '" . $usuariosVO->getLogin() . "',";
+        $query .= " `senha` = '" . $usuariosVO->getSenha() . "',";
+        $query .= " `id_tipo_usuario` = '" . $usuariosVO->getId_tipo_usuario() . "',";
+        $query .= " `descricao` = '" . $usuariosVO->getDescricao() . "',";
+        $query .= " `data_nascimento` = '" . $usuariosVO->getData_nascimento() . "',";
+        $query .= " `altura` = '" . $usuariosVO->getAltura() . "',";
 
-			$query .= " `peso` = '".$usuariosVO->getPeso()."'";
-			$query .= " WHERE `id` = '".$usuariosVO->getId()."'";
+        if ($usuariosVO->getImagem() != "") {
+            $query .= " `imagem` = '" . $usuariosVO->getImagem() . "',";
+        }
 
-			$db->do_query($query);
+        $query .= " `peso` = '" . $usuariosVO->getPeso() . "'";
+        $query .= " WHERE `id` = '" . $usuariosVO->getId() . "'";
 
-			return $query;
+        $db->do_query($query);
 
-			$db->close();
-		}
-		
-		function deleteUsuario($usuariosVO) {
-			
-			$db = new DBMySQL();
-			
-			$query = "UPDATE `usuarios` SET `status` = 0  WHERE `id` = '".$usuariosVO->getId()."'";
-			
-			$db->do_query($query);
+        //echo $query; exit;
 
-			return $query;
+        return $query;
 
-			$db->close();		
-			
-		}
-		
-		function get($usuariosVO) {
-			
-			$db = new DBMySQL();
-			
-			if($usuariosVO->getId() != "") {
-				
-				$query = "SELECT * FROM `usuarios` WHERE `id` = '".$usuariosVO->getId()."'";
-				
-				$db->do_query($query);
-				
-				$result = $db->getRow();
-				
-				
-			}
-			elseif($usuariosVO->getId_tipo_usuario() != ""){
+        $db->close();
 
-				$query = "SELECT * FROM `usuarios` WHERE `id_tipo_usuario` = '".$usuariosVO->getId_tipo_usuario()."' AND `status` = 1";
+    }
 
-				$db->do_query($query);
+    function editPerfil($usuariosVO)
+    {
 
-				$r = 0;
+        $db = new DBMySQL();
 
-				while($row = $db->getRow()) {
+        $query = "UPDATE `usuarios` SET";
+        $query .= " `nome` = '" . $usuariosVO->getNome() . "',";
+        $query .= " `email` = '" . $usuariosVO->getEmail() . "',";
+        $query .= " `login` = '" . $usuariosVO->getLogin() . "',";
+        $query .= " `senha` = '" . $usuariosVO->getSenha() . "',";
+        $query .= " `data_nascimento` = '" . $usuariosVO->getData_nascimento() . "',";
+        $query .= " `altura` = '" . $usuariosVO->getAltura() . "',";
 
-					$result[$r] = $row;
+        if ($usuariosVO->getImagem() != "") {
+            $query .= " `imagem` = '" . $usuariosVO->getImagem() . "',";
+        }
 
-					$r++;
+        $query .= " `peso` = '" . $usuariosVO->getPeso() . "'";
+        $query .= " WHERE `id` = '" . $usuariosVO->getId() . "'";
 
-				}
-			}
-			else {
+        $db->do_query($query);
 
-				$query = "SELECT * FROM `usuarios` WHERE `status` = 1 ORDER BY `nome`";
-				
-				$db->do_query($query);
-				
-				$r = 0;
-				
-				while($row = $db->getRow()) {
-					
-					$result[$r] = $row;
-					
-					$r++;
-					
-				}
-				
-			}
-			
-			return $result;
-			
-		}
+        return $query;
 
-		function buscaPessoas($usuariosVO, $inicio, $TAMANHO_PAGINA, $palavra = ""){
+        $db->close();
+    }
 
-			$db = new DBMySQL();
+    function deleteUsuario($usuariosVO)
+    {
 
-			if(!empty($palavra)){
+        $db = new DBMySQL();
 
-				$query = "SELECT * FROM `usuarios` where `nome` LIKE '%".$palavra."%' LIMIT ".$inicio.", ".$TAMANHO_PAGINA."";
-			}else{
+        $query = "UPDATE `usuarios` SET `status` = 0  WHERE `id` = '" . $usuariosVO->getId() . "'";
 
-				$query = "SELECT * FROM `usuarios` LIMIT ".$inicio.", ".$TAMANHO_PAGINA."";
-			}
-			
-			$db->do_query($query);
+        $db->do_query($query);
 
-			$r = 0;
-			
-			while($row = $db->getRow()) {
-				
-				$result[$r] = $row;
-				
-				$r++;
-				
-			}
-		
-			return $result;
-		}
+        return $query;
 
-		function buscaPessoasSite($inicio, $TAMANHO_PAGINA, $tipo, $palavra){
+        $db->close();
 
-			$db = new DBMySQL();
+    }
 
-			if($tipo=="Cidade"){
+    function get($usuariosVO)
+    {
 
-				$query = "SELECT * FROM `usuarios` where `cidade` LIKE '%".$palavra."%' LIMIT ".$inicio.", ".$TAMANHO_PAGINA."";
-			}
-			elseif($tipo=="Formacao"){
+        $db = new DBMySQL();
 
-				$query = "SELECT * FROM `usuarios` where `funcao` LIKE '%".$palavra."%' LIMIT ".$inicio.", ".$TAMANHO_PAGINA."";
-			}
-			
-			$db->do_query($query);
+        if ($usuariosVO->getId() != "") {
 
-			$r = 0;
-			
-			while($row = $db->getRow()) {
-				
-				$result[$r] = $row;
-				
-				$r++;
-				
-			}
-		
-			return $result;
-		}		
-		
-		function getAll() {
-				
-			$db = new DBMySQL();
-		
-			$query = "SELECT * FROM `usuarios` ORDER BY `id` ASC";
-		
-			$db->do_query($query);
-		
-			$r = 0;
-		
-			while($row = $db->getRow()) {
-						
-				$result[$r] = $row;
-						
-				$r++;
-						
-			}
-				
-			return $result;
-				
-		}
-		
-		function count($palavra="") {
-			
-			$db = new DBMySQL();
-			
-			if(!empty($palavra)){
+            $query = "SELECT * FROM `usuarios` WHERE `id` = '" . $usuariosVO->getId() . "'";
 
-				$query = "SELECT COUNT(`id`) AS 'total' FROM `usuarios` where `nome` LIKE '%".$palavra."%'";
-			
-			}else{
+            $db->do_query($query);
 
-				$query = "SELECT COUNT(`id`) AS 'total' FROM `usuarios`";
-					
-			}
-
-			$db->do_query($query);
-			
-			$result = $db->getRow();
-			
-			return $result;
-			
-		}
-		
-		function paginacao($busca = "",$inicio,$TAMANHO_PAGINA) {
-			
-			$db = new DBMySQL();
-
-			if($busca == ""){
-
-				$query = "SELECT * FROM `usuarios` ORDER BY `id` ASC LIMIT $inicio, $TAMANHO_PAGINA";
-			}
-			else{
-				$query = "SELECT * FROM `usuarios` WHERE `nome` LIKE '%$busca%' ORDER BY `id` ASC LIMIT $inicio, $TAMANHO_PAGINA";
-			}
-
-			$db->do_query($query);
-			
-			$r = 0;
-			
-			while($row = $db->getRow()) {
-				
-				$result[$r] = $row;
-				
-				$r++;
-				
-			}
-
-			return $result;
-			
-		}
+            $result = $db->getRow();
 
 
-		function countAll() {
-				
-			$db = new DBMySQL();
-				
-			$db->do_query("SELECT COUNT(`id`) AS 'total' FROM `usuarios` ");
-				
-			$result = $db->getRow();
-				
-			return $result;
-				
-		}
-		
-		function paginacaoAll($inicio,$TAMANHO_PAGINA) {
-				
-			$db = new DBMySQL();
-				
-			$db->do_query("SELECT * FROM `usuarios` ORDER BY `id` ASC LIMIT ".$inicio.",".$TAMANHO_PAGINA);
-				
-			$r = 0;
-				
-			while($row = $db->getRow()) {
-		
-				$result[$r] = $row;
-		
-				$r++;
-		
-			}
-				
-			return $result;
-				
-		}
+        } elseif ($usuariosVO->getId_tipo_usuario() != "") {
 
-		function paginaAdmin($admin){
-			if($admin == TRUE){
-				$this->paginaAdmin = TRUE;
-			}else{
-				$this->paginaAdmin = FALSE;
-			}
-		}
-		
-	}
+            $query = "SELECT * FROM `usuarios` WHERE `id_tipo_usuario` = '" . $usuariosVO->getId_tipo_usuario() . "' AND `status` = 1";
+
+            $db->do_query($query);
+
+            $r = 0;
+
+            while ($row = $db->getRow()) {
+
+                $result[$r] = $row;
+
+                $r++;
+
+            }
+        } else {
+
+            $query = "SELECT * FROM `usuarios` WHERE `status` = 1 ORDER BY `nome`";
+
+            $db->do_query($query);
+
+            $r = 0;
+
+            while ($row = $db->getRow()) {
+
+                $result[$r] = $row;
+
+                $r++;
+
+            }
+
+        }
+
+        return $result;
+
+    }
+
+    function getCoaches()
+    {
+
+        $db = new DBMySQL();
+
+        $query = "SELECT * FROM `usuarios` WHERE `id_tipo_usuario` = 1 OR `id_tipo_usuario` = 2 ORDER BY `id`";
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+    }
+
+    function buscaPessoas($usuariosVO, $inicio, $TAMANHO_PAGINA, $palavra = "")
+    {
+
+        $db = new DBMySQL();
+
+        if (!empty($palavra)) {
+
+            $query = "SELECT * FROM `usuarios` where `nome` LIKE '%" . $palavra . "%' LIMIT " . $inicio . ", " . $TAMANHO_PAGINA . "";
+        } else {
+
+            $query = "SELECT * FROM `usuarios` LIMIT " . $inicio . ", " . $TAMANHO_PAGINA . "";
+        }
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+    }
+
+    function buscaPessoasSite($inicio, $TAMANHO_PAGINA, $tipo, $palavra)
+    {
+
+        $db = new DBMySQL();
+
+        if ($tipo == "Cidade") {
+
+            $query = "SELECT * FROM `usuarios` where `cidade` LIKE '%" . $palavra . "%' LIMIT " . $inicio . ", " . $TAMANHO_PAGINA . "";
+        } elseif ($tipo == "Formacao") {
+
+            $query = "SELECT * FROM `usuarios` where `funcao` LIKE '%" . $palavra . "%' LIMIT " . $inicio . ", " . $TAMANHO_PAGINA . "";
+        }
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+    }
+
+    function getAll()
+    {
+
+        $db = new DBMySQL();
+
+        $query = "SELECT * FROM `usuarios` ORDER BY `id` ASC";
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+
+    }
+
+    function count($palavra = "")
+    {
+
+        $db = new DBMySQL();
+
+        if (!empty($palavra)) {
+
+            $query = "SELECT COUNT(`id`) AS 'total' FROM `usuarios` where `nome` LIKE '%" . $palavra . "%'";
+
+        } else {
+
+            $query = "SELECT COUNT(`id`) AS 'total' FROM `usuarios`";
+
+        }
+
+        $db->do_query($query);
+
+        $result = $db->getRow();
+
+        return $result;
+
+    }
+
+    function paginacao($busca = "", $inicio, $TAMANHO_PAGINA)
+    {
+
+        $db = new DBMySQL();
+
+        if ($busca == "") {
+
+            $query = "SELECT * FROM `usuarios` ORDER BY `id` ASC LIMIT $inicio, $TAMANHO_PAGINA";
+        } else {
+            $query = "SELECT * FROM `usuarios` WHERE `nome` LIKE '%$busca%' ORDER BY `id` ASC LIMIT $inicio, $TAMANHO_PAGINA";
+        }
+
+        $db->do_query($query);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+
+    }
+
+
+    function countAll()
+    {
+
+        $db = new DBMySQL();
+
+        $db->do_query("SELECT COUNT(`id`) AS 'total' FROM `usuarios` ");
+
+        $result = $db->getRow();
+
+        return $result;
+
+    }
+
+    function paginacaoAll($inicio, $TAMANHO_PAGINA)
+    {
+
+        $db = new DBMySQL();
+
+        $db->do_query("SELECT * FROM `usuarios` ORDER BY `id` ASC LIMIT " . $inicio . "," . $TAMANHO_PAGINA);
+
+        $r = 0;
+
+        while ($row = $db->getRow()) {
+
+            $result[$r] = $row;
+
+            $r++;
+
+        }
+
+        return $result;
+
+    }
+
+    function paginaAdmin($admin)
+    {
+        if ($admin == TRUE) {
+            $this->paginaAdmin = TRUE;
+        } else {
+            $this->paginaAdmin = FALSE;
+        }
+    }
+
+}
 
 
 ?>

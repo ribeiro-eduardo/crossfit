@@ -182,6 +182,9 @@ Global Page Section Start
     <div class="row" style="margin-top: 80px; margin-bottom: 80px;">
         <h1 class="text-center" style="margin-bottom: 60px; background: #E5001C; padding: 15px; color: #fcfcfc;">
             Benchmarks</h1>
+        <div class="text-right">
+            <a href="editar-perfil.php#benchmarks" class="btn btn-details">Editar benchmarks</a>
+        </div>
         <table style="width: 80%; margin-left: 10%">
             <?
             if (!empty($benchmarks)) {

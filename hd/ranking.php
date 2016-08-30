@@ -155,8 +155,8 @@ include("footer-logado.php");
     $('#id_categoria_treino').change(function () {
         var id_categoria_treino = $('#id_categoria_treino').val();
 //        console.log("Id categoria: "+id_categoria_treino);
+        $('#id_benchmark').find("option:gt(0)").remove();
         if (id_categoria_treino != "") {
-            $('#id_benchmark').find("option:gt(0)").remove();
             $('#listagem').html("");
             $.ajax({
                 url: "ajaxGetBenchmarks.php",

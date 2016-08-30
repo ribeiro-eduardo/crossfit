@@ -47,7 +47,7 @@ switch ($id_tipo_usuario) {
         break;
 }
 
-if($header_logado == 1){
+if ($header_logado == 1) {
     include("header-logado.php");
 }
 
@@ -106,14 +106,13 @@ Global Page Section Start
     <div class="row">
 
         <!-- form dados pessoais -->
-        <form id="form" role="form" method="POST" action="../admin/action/usuarios-action.php"
+        <form id="form" role="form" method="POST" action="actionPerfil.php"
               enctype="multipart/form-data">
 
 
             <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
                     data-wow-delay="0ms" style="background: none;">
                 <div class="col-md-4 img-wrapper">
-                    <!--  <div id="preview" class="center-block circle-avatar" style="background: url('fotos-coaches/<?= $usuario['imagem'] ?>') no-repeat; "></div> -->
                     <div id="preview" class="center-block circle-avatar"
                          style="background: url('<?= $dir ?>/<?= $usuario['imagem'] ?>') no-repeat; "></div>
                     <div class="overlay center-block" style="background: none; width: 220px;">
@@ -124,25 +123,6 @@ Global Page Section Start
                     </div>
                 </div>
             </figure>
-
-
-            <!-- PRIMEIRA VERSAO. OK PARA FOTOS QUADRADAS
-
-      <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms"
-              data-wow-delay="0ms" style="background: none;">
-        <div class="col-md-4 img-wrapper">
-          <img id="preview" class="img-circle center-block img-perfil" src="fotos-coaches/<?= $usuario['imagem'] ?>" style="margin-top: 24px; margin-bottom:40px">
-<!--            <img id="preview" src="#" width="100px" height="100px">-->
-            <!--      <div class="overlay center-block" style="background: none; width: 220px;">
-                      <div class="buttons" style="background: rgba(0, 0, 0, 0.7); top: 40%; left: 30%;">
-                          <input type="file" name="file" id="file" class="inputfile" />
-                          <a><label for="file">Alterar</label></a>
-                          <!-- <a href="#">Alterar</a> -->
-            <!--        </div>
-                </div>
-              </div>
-            </figure> -->
-
 
             <div class="col-md-8" style="margin-top: 20px">
                 <span style="margin-right: 15px"><img src="<?= $icone ?>"></span>
@@ -201,101 +181,21 @@ Global Page Section Start
     <h1 class="text-center" style="margin-bottom: 60px; background: #E5001C; padding: 15px; color: #fcfcfc;">
         Benchmarks</h1>
 
-    <div class="text-right" style="margin: 30px;">
-        <a id="add-benchmark" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span
+    <div id="add" class="text-right" style="margin: 30px;">
+        <a id="add-benchmark" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"
+           onclick="adicionar(1)"><span
                 class="ion-plus-circled"></span> Adicionar Benchmark</a>
     </div>
 
     <!--form benchs-->
-    <form>
-      <!--cada bench-->
-      <div>
-        <div class="col-md-1 text-center lbl">
-          <img src="images/challenge.png"></td>
-        </div>
-        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
-          Nome do benchmark
-        </div>
-        <div class="col-md-2 lbl">
-          <input value="02:59" style="width: 100%"/>
-        </div>
-        <div class="col-md-2">
-          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-      <!--fim de cada bench-->
-
-
-      <div>
-        <div class="col-md-1 text-center lbl">
-          <img src="images/girl.png"></td>
-        </div>
-        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
-          Nome do benchmark
-        </div>
-        <div class="col-md-2 lbl">
-          <input value="02:59" style="width: 100%"/>
-        </div>
-        <div class="col-md-2">
-          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-
-      <div>
-        <div class="col-md-1 text-center lbl">
-          <img src="images/hero.png"></td>
-        </div>
-        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">
-          Nome do benchmark
-        </div>
-        <div class="col-md-2 lbl">
-          <input value="02:59" style="width: 100%"/>
-        </div>
-        <div class="col-md-2">
-          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-
-
-      <!--inserir bench-->
-<!--      <div>-->
-<!--        <div class="col-md-1 text-center lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">-->
-<!--          <select id="id_categoria_treino" style="border-radius: 0; width: 100%; height: 100%;">-->
-<!--            <option value=""></option>-->
-<!--            <option value="challenge">CHALLENGE</option>-->
-<!--            <option value="girl">GIRL</option>-->
-<!--            <option value="hero">HERO</option>-->
-<!--          </select>-->
-<!--        </div>-->
-<!--        <div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;">-->
-<!--          <select style="border-radius: 0; width: 100%; height: 100%;">-->
-<!--            <option value=""></option>-->
-<!--            <option value="1">Nome do benchmark dessa categoria</option>-->
-<!--            <option value="2">Nome do benchmark</option>-->
-<!--            <option value="3">Nome do benchmark</option>-->
-<!--          </select>-->
-<!--        </div>-->
-<!--        <div class="col-md-2 lbl" style="height: 30px; font-size: 16px; padding-top: 2px;">-->
-<!--          <input value="02:59" style="width: 100%"/>-->
-<!--        </div>-->
-<!--        <div class="col-md-2" style="height: 30px; font-size: 16px; padding-top: 4px;">-->
-<!--          <a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="clearfix"></div>-->
-      <!--fim inserir bench-->
-
-
-        <div class="text-right" style="margin-top: 60px">
-            <input name="salvar" id="salvar" value="Salvar" type="submit" class="btn btn-details">
-        </div>
-
+    <form id="lista">
+        <!--
+        CARREGA VIA AJAX, FUNÇÃO carregarTempos();
+        -->
     </form>
     <!--fim form benchs-->
 </div>
+
 </div>
 
 <?php
@@ -307,16 +207,15 @@ include("footer-logado.php");
         $("#data_nascimento").mask("00/00/0000");
         $("#altura").mask("0,00");
         $("#peso").mask("00,0");
+        carregarTempos();
     });
 
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-
             reader.onload = function (e) {
                 $('#preview').css('background', 'url(' + e.target.result + ')');
             };
-
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -329,16 +228,95 @@ include("footer-logado.php");
 <script src="js/valida-form-perfil.js"></script>
 
 <script>
-    $('#add-benchmark').click(function () {
-        $('#benchmarks').append('<div><div class="col-md-1 text-center lbl" style="height: 30px; font-size: 16px; padding-top: 4px;"><select id="id_categoria_treino" style="border-radius: 0; width: 100%; height: 100%;"><option value=""></option><option value="challenge">CHALLENGE</option><option value="girl">GIRL</option><option value="hero">HERO</option></select></div><div class="col-md-7 lbl" style="height: 30px; font-size: 16px; padding-top: 4px;"><select style="border-radius: 0; width: 100%; height: 100%;"><option value=""></option><option value="1">Nome do benchmark dessa categoria</option><option value="2">Nome do benchmark</option><option value="3">Nome do benchmark</option></select></div><div class="col-md-2 lbl" style="height: 30px; font-size: 16px; padding-top: 2px;"><input value="02:59" style="width: 100%"/></div><div class="col-md-2" style="height: 30px; font-size: 16px; padding-top: 4px;"><a href="#" style="color: #e5001c; text-transform: uppercase; font-size: 16px;"><span class="ion-trash-b" style="padding-right: 7px"></span>   Remover </a></div></div><div class="clearfix"></div>');
-    });
+    function carregarTempos() {
+        $.ajax({
+            url: "ajaxTempoBenchmarks.php",
+            dataType: "html",
+            data: {'acao': 'carregar', 'id_atleta': <?=$id?>},
+            type: "POST",
+            success: function (data) {
+                $("#lista").html(data);
+            }
+        });
+    }
 
-//    $('#id_categoria_treino').change(function(){
-//        var id_categoria_treino = $('#id_categoria_treino').val();
-//        console.log(id_categoria_treino);
-//    });
-    $( "#id_categoria_treino" ).change(function() {
-        alert( "Handler for .change() called." );
-    });
+    function adicionar(n) {
+        $('#add-benchmark').attr("onclick", "adicionar(" + (n + 1) + ")");
+        $('#benchmarks').append("<div class='row' id='novos-" + (n + 1) + "'><div class='col-md-1 text-center lbl' style='height: 30px; font-size: 16px; padding-top: 4px;'><select required id='id_categoria_treino-" + (n + 1) + "' style='border-radius: 0; width: 100%; height: 100%;' onchange='carregaBenchs(this.options[this.selectedIndex].value, "+(n + 1)+")'><option value=''>SELECIONE</option><option value='1'>HERO</option><option value='2'>GIRL</option><option value='3'>CHALLENGE</option></select></div><div class='col-md-7 lbl' style='height: 30px; font-size: 16px; padding-top: 4px;'><select id='id_benchmark-" + (n + 1) + "' style='border-radius: 0; width: 100%; height: 100%;' required><option value=''>SELECIONE</option></select></div><div class='col-md-2 lbl' style='height: 30px; font-size: 16px; padding-top: 2px;'><input id='tempo-" + (n + 1) + "' style='width: 100%' required></div><div class='col-md-2' style='height: 30px; font-size: 16px; padding-top: 4px;'><a style='color: #e5001c;' alt='ADICIONAR' onclick='salvar(" + (n + 1) + ")'><i class='fa fa-check-circle' aria-hidden='true'></i></a>&nbsp;&nbsp;&nbsp;<a style='color: #e5001c;' alt='REMOVER' onclick='removerNovos(" + (n + 1) + ")'><span class='ion-trash-b' style='padding-right: 7px'></span></a></div></div><span id='campos_obrigatorios' style='color: #e5001c; display: none;'>Preencha os campos obrigatórios!</span>");
+    }
+
+    function salvar(n) {
+        var id_categoria = $("#id_categoria_treino-" + n).val();
+        var id_benchmark = $("#id_benchmark-" + n).val();
+        var tempo = $("#tempo-" + n).val();
+        if(!id_categoria || !id_benchmark || !tempo){
+            $("#campos_obrigatorios").show();
+        }else {
+            $("#campos_obrigatorios").hide();
+            $.ajax({
+                url: "ajaxTempoBenchmarks.php",
+                dataType: "html",
+                data: {'acao': 'salvar', 'id_benchmark': id_benchmark, 'id_atleta': <?=$id?>, 'tempo': tempo},
+                type: "POST",
+                success: function (data) {
+                    console.log(data);
+                    carregarTempos();
+                    $("#novos-" + n).remove();
+                }
+            });
+        }
+    }
+
+    function carregaBenchs(index, n){
+        console.log("SELECIONADO: "+index+ " n: "+n);
+        $('#id_benchmark-'+n).find("option:gt(0)").remove();
+        if(index != ""){
+            $.ajax({
+                url: "ajaxGetBenchmarks.php",
+                data: {'id_categoria_treino': index},
+                type: "POST",
+                success: function (data) {
+                    var benchs = $.parseJSON(data);
+                    $.each(benchs, function (i, d) {
+                        $('#id_benchmark-'+n).append('<option value="' + d.id + '">' + d.titulo + '</option>');
+                    });
+                }
+            });
+        }
+
+    }
+
+    function remover(i) {
+        if (confirm("Tem certeza?")) {
+            $("#gif-" + i).show();
+            $.ajax({
+                url: "ajaxTempoBenchmarks.php",
+                dataType: "html",
+                data: {'acao': 'remover', 'id': i},
+                type: "POST",
+                success: function (data) {
+                    $("#bench-" + i).hide();
+                }
+            });
+        }
+    }
+
+    function removerNovos(n) {
+        $("#novos-" + n).hide();
+    }
+
+    function alterar(i) {
+        $("#gif-" + i).show();
+        var tempo = $("#tempo-" + i).val();
+        $.ajax({
+            url: "ajaxTempoBenchmarks.php",
+            dataType: "html",
+            data: {'acao': 'alterar', 'id': i, 'tempo': tempo},
+            type: "POST",
+            success: function (data) {
+                $("#gif-" + i).hide();
+            }
+        });
+    }
 
 </script>

@@ -63,6 +63,9 @@ $action = "action/usuarios-action.php";
     ?>
 </div>
 <script>
+
+
+
     $('#mostrar_senha').click(function(){
         if($('#senha').attr('type') == "password"){
             $('#senha').attr('type', 'text');
@@ -74,7 +77,7 @@ $action = "action/usuarios-action.php";
     });
 
     $("#id_tipo_usuario").change(function(){
-        if($(this).val() == "2"){
+        if($(this).val() == "2" || $(this).val() == "1"){
             $("#div_descricao").show();
         }else{
             $("#div_descricao").hide();
@@ -116,17 +119,13 @@ $action = "action/usuarios-action.php";
         }
     }
 
-    if($('#id_tipo_usuario').val() == "2"){
-        $("#div_descricao").show();
-    }else{
-        $("#div_descricao").hide();
-    }
 
     $(document).ready( function() {
+
         $("#telefone").mask("(99) 9999-9999");
         $("#celular").mask("(99) 9999-9999");
         $("#data_nascimento").mask("00/00/0000");
-        if($('#id_tipo_usuario').val() == "2"){
+        if($('#id_tipo_usuario').val() == "2" || $('#id_tipo_usuario').val() == "1"){
             $("#div_descricao").show();
         }else{
             $("#div_descricao").hide();

@@ -1,7 +1,10 @@
 <?php
 require_once("../admin/lib/DBMySql.php");
+require("../admin/classe/bo/contatosBO.php");
 require("../admin/classe/bo/usuariosBO.php");
 require("../admin/classe/vo/usuariosVO.php");
+
+$contatosBO = new contatosBO();
 $usuariosBO = new usuariosBO();
 $usuariosVO = new usuariosVO();
 
@@ -9,7 +12,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if (isset($_SESSION['id'])) {
-    var_dump($_SESSION);
     $id = $_SESSION["id"];
     $usuariosVO->setId($id);
 
@@ -32,9 +34,10 @@ if (isset($_SESSION['id'])) {
     include("header-logado.php");
 } else {
     @session_destroy();
-    var_dump($_SESSION);
     include("header.php");
 }
+
+$assuntos = $contatosBO->getAssuntos();
 ?>
 
         <!--
@@ -77,33 +80,33 @@ if (isset($_SESSION['id'])) {
                                 Envie sua mensagem que responderemos o mais breve possível.
                             </p>
                             <div class="contact-form">
-                                <form id="contact-form" method="post" action="sendmail.php" role="form">
+                                <form id="contato" method="post">
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
-                                        <input type="text" placeholder="Seu Nome" class="form-control" name="name" id="name">
+                                        <input type="text" placeholder="Seu Nome" class="form-control" name="nome" id="nome" required>
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
-                                        <input type="email" placeholder="Seu Email" class="form-control" name="email" id="email" >
+                                        <input type="email" placeholder="Seu Email" class="form-control" name="email" id="email" required>
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
-                                        <select class="form-control" name="subject" id="subject">
-                                          <option value="">Assunto</option>
-                                          <option value="mensalidade">Mensalidade</option>
-                                          <option value="academia">Academia</option>
-                                          <option value="horario">Horário</option>
-                                          <option value="outro">Outro</option>
+                                        <select class="form-control" name="assunto" id="id_assunto" required>
+                                            <option value="" disabled selected>Selecione...</option>
+                                          <? for($i = 0; $i < count($assuntos); $i++){?>
+                                                <option value="<?=$assuntos[$i]['id']?>"><?=$assuntos[$i]['nome']?></option>
+                                          <? } ?>
                                         </select>
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
-                                        <textarea rows="6" placeholder="Mensagem" class="form-control" name="message" id="message"></textarea>
+                                        <textarea required rows="6" placeholder="Mensagem" class="form-control" name="mensagem" id="mensagem"></textarea>
                                     </div>
 
 
                                     <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
                                         <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Enviar Mensagem">
+                                        <span id="confirmacao" style="color: #e5001c;"></span>
                                     </div>
 
                                 </form>
@@ -117,9 +120,6 @@ if (isset($_SESSION['id'])) {
                                 Saiba onde nos encontrar.
                             </p>
                             <div class="map">
-<!--                               <img src="images/mapa.png" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen>-->
-                                <!-- PRECISA DA API DO GOOGLE PRA KEY
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.277552998015!2d90.3678744!3d23.773128800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0ae4adf3cb9%3A0x7f2cf443b764e4a4!2sShishu+Mela!5e0!3m2!1sen!2s!4v1435516022247" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe> -->
                                 <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDDQmPCutGJeaBWS68lRx5Jq33rUdnLmz0'></script><div style='overflow:hidden;height:400px;width:100%;'><div id='gmap_canvas' style='height:400px;width:100%;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='http://maps-generator.com/pt'>www.maps-generator.com</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=60a28654da4bc62ae6dc1a2fd860f2a3b381525a'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(-25.4471962,-49.24752509999996),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(-25.4471962,-49.24752509999996)});infowindow = new google.maps.InfoWindow({content:'<strong>HD Elite Team</strong><br>Avenida Comendador Franco, 1234<br> Curitiba<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
                             </div>
                         </div>
@@ -135,7 +135,7 @@ if (isset($_SESSION['id'])) {
                     <div class="col-md-3">
                         <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
                             <i class="ion-ios-email-outline"></i>
-                            <h5>hdeliteteam@email.com<br>tiagoribeiro@gmail.com</h5>
+                            <h5>hdeliteteam@email.com<br>thiagoribeiro@gmail.com</h5>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -186,3 +186,24 @@ if (isset($_SESSION['id'])) {
         include("footer.php");
         ?>
         <!-- /#footer -->
+
+<script>
+    $("#contato").submit(function(e) {
+        e.preventDefault();
+        var nome = $("#nome").val();
+        var email = $("#email").val();
+        var id_assunto = $("#id_assunto").val();
+        var mensagem = $("#mensagem").val();
+
+        $.ajax({
+            url: "ajaxEnviaContato.php",
+            dataType: "html",
+            data: {'nome': nome, 'email': email, 'id_assunto': id_assunto, 'mensagem': mensagem},
+            type: "POST",
+            success: function (data) {
+                $("#confirmacao").html(data);
+                $(".form-control").val("");
+            }
+        });
+    });
+</script>

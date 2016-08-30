@@ -41,6 +41,9 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 
         <!-- Template Javascript Files
         ================================================== -->
+
+        <!-- font awesome -->
+        <script src="https://use.fontawesome.com/7ed8329303.js"></script>
         <!-- modernizr js -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <!-- jquery -->
