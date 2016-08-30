@@ -9,14 +9,7 @@ if($erro == 1){
     $erro = "Ops! Usuário e/ou senha incorretos!";
     $display = "";
 }
-//elseif($erro == 2){
-//    //usuário inexistente
-//    $erro = "Ops! Usuário e/ou senha incorretos!";
-//    $display = "";
-//}elseif($erro == 3){
-//    //logout
-//    $erro = "";
-//}
+
 ?>
 
 <!--
@@ -28,7 +21,7 @@ Global Page Section Start
         <div class="row">
             <div class="col-md-12">
                 <div class="block">
-                    <h2 style="margin-bottom: 0">já é nosso aluno?</h2>
+                    <h2 style="margin-bottom: 0">Já é nosso aluno?</h2>
                     <h3 style="margin-top: 0" class="text-uppercase">Faça seu login</h3>
                     <ol class="breadcrumb">
                         <li>
@@ -49,9 +42,9 @@ Global Page Section Start
 <section>
     <div class="container">
         <div class="row">
-            <span><?=$erro?></span>
           <div class="wow fadeInRight" data-wow-delay=".3s" >
             <form class="login text-center" method="post" action="processausuarios.php">
+                <span style="color: #fcfcfc"><?=$erro?></span>
               <div class="form-group input-group">
                 <span class="input-group-addon">
                   <span class="ion-person"></span>

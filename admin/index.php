@@ -26,7 +26,7 @@ if($erro == 1){
         <div class="login">
             <img class="img-responsive" src="img/logo.png">
             <div >
-                <h4 class="text-uppercase text-center" style="padding: 5%">  <a class="link-login" href="localhost/crossfit/hd">Acesse o site aqui</a><br/>    ou<br/>Faça seu login</h4>
+                <h4 class="text-uppercase text-center" style="padding: 5%">  <a class="link-login" href="../hd">Acesse o site aqui</a><br/>    ou<br/>Faça seu login</h4>
                 <span id="erro" style="color: red; <?=$display?>"><?=$erro?></span>
                 <form action="processausuarios.php" class="text-center" method="POST">
                     <div class=" form-group input-group">
