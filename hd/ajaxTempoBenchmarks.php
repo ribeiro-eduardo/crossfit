@@ -42,14 +42,14 @@ if($acao == "carregar"){
             }
             $html .= "
             <div class='row' id='bench-$id_tempo'>
-                <div class='col-md-1 text-center lbl'>
+                <div class='col-md-2 text-center lbl'>
                     <img src='$imagem'></td>
                 </div>
-                <div class='col-md-7 lbl' style='height: 30px; font-size: 16px; padding-top: 4px;'>
+                <div class='col-md-6 lbl' style='height: 30px; font-size: 16px; padding-top: 4px;'>
                     $titulo
                 </div>
                 <div class='col-md-2 lbl'>
-                    <input id='tempo-$id_tempo' value='$tempo' onblur='alterar($id_tempo)' style='width: 100%'/>
+                    <input id='tempo-$id_tempo' value='$tempo' onblur='alterar($id_tempo)' style='width: 92%'/>
                     <i class='fa-li fa fa-spinner fa-spin' id='gif-$id_tempo' style='display: none'></i>
                 </div>
                 <div class='col-md-2'>
