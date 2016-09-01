@@ -132,7 +132,7 @@ $usuarios = $usuariosBO->get($usuariosVO);
 
     function excluir(id) {
         if (confirm('Você tem certeza que deseja excluir esse usuário?')) {
-            window.location = 'usuarios-action.php?acao=e&id=' + id;
+            window.location = 'action/usuarios-action.php?acao=e&id=' + id;
         }
     }
 
