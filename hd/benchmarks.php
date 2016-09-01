@@ -50,14 +50,17 @@ $tipo = $_GET['b'];
 switch ($tipo) {
     case 'heroes':
         $id_categoria_treino = 1;
+        $menu = "Heroes";
         $texto = "hero";
         break;
     case 'girls':
         $id_categoria_treino = 2;
+        $menu = "Girls";
         $texto = "girl";
         break;
     case 'challenges':
         $id_categoria_treino = 3;
+        $menu = "Challenges";
         $texto = "challenge";
         break;
 }
@@ -85,7 +88,7 @@ Global Page Section Start
                             </a>
                         </li>
                         <li>Benchmark</li>
-                        <li class="active">Challenges</li>
+                        <li class="active"><?=$menu?></li>
                     </ol>
                 </div>
             </div>
