@@ -81,8 +81,12 @@ class usuariosBO
         $query = "UPDATE `usuarios` SET";
         $query .= " `nome` = '" . $usuariosVO->getNome() . "',";
         $query .= " `email` = '" . $usuariosVO->getEmail() . "',";
-        $query .= " `login` = '" . $usuariosVO->getLogin() . "',";
-        $query .= " `senha` = '" . $usuariosVO->getSenha() . "',";
+        if ($usuariosVO->getLogin() != "") {
+            $query .= " `login` = '" . $usuariosVO->getLogin() . "',";
+        }
+        if ($usuariosVO->getSenha() != "") {
+            $query .= " `senha` = '" . $usuariosVO->getSenha() . "',";
+        }
         $query .= " `data_nascimento` = '" . $usuariosVO->getData_nascimento() . "',";
         $query .= " `altura` = '" . $usuariosVO->getAltura() . "',";
 
