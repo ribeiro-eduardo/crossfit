@@ -5,7 +5,6 @@
  * Date: 07/04/2016
  * Time: 14:04
  */
-
 @session_start();
 if ($_SESSION["id_tipo_usuario"] != 1) {
     header("Location: index.php");
@@ -41,7 +40,7 @@ if(isset($_POST["cadastrar"])){
     $data_cadastro = @date("Y-m-d H:i:s",$t);
 
 //validação caso passe pelo JS
-    include("../classe/validacoes/valida-usuarios.php?a=cadastrar");
+    //include("../classe/validacoes/valida-usuarios.php?a=cadastrar");
 
 
     $usuariosVO->setId_tipo_usuario($id_tipo_usuario);
@@ -96,7 +95,7 @@ elseif(isset($_POST["editar"])){
     $data_cadastro = @date("Y-m-d H:i:s",$t);
 
 //valida��o caso passe pelo JS
-    include("../classe/validacoes/valida-usuarios.php");
+    //include("../classe/validacoes/valida-usuarios.php");
 
 
     $usuariosVO->setId($id);
