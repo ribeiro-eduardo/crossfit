@@ -145,6 +145,9 @@ Global Page Section Start
                                style="width: 40%; font-size: 16px">
                         <span id="data_nascimento-obrig" style="display: none; color: red">Campo obrigatório!</span>
                     </div>
+                    <div class="clearfix">
+
+                    </div>
                     <div class="form-group" style="margin-bottom: 2px">
                         <label class="lbl col-xs-5 text-center" for="altura" style="padding-bottom: 5px">Altura:
                             (m)</label>
@@ -194,6 +197,9 @@ Global Page Section Start
         -->
     </form>
     <!--fim form benchs-->
+</div>
+<div class="clearfix">
+
 </div>
 
 </div>

@@ -42,17 +42,17 @@ if($acao == "carregar"){
             }
             $html .= "
             <div class='row' id='bench-$id_tempo'>
-                <div class='col-md-2 text-center lbl'>
+                <div class='col-xs-2 text-center lbl'>
                     <img src='$imagem'></td>
                 </div>
-                <div class='col-md-6 lbl' style='height: 30px; font-size: 16px; padding-top: 4px;'>
+                <div class='col-sm-6 col-xs-5 lbl' style='height: 30px; font-size: 16px; padding-top: 4px;'>
                     $titulo
                 </div>
-                <div class='col-md-2 lbl'>
+                <div class='col-sm-2 col-xs-3 lbl'>
                     <input id='tempo-$id_tempo' value='$tempo' onblur='alterar($id_tempo)' style='width: 92%'/>
                     <i class='fa-li fa fa-spinner fa-spin' id='gif-$id_tempo' style='display: none'></i>
                 </div>
-                <div class='col-md-2'>
+                <div class='col-xs-2'>
                     <a style='color: #e5001c; text-transform: uppercase; font-size: 16px;' onclick='remover($id_tempo)'><span class='ion-trash-b' style='padding-right: 7px'></span></a>
                 </div>
             </div>";
