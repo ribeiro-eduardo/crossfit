@@ -88,30 +88,30 @@ if (!empty($noticia)) { ?>
                             <?= urldecode($noticia['descricao']) ?>
                         </p>
                     </div>
-                    <ul class="social-share">
-                        <h4>Share this article</h4>
-                        <li>
-                            <a href="#" class="Facebook">
-                                <i class="ion-social-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="Twitter">
-                                <i class="ion-social-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="Linkedin">
-                                <i class="ion-social-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="Google Plus">
-                                <i class="ion-social-googleplus"></i>
-                            </a>
-                        </li>
-
-                    </ul>
+<!--                    <ul class="social-share">-->
+<!--                        <h4>Share this article</h4>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="Facebook">-->
+<!--                                <i class="ion-social-facebook"></i>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="Twitter">-->
+<!--                                <i class="ion-social-twitter"></i>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="Linkedin">-->
+<!--                                <i class="ion-social-linkedin"></i>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="Google Plus">-->
+<!--                                <i class="ion-social-googleplus"></i>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!---->
+<!--                    </ul>-->
 
                 </div>
             </div>
