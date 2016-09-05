@@ -83,15 +83,17 @@ $assuntos = $contatosBO->getAssuntos();
                                 <form id="contato" method="post">
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
-                                        <input type="text" placeholder="Seu Nome" class="form-control" name="nome" id="nome" required>
+                                        <input type="text" placeholder="Seu Nome" class="form-control" name="nome" id="nome">
+                                        <span style="color: red">*</span>
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
-                                        <input type="email" placeholder="Seu Email" class="form-control" name="email" id="email" required>
+                                        <input type="email" placeholder="Seu Email" class="form-control" name="email" id="email">
+                                        <span style="color: red">*</span>
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
-                                        <select class="form-control" name="assunto" id="id_assunto" required>
+                                        <select class="form-control" name="assunto" id="id_assunto">
                                             <option value="" disabled selected>Selecione...</option>
                                           <? for($i = 0; $i < count($assuntos); $i++){?>
                                                 <option value="<?=$assuntos[$i]['id']?>"><?=$assuntos[$i]['nome']?></option>
@@ -100,7 +102,8 @@ $assuntos = $contatosBO->getAssuntos();
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
-                                        <textarea required rows="6" placeholder="Mensagem" class="form-control" name="mensagem" id="mensagem"></textarea>
+                                        <textarea rows="6" placeholder="Mensagem" class="form-control" name="mensagem" id="mensagem"></textarea>
+                                        <span style="color: red">*</span>
                                     </div>
 
 
@@ -194,6 +197,15 @@ $assuntos = $contatosBO->getAssuntos();
         var email = $("#email").val();
         var id_assunto = $("#id_assunto").val();
         var mensagem = $("#mensagem").val();
+
+        if(!nome || !email || !mensagem){
+            $("#confirmacao").html("Os campos nome, email e mensagem são obrigatórios!");
+            return false;
+        }
+
+        if(!id_assunto){
+            id_assunto = 4;
+        }
 
         $.ajax({
             url: "ajaxEnviaContato.php",
