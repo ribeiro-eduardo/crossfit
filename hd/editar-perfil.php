@@ -137,6 +137,9 @@ Global Page Section Start
                                style="width: 40%; font-size: 16px">
                         <span id="email-obrig" style="display: none; color: red">Campo obrigatório!</span>
                     </div>
+                    <div class="clearfix">
+
+                    </div>
                     <div class="form-group" style="margin-bottom: 2px">
                         <label class="lbl col-xs-5 text-center" for="data_nascimento" style="padding-bottom: 5px">Data
                             de nascimento:</label>
@@ -155,6 +158,9 @@ Global Page Section Start
                                value="<? echo substr_replace($altura, ',', 1, 0); ?> m"
                                style="width: 40%; font-size: 16px">
                         <span id="altura-obrig" style="display: none; color: red">Campo obrigatório!</span>
+                    </div>
+                    <div class="clearfix">
+
                     </div>
                     <div class="form-group" style="margin-bottom: 2px">
                         <label class="lbl col-xs-5 text-center" for="peso" style="padding-bottom: 5px">Peso:
