@@ -129,6 +129,9 @@ Global Page Section Start
                   </div>
 
          <? } ?>
+         <div class="clearfix">
+
+         </div>
           <div align="right">
               <?
           for($i = 1; $i < $numPaginas + 1; $i++) {
