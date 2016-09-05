@@ -79,7 +79,7 @@ Global Page Section Start
         <div class="row">
             <div class="col-md-12">
                 <div class="block">
-                    <h2>Challenges</h2>
+                    <h2><?=$menu?></h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.php">
