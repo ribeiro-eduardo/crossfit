@@ -32,7 +32,6 @@ if (isset($_SESSION['id'])) {
     include("header-logado.php");
 } else {
     @session_destroy();
-    var_dump($_SESSION);
     include("header.php");
 }
 
