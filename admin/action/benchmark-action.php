@@ -74,7 +74,7 @@ if(isset($_POST["cadastrar"])){
     if($benchmarksBO->deleteBenchmark($benchmarksVO)){
         ?>
         <script>
-            alert("Benchmark exclu�do com sucesso!");
+            alert("Benchmark excluído com sucesso!");
             location.href = "../benchmarks.php";
         </script>
         <?
