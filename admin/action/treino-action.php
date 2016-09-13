@@ -26,10 +26,6 @@ $data_aux = $_POST["data"];
 $aux = explode('/', $data_aux);
 $data = $aux[2] . "-" . $aux[1] . "-" . $aux[0];
 
-//if($titulo != ""){
-//    $html = "<b><font color='green'>Mensagem enviada com sucesso!</font></b>";
-//}
-
 if($id != ""){
     $treinosVO->setId($id);
     $treinosVO->setTitulo($titulo);

@@ -20,9 +20,6 @@ $sobreVO = new sobreVO();
 if (isset($_POST["editar"])) {
     $id_modulo = $_POST["id_modulo"];
     $texto = $_POST["texto"];
-//    echo "id modulo".$id_modulo."<br>";
-//    echo "id usuario".$id_usuario."<br>";
-//    exit;
     $sobreVO->setIdModulo($id_modulo);
     $sobreVO->setTexto(urlencode($texto));
 

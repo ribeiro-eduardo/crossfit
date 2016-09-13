@@ -94,10 +94,6 @@ elseif(isset($_POST["editar"])){
     $t=time();
     $data_cadastro = @date("Y-m-d H:i:s",$t);
 
-//valida��o caso passe pelo JS
-    //include("../classe/validacoes/valida-usuarios.php");
-
-
     $usuariosVO->setId($id);
     $usuariosVO->setId_tipo_usuario($id_tipo_usuario);
     $usuariosVO->setNome($nome);
