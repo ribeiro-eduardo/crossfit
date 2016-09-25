@@ -83,26 +83,27 @@ $assuntos = $contatosBO->getAssuntos();
                                 <form id="contato" method="post">
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
-                                        <input type="text" placeholder="Seu Nome" class="form-control" name="nome" id="nome">
+                                        <input type="text" placeholder="Seu Nome" class="form-control" name="nome" id="nome" style=" display: inline-block; width: 98%;">
                                         <span style="color: red">*</span>
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
-                                        <input type="email" placeholder="Seu Email" class="form-control" name="email" id="email">
+                                        <input type="email" placeholder="Seu Email" class="form-control" name="email" id="email" style=" display: inline-block; width: 98%;">
                                         <span style="color: red">*</span>
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
-                                        <select class="form-control" name="assunto" id="id_assunto">
-                                            <option value="" disabled selected>Selecione...</option>
+                                        <select class="form-control" name="assunto" id="id_assunto" style=" display: inline-block; width: 98%;">
+                                            <option value="" disabled selected>Assunto...</option>
                                           <? for($i = 0; $i < count($assuntos); $i++){?>
                                                 <option value="<?=$assuntos[$i]['id']?>"><?=$assuntos[$i]['nome']?></option>
                                           <? } ?>
                                         </select>
+                                        <span style="color: red">*</span>
                                     </div>
 
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
-                                        <textarea rows="6" placeholder="Mensagem" class="form-control" name="mensagem" id="mensagem"></textarea>
+                                        <textarea rows="6" placeholder="Mensagem" class="form-control" name="mensagem" id="mensagem" style=" display: inline-block; width: 98%;"></textarea>
                                         <span style="color: red">*</span>
                                     </div>
 
