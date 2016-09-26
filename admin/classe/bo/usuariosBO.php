@@ -175,7 +175,7 @@ class usuariosBO
 
         $db = new DBMySQL();
 
-        $query = "SELECT * FROM `usuarios` WHERE `id_tipo_usuario` = 1 OR `id_tipo_usuario` = 2 ORDER BY `id`";
+        $query = "SELECT * FROM `usuarios` WHERE `id_tipo_usuario` = 1 OR `id_tipo_usuario` = 2 AND `status` = 1 ORDER BY `id`";
 
         $db->do_query($query);
 
