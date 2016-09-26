@@ -79,6 +79,7 @@ $assuntos = $contatosBO->getAssuntos();
                             <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s" style="color: #acacac;">
                                 Envie sua mensagem que responderemos o mais breve possível.
                             </p>
+                            <p style="color: red;">* campos obrigatórios</p>
                             <div class="contact-form">
                                 <form id="contato" method="post">
 
@@ -199,13 +200,9 @@ $assuntos = $contatosBO->getAssuntos();
         var id_assunto = $("#id_assunto").val();
         var mensagem = $("#mensagem").val();
 
-        if(!nome || !email || !mensagem){
-            $("#confirmacao").html("Os campos nome, email e mensagem são obrigatórios!");
+        if(!nome || !email || !mensagem || !id_assunto){
+            $("#confirmacao").html("Os campos nome, email, assunto e mensagem são obrigatórios!");
             return false;
-        }
-
-        if(!id_assunto){
-            id_assunto = 4;
         }
 
         $.ajax({
