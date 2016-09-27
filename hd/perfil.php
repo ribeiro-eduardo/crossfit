@@ -30,6 +30,9 @@ $usuariosVO->setId($id);
 
 $usuario = $usuariosBO->get($usuariosVO);
 $imagem = $usuario['imagem'];
+if($imagem == ""){
+    $imagem = 'sem-imagem.jpg';
+}
 $id_tipo_usuario = $usuario['id_tipo_usuario'];
 
 switch ($id_tipo_usuario) {
@@ -108,7 +111,7 @@ Global Page Section Start
                 data-wow-delay="0ms" style="background: none;">
             <div class="col-md-4 img-wrapper">
                 <div id="preview" class="center-block circle-avatar"
-                     style="background: url('<?= $dir ?>/<?= $usuario['imagem'] ?>') no-repeat; margin-top: 70px; "></div>
+                     style="background: url('<?= $dir ?>/<?= $imagem ?>') no-repeat; margin-top: 70px; "></div>
             </div>
         </figure>
 

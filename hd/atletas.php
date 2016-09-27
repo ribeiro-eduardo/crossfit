@@ -33,6 +33,9 @@ $usuario_logadoVO->setId($id);
 
 $usuario_logado = $usuariosBO->get($usuario_logadoVO);
 $imagem = $usuario_logado['imagem'];
+if($imagem == ""){
+    $imagem = 'sem-imagem.jpg';
+}
 $id_tipo_usuario = $usuario_logado['id_tipo_usuario'];
 
 switch ($id_tipo_usuario) {

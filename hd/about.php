@@ -9,12 +9,15 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if (isset($_SESSION['id'])) {
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     $id = $_SESSION["id"];
     $usuariosVO->setId($id);
 
     $usuario = $usuariosBO->get($usuariosVO);
     $imagem = $usuario['imagem'];
+    if($imagem == ""){
+        $imagem = 'sem-imagem.jpg';
+    }
     $id_tipo_usuario = $usuario['id_tipo_usuario'];
 
     switch ($id_tipo_usuario) {

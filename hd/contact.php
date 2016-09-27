@@ -17,6 +17,9 @@ if (isset($_SESSION['id'])) {
 
     $usuario = $usuariosBO->get($usuariosVO);
     $imagem = $usuario['imagem'];
+    if($imagem == ""){
+        $imagem = 'sem-imagem.jpg';
+    }
     $id_tipo_usuario = $usuario['id_tipo_usuario'];
 
     switch ($id_tipo_usuario) {

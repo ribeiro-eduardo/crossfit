@@ -101,7 +101,7 @@ class benchmarksBO
         }
         else{
 
-            $query = "SELECT * FROM `benchmarks` WHERE `status` = 1 ORDER BY `id` ASC";
+            $query = "SELECT * FROM `benchmarks` WHERE `status` = 1 ORDER BY `titulo` ASC";
 
             $db->do_query($query);
 
