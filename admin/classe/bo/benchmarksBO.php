@@ -84,7 +84,7 @@ class benchmarksBO
 
         } elseif($benchmarksVO->getIdCategoriaTreino() != "") {
 
-            $query = "SELECT * FROM `benchmarks` WHERE `id_categoria_treino` = '".$benchmarksVO->getIdCategoriaTreino()."'AND `status` = 1 ORDER BY `id` ASC";
+            $query = "SELECT * FROM `benchmarks` WHERE `id_categoria_treino` = '".$benchmarksVO->getIdCategoriaTreino()."'AND `status` = 1 ORDER BY `titulo` ASC";
 
             $db->do_query($query);
 
