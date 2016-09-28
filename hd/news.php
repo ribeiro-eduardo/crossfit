@@ -98,11 +98,6 @@ background-size: cover;">
 
                             <div class="blog-meta" style="color: #5f5f5f;">
                                 <span><?= $data ?>, &agrave;s <?= $time ?></span>
-                                <!-- DEIXEI COMENTADO A PROXIMA LINHA PQ NÃO TEMOS A INFORMAÇÃO DE QUEM CADASTROU A NOTICIA,
-                                SE QUISER EU POSSO FAZER TB, SE DER TEMPO KK
-                                ------ Não precisa :)
-                                <span>by Admin</span>-->
-                                <!-- <span><a href="">business</a>,<a href="">people</a></span> -->
                             </div>
                             <p style="color: #acacac">
                                 <?

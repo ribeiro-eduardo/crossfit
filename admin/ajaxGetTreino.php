@@ -45,7 +45,7 @@ if($treino['id'] != ""){
       </div>
       <div class="form-group">
          <label for="descricao">Descri&ccedil;&atilde;o:<span style="color: red"> *</span></label>
-            <textarea rows="4" class="form-control" id="descricao" name="descricao">'.$descricao.'</textarea>
+            <textarea rows="10" class="form-control" id="descricao" name="descricao">'.$descricao.'</textarea>
       </div>
       <div class="form-group">
         <input type="hidden" name="id" id="id" value="'.$id.'">

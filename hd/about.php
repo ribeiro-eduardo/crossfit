@@ -79,7 +79,7 @@ $texto = $sobreBO->get(1);
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
-                        <img src="images/group.jpg" alt="" class="img-responsive">
+                        <img src="images/about.jpg" alt="" class="img-responsive">
                     </div>
                     <div class="col-md-6">
                         <div class="block">

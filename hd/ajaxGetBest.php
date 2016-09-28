@@ -34,6 +34,9 @@ if (!empty($benchmarks)) {
 
     for ($i = 0; $i < count($benchmarks); $i++) {
         $imagem = $benchmarks[$i]['imagem'];
+        if($imagem == ""){
+            $imagem = 'sem-imagem.jpg';
+        }
         $id_tipo_usuario = $benchmarks[$i]['id_tipo_usuario'];
         $data_nascimento = @date('d/m/Y', strtotime($benchmarks[$i]["data_nascimento"]));
         $idade = calculaIdade($data_nascimento);

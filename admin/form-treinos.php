@@ -18,9 +18,6 @@ require("classe/bo/treinosBO.php");
 $treinosBO = new treinosBO();
 
 $datas_banco = $treinosBO->getDatas();
-//echo "<pre>";
-//var_dump($datas_banco);
-//echo "</pre>";
 
 for($i = 0; $i < count($datas_banco); $i++){
     $datas[$i] = $datas_banco[$i]['data'];

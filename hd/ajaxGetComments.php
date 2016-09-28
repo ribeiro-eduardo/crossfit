@@ -33,6 +33,9 @@ if(!empty($comentarios)){
         $texto = $comentarios[$j]['texto'];
         $texto = nl2br($texto);
         $imagem = $comentarios[$j]['imagem'];
+        if($imagem == ""){
+            $imagem = 'sem-imagem.jpg';
+        }
         $id_tipo_usuario = $comentarios[$j]['id_tipo_usuario'];
         $dir = '';
 

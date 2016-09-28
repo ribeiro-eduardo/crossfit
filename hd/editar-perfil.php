@@ -117,7 +117,7 @@ Global Page Section Start
                     data-wow-delay="0ms" style="background: none;">
                 <div class="col-md-4 img-wrapper">
                     <div id="preview" class="center-block circle-avatar"
-                         style="background: url('<?= $dir ?>/<?= $usuario['imagem'] ?>') no-repeat; "></div>
+                         style="background: url('<?= $dir ?>/<?= $imagem ?>') no-repeat; "></div>
                     <div class="overlay center-block" style="background: none; width: 220px;">
                         <div class="buttons" style="background: rgba(0, 0, 0, 0.7); top: 40%; left: 30%;">
                             <input type="file" name="file" id="file" class="inputfile"/>
