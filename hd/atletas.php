@@ -100,6 +100,10 @@ Global Page Section Start
         <!-- div inserida para cada atleta -->
           <? for($i = 0; $i < count($atletas); $i++){
               $id_tipo_usuario = $atletas[$i]['id_tipo_usuario'];
+              $imagemAtleta = $atletas[$i]['imagem'];
+			  if($imagemAtleta == ""){
+    		     $imagemAtleta = 'sem-imagem.jpg';
+			  }	              
 
               switch ($id_tipo_usuario) {
                   case 1:
@@ -123,7 +127,7 @@ Global Page Section Start
 
                   <div class="col-md-4 col-sm-6 img-wrapper" style="margin-bottom: 60px; height: 131px">
                     <a href="atleta.php?id=<?=$atletas[$i]['id']?>">
-                      <div class="circle-avatar col-md-3" style="background: url('<?=$dir?>/<?=$atletas[$i]['imagem']?>') no-repeat; height: 131px; width: 131px; margin-right: 20px"></div>
+                      <div class="circle-avatar col-md-3" style="background: url('<?=$dir?>/<?=$imagemAtleta?>') no-repeat; height: 131px; width: 131px; margin-right: 20px"></div>
                       <div>
                         <h3><?=$atletas[$i]['nome']?><span><img src="<?=$icone?>"></span></h3>
                         <p><?=$idade?> anos</p>

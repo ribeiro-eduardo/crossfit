@@ -63,6 +63,9 @@ $id_atleta = $_GET['id'];
 $atletaVO->setId($id_atleta);
 $atleta = $usuariosBO->get($atletaVO);
 $imagem_atleta = $atleta['imagem'];
+if($imagem_atleta == ""){
+    $imagem_atleta = 'sem-imagem.jpg';
+}  
 
 $id_tipo_atleta = $atleta['id_tipo_usuario'];
 
